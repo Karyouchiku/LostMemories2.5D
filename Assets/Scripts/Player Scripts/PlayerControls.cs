@@ -18,7 +18,7 @@ public class PlayerControls : MonoBehaviour
     float moveZ;
     public float movementSpeed;
 
-    float jumpTimer = 0.2f;
+    //float jumpTimer = 0.2f;
 
     bool isOnKeyboardOrGamepad = false;
     bool isOnScreenControls = false;
@@ -62,9 +62,12 @@ public class PlayerControls : MonoBehaviour
                 moveX = joystick.Horizontal;
                 moveZ = joystick.Vertical;
             }
-
+            if (verticalVelocity < -0.5f)
+            {
+            }
+            
+            verticalVelocity = -gravity * Time.deltaTime;
             playerAnimations.isFalling = false;
-            //verticalVelocity = -gravity * 10 * Time.deltaTime;
             if (Input.GetAxisRaw("Jump") > 0)
             {
                 verticalVelocity = jumpForce;
@@ -75,14 +78,18 @@ public class PlayerControls : MonoBehaviour
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;
-            playerAnimations.isFalling = true;
+            if (verticalVelocity <= -1.5f)
+            {
+                playerAnimations.isFalling = true;
+            }
         }
+
         if (playerAnimations.isJumping)
         {
-            jumpTimer -= 2 * Time.deltaTime;
-            if (jumpTimer <= 0)
+            //jumpTimer -= 2 * Time.deltaTime;
+            if (verticalVelocity <= 0f)
             {
-                jumpTimer = 0.3f;
+                //jumpTimer = 0.4f;
                 playerAnimations.isJumping = false;
             }
         }
@@ -91,23 +98,23 @@ public class PlayerControls : MonoBehaviour
         {
             if (moveX > 0 && moveZ > 0)
             {
-                moveX *= 0.5f;
-                moveZ *= 0.5f;
+                moveX = 0.75f;
+                moveZ = 0.75f;
             }
             if (moveX < 0 && moveZ < 0)
             {
-                moveX *= 0.5f;
-                moveZ *= 0.5f;
+                moveX = -0.75f;
+                moveZ = -0.75f;
             }
             if (moveX > 0 && moveZ < 0)
             {
-                moveX *= 0.5f;
-                moveZ *= 0.5f;
+                moveX = 0.75f;
+                moveZ = -0.75f;
             }
             if (moveX < 0 && moveZ > 0)
             {
-                moveX *= 0.5f;
-                moveZ *= 0.5f;
+                moveX = -0.75f;
+                moveZ = 0.75f;
             }
         }
 
@@ -135,7 +142,7 @@ public class PlayerControls : MonoBehaviour
             playerAnimations.isMoving = false;
         }
 
-
+        Debug.Log(verticalVelocity);
         //Debugging
         //if (isMoving)
         //{
