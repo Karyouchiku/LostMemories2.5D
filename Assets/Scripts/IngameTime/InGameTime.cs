@@ -7,12 +7,12 @@ public class InGameTime : MonoBehaviour
     public float inGameTimeSpeed;
 
     GameObject lighting;
-    Light light;
+    Light sunLight;
     // Start is called before the first frame update
     void Start()
     {
         lighting = transform.gameObject;
-        light = GetComponent<Light>();
+        sunLight = GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -23,19 +23,19 @@ public class InGameTime : MonoBehaviour
         if (lighting.transform.rotation.eulerAngles.x >= 160 && lighting.transform.rotation.eulerAngles.x <= 180)
         {
             //light.color = Color.ye;
-            light.color = new Color(1f, 0.92f, 0.17f, 1f);
+            sunLight.color = new Color(1f, 0.92f, 0.17f, 1f);
         }
         if (lighting.transform.rotation.eulerAngles.x >= 180 && lighting.transform.rotation.eulerAngles.x <= 360)
         {
-            light.color = Color.black;
+            sunLight.color = Color.black;
         }
         if (lighting.transform.rotation.eulerAngles.x >= 0 && lighting.transform.rotation.eulerAngles.x <= 30)
         {
-            light.color = Color.yellow;
+            sunLight.color = Color.yellow;
         }
         if (lighting.transform.rotation.eulerAngles.x >= 30 && lighting.transform.rotation.eulerAngles.x <= 160)
         {
-            light.color = Color.white;
+            sunLight.color = Color.white;
         }
     }
 }
