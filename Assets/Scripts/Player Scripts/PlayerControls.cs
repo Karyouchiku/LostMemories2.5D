@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
-    PlayerAnimations playerAnimations;
+
     CharacterController controller;
+    Animator anim;
     Vector3 move;
-    SpriteRenderer flipSprite;
+    Vector3 flipSprite;
     public VariableJoystick joystick;
 
     public float gravity;
@@ -18,7 +19,12 @@ public class PlayerControls : MonoBehaviour
     float moveZ;
     public float movementSpeed;
 
-    float jumpTimer = 0.2f;
+    float animMoveX;
+    float animMoveZ;
+    bool isMoving = false;
+    bool isJumping = false;
+    bool isFalling = false;
+    float jumpTimer = 0.1f;
 
     bool isOnKeyboardOrGamepad = false;
     bool isOnScreenControls = false;
@@ -27,8 +33,8 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        playerAnimations = GetComponent<PlayerAnimations>();
-        flipSprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        flipSprite = transform.localScale;
     }
 
     // Update is called once per frame
@@ -63,27 +69,27 @@ public class PlayerControls : MonoBehaviour
                 moveZ = joystick.Vertical;
             }
 
-            playerAnimations.isFalling = false;
-            //verticalVelocity = -gravity * 10 * Time.deltaTime;
+            isFalling = false;
+            //verticalVelocity = -gravity * Time.deltaTime;
             if (Input.GetAxisRaw("Jump") > 0)
             {
                 verticalVelocity = jumpForce;
-                playerAnimations.isJumping = true;
+                isJumping = true;
 
             }
         }
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;
-            playerAnimations.isFalling = true;
+            isFalling = true;
         }
-        if (playerAnimations.isJumping)
+        if (isJumping)
         {
             jumpTimer -= 2 * Time.deltaTime;
             if (jumpTimer <= 0)
             {
                 jumpTimer = 0.3f;
-                playerAnimations.isJumping = false;
+                isJumping = false;
             }
         }
 
@@ -119,27 +125,31 @@ public class PlayerControls : MonoBehaviour
 
         if (moveX != 0 || moveZ != 0)
         {
-            playerAnimations.isMoving = true;
+            isMoving = true;
             if (moveX > 0)
             {
-                flipSprite.flipX = false;
+                flipSprite.x = 1;
             }
             if (moveX < 0)
             {
-                flipSprite.flipX = true;
+                flipSprite.x = -1;
             }
-            //transform.localScale = flipSprite;
+            transform.localScale = flipSprite;
         }
         else
         {
-            playerAnimations.isMoving = false;
+            isMoving = false;
         }
 
+        //anim.SetFloat("Horizontal",moveX);
+        anim.SetBool("isMoving", isMoving);
+        anim.SetBool("isJumping", isJumping);
+        anim.SetBool("isFalling", isFalling);
 
-        //Debugging
-        //if (isMoving)
-        //{
-        //    Debug.Log("MoveX = " + moveX + ", MoveZ= " + moveZ);
-        //}
+        if (isMoving)
+        {
+            Debug.Log("MoveX = " + moveX + ", MoveZ= " + moveZ);
+
+        }
     }
 }
