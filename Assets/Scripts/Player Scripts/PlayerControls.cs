@@ -142,7 +142,6 @@ public class PlayerControls : MonoBehaviour
             playerAnimations.isMoving = false;
         }
 
-        Debug.Log(verticalVelocity);
         //Debugging
         //if (isMoving)
         //{
