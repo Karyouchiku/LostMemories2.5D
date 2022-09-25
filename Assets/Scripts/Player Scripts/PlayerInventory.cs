@@ -10,6 +10,8 @@ public class PlayerInventory : MonoBehaviour
     public List<InventoryItem> inventory = new List<InventoryItem>();
     Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
 
+    public GameObject inventoryPanel;
+    
     void OnEnable()
     {
         Item.OnItemCollected += Add;

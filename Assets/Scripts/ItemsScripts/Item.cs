@@ -6,13 +6,14 @@ public class Item : MonoBehaviour, ICollectible
 {
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(ItemData itemData);
-    public ItemData item;
+    public ItemData itemData;
+    
 
     public void Collect()
     {
-        Debug.Log($"{item.displayName} is Collected");
+        Debug.Log($"{itemData.displayName} is Collected");
         Destroy(gameObject);
-        OnItemCollected?.Invoke(item);
+        OnItemCollected?.Invoke(itemData);
     }
 
 }

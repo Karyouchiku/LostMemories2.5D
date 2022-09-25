@@ -5,22 +5,32 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
+    //Componets
     PlayerAnimations playerAnimations;
     CharacterController controller;
     Vector3 move;
     SpriteRenderer flipSprite;
-    public VariableJoystick joystick;
 
+    [Header("Movement Settings")]
     public float gravity;
+
+    //Remove this sht later
     public float jumpForce;
+    
     float verticalVelocity;
-    float moveX;
-    float moveZ;
     public float movementSpeed;
+
+    [Header("MomementValue - readonly")]
+    public float moveX;
+    public float moveZ;
 
     //float jumpTimer = 0.2f;
 
     bool isOnKeyboardOrGamepad = false;
+
+    [Header("Joystick Settings")]
+    public VariableJoystick joystick;
+    public float JoystickLimiter;
     bool isOnScreenControls = false;
 
     // Start is called before the first frame update
@@ -59,15 +69,29 @@ public class PlayerControls : MonoBehaviour
             //UI Controls
             if (isOnScreenControls)
             {
-                moveX = joystick.Horizontal;
-                moveZ = joystick.Vertical;
+                if (joystick.Horizontal >= -JoystickLimiter && joystick.Horizontal <= JoystickLimiter)
+                {
+                    moveX = 0f;
+                }
+                else
+                {
+                    moveX = joystick.Horizontal;
+                }
+                if (joystick.Vertical >= -JoystickLimiter && joystick.Vertical <= JoystickLimiter)
+                {
+                    moveZ = 0f;
+                }
+                else
+                {
+                    moveZ = joystick.Vertical;
+                }
             }
-            if (verticalVelocity < -0.5f)
-            {
-            }
+            
             
             verticalVelocity = -gravity * Time.deltaTime;
             playerAnimations.isFalling = false;
+            
+            //JUMP Remove later this is just for testing shts
             if (Input.GetAxisRaw("Jump") > 0)
             {
                 verticalVelocity = jumpForce;
@@ -94,34 +118,12 @@ public class PlayerControls : MonoBehaviour
             }
         }
 
-        if (isOnKeyboardOrGamepad)
-        {
-            if (moveX > 0 && moveZ > 0)
-            {
-                moveX = 0.75f;
-                moveZ = 0.75f;
-            }
-            if (moveX < 0 && moveZ < 0)
-            {
-                moveX = -0.75f;
-                moveZ = -0.75f;
-            }
-            if (moveX > 0 && moveZ < 0)
-            {
-                moveX = 0.75f;
-                moveZ = -0.75f;
-            }
-            if (moveX < 0 && moveZ > 0)
-            {
-                moveX = -0.75f;
-                moveZ = 0.75f;
-            }
-        }
-
+        //Movement Result 
         move = Vector3.zero;
         move.x = moveX * movementSpeed;
         move.y = verticalVelocity;
         move.z = moveZ * movementSpeed;
+        Vector3.Normalize(move) ;
         controller.Move(move * Time.deltaTime);
 
         if (moveX != 0 || moveZ != 0)
@@ -141,11 +143,5 @@ public class PlayerControls : MonoBehaviour
         {
             playerAnimations.isMoving = false;
         }
-
-        //Debugging
-        //if (isMoving)
-        //{
-        //    Debug.Log("MoveX = " + moveX + ", MoveZ= " + moveZ);
-        //}
     }
 }
