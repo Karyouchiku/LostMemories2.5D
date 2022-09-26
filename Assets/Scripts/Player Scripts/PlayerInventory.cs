@@ -48,7 +48,19 @@ public class PlayerInventory : MonoBehaviour
             {
                 inventory.Remove(item);
                 itemDictionary.Remove(itemData);
+                OnInventoryChange?.Invoke(inventory);
             }
+        }
+    }
+    public bool SearchItemInInventory(ItemData itemData)
+    {
+        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

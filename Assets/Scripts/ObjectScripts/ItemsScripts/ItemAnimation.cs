@@ -26,7 +26,7 @@ public class ItemAnimation : MonoBehaviour
     {
         //Animation
         time = Time.time;
-        transform.localPosition = new Vector3(0f, (Mathf.Sin(time * frequency) * amplify ) + 0.05f,0f);
+        transform.localPosition = new Vector3(0f, (Mathf.Sin(time * frequency) * amplify),0f);
     }
     //Face the Sprite to the Camera
     void LateUpdate()
