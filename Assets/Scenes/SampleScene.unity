@@ -16640,7 +16640,7 @@ MonoBehaviour:
   slotPrefab: {fileID: 3617353792623685297, guid: 0e725075c8762dc47a10ee87cc9dd478, type: 3}
   inventorySlots: []
   inventoryUI: {fileID: 1267228029}
-  arrow: {fileID: 1301990176}
+  arrowButton: {fileID: 1301990176}
   show_HideInventory: {fileID: 1267228030}
 --- !u!1001 &1808370719
 PrefabInstance:
