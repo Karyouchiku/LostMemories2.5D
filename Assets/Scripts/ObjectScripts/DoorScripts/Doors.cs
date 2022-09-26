@@ -35,7 +35,6 @@ public class Doors : MonoBehaviour
             Debug.Log("Door Unlocked");
             inventory.Remove(Key);
             locked = false;
-            //Destroy(gameObject);
         }
     }
 }
