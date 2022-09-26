@@ -7,13 +7,10 @@ public class ItemAnimation : MonoBehaviour
     //Animation
     Vector3 itemAnimation;
     [Header("Animation")]
-    public float speed;
-    public float increaseSpeed = 0.1f;
-    public float decreaseSpeed = 0.2f;
-    public float maxHeight = 0.05f;
-    public float minHeight = 0f;
 
-    bool turn;
+    public float time;
+    public float amplify;
+    public float frequency;
 
     //Follow Camera Angle
     Camera followCameraAngle;
@@ -21,54 +18,15 @@ public class ItemAnimation : MonoBehaviour
     void Start()
     {
         followCameraAngle = Camera.main;
-    }
+        amplify = 0.1f;
+        frequency = 1.5f;
+}
 
     void Update()
     {
         //Animation
-        itemAnimation = Vector3.zero;
-        itemAnimation.y = 1f;
-
-        if (transform.localPosition.y >= maxHeight)
-        {
-            speed = 0f;
-            turn = true;
-        }
-        if (transform.localPosition.y <= minHeight)
-        {
-            speed = 0f;
-            turn = false;
-        }
-
-        if (turn)
-        {
-            
-            if (transform.localPosition.y >= minHeight && transform.localPosition.y <= (maxHeight * 0.3f))
-            {
-                speed -= decreaseSpeed * Time.deltaTime;
-            }
-            else
-            {
-                speed += increaseSpeed * Time.deltaTime;
-            }
-
-            transform.localPosition -= itemAnimation * speed * Time.deltaTime;
-            
-        }
-        else
-        {
-            if (transform.localPosition.y >= (maxHeight * 0.7f) && transform.localPosition.y <= maxHeight)
-            {
-                speed -= decreaseSpeed * Time.deltaTime;
-            }
-            else
-            {
-                speed += increaseSpeed * Time.deltaTime;
-            }
-
-            transform.localPosition += itemAnimation * speed * Time.deltaTime;
-        }
-
+        time = Time.time;
+        transform.localPosition = new Vector3(0f, (Mathf.Sin(time * frequency) * amplify ) + 0.05f,0f);
     }
     //Face the Sprite to the Camera
     void LateUpdate()

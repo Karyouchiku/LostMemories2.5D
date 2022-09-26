@@ -9,76 +9,28 @@ public class InventoryManager : MonoBehaviour
     public List<InventorySlot> inventorySlots = new List<InventorySlot>(4);
     public RectTransform inventoryUI;
     //For Testing
-    public TextMeshProUGUI arrow;
-    //public void ShowInventory()
-    //{
-    //    gameObject.SetActive(true);
-    //    OnEnable();
-    //}
-    //public void CloseInventory()
-    //{
-    //    gameObject.SetActive(false);
-    //}
+    public TextMeshProUGUI arrowButton;
+    
     bool showInventory;
 
-    [Header("Transition Speed")]
-    public float transitionX;
-    public float speedDefaultValue = 1000f;
-    public float speed;
-    public float decreaseSpeed;
-    
-    Vector3 currentInventoryUILocation;
-    
+    [Header("Inventory Animation")]
+    public Animator show_HideInventory;
+
     public void OpenCloseInventory()
     {
         if (showInventory)
         {
             showInventory = false;
+            arrowButton.text = "<";
         }
         else
         {
             showInventory = true;
+            arrowButton.text = ">";
         }
+        show_HideInventory.SetBool("show_HideInventory", showInventory);
     }
-
-    private void Start()
-    {
-        speed = speedDefaultValue;
-    }
-    void FixedUpdate()
-    {
-        if (showInventory)
-        {
-            if (currentInventoryUILocation.x >= -450f)
-            {
-                speed -= decreaseSpeed * Time.deltaTime;
-                transitionX -= speed * Time.deltaTime;
-            }
-            else
-            {
-                speed = speedDefaultValue;
-            }
-            arrow.text = ">";
-        }
-        else
-        {
-            if (currentInventoryUILocation.x < -1)
-            {
-                speed -= decreaseSpeed * Time.deltaTime;
-                transitionX += speed * Time.deltaTime;
-            }
-            else
-            {
-                speed = speedDefaultValue;
-                currentInventoryUILocation = Vector3.zero;
-            }
-            arrow.text = "<";
-        }
-        
-        currentInventoryUILocation = new Vector3(transitionX, 0f);
-        inventoryUI.anchoredPosition = currentInventoryUILocation;
-    }
-
+    
     void OnEnable()
     {
         PlayerInventory.OnInventoryChange += DrawInventory;
