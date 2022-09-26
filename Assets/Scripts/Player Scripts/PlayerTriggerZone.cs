@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerTriggerZone : MonoBehaviour
 {
     public GameObject interactButton;
-    string objectName;
+    //string objectName;
+
+    public PlayerInventory inventory;
+    Collider other;
+
     void ButtonEnabler(bool turn)
     {
         interactButton.SetActive(turn);
@@ -13,43 +17,28 @@ public class PlayerTriggerZone : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "InteractableNPC")
+        switch (other.tag)
         {
-            ButtonEnabler(true);
-            objectName = other.gameObject.tag;
-        }
-        if (other.gameObject.name == "Door")
-        {
-            ButtonEnabler(true);
-            objectName = other.gameObject.name;
+            case "InteractableNPC":
+            case "InteractableObject":
+                ButtonEnabler(true);
+                this.other = other;
+                break;
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit()
     {
-        if (other.gameObject.tag == "InteractableNPC")
-        {
-            ButtonEnabler(false);
-        }
-        if (other.gameObject.name == "Door")
-        {
-            ButtonEnabler(false);
-        }
+        ButtonEnabler(false);
+        other = null;
     }
-
 
 
     public void Interactbutton()
     {
-        
-        if (objectName == "InteractableNPC")
+        if (other.tag == "InteractableObject")
         {
-            Debug.Log("having a FUCKING conversation");
+            other.GetComponent<Doors>().Door();
         }
-        if (objectName == "Door")
-        {
-            Debug.Log("Go inside to the FUCKING Door");
-        }
-        
     }
 }
