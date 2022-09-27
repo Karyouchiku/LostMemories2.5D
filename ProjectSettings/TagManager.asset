@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractableNPC
   - Item
+  - InteractableObject
   layers:
   - Default
   - TransparentFX

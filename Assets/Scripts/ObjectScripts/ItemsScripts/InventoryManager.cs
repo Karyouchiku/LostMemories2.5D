@@ -8,7 +8,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject slotPrefab;
     public List<InventorySlot> inventorySlots = new List<InventorySlot>(4);
     public RectTransform inventoryUI;
+    
     //For Testing
+    //Show Inventory Arrow
     public TextMeshProUGUI arrowButton;
     
     bool showInventory;
@@ -16,6 +18,7 @@ public class InventoryManager : MonoBehaviour
     [Header("Inventory Animation")]
     public Animator show_HideInventory;
 
+    //ONClick Button
     public void OpenCloseInventory()
     {
         if (showInventory)
@@ -31,6 +34,7 @@ public class InventoryManager : MonoBehaviour
         show_HideInventory.SetBool("show_HideInventory", showInventory);
     }
     
+
     void OnEnable()
     {
         PlayerInventory.OnInventoryChange += DrawInventory;
