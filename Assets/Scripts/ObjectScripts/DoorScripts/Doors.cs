@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Doors : MonoBehaviour
 {
-    
+    //Testing light switch
+    public Light lightSwitch;
+    public bool isLightOn;
+
     public PlayerInventory inventory;
     public ItemData Key;
     public bool locked;
@@ -23,6 +26,17 @@ public class Doors : MonoBehaviour
     public void UnlockedDoor()
     {
         Debug.Log("Gettin' Fool");
+
+        if (isLightOn)
+        {
+            lightSwitch.range = 0;
+        }
+        else
+        {
+            lightSwitch.range = 5;
+        }
+        isLightOn = !isLightOn;
+
     }
     public void LockedDoor()
     {
