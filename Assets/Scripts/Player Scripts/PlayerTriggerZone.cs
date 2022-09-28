@@ -15,7 +15,7 @@ public class PlayerTriggerZone : MonoBehaviour
         interactButton.SetActive(turn);
     }
     
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         switch (other.tag)
         {
