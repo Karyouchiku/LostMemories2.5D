@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
-    //Componets
+    //private Componets
     PlayerAnimations playerAnimations;
     CharacterController controller;
     Vector3 move;
@@ -16,9 +17,9 @@ public class PlayerControls : MonoBehaviour
 
     //Remove this sht later
     public float jumpForce;
+    public float movementSpeed;
     
     float verticalVelocity;
-    public float movementSpeed;
 
     [Header("MomementValue - readonly")]
     public float moveX;
@@ -26,12 +27,15 @@ public class PlayerControls : MonoBehaviour
 
     //float jumpTimer = 0.2f;
 
-    bool isOnKeyboardOrGamepad = false;
 
     [Header("Joystick Settings")]
     public VariableJoystick joystick;
     public float JoystickLimiter;
     bool isOnScreenControls = false;
+    bool isOnKeyboardOrGamepad = false;
+
+    [Header("Controller Manager")]
+    public bool isControlEnable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +48,15 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isControlEnable)
+        {
+            MovementScript();
+        }
 
+    }
+
+    private void MovementScript()
+    {
 
         if (controller.isGrounded)
         {
@@ -86,11 +98,11 @@ public class PlayerControls : MonoBehaviour
                     moveZ = joystick.Vertical;
                 }
             }
-            
-            
+
+
             verticalVelocity = -gravity * Time.deltaTime;
             playerAnimations.isFalling = false;
-            
+
             //JUMP Remove later this is just for testing shts
             if (Input.GetAxisRaw("Jump") > 0)
             {
@@ -123,7 +135,7 @@ public class PlayerControls : MonoBehaviour
         move.x = moveX * movementSpeed;
         move.y = verticalVelocity;
         move.z = moveZ * movementSpeed;
-        Vector3.Normalize(move) ;
+        Vector3.Normalize(move);
         controller.Move(move * Time.deltaTime);
 
         if (moveX != 0 || moveZ != 0)

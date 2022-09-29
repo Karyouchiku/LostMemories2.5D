@@ -11,9 +11,9 @@ public class Item : MonoBehaviour, ICollectible
 
     public void Collect()
     {
-        Debug.Log($"{itemData.displayName} is Collected");
         Destroy(gameObject);
         OnItemCollected?.Invoke(itemData);
+        Debug.Log($"{itemData.displayName} is Collected");
     }
 
 }

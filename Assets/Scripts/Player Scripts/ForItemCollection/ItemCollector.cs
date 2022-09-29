@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider item)
+    void OnTriggerEnter(Collider item)
     {
         ICollectible collectible = item.GetComponent<ICollectible>();
         if (collectible != null)
