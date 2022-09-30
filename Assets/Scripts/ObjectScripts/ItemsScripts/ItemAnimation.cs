@@ -12,14 +12,19 @@ public class ItemAnimation : MonoBehaviour
     public float amplify;
     public float frequency;
 
+    [Header("3D Object")]
+    public bool is3DObject;
     //Follow Camera Angle
     Camera followCameraAngle;
 
     void Start()
     {
-        followCameraAngle = Camera.main;
-        amplify = 0.1f;
-        frequency = 1.5f;
+        if (!is3DObject)
+        {
+            followCameraAngle = Camera.main;
+            amplify = 0.1f;
+            frequency = 1.5f;
+        }
 }
 
     void Update()
@@ -31,7 +36,10 @@ public class ItemAnimation : MonoBehaviour
     //Face the Sprite to the Camera
     void LateUpdate()
     {
-        transform.LookAt(followCameraAngle.transform);
-        transform.rotation = Quaternion.Euler(20f, transform.rotation.eulerAngles.y - 180f, 0f);
+        if (!is3DObject)
+        {
+            transform.LookAt(followCameraAngle.transform);
+            transform.rotation = Quaternion.Euler(20f, transform.rotation.eulerAngles.y - 180f, 0f);
+        }
     }
 }
