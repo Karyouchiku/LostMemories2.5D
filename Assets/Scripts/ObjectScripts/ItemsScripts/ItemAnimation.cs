@@ -19,9 +19,12 @@ public class ItemAnimation : MonoBehaviour
 
     void Start()
     {
-        followCameraAngle = Camera.main;
-        amplify = 0.1f;
-        frequency = 1.5f;
+        if (!is3DObject)
+        {
+            followCameraAngle = Camera.main;
+            amplify = 0.1f;
+            frequency = 1.5f;
+        }
 }
 
     void Update()

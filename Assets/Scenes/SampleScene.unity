@@ -6188,8 +6188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  amplify: 0
-  frequency: 0
+  amplify: 1
+  frequency: 30
   is3DObject: 1
 --- !u!4 &725887454 stripped
 Transform:
@@ -12704,15 +12704,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514534368}
-  m_LocalRotation: {x: -0.1701117, y: -0.30174923, z: 0.468066, w: 0.8129721}
-  m_LocalPosition: {x: -24.17, y: 34.89, z: -20.29}
+  m_LocalRotation: {x: -0.50080776, y: -0.49336633, z: 0.49143252, w: 0.5140771}
+  m_LocalPosition: {x: -24.706997, y: 35.053684, z: -18.152145}
   m_LocalScale: {x: 0.16915, y: 0.16915, z: 0.16915}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 725887454}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.719, y: -89.337, z: 89.119}
 --- !u!1001 &1514616947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18199,6 +18199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2793198459214088063, guid: d80e96c2278d25b48881db23d5976702, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2793198459587279009, guid: d80e96c2278d25b48881db23d5976702, type: 3}
       propertyPath: m_Name
       value: MainActor
