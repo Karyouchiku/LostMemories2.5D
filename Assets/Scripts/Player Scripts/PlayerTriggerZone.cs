@@ -26,15 +26,8 @@ public class PlayerTriggerZone : MonoBehaviour
         {
             case "InteractableNPC":
             case "InteractableObject":
+                interactButtonName = other.name;
                 ButtonEnabler(true);
-                if (other.TryGetComponent<Conversation>(out Conversation conversation))
-                {
-                    interactButtonName = conversation.dialogueData.npcName;
-                }
-                else
-                {
-                    interactButtonName = other.name;
-                }
                 interactButton.GetComponentInChildren<TextMeshProUGUI>().text = interactButtonName;
                 this.other = other;
                 break;
@@ -59,11 +52,6 @@ public class PlayerTriggerZone : MonoBehaviour
         }
         else if (other.tag == "InteractableNPC")
         {
-            IDialogue dialogue = other.GetComponent<IDialogue>();
-            if (dialogue != null)
-            {
-                dialogue.Dialogue();
-            }
             ButtonEnabler(false);
         }
     }
