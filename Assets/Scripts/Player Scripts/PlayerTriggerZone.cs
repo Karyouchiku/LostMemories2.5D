@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlayerTriggerZone : MonoBehaviour
 {
+    
+
     [Header("Interact Button in Canvas")]
     public GameObject interactButton;
 
@@ -12,7 +14,9 @@ public class PlayerTriggerZone : MonoBehaviour
     public PlayerInventory inventory;
 
     [Header("Current Interactable Object (Should be leave null)")]
-    public Collider other;
+    public Collider _GOCollider;
+    string interactButtonName;
+    bool isTalking;
 
     void ButtonEnabler(bool turn)
     {
@@ -21,38 +25,59 @@ public class PlayerTriggerZone : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        string interactButtonName = "";
-        switch (other.tag)
+        DefineGameObjectTag(other);
+
+
+    }
+    void OnTriggerStay(Collider other)
+    {
+        DefineGameObjectTag(other);
+    }
+
+    void DefineGameObjectTag(Collider other)
+    {
+        if (!isTalking)
         {
-            case "InteractableNPC":
-            case "InteractableObject":
-                interactButtonName = other.name;
-                ButtonEnabler(true);
-                interactButton.GetComponentInChildren<TextMeshProUGUI>().text = interactButtonName;
-                this.other = other;
-                break;
+            switch (other.tag)
+            {
+                case "InteractableNPC":
+                case "InteractableObject":
+                    interactButtonName = other.name;
+                    ButtonEnabler(true);
+
+                    interactButton.GetComponentInChildren<TextMeshProUGUI>().text = interactButtonName;
+                    _GOCollider = other;
+                    break;
+            }
         }
     }
-
     void OnTriggerExit()
     {
-        ButtonEnabler(false);
-        other = null;
+        _GOCollider = null;
+        isTalking = false;
     }
-
-
+    void FixedUpdate()
+    {
+        if (_GOCollider == null)
+        {
+            ButtonEnabler(false);
+        }
+    }
     public void Interactbutton()
     {
-        if (other.tag == "InteractableObject")
+        //Input.GetAxisRaw("Fire1");
+        if (_GOCollider.tag == "InteractableObject")
         {
-            if (other.TryGetComponent<Doors>(out Doors door))
+            if (_GOCollider.TryGetComponent<Doors>(out Doors door))
             {
                 door.Door();
             }
         }
-        else if (other.tag == "InteractableNPC")
+        else if (_GOCollider.tag == "InteractableNPC")
         {
+            Debug.Log("Fuck u");
             ButtonEnabler(false);
+            isTalking = true;
         }
     }
 }
