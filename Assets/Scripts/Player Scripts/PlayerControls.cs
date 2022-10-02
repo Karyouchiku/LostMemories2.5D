@@ -10,23 +10,16 @@ public class PlayerControls : MonoBehaviour
     PlayerAnimations playerAnimations;
     CharacterController controller;
     Vector3 move;
-    SpriteRenderer flipSprite;
+    public SpriteRenderer sprite;
+    public Transform cam;
 
     [Header("Movement Settings")]
-    public float gravity;
-
-    //Remove this sht later
-    public float jumpForce;
     public float movementSpeed;
     
-    float verticalVelocity;
-
     [Header("MomementValue - readonly")]
     public float moveX;
     public float moveZ;
-
-    //float jumpTimer = 0.2f;
-
+    public float targetAngle;
 
     [Header("Joystick Settings")]
     public VariableJoystick joystick;
@@ -42,7 +35,6 @@ public class PlayerControls : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerAnimations = GetComponent<PlayerAnimations>();
-        flipSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -57,9 +49,10 @@ public class PlayerControls : MonoBehaviour
 
     private void MovementScript()
     {
-
         if (controller.isGrounded)
         {
+            playerAnimations.isFalling = false;
+
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
                 isOnKeyboardOrGamepad = true;
@@ -99,55 +92,31 @@ public class PlayerControls : MonoBehaviour
                 }
             }
 
-
-            verticalVelocity = -gravity * Time.deltaTime;
-            playerAnimations.isFalling = false;
-
-            //JUMP Remove later this is just for testing shts
-            if (Input.GetAxisRaw("Jump") > 0)
-            {
-                verticalVelocity = jumpForce;
-                playerAnimations.isJumping = true;
-
-            }
         }
         else
         {
-            verticalVelocity -= gravity * Time.deltaTime;
-            if (verticalVelocity <= -1.5f)
-            {
-                playerAnimations.isFalling = true;
-            }
+            playerAnimations.isFalling = true;
         }
 
-        if (playerAnimations.isJumping)
-        {
-            //jumpTimer -= 2 * Time.deltaTime;
-            if (verticalVelocity <= 0f)
-            {
-                //jumpTimer = 0.4f;
-                playerAnimations.isJumping = false;
-            }
-        }
 
         //Movement Result 
-        move = Vector3.zero;
-        move.x = moveX * movementSpeed;
-        move.y = verticalVelocity;
-        move.z = moveZ * movementSpeed;
-        Vector3.Normalize(move);
-        controller.Move(move * Time.deltaTime);
+        move = new Vector3(moveX, 0f, moveZ).normalized;
+        move.x *= movementSpeed * Time.deltaTime;
+        move.z *= movementSpeed * Time.deltaTime;
+        //controller.Move(move * Time.deltaTime);
+        controller.Move(cam.rotation * ((Vector3.forward * move.z) + (Vector3.right * move.x)) + (Vector3.down * 5f * Time.deltaTime));
+
 
         if (moveX != 0 || moveZ != 0)
         {
             playerAnimations.isMoving = true;
             if (moveX > 0)
             {
-                flipSprite.flipX = false;
+                sprite.flipX = false;
             }
             if (moveX < 0)
             {
-                flipSprite.flipX = true;
+                sprite.flipX = true;
             }
             //transform.localScale = flipSprite;
         }

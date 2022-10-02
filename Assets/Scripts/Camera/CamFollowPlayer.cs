@@ -7,16 +7,15 @@ public class CamFollowPlayer : MonoBehaviour
     [Header("Camera Settings")]
     public float followSpeed;
     public Transform followTarget;
-    public float lockCameraZ;
 
-    private void Start()
-    {
-        lockCameraZ = followTarget.position.z - 2f;
-    }
+    [Header("Camera Position")]
+    public float camX;
+    public float camY;
+    public float camZ;
     void Update()
     {
 
-        Vector3 newPosition = new Vector3(followTarget.position.x, followTarget.position.y + 1f, lockCameraZ);
+        Vector3 newPosition = new Vector3(followTarget.position.x + camX, followTarget.position.y + camY, followTarget.position.z + camZ);
         transform.position = Vector3.Slerp(transform.position, newPosition, followSpeed * Time.deltaTime);
         
     }
