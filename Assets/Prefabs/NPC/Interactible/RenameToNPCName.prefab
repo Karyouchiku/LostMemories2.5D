@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8387107262772258063}
   - component: {fileID: 189290330365097386}
   - component: {fileID: 6774718981831807593}
+  - component: {fileID: 5134080555522590878}
   m_Layer: 0
   m_Name: RenameToNPCName
   m_TagString: InteractableNPC
@@ -165,6 +166,19 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
+--- !u!114 &5134080555522590878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826319948126313415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fc1cb8e8166c944b9287128881ad36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguedb: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
 --- !u!1 &2826319948338021867
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,13 @@ public class PlayerAnimations : MonoBehaviour
     public bool isMoving;
     public bool isJumping;
     public bool isFalling;
-    // Start is called before the first frame update
-    void Start()
+    
+    public void resetAnimation()
     {
+        isMoving = false;
+        isJumping = false;
+        isFalling = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
         spriteAnimation.SetBool("isMoving", isMoving);
