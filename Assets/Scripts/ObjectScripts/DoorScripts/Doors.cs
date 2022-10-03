@@ -12,6 +12,17 @@ public class Doors : MonoBehaviour
     public ItemData Key;
     public bool locked;
 
+    public AudioClip doorShut;
+    public AudioClip doorOpen;
+    public AudioClip doorKnocking;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void Door()
     {
         if (locked)
@@ -26,6 +37,7 @@ public class Doors : MonoBehaviour
     public void UnlockedDoor()
     {
         Debug.Log("Gettin' Fool");
+        playAudio(doorOpen);
 
         if (isLightOn)
         {
@@ -42,6 +54,7 @@ public class Doors : MonoBehaviour
     {
         if (!inventory.SearchItemInInventory(Key))
         {
+            playAudio(doorKnocking);
             Debug.Log("The Door is Lock");
         }
         else
@@ -49,6 +62,16 @@ public class Doors : MonoBehaviour
             Debug.Log("Door Unlocked");
             inventory.Remove(Key);
             locked = false;
+
+            playAudio(doorShut);
+        }
+    }
+    void playAudio(AudioClip clip)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
         }
     }
 }
