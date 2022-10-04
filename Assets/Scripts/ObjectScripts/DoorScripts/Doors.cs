@@ -37,7 +37,7 @@ public class Doors : MonoBehaviour
     public void UnlockedDoor()
     {
         Debug.Log("Gettin' Fool");
-        playAudio(doorOpen);
+        playAudio(doorOpen, 0.7f);
 
         if (isLightOn)
         {
@@ -54,7 +54,8 @@ public class Doors : MonoBehaviour
     {
         if (!inventory.SearchItemInInventory(Key))
         {
-            playAudio(doorKnocking);
+            
+            playAudio(doorKnocking, 0.2f);
             Debug.Log("The Door is Lock");
         }
         else
@@ -63,11 +64,14 @@ public class Doors : MonoBehaviour
             inventory.Remove(Key);
             locked = false;
 
-            playAudio(doorShut);
+            playAudio(doorShut,0.5f);
         }
     }
-    void playAudio(AudioClip clip)
+
+    //For Playing SFX
+    void playAudio(AudioClip clip, float vol)
     {
+        audioSource.volume = vol;
         if (!audioSource.isPlaying)
         {
             audioSource.clip = clip;
