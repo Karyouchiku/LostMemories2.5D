@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,14 @@ public class Doors : MonoBehaviour
     public bool isLightOn;
 
     public PlayerInventory inventory;
-    public ItemData Key;
+    public SOItemData key;
     public bool locked;
-
     public AudioClip doorShut;
     public AudioClip doorOpen;
     public AudioClip doorKnocking;
 
     AudioSource audioSource;
+   
 
     void Start()
     {
@@ -50,18 +51,20 @@ public class Doors : MonoBehaviour
         isLightOn = !isLightOn;
 
     }
+    
     public void LockedDoor()
     {
-        if (!inventory.SearchItemInInventory(Key))
+        Debug.Log("U r here");
+        if (!inventory.SearchItemInInventory(key))
         {
             
-            playAudio(doorKnocking, 0.2f);
+            playAudio(doorKnocking, 0.4f);
             Debug.Log("The Door is Lock");
         }
         else
         {
             Debug.Log("Door Unlocked");
-            inventory.Remove(Key);
+            inventory.Remove(key);
             locked = false;
 
             playAudio(doorShut,0.5f);

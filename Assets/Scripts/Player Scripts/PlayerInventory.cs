@@ -3,15 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour, ISaveable
 {
     public static event Action<List<InventoryItem>> OnInventoryChange;
 
     public List<InventoryItem> inventory = new List<InventoryItem>();
-    Dictionary<ItemData, InventoryItem> itemDictionary = new Dictionary<ItemData, InventoryItem>();
-
-    public GameObject inventoryPanel;
+    Dictionary<string, InventoryItem> itemDictionary = new Dictionary<string, InventoryItem>();
     
+    public GameObject inventoryPanel;
+
+    public InventoryManager inventoryManager;
+    void Awake()
+    {
+        InventoryRefresher();
+    }
+
+    void InventoryRefresher()
+    {
+        inventoryManager.Refresher(inventory);
+    }
     void OnEnable()
     {
         Item.OnItemCollected += Add;
@@ -21,40 +31,40 @@ public class PlayerInventory : MonoBehaviour
         Item.OnItemCollected -= Add;
     }
 
-    public void Add(ItemData itemData)
+    public void Add(SOItemData soItemData)
     {
-        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
+        if (itemDictionary.TryGetValue(soItemData.name, out InventoryItem item))
         {
             item.addToStack();
-            Debug.Log($"{itemData.displayName} Total stack now {item.stackSize}");
+            Debug.Log($"{soItemData.itemName} Total stack now {item.stackSize}");
             OnInventoryChange?.Invoke(inventory);
         }
         else
         {
-            InventoryItem newItem = new InventoryItem(itemData);
+            InventoryItem newItem = new InventoryItem(soItemData.name);
             inventory.Add(newItem);
-            itemDictionary.Add(itemData, newItem);
-            Debug.Log($"Got the {itemData.displayName}");
+            itemDictionary.Add(soItemData.name, newItem);
+            Debug.Log($"Got the {soItemData.itemName}");
             OnInventoryChange?.Invoke(inventory);
         }
     }
 
-    public void Remove(ItemData itemData)
+    public void Remove(SOItemData soItemData)
     {
-        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
+        if (itemDictionary.TryGetValue(soItemData.name, out InventoryItem item))
         {
             item.removeFromStack();
             if (item.stackSize == 0)
             {
                 inventory.Remove(item);
-                itemDictionary.Remove(itemData);
+                itemDictionary.Remove(soItemData.name);
                 OnInventoryChange?.Invoke(inventory);
             }
         }
     }
-    public bool SearchItemInInventory(ItemData itemData)
+    public bool SearchItemInInventory(SOItemData soItemData)
     {
-        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
+        if (itemDictionary.TryGetValue(soItemData.name, out InventoryItem item))
         {
             return true;
         }
@@ -63,4 +73,32 @@ public class PlayerInventory : MonoBehaviour
             return false;
         }
     }
+    
+
+    //SAVE THE EXISTING DATA FROM INVENTORY FUCKER
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            inventory = this.inventory,
+            itemDictionary = this.itemDictionary
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        this.inventory = saveData.inventory;
+        this.itemDictionary = saveData.itemDictionary;
+        InventoryRefresher(); 
+
+    }
+
+    [Serializable]
+    struct SaveData
+    {
+        public List<InventoryItem> inventory;
+        public Dictionary<string, InventoryItem> itemDictionary;
+    }
+    
 }
