@@ -14,15 +14,12 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     public AudioSource audioSource;
     public AudioClip clip;
 
-    public bool isNotActive;
+    public bool isActive;
     
-    void Update()
+    void FixedUpdate()
     {
-        if (isNotActive)
-        {
-            GetComponent<CapsuleCollider>().enabled = false;
-            GetComponentInChildren<SpriteRenderer>().enabled = false;
-        }
+        GetComponent<CapsuleCollider>().enabled = isActive;
+        GetComponentInChildren<SpriteRenderer>().enabled = isActive;
     }
 
     public void Collect()
@@ -31,7 +28,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
 
         audioSource.clip = clip;
         audioSource.Play();
-        isNotActive = true;
+        isActive = false;
         Debug.Log($"{soItemData.itemName} is Collected");
     }
     
@@ -39,20 +36,20 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     {
         return new SaveData()
         {
-            isNotActive = this.isNotActive,
+            isActive = this.isActive,
         };
     }
 
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        this.isNotActive = saveData.isNotActive;
+        this.isActive = saveData.isActive;
     }
 
     [Serializable]
     struct SaveData
     {
-        public bool isNotActive;
+        public bool isActive;
     }
     
 }
