@@ -2294,6 +2294,10 @@ PrefabInstance:
       value: New Conversation 1
       objectReference: {fileID: 0}
     - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: preventRestartOnSameFrameEnded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
       propertyPath: condition.acceptedTags.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3937,6 +3941,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5134080555522590878, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: dialoguedb
+      value: 
+      objectReference: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
     - target: {fileID: 5283925016063822594, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -3945,6 +3953,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a6adcfb84d9054ac486ef7a10722243d, type: 3}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: conversation
+      value: (Prologue) Outside Classroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: selectedDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
 --- !u!4 &416163500 stripped
@@ -4171,6 +4187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5134080555522590878, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: dialoguedb
+      value: 
+      objectReference: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
     - target: {fileID: 5283925016063822594, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -4180,8 +4200,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8b2704248651b4c8c84168c5fe44bcf2, type: 3}
     - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: replace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: trigger
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
       propertyPath: conversation
+      value: (Prologue) School Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: selectedDatabase
       value: 
+      objectReference: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: setEnabledActions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774718981831807593, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
+      propertyPath: preventRestartOnSameFrameEnded
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48035c32e0facef4e8b2322781c5a0d4, type: 3}
@@ -13587,13 +13627,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5610885321720887089, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: initialDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
+    - target: {fileID: 5610885321720887089, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: displaySettings.dialogueUI
       value: 
-      objectReference: {fileID: 191644, guid: ec86157352090354fba5ec5ba5f2e9aa, type: 3}
+      objectReference: {fileID: 101180, guid: 5ba51781a19f8a843abeb2d304d0d26e, type: 3}
     - target: {fileID: 5610885321720887089, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: displaySettings.defaultCanvas
       value: 
       objectReference: {fileID: 1061532514}
+    - target: {fileID: 5610885321720887089, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: displaySettings.subtitleSettings.continueButton
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7511052945659361130, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
