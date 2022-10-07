@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[CreateAssetMenu]
-public class ItemData : ScriptableObject
+[Serializable]
+public class ItemData
 {
-    public string displayName;
-    public Sprite icon;
+    public string soItemDataName;
+
+    public ItemData(Item item)
+    {
+        soItemDataName = item.soItemData.name;
+    }
 }
