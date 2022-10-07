@@ -6,14 +6,17 @@ using System;
 [Serializable]
 public class InventoryItem
 {
-    public ItemData itemData;
+    //public SOItemData soItemData;
+    public string soItemDataName;
     public int stackSize;
 
-    public InventoryItem(ItemData item)
+    //public InventoryItem(SOItemData soItemData)
+    public InventoryItem(string soItemDataName)
     {
-        itemData = item;
+        this.soItemDataName = soItemDataName;
         addToStack();
     }
+
     public void addToStack()
     {
         stackSize++;
