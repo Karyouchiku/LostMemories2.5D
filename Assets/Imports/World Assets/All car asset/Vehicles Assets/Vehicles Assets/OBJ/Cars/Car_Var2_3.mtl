@@ -1,0 +1,13 @@
+# Blender MTL File: 'Vehicles Assets.blend'
+# Material Count: 1
+
+newmtl Car_Var2_3
+Ns 639.999995
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.600000 0.600000 0.600000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Descargas\\Assets\\Vehicles Assets\\FBX\\Cars\\Car_Var2_3.png
