@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    Animator anim;
+    public Animator spriteAnimation;
 
     public bool isMoving;
     public bool isJumping;
     public bool isFalling;
-    // Start is called before the first frame update
-    void Start()
+    
+    public void resetAnimation()
     {
-        anim = GetComponent<Animator>();
+        isMoving = false;
+        isJumping = false;
+        isFalling = false;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        anim.SetBool("isMoving", isMoving);
-        anim.SetBool("isJumping", isJumping);
-        anim.SetBool("isFalling", isFalling);
+        spriteAnimation.SetBool("isMoving", isMoving);
+        spriteAnimation.SetBool("isJumping", isJumping);
+        spriteAnimation.SetBool("isFalling", isFalling);
     }
 }

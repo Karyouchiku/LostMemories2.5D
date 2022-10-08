@@ -27,14 +27,21 @@ public class InventorySlot : MonoBehaviour
         icon.enabled = true;
         itemName.enabled = true;
 
-        icon.sprite = item.itemData.icon;
+        icon.sprite = GetSOItemData(item.soItemDataName).icon;
         icon.color = new Color(255, 255, 255, 255);
 
-        itemName.text = item.itemData.displayName;
+        itemName.text = GetSOItemData(item.soItemDataName).itemName;
         if (item.stackSize > 1)
         {
             stackSizeText.enabled = true;
             stackSizeText.text = item.stackSize.ToString();
         }
     }
+
+    SOItemData GetSOItemData(string soItemDataname)
+    {
+        SOItemData soItemData = Resources.Load<SOItemData>(soItemDataname);
+        return soItemData;
+    }
+
 }
