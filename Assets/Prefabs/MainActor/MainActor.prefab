@@ -589,6 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   inventoryPanel: {fileID: 7755098030502016529}
+  inventoryManager: {fileID: 7755098030502016542}
 --- !u!114 &3586495574925744592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ CharacterController:
   m_Height: 0
   m_Radius: 0.14
   m_SlopeLimit: 45
-  m_StepOffset: 0.2
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
