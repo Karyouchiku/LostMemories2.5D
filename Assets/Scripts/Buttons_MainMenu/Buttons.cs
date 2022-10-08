@@ -5,26 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public void OpenScene()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OpenScene(string newGame)
-    {
-        SceneManager.LoadSceneAsync(newGame);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void CloseScene()
     {
         Application.Quit();
         Debug.Log("Quit");
+    }
+
+    public void WarningTransition()
+    {
+
     }
 }
