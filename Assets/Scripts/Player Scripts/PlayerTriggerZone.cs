@@ -63,7 +63,6 @@ public class PlayerTriggerZone : MonoBehaviour
     }
     public void Interactbutton()
     {
-        //Input.GetAxisRaw("Fire1");
         if (_GOCollider.tag == "InteractableObject")
         {
             if (_GOCollider.TryGetComponent<Doors>(out Doors door))
@@ -73,7 +72,7 @@ public class PlayerTriggerZone : MonoBehaviour
         }
         else if (_GOCollider.tag == "InteractableNPC")
         {
-            Debug.Log("Fuck u");
+            Debug.Log("Convo Test");
             ButtonEnabler(false);
             isTalking = true;
         }
