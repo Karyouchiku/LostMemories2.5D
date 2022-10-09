@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doors : MonoBehaviour
+public class Doors : MonoBehaviour, ISaveable
 {
     //Testing light switch
     public Light lightSwitch;
@@ -80,5 +80,26 @@ public class Doors : MonoBehaviour
             audioSource.clip = clip;
             audioSource.Play();
         }
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            locked = this.locked
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+
+        this.locked = saveData.locked;
+    }
+
+    [Serializable]
+    struct SaveData
+    {
+        public bool locked;
     }
 }
