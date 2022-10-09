@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class IngameMenuScript : MonoBehaviour
+{
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit Game");
+    }
+
+    public GameObject ingameUI;
+    public Button pauseBtn;
+    public Button resumeBtn;
+    public Button inventoryButton;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ingameUI.activeSelf)
+            {
+                pauseBtn.onClick.Invoke();
+            }
+            else
+            {
+                resumeBtn.onClick.Invoke();
+            }
+        }
+
+        if (Input.GetButton("Inventory"))
+        {
+            if (ingameUI.activeSelf)
+            {
+                inventoryButton.onClick.Invoke();
+            }
+        }
+    }
+}
