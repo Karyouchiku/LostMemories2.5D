@@ -12,16 +12,19 @@ public class Doors : MonoBehaviour, ISaveable
     public PlayerInventory inventory;
     public SOItemData key;
     public bool locked;
+
+
     public AudioClip doorShut;
     public AudioClip doorOpen;
     public AudioClip doorKnocking;
-
+    
+    
     AudioSource audioSource;
    
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
     }
 
     public void Door()
@@ -35,7 +38,7 @@ public class Doors : MonoBehaviour, ISaveable
             UnlockedDoor();
         }
     }
-    public void UnlockedDoor()
+    void UnlockedDoor()
     {
         Debug.Log("Gettin' Fool");
         playAudio(doorOpen, 0.7f);
@@ -50,9 +53,10 @@ public class Doors : MonoBehaviour, ISaveable
         }
         isLightOn = !isLightOn;
 
+        MovePosition();
     }
     
-    public void LockedDoor()
+    void LockedDoor()
     {
         Debug.Log("U r here");
         if (!inventory.SearchItemInInventory(key))
@@ -69,6 +73,22 @@ public class Doors : MonoBehaviour, ISaveable
 
             playAudio(doorShut,0.5f);
         }
+    }
+
+
+    [Header("Teleport to other position")]
+    public GameObject changePositionTo;
+    Vector3 changePositionToVec;
+    //Vector3 player;
+
+    void MovePosition()
+    {
+        //player = GameObject.FindWithTag("Player").transform.position;
+        changePositionToVec = changePositionTo.transform.position;
+        //player = changePositionToVec;
+        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        GameObject.FindWithTag("Player").transform.position = changePositionToVec;
+        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
     }
 
     //For Playing SFX
