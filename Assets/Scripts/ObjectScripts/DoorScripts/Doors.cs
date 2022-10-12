@@ -3,25 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doors : MonoBehaviour
+public class Doors : MonoBehaviour, ISaveable
 {
     //Testing light switch
     public Light lightSwitch;
     public bool isLightOn;
 
-    public PlayerInventory inventory;
+    PlayerInventory inventory;
     public SOItemData key;
     public bool locked;
+
+
     public AudioClip doorShut;
     public AudioClip doorOpen;
     public AudioClip doorKnocking;
-
+    
+    
     AudioSource audioSource;
    
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
+        audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
     }
 
     public void Door()
@@ -35,7 +39,7 @@ public class Doors : MonoBehaviour
             UnlockedDoor();
         }
     }
-    public void UnlockedDoor()
+    void UnlockedDoor()
     {
         Debug.Log("Gettin' Fool");
         playAudio(doorOpen, 0.7f);
@@ -50,9 +54,10 @@ public class Doors : MonoBehaviour
         }
         isLightOn = !isLightOn;
 
+        StartCoroutine(MovePosition());
     }
     
-    public void LockedDoor()
+    void LockedDoor()
     {
         Debug.Log("U r here");
         if (!inventory.SearchItemInInventory(key))
@@ -71,6 +76,28 @@ public class Doors : MonoBehaviour
         }
     }
 
+
+    [Header("Teleport to other position")]
+    public GameObject changePositionTo;
+    Vector3 changePositionToVec;
+    [Header("World to Render")]
+    public GameObject unrenderWorld;
+    public GameObject renderWorld;
+    IEnumerator MovePosition()
+    {
+        changePositionToVec = changePositionTo.transform.position;
+        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<PlayerAnimations>().resetAnimation();
+        GameObject.FindWithTag("Canvas").GetComponent<BlackTransitioning>().StartTransition();
+        yield return new WaitForSeconds(0.8f);
+        unrenderWorld.SetActive(false);
+        renderWorld.SetActive(true);
+        GameObject.FindWithTag("Player").transform.position = changePositionToVec;
+        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = true;
+    }
+
     //For Playing SFX
     void playAudio(AudioClip clip, float vol)
     {
@@ -80,5 +107,26 @@ public class Doors : MonoBehaviour
             audioSource.clip = clip;
             audioSource.Play();
         }
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            locked = this.locked
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+
+        this.locked = saveData.locked;
+    }
+
+    [Serializable]
+    struct SaveData
+    {
+        public bool locked;
     }
 }
