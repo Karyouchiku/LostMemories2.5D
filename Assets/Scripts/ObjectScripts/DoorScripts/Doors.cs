@@ -87,12 +87,15 @@ public class Doors : MonoBehaviour, ISaveable
     {
         changePositionToVec = changePositionTo.transform.position;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<PlayerAnimations>().resetAnimation();
         GameObject.FindWithTag("Canvas").GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
         unrenderWorld.SetActive(false);
         renderWorld.SetActive(true);
         GameObject.FindWithTag("Player").transform.position = changePositionToVec;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = true;
     }
 
     //For Playing SFX
