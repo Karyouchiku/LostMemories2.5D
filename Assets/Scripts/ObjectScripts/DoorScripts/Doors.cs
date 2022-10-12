@@ -9,7 +9,7 @@ public class Doors : MonoBehaviour, ISaveable
     public Light lightSwitch;
     public bool isLightOn;
 
-    public PlayerInventory inventory;
+    PlayerInventory inventory;
     public SOItemData key;
     public bool locked;
 
@@ -24,6 +24,7 @@ public class Doors : MonoBehaviour, ISaveable
 
     void Start()
     {
+        inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
     }
 
@@ -53,7 +54,7 @@ public class Doors : MonoBehaviour, ISaveable
         }
         isLightOn = !isLightOn;
 
-        MovePosition();
+        StartCoroutine(MovePosition());
     }
     
     void LockedDoor()
@@ -79,14 +80,12 @@ public class Doors : MonoBehaviour, ISaveable
     [Header("Teleport to other position")]
     public GameObject changePositionTo;
     Vector3 changePositionToVec;
-    //Vector3 player;
-
-    void MovePosition()
+    IEnumerator MovePosition()
     {
-        //player = GameObject.FindWithTag("Player").transform.position;
         changePositionToVec = changePositionTo.transform.position;
-        //player = changePositionToVec;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
+        GameObject.FindWithTag("Canvas").GetComponent<BlackTransitioning>().StartTransition();
+        yield return new WaitForSeconds(0.8f);
         GameObject.FindWithTag("Player").transform.position = changePositionToVec;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
     }

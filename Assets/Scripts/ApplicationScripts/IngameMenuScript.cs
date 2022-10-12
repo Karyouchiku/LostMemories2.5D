@@ -35,7 +35,7 @@ public class IngameMenuScript : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Inventory"))
+        if (Input.GetButtonDown("Inventory"))
         {
             if (ingameUI.activeSelf)
             {
