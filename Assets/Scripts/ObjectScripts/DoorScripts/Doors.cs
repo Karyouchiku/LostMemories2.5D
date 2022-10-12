@@ -80,12 +80,17 @@ public class Doors : MonoBehaviour, ISaveable
     [Header("Teleport to other position")]
     public GameObject changePositionTo;
     Vector3 changePositionToVec;
+    [Header("World to Render")]
+    public GameObject unrenderWorld;
+    public GameObject renderWorld;
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
         GameObject.FindWithTag("Canvas").GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
+        unrenderWorld.SetActive(false);
+        renderWorld.SetActive(true);
         GameObject.FindWithTag("Player").transform.position = changePositionToVec;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
     }
