@@ -69,6 +69,10 @@ public class PlayerTriggerZone : MonoBehaviour
             {
                 door.Door();
             }
+            if (_GOCollider.TryGetComponent<Gate>(out Gate gate))
+            {
+                gate.OpenGate();
+            }
         }
         else if (_GOCollider.tag == "InteractableNPC")
         {
