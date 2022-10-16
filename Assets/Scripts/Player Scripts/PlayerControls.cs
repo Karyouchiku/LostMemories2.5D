@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : MonoBehaviour, ISaveable
 {
     //private Componets
     PlayerAnimations playerAnimations;
@@ -30,14 +30,12 @@ public class PlayerControls : MonoBehaviour
     [Header("Controller Manager")]
     public bool isControlEnable = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
         playerAnimations = GetComponent<PlayerAnimations>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isControlEnable)
@@ -103,7 +101,6 @@ public class PlayerControls : MonoBehaviour
         move = new Vector3(moveX, 0f, moveZ).normalized;
         move.x *= movementSpeed * Time.deltaTime;
         move.z *= movementSpeed * Time.deltaTime;
-        //controller.Move(move * Time.deltaTime);
         controller.Move(cam.rotation * ((Vector3.forward * move.z) + (Vector3.right * move.x)) + (Vector3.down * 5f * Time.deltaTime));
 
 
@@ -118,11 +115,41 @@ public class PlayerControls : MonoBehaviour
             {
                 sprite.flipX = true;
             }
-            //transform.localScale = flipSprite;
         }
         else
         {
             playerAnimations.isMoving = false;
         }
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            position = new float[]
+            {
+                transform.position.x,
+                transform.position.y,
+                transform.position.z
+            }
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        Vector3 position;
+
+        position.x = saveData.position[0];
+        position.y = saveData.position[1];
+        position.z = saveData.position[2];
+
+        transform.position = position;
+    }
+
+    [Serializable]
+    struct SaveData
+    {
+        public float[] position;
     }
 }

@@ -33,7 +33,10 @@ public class InventoryManager : MonoBehaviour
         }
         show_HideInventory.SetBool("show_HideInventory", showInventory);
     }
-    
+    public void Refresher(List<InventoryItem> inventory)
+    {
+        DrawInventory(inventory);
+    }
 
     void OnEnable()
     {

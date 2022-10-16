@@ -39,12 +39,12 @@ MonoBehaviour:
     underline: 0
   baseID: 1
   actors:
-  - id: 1
+  - id: 4
     fields:
     - title: Name
-      value: Player
+      value: Narrator
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -52,29 +52,7 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
-    - title: IsPlayer
-      value: True
-      type: 2
-      typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
-    alternatePortraits: []
-    spritePortraits: []
-  - id: 2
-    fields:
-    - title: Name
-      value: Marisa
-      type: 0
-      typeString: 
-    - title: Pictures
-      value: '[]'
-      type: 3
-      typeString: CustomFieldType_Files
-    - title: Description
-      value: 
-      type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
@@ -83,10 +61,10 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
-  - id: 3
+  - id: 5
     fields:
     - title: Name
-      value: Carol
+      value: New Actor 5
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -937,8 +915,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 44.7581, y: 5.544358}
-    canvasZoom: 0.95999986
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.80999994
   - id: 3
     fields:
     - title: Title

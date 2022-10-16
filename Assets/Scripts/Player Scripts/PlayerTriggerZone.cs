@@ -26,8 +26,6 @@ public class PlayerTriggerZone : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         DefineGameObjectTag(other);
-
-
     }
     void OnTriggerStay(Collider other)
     {
