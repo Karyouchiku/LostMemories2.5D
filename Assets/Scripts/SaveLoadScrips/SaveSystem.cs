@@ -5,11 +5,29 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveSystem : MonoBehaviour
 {
+    //Checkpoints
+    public string Checkpoints => $"{Application.persistentDataPath}/LostMemoriesCheckpoint.lm";
+
+    //Slots
     public string SavePath1 => $"{Application.persistentDataPath}/LostMemories1.lm";
     public string SavePath2 => $"{Application.persistentDataPath}/LostMemories2.lm";
     public string SavePath3 => $"{Application.persistentDataPath}/LostMemories3.lm";
     public string SavePath4 => $"{Application.persistentDataPath}/LostMemories4.lm";
     public string SavePath5 => $"{Application.persistentDataPath}/LostMemories5.lm";
+
+    //Checkpoints
+    public void SaveCheckpoint()
+    {
+        var state = LoadFile(Checkpoints);
+        SaveState(state);
+        SaveFile(state, Checkpoints);
+    }
+    public void LoadCheckpoint()
+    {
+        var state = LoadFile(Checkpoints);
+        LoadState(state);
+    }
+
 
     //Save Methods
     public void Save1()
