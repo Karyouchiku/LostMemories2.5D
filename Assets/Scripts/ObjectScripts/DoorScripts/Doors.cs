@@ -10,10 +10,11 @@ public class Doors : MonoBehaviour, ISaveable
     public bool isLightOn;
 
     PlayerInventory inventory;
+    [Header("Door Info")]
     public SOItemData key;
     public bool locked;
 
-
+    [Header("Audio Clips")]
     public AudioClip doorShut;
     public AudioClip doorOpen;
     public AudioClip doorKnocking;
@@ -44,15 +45,22 @@ public class Doors : MonoBehaviour, ISaveable
         Debug.Log("Gettin' Fool");
         playAudio(doorOpen, 0.7f);
 
-        if (isLightOn)
+        try
         {
-            lightSwitch.range = 0;
+            if (isLightOn)
+            {
+                lightSwitch.range = 0;
+            }
+            else
+            {
+                lightSwitch.range = 5;
+            }
+            isLightOn = !isLightOn;
         }
-        else
+        catch (Exception)
         {
-            lightSwitch.range = 5;
+            Debug.Log("No lights");
         }
-        isLightOn = !isLightOn;
 
         StartCoroutine(MovePosition());
     }

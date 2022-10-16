@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/blueprint_main_menu.unity
     guid: b01ac35e9b38c3940989da199de018f8
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/LMWorld.unity
     guid: e054536ba396be34cad2d1ca9d5102d9
   m_configObjects: {}
