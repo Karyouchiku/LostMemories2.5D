@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerTriggerZone : MonoBehaviour
 {
-    
-
     [Header("Interact Button in Canvas")]
     public GameObject interactButton;
 
@@ -31,9 +30,13 @@ public class PlayerTriggerZone : MonoBehaviour
     {
         DefineGameObjectTag(other);
     }
-
+    
     void DefineGameObjectTag(Collider other)
     {
+        if (other == null)
+        {
+            return;
+        }
         if (!isTalking)
         {
             switch (other.tag)
@@ -61,19 +64,26 @@ public class PlayerTriggerZone : MonoBehaviour
             ButtonEnabler(false);
         }
     }
+
+    public TextMeshProUGUI debug;
+
     public void Interactbutton()
     {
         if (_GOCollider.tag == "InteractableObject")
         {
-            if (_GOCollider.TryGetComponent<Doors>(out Doors door))
+            if (_GOCollider.gameObject.TryGetComponent<Doors>(out Doors door))
             {
+                debug.text = "PlayerTriggerZone interactbutton() 1";
                 door.Door();
+                debug.text = $"collidertag = {_GOCollider.tag}";
+                ButtonEnabler(false);
             }
-            if (_GOCollider.TryGetComponent<Gate>(out Gate gate))
+            if (_GOCollider.gameObject.TryGetComponent<Gate>(out Gate gate))
             {
                 gate.OpenGate();
             }
         }
+
         else if (_GOCollider.tag == "InteractableNPC")
         {
             Debug.Log("Convo Test");

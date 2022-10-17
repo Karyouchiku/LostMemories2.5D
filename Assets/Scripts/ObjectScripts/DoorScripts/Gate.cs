@@ -50,7 +50,6 @@ public class Gate : MonoBehaviour
 
     void LockedDoor()
     {
-        Debug.Log("U r here");
         if (!inventory.SearchItemInInventory(key))
         {
 
@@ -62,19 +61,26 @@ public class Gate : MonoBehaviour
             Debug.Log("Door Unlocked");
             inventory.Remove(key);
             locked = false;
-
             playAudio(doorShut, 0.5f);
+            
         }
 
     }
     //For Playing SFX
     void playAudio(AudioClip clip, float vol)
     {
-        audioSource.volume = vol;
-        if (!audioSource.isPlaying)
+        try
         {
-            audioSource.clip = clip;
-            audioSource.Play();
+            audioSource.volume = vol;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = clip;
+                audioSource.Play();
+            }
+        }
+        catch (Exception)
+        {
+            Debug.Log("No SFX");
         }
     }
 }

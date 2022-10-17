@@ -9565,6 +9565,7 @@ GameObject:
   - component: {fileID: 947817204}
   - component: {fileID: 947817208}
   - component: {fileID: 947817206}
+  - component: {fileID: 947817209}
   m_Layer: 0
   m_Name: Door
   m_TagString: InteractableObject
@@ -9599,8 +9600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b16f240fe3049e458b75e9125352524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSwitch: {fileID: 1816713883}
-  isLightOn: 0
   key: {fileID: 0}
   locked: 0
   doorShut: {fileID: 8300000, guid: ff76f5f0cd5d1594db0ffb8eeaad0c02, type: 3}
@@ -9623,6 +9622,19 @@ CapsuleCollider:
   m_Height: 4.33
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &947817209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947817203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ebc0bb1428188419e11f7de11dd382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 187f7d88-cd65-4aa1-b2d0-95379728e71b
 --- !u!1 &949658947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1944616840669060, guid: 7a77ea810bbc0db4992e500affe32dbf, type: 3}
@@ -15997,8 +16009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b16f240fe3049e458b75e9125352524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSwitch: {fileID: 2053909457}
-  isLightOn: 0
   key: {fileID: 11400000, guid: 2301910e6187a8e4ea6ffe7554630294, type: 2}
   locked: 1
   doorShut: {fileID: 8300000, guid: ff76f5f0cd5d1594db0ffb8eeaad0c02, type: 3}
@@ -20901,6 +20911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classroom: {fileID: 347772474}
   outdoor: {fileID: 297496598}
+  hallway: {fileID: 0}
 --- !u!114 &2062193131
 MonoBehaviour:
   m_ObjectHideFlags: 0

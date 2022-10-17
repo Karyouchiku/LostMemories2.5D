@@ -2,13 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Doors : MonoBehaviour, ISaveable
 {
-    //Testing light switch
-    public Light lightSwitch;
-    public bool isLightOn;
-
     PlayerInventory inventory;
     [Header("Door Info")]
     public SOItemData key;
@@ -21,8 +17,8 @@ public class Doors : MonoBehaviour, ISaveable
     
     
     AudioSource audioSource;
-   
 
+    public TextMeshProUGUI debug;
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
@@ -31,6 +27,7 @@ public class Doors : MonoBehaviour, ISaveable
 
     public void Door()
     {
+        debug.text = "Door()";
         if (locked)
         {
             LockedDoor();
@@ -42,26 +39,8 @@ public class Doors : MonoBehaviour, ISaveable
     }
     void UnlockedDoor()
     {
-        Debug.Log("Gettin' Fool");
         playAudio(doorOpen, 0.7f);
-
-        try
-        {
-            if (isLightOn)
-            {
-                lightSwitch.range = 0;
-            }
-            else
-            {
-                lightSwitch.range = 5;
-            }
-            isLightOn = !isLightOn;
-        }
-        catch (Exception)
-        {
-            Debug.Log("No lights");
-        }
-
+        debug.text = "unlockdoor()";
         StartCoroutine(MovePosition());
     }
     
@@ -93,6 +72,7 @@ public class Doors : MonoBehaviour, ISaveable
     public GameObject renderWorld;
     IEnumerator MovePosition()
     {
+        debug.text = "MovePosition() firstline";
         changePositionToVec = changePositionTo.transform.position;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
         GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = false;
@@ -104,6 +84,7 @@ public class Doors : MonoBehaviour, ISaveable
         GameObject.FindWithTag("Player").transform.position = changePositionToVec;
         GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
         GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = true;
+        debug.text = "MovePosition() lastline";
     }
 
     //For Playing SFX
