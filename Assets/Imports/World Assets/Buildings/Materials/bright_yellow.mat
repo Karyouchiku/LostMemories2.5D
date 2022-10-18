@@ -27,5 +27,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1, g: 0.8607, b: 0.6162, a: 1}
+    - _Color: {r: 0.6226415, g: 0.61724705, b: 0.6079566, a: 1}
   m_BuildTextureStacks: []
