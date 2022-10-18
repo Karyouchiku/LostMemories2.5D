@@ -9,6 +9,8 @@ TagManager:
   - InteractableObject
   - Player Inventory
   - Canvas
+  - Transition
+  - Burito
   layers:
   - Default
   - TransparentFX

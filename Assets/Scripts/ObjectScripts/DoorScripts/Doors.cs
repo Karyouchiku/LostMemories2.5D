@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class Doors : MonoBehaviour, ISaveable
 {
@@ -18,16 +19,16 @@ public class Doors : MonoBehaviour, ISaveable
     
     AudioSource audioSource;
 
-    public TextMeshProUGUI debug;
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Burito");
+        transition = GameObject.FindGameObjectWithTag("Canvas");
     }
 
     public void Door()
     {
-        debug.text = "Door()";
         if (locked)
         {
             LockedDoor();
@@ -40,7 +41,6 @@ public class Doors : MonoBehaviour, ISaveable
     void UnlockedDoor()
     {
         playAudio(doorOpen, 0.7f);
-        debug.text = "unlockdoor()";
         StartCoroutine(MovePosition());
     }
     
@@ -63,8 +63,10 @@ public class Doors : MonoBehaviour, ISaveable
         }
     }
 
-
+    //[Header("Player Gameobject")]
+    GameObject player;
     [Header("Teleport to other position")]
+    GameObject transition;
     public GameObject changePositionTo;
     Vector3 changePositionToVec;
     [Header("World to Render")]
@@ -72,19 +74,17 @@ public class Doors : MonoBehaviour, ISaveable
     public GameObject renderWorld;
     IEnumerator MovePosition()
     {
-        debug.text = "MovePosition() firstline";
         changePositionToVec = changePositionTo.transform.position;
-        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = false;
-        GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = false;
-        GameObject.FindWithTag("Player").GetComponent<PlayerAnimations>().resetAnimation();
-        GameObject.FindWithTag("Canvas").GetComponent<BlackTransitioning>().StartTransition();
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<PlayerControls>().enabled = false;
+        player.GetComponent<PlayerAnimations>().resetAnimation();
+        transition.GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
         unrenderWorld.SetActive(false);
         renderWorld.SetActive(true);
-        GameObject.FindWithTag("Player").transform.position = changePositionToVec;
-        GameObject.FindWithTag("Player").GetComponent<CharacterController>().enabled = true;
-        GameObject.FindWithTag("Player").GetComponent<PlayerControls>().enabled = true;
-        debug.text = "MovePosition() lastline";
+        player.transform.position = changePositionToVec;
+        player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponent<PlayerControls>().enabled = true;
     }
 
     //For Playing SFX

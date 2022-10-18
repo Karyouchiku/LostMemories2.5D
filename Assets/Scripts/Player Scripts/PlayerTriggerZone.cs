@@ -73,10 +73,8 @@ public class PlayerTriggerZone : MonoBehaviour
         {
             if (_GOCollider.gameObject.TryGetComponent<Doors>(out Doors door))
             {
-                debug.text = "PlayerTriggerZone interactbutton() 1";
-                door.Door();
-                debug.text = $"collidertag = {_GOCollider.tag}";
                 ButtonEnabler(false);
+                door.Door();
             }
             if (_GOCollider.gameObject.TryGetComponent<Gate>(out Gate gate))
             {
