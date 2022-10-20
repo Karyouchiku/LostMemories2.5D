@@ -85,6 +85,7 @@ public class Doors : MonoBehaviour, ISaveable
         player.transform.position = changePositionToVec;
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerControls>().enabled = true;
+        yield return null;
     }
 
     //For Playing SFX
