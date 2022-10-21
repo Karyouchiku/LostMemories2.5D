@@ -8,6 +8,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public GameObject classroom;
     public GameObject outdoor;
     public GameObject hallway;
+    public GameObject _MCHouseInterior;
 
     public object SaveState()
     {
@@ -15,7 +16,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         {
             classroom = this.classroom.activeSelf,
             outdoor = this.outdoor.activeSelf,
-            hallway = this.hallway.activeSelf
+            hallway = this.hallway.activeSelf,
+            _MCHouseInterior = this._MCHouseInterior.activeSelf
         };
     }
 
@@ -26,6 +28,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         classroom.SetActive(saveData.classroom);
         outdoor.SetActive(saveData.outdoor);
         hallway.SetActive(saveData.hallway);
+        _MCHouseInterior.SetActive(saveData._MCHouseInterior);
         
     }
 
@@ -35,5 +38,6 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         public bool classroom;
         public bool outdoor;
         public bool hallway;
+        public bool _MCHouseInterior;
     }
 }
