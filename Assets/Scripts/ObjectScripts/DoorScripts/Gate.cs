@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate : MonoBehaviour
+public class Gate : MonoBehaviour, ISaveable
 {
     PlayerInventory inventory;
     [Header("Door Info")]
@@ -11,7 +11,7 @@ public class Gate : MonoBehaviour
     public bool locked;
 
     [Header("Audio Clips")]
-    public AudioClip doorShut;
+    public AudioClip unlockedWithKey;
     public AudioClip doorOpen;
     public AudioClip doorKnocking;
 
@@ -61,7 +61,7 @@ public class Gate : MonoBehaviour
             Debug.Log("Door Unlocked");
             inventory.Remove(key);
             locked = false;
-            playAudio(doorShut, 0.5f);
+            playAudio(unlockedWithKey, 0.5f);
             
         }
 
@@ -82,5 +82,27 @@ public class Gate : MonoBehaviour
         {
             Debug.Log("No SFX");
         }
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            locked = this.locked,
+            isOpen = this.isOpen
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        this.locked = saveData.locked;
+        this.isOpen = saveData.isOpen;
+    }
+    [Serializable]
+    struct SaveData
+    {
+        public bool locked;
+        public bool isOpen;
     }
 }

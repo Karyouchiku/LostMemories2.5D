@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soItemData: {fileID: 0}
-  clip: {fileID: 8300000, guid: 6d652e6cc288ee94fbfee8a495cb98fd, type: 3}
+  clip: {fileID: 8300000, guid: 9e3154699d5692543986d6444734aa46, type: 3}
   isActive: 1
 --- !u!114 &673299530145263636
 MonoBehaviour:
