@@ -19,12 +19,12 @@ public class Gate : MonoBehaviour, ISaveable
     AudioSource audioSource;
 
     [Header("Gate Properties")]
-    public Animator gate1;
-    public Animator gate2;
+    Animator gate;
     public bool isOpen;
 
     void Start()
     {
+        gate = GetComponentInParent<Animator>();
         inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
     }
@@ -44,10 +44,12 @@ public class Gate : MonoBehaviour, ISaveable
     {
         isOpen = !isOpen;
         playAudio(doorOpen, 0.7f);
-        gate1.SetBool("isOpen", isOpen);
-        gate2.SetBool("isOpen", isOpen);
     }
 
+    void Update()
+    {
+        gate.SetBool("isOpen", isOpen);
+    }
     void LockedDoor()
     {
         if (!inventory.SearchItemInInventory(key))
