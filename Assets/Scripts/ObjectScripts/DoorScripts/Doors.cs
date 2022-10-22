@@ -25,6 +25,7 @@ public class Doors : MonoBehaviour, ISaveable
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Burito");
         transition = GameObject.FindGameObjectWithTag("Canvas");
+        worldRenderer = GetComponentInParent<WorldActiveSaveState>();
     }
 
     public void Door()
@@ -69,9 +70,13 @@ public class Doors : MonoBehaviour, ISaveable
     GameObject transition;
     public GameObject changePositionTo;
     Vector3 changePositionToVec;
+
+    WorldActiveSaveState worldRenderer;
     [Header("World to Render")]
-    public GameObject unrenderWorld;
-    public GameObject renderWorld;
+    public bool renderClassRoom;
+    public bool renderSchoolHallway;
+    public bool renderMCHouseOutside;
+    public bool renderMCHouseInterior;
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
@@ -80,14 +85,15 @@ public class Doors : MonoBehaviour, ISaveable
         player.GetComponent<PlayerAnimations>().resetAnimation();
         transition.GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
-        unrenderWorld.SetActive(false);
-        renderWorld.SetActive(true);
+
+        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside, renderMCHouseInterior);
+        worldRenderer.StartRender();
         player.transform.position = changePositionToVec;
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerControls>().enabled = true;
         yield return null;
     }
-
+    
     //For Playing SFX
     void playAudio(AudioClip clip, float vol)
     {
