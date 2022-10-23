@@ -2,26 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Doors : MonoBehaviour
+using UnityEngine.UI;
+using TMPro;
+public class Doors : MonoBehaviour, ISaveable
 {
-    //Testing light switch
-    public Light lightSwitch;
-    public bool isLightOn;
-
-    public PlayerInventory inventory;
+    PlayerInventory inventory;
+    [Header("Door Info")]
     public SOItemData key;
     public bool locked;
+
+    [Header("Audio Clips")]
     public AudioClip doorShut;
     public AudioClip doorOpen;
     public AudioClip doorKnocking;
-
+    
+    
     AudioSource audioSource;
-   
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
+        audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Burito");
+        transition = GameObject.FindGameObjectWithTag("Canvas");
+        worldRenderer = GetComponentInParent<WorldActiveSaveState>();
     }
 
     public void Door()
@@ -35,24 +39,13 @@ public class Doors : MonoBehaviour
             UnlockedDoor();
         }
     }
-    public void UnlockedDoor()
+    void UnlockedDoor()
     {
-        Debug.Log("Gettin' Fool");
         playAudio(doorOpen, 0.7f);
-
-        if (isLightOn)
-        {
-            lightSwitch.range = 0;
-        }
-        else
-        {
-            lightSwitch.range = 5;
-        }
-        isLightOn = !isLightOn;
-
+        StartCoroutine(MovePosition());
     }
     
-    public void LockedDoor()
+    void LockedDoor()
     {
         Debug.Log("U r here");
         if (!inventory.SearchItemInInventory(key))
@@ -71,6 +64,37 @@ public class Doors : MonoBehaviour
         }
     }
 
+    //[Header("Player Gameobject")]
+    GameObject player;
+    [Header("Teleport to other position")]
+    GameObject transition;
+    public GameObject changePositionTo;
+    Vector3 changePositionToVec;
+
+    WorldActiveSaveState worldRenderer;
+    [Header("World to Render")]
+    public bool renderClassRoom;
+    public bool renderSchoolHallway;
+    public bool renderMCHouseOutside;
+    public bool renderMCHouseInterior;
+    public bool renderOutsideSchool;
+    IEnumerator MovePosition()
+    {
+        changePositionToVec = changePositionTo.transform.position;
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<PlayerControls>().enabled = false;
+        player.GetComponent<PlayerAnimations>().resetAnimation();
+        transition.GetComponent<BlackTransitioning>().StartTransition();
+        yield return new WaitForSeconds(0.8f);
+
+        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside, renderMCHouseInterior, renderOutsideSchool);
+        worldRenderer.StartRender();
+        player.transform.position = changePositionToVec;
+        player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponent<PlayerControls>().enabled = true;
+        yield return null;
+    }
+    
     //For Playing SFX
     void playAudio(AudioClip clip, float vol)
     {
@@ -80,5 +104,26 @@ public class Doors : MonoBehaviour
             audioSource.clip = clip;
             audioSource.Play();
         }
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            locked = this.locked
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+
+        this.locked = saveData.locked;
+    }
+
+    [Serializable]
+    struct SaveData
+    {
+        public bool locked;
     }
 }
