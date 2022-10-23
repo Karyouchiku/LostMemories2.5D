@@ -78,6 +78,7 @@ public class Doors : MonoBehaviour, ISaveable
     public bool renderMCHouseOutside;
     public bool renderMCHouseInterior;
     public bool renderOutsideSchool;
+    public bool renderSmallTown;
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
@@ -87,7 +88,7 @@ public class Doors : MonoBehaviour, ISaveable
         transition.GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
 
-        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside, renderMCHouseInterior, renderOutsideSchool);
+        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside, renderMCHouseInterior, renderOutsideSchool, renderSmallTown);
         worldRenderer.StartRender();
         player.transform.position = changePositionToVec;
         player.GetComponent<CharacterController>().enabled = true;

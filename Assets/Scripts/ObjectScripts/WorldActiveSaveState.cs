@@ -10,6 +10,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public GameObject _MCHouseOutside;
     public GameObject _MCHouseInterior;
     public GameObject outsideSchool;
+    public GameObject smallTown;
     
     [Header("Render Worlds")]
     public bool renderClassRoom;
@@ -17,18 +18,20 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public bool renderMCHouseOutside;
     public bool renderMCHouseInterior;
     public bool renderOutsideSchool;
+    public bool renderSmallTown;
 
     void Start()
     {
         StartRender();
     }
-    public void RenderWorlds(bool _1, bool _2, bool _3, bool _4, bool _5)
+    public void RenderWorlds(bool _1, bool _2, bool _3, bool _4, bool _5, bool _6)
     {
         renderClassRoom = _1;
         renderSchoolHallway = _2;
         renderMCHouseOutside = _3;
         renderMCHouseInterior = _4;
         renderOutsideSchool = _5;
+        renderSmallTown = _6;
     }
     public void StartRender()
     {
@@ -37,6 +40,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         WorldRenderer(_MCHouseOutside, renderMCHouseOutside);
         WorldRenderer(_MCHouseInterior, renderMCHouseInterior);
         WorldRenderer(outsideSchool, renderOutsideSchool);
+        WorldRenderer(smallTown, renderSmallTown);
 
     }
 
@@ -68,7 +72,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
             renderSchoolHallway = this.renderSchoolHallway,
             renderMCHouseOutside = this.renderMCHouseOutside,
             renderMCHouseInterior = this.renderMCHouseInterior,
-            renderOutsideSchool = this.renderOutsideSchool
+            renderOutsideSchool = this.renderOutsideSchool,
+            renderSmallTown = this.renderSmallTown
         };
     }
 
@@ -81,6 +86,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         renderMCHouseOutside = saveData.renderMCHouseOutside;
         renderMCHouseInterior = saveData.renderMCHouseInterior;
         renderOutsideSchool = saveData.renderOutsideSchool;
+        renderSmallTown = saveData.renderSmallTown;
 
         StartRender();
 
@@ -94,5 +100,6 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         public bool renderMCHouseOutside;
         public bool renderMCHouseInterior;
         public bool renderOutsideSchool;
+        public bool renderSmallTown;
     }
 }
