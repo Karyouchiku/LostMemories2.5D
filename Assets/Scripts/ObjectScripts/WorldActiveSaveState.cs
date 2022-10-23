@@ -13,6 +13,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public GameObject smallTown;
     public GameObject bigCity;
     public GameObject trailerPark;
+    public GameObject florHouse;
+    public GameObject warehouse;
 
     
     [Header("Render Worlds")]
@@ -24,12 +26,14 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public bool renderSmallTown;
     public bool renderBigCity;
     public bool renderTrailerPark;
+    public bool renderFlorHouse;
+    public bool renderWarehouse;
 
     void Start()
     {
         StartRender();
     }
-    public void RenderWorlds(bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8)
+    public void RenderWorlds(bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8, bool w9, bool w10)
     {
         renderClassRoom = w1;
         renderSchoolHallway = w2;
@@ -39,6 +43,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         renderSmallTown = w6;
         renderBigCity = w7;
         renderTrailerPark = w8;
+        renderFlorHouse = w9;
+        renderWarehouse = w10;
     }
     public void StartRender()
     {
@@ -50,6 +56,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         WorldRenderer(smallTown, renderSmallTown);
         WorldRenderer(bigCity, renderBigCity);
         WorldRenderer(trailerPark, renderTrailerPark);
+        WorldRenderer(florHouse, renderFlorHouse);
+        WorldRenderer(warehouse, renderWarehouse);
 
     }
 
@@ -84,7 +92,9 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
             renderOutsideSchool = this.renderOutsideSchool,
             renderSmallTown = this.renderSmallTown,
             renderBigCity = this.renderBigCity,
-            renderTrailerPark = this.renderTrailerPark
+            renderTrailerPark = this.renderTrailerPark,
+            renderFlorHouse = this.renderFlorHouse,
+            renderWarehouse = this.renderWarehouse
         };
     }
 
@@ -99,6 +109,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         renderOutsideSchool = saveData.renderOutsideSchool;
         renderSmallTown = saveData.renderSmallTown;
         renderTrailerPark = saveData.renderTrailerPark;
+        renderFlorHouse = saveData.renderFlorHouse;
+        renderWarehouse = saveData.renderWarehouse;
 
         StartRender();
 
@@ -115,5 +127,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         public bool renderSmallTown;
         public bool renderBigCity;
         public bool renderTrailerPark;
+        public bool renderFlorHouse;
+        public bool renderWarehouse;
     }
 }
