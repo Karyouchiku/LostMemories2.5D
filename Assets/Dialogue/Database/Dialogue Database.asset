@@ -103,35 +103,7 @@ MonoBehaviour:
       type: 2
       typeString: CustomFieldType_Boolean
   locations: []
-  variables:
-  - id: 1
-    fields:
-    - title: Name
-      value: Alert
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: Testing text mf
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Description
-      value: 
-      type: 0
-      typeString: 
-  - id: 2
-    fields:
-    - title: Name
-      value: testBool
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
+  variables: []
   conversations:
   - id: 1
     fields:
