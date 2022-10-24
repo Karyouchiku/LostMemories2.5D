@@ -65,20 +65,13 @@ public class PlayerTriggerZone : MonoBehaviour
         }
     }
 
-    public TextMeshProUGUI debug;
-
     public void Interactbutton()
     {
         if (_GOCollider.tag == "InteractableObject")
         {
-            if (_GOCollider.gameObject.TryGetComponent<Doors>(out Doors door))
+            if (_GOCollider.gameObject.TryGetComponent<IInteractor>(out IInteractor interact))
             {
-                ButtonEnabler(false);
-                door.Door();
-            }
-            if (_GOCollider.gameObject.TryGetComponent<Gate>(out Gate gate))
-            {
-                gate.OpenGate();
+                interact.Interact();
             }
         }
 
