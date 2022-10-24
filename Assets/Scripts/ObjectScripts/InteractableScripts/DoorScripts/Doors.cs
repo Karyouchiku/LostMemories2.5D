@@ -6,6 +6,9 @@ using UnityEngine.UI;
 using TMPro;
 public class Doors : MonoBehaviour, ISaveable, IInteractor
 {
+    public static event HandledTriggerInteractBtn OnTriggerExitBtn;
+    public delegate void HandledTriggerInteractBtn();
+
     PlayerInventory inventory;
     [Header("Door Info")]
     public SOItemData key;
@@ -101,6 +104,7 @@ public class Doors : MonoBehaviour, ISaveable, IInteractor
         player.transform.position = changePositionToVec;
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerControls>().enabled = true;
+        OnTriggerExitBtn?.Invoke();
         yield return null;
     }
     

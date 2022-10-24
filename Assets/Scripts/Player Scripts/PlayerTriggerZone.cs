@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerTriggerZone : MonoBehaviour
 {
+    
+
     [Header("Interact Button in Canvas")]
     public GameObject interactButton;
 
@@ -16,6 +18,15 @@ public class PlayerTriggerZone : MonoBehaviour
     public Collider _GOCollider;
     bool isTalking;
 
+    void OnEnable()
+    {
+        Doors.OnTriggerExitBtn += DisableBtn;
+    }
+
+    void OnDisable()
+    {
+        Doors.OnTriggerExitBtn -= DisableBtn;
+    }
     void ButtonEnabler(bool turn)
     {
         interactButton.SetActive(turn);
@@ -28,6 +39,22 @@ public class PlayerTriggerZone : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         DefineGameObjectTag(other);
+    }
+    void OnTriggerExit()
+    {
+        DisableBtn();
+    }
+    void DisableBtn()
+    {
+        _GOCollider = null;
+        isTalking = false;
+    }
+    void FixedUpdate()
+    {
+        if (_GOCollider == null)
+        {
+            ButtonEnabler(false);
+        }
     }
     
     void DefineGameObjectTag(Collider other)
@@ -46,18 +73,6 @@ public class PlayerTriggerZone : MonoBehaviour
                     _GOCollider = other;
                     break;
             }
-        }
-    }
-    void OnTriggerExit()
-    {
-        _GOCollider = null;
-        isTalking = false;
-    }
-    void FixedUpdate()
-    {
-        if (_GOCollider == null)
-        {
-            ButtonEnabler(false);
         }
     }
 

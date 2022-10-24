@@ -8,10 +8,14 @@ public class InteractableItem : MonoBehaviour, IInteractor
     public delegate void HandledItemCollected(SOItemData soItemData);
 
     public SOItemData itemData;
+    bool itemGot;
     public void Interact()
     {
-        OnItemCollected?.Invoke(itemData);
-        Debug.Log($"Got Some Food: {itemData.itemName}");
+        if (!itemGot)
+        {
+            OnItemCollected?.Invoke(itemData);
+            itemGot = true;
+        }
     }
 
 }
