@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1238cede5324ca741ac37aad682c3cba
+guid: 1dd32bf77a20983429d65003a8e66c59
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bag_For_Inventory_0
+      name: Dialogs_design_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 35
-        width: 31
-        height: 26
+        x: 68
+        y: 628
+        width: 348
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b21a7f379367aef45bcc2920b0d77bae
-      internalID: 457986724
+      spriteID: 319efe361db7c3448bbcfde39bcca379
+      internalID: 1983260775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bag_For_Inventory_1
+      name: Dialogs_design_1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 8
-        width: 59
-        height: 11
+        x: 19
+        y: 306
+        width: 1047
+        height: 298
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d35be16c1b185af449f6098aa0f0ec68
-      internalID: 725540838
+      spriteID: 1c38d544dcd75d94ead6df24d0a56b7f
+      internalID: 313680219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogs_design_2
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 487
+        width: 376
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43717b9ba29ead4b9b59bebcfb41355
+      internalID: 1993409035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogs_design_3
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 408
+        width: 371
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799860f94bc97f24095de7869baa188a
+      internalID: 402277918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogs_design_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1048
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a51c40ed6b43e34f833c6578efa9d82
+      internalID: -1699352250
       vertices: []
       indices: 
       edges: []
@@ -161,7 +224,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0d74ee4422d222b4797b9955988841cc
+    spriteID: 4dbab40f7accfe642bd46e16091a0c65
     internalID: 0
     vertices: []
     indices: 
@@ -169,8 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bag_For_Inventory_1: 725540838
-      Bag_For_Inventory_0: 457986724
+      Dialogs_design_0: 1983260775
+      Dialogs_design_3: 402277918
+      Dialogs_design_2: 1993409035
+      Dialogs_design_4: -1699352250
+      Dialogs_design_1: 313680219
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
