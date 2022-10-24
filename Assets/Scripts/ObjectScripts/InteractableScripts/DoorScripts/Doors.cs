@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class Doors : MonoBehaviour, ISaveable
+public class Doors : MonoBehaviour, ISaveable, IInteractor
 {
     PlayerInventory inventory;
     [Header("Door Info")]
@@ -27,8 +27,7 @@ public class Doors : MonoBehaviour, ISaveable
         transition = GameObject.FindGameObjectWithTag("Canvas");
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
     }
-
-    public void Door()
+    public void Interact()
     {
         if (locked)
         {
@@ -39,6 +38,7 @@ public class Doors : MonoBehaviour, ISaveable
             UnlockedDoor();
         }
     }
+
     void UnlockedDoor()
     {
         playAudio(doorOpen, 0.7f);
@@ -78,6 +78,12 @@ public class Doors : MonoBehaviour, ISaveable
     public bool renderMCHouseOutside;
     public bool renderMCHouseInterior;
     public bool renderOutsideSchool;
+    public bool renderSmallTown;
+    public bool renderBigCity;
+    public bool renderTrailerPark;
+    public bool renderFlorHouse;
+    public bool renderWarehouse;
+
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
@@ -87,7 +93,10 @@ public class Doors : MonoBehaviour, ISaveable
         transition.GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
 
-        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside, renderMCHouseInterior, renderOutsideSchool);
+        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside,
+            renderMCHouseInterior, renderOutsideSchool, renderSmallTown, renderBigCity, renderTrailerPark,
+            renderFlorHouse, renderWarehouse);
+
         worldRenderer.StartRender();
         player.transform.position = changePositionToVec;
         player.GetComponent<CharacterController>().enabled = true;

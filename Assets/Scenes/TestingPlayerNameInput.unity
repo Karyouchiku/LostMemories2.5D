@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e63be444e686e49b653ae5adf196d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueDB: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
   playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
   inputPlayerName: {fileID: 774973144}
   displayPlayerName: {fileID: 1606930187}

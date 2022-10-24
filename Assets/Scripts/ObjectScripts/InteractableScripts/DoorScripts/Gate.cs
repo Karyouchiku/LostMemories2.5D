@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate : MonoBehaviour, ISaveable
+public class Gate : MonoBehaviour, ISaveable, IInteractor
 {
     PlayerInventory inventory;
     [Header("Door Info")]
@@ -29,7 +29,7 @@ public class Gate : MonoBehaviour, ISaveable
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
     }
 
-    public void OpenGate()
+    public void Interact()
     {
         if (locked)
         {

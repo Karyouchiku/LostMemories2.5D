@@ -25,10 +25,15 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     void OnEnable()
     {
         Item.OnItemCollected += Add;
+        InteractableItem.OnItemCollected += Add;
+        ItemFormNPC.OnItemReceived += Add;
+
     }
     void OnDisable()
     {
         Item.OnItemCollected -= Add;
+        InteractableItem.OnItemCollected -= Add;
+        ItemFormNPC.OnItemReceived -= Add;
     }
 
     public void Add(SOItemData soItemData)
