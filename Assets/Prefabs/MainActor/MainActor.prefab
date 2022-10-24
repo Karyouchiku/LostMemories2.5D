@@ -9478,7 +9478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3971137489600593961}
   cam: {fileID: 4376903143679431717}
-  movementSpeed: 3
+  movementSpeed: 2
   moveX: 0
   moveZ: 0
   targetAngle: 0
