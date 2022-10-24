@@ -121,6 +121,90 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffaaead4178aea14bbc70e69e53c025d
+      internalID: -773451021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front (Standing)_Burito_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e208c3f4e1469ef48b4fc2053bacc333
+      internalID: 318781539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front (Standing)_Burito_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275e1987b61736948be99b190e004969
+      internalID: 1130527601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front (Standing)_Burito_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cff025c1e552b49a707caaa92a35f7
+      internalID: 1662469229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front (Standing)_Burito_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 64
         height: 64
@@ -131,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ac4f0a23f1e8da46b662fed5ffddbda
-      internalID: -1070625505
+      spriteID: 29dd52f55a575cc4189f41fc828dbc8f
+      internalID: -1616230478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Front (Standing)_Burito_1
+      name: Front (Standing)_Burito_5
       rect:
         serializedVersion: 2
         x: 64
@@ -152,8 +236,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7698ff5f73455da4eb2eafe231fccd80
-      internalID: 115209513
+      spriteID: 63732a4a02d105f42b586a95511ed8e3
+      internalID: 1054784817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front (Standing)_Burito_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fd8440657af30428750021a3535efc
+      internalID: 811873037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Front (Standing)_Burito_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e434afde2738840a98f64f9db104b4
+      internalID: 550790069
       vertices: []
       indices: 
       edges: []
@@ -161,7 +287,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a2510a5370fe3f643a40d3b06551b8c5
+    spriteID: bd73ad12179d1cb48b6f8b344f33d7c3
     internalID: 0
     vertices: []
     indices: 
@@ -169,8 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Front (Standing)_Burito_1: 115209513
-      Front (Standing)_Burito_0: -1070625505
+      Front (Standing)_Burito_6: 811873037
+      Front (Standing)_Burito_7: 550790069
+      Front (Standing)_Burito_2: 1130527601
+      Front (Standing)_Burito_3: 1662469229
+      Front (Standing)_Burito_1: 318781539
+      Front (Standing)_Burito_5: 1054784817
+      Front (Standing)_Burito_0: -773451021
+      Front (Standing)_Burito_4: -1616230478
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
