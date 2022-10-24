@@ -14,7 +14,6 @@ public class PlayerTriggerZone : MonoBehaviour
 
     [Header("Current Interactable Object (Should be leave null)")]
     public Collider _GOCollider;
-    string interactButtonName;
     bool isTalking;
 
     void ButtonEnabler(bool turn)
@@ -43,10 +42,7 @@ public class PlayerTriggerZone : MonoBehaviour
             {
                 case "InteractableNPC":
                 case "InteractableObject":
-                    interactButtonName = other.name;
                     ButtonEnabler(true);
-
-                    interactButton.GetComponentInChildren<TextMeshProUGUI>().text = interactButtonName;
                     _GOCollider = other;
                     break;
             }

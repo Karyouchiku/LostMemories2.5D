@@ -9286,7 +9286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8390022774181532602}
   - component: {fileID: 3971137489600593961}
-  - component: {fileID: 5351752490341349920}
+  - component: {fileID: 8987313563989479697}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Player
@@ -9350,7 +9350,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: f374107ba66790641b6b7c9d0d9a49d3, type: 3}
+  m_Sprite: {fileID: -773451021, guid: 023e2c7a5fcd8ba4d8d95f21386693a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9361,7 +9361,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5351752490341349920
+--- !u!95 &8987313563989479697
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -9371,7 +9371,7 @@ Animator:
   m_GameObject: {fileID: 8390022774181532603}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5e5a7a93a78d6f40babbc1cd157512a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8ab88337a5c5a3e43846e90f623b6d42, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9497,10 +9497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3861cf8760e5be4cb12c003a8b41411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimation: {fileID: 5351752490341349920}
-  isMoving: 0
-  isJumping: 0
-  isFalling: 0
+  spriteAnimation: {fileID: 8987313563989479697}
+  moveX: 0
+  moveZ: 0
 --- !u!114 &3613706432598455261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9516,7 +9515,6 @@ MonoBehaviour:
   interactButton: {fileID: 4376903145018616727}
   inventory: {fileID: 8390022775087897596}
   _GOCollider: {fileID: 11400000, guid: c4f86e1281fa1f44b93f95f845957c71, type: 2}
-  debug: {fileID: 0}
 --- !u!114 &8390022774997457335
 MonoBehaviour:
   m_ObjectHideFlags: 0

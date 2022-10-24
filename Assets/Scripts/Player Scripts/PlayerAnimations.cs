@@ -6,20 +6,17 @@ public class PlayerAnimations : MonoBehaviour
 {
     public Animator spriteAnimation;
 
-    public bool isMoving;
-    public bool isJumping;
-    public bool isFalling;
-    
+    public float moveX;
+    public float moveZ;
+
     public void resetAnimation()
     {
-        isMoving = false;
-        isJumping = false;
-        isFalling = false;
+        moveX = 0f;
+        moveZ = 0f;
     }
     void Update()
     {
-        spriteAnimation.SetBool("isMoving", isMoving);
-        spriteAnimation.SetBool("isJumping", isJumping);
-        spriteAnimation.SetBool("isFalling", isFalling);
+        spriteAnimation.SetFloat("MoveX", moveX);
+        spriteAnimation.SetFloat("MoveZ", moveZ);
     }
 }
