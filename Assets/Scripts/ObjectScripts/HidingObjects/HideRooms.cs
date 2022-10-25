@@ -11,7 +11,7 @@ public class HideRooms : MonoBehaviour
     void Start()
     {
         mesh = GetComponentsInChildren<MeshRenderer>();
-        lights= GetComponentsInChildren<Light>();
+        lights = GetComponentsInChildren<Light>();
     }
     void Update()
     {
