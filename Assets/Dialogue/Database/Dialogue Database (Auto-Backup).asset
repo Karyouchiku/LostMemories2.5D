@@ -42,7 +42,7 @@ MonoBehaviour:
   - id: 4
     fields:
     - title: Name
-      value: "fuckinghell\u200B"
+      value: Burito
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -123,14 +123,19 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: 
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
-  - id: 8
+  items:
+  - id: 1
     fields:
     - title: Name
-      value: Burito
+      value: Package
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -141,45 +146,12 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: CustomFieldType_Text
-    - title: IsPlayer
-      value: False
+    - title: Is Item
+      value: True
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
-    alternatePortraits: []
-    spritePortraits: []
-  items: []
   locations: []
-  variables:
-  - id: 1
-    fields:
-    - title: Name
-      value: Alert
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: Testing text mf
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Description
-      value: 
-      type: 0
-      typeString: 
-  - id: 2
-    fields:
-    - title: Name
-      value: testBool
-      type: 0
-      typeString: CustomFieldType_Text
-    - title: Initial Value
-      value: False
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: CustomFieldType_Text
+  variables: []
   conversations:
   - id: 1
     fields:
@@ -1716,16 +1688,16 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 24.055218}
-    canvasZoom: 0.6700003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.9100001
   - id: 4
     fields:
     - title: Title
-      value: Burito hinabol ng bading
+      value: New Conversation 4
       type: 0
       typeString: CustomFieldType_Text
     - title: Description
-      value: 
+      value: Burito hinabol ng bading
       type: 0
       typeString: CustomFieldType_Text
     - title: Actor
@@ -1805,7 +1777,7 @@ MonoBehaviour:
       - originConversationID: 4
         originDialogueID: 0
         destinationConversationID: 4
-        destinationDialogueID: 1
+        destinationDialogueID: 9
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1815,11 +1787,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 446.2136
-        y: 141.79611
+        x: 269.7727
+        y: 194.99998
         width: 160
         height: 30
-    - id: 1
+    - id: 9
       fields:
       - title: Title
         value: 
@@ -1858,15 +1830,15 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
-        originDialogueID: 1
+        originDialogueID: 9
         destinationConversationID: 4
-        destinationDialogueID: 2
+        destinationDialogueID: 10
         isConnector: 0
         priority: 2
       - originConversationID: 4
-        originDialogueID: 1
+        originDialogueID: 9
         destinationConversationID: 4
-        destinationDialogueID: 3
+        destinationDialogueID: 11
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1876,11 +1848,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 445.24274
-        y: 186.94177
+        x: 268.75732
+        y: 272.14566
         width: 160
         height: 30
-    - id: 2
+    - id: 10
       fields:
       - title: Title
         value: 
@@ -1919,9 +1891,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
-        originDialogueID: 2
+        originDialogueID: 10
         destinationConversationID: 4
-        destinationDialogueID: 4
+        destinationDialogueID: 12
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1931,11 +1903,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 325
-        y: 258
+        x: 148.51459
+        y: 343.2039
         width: 160
         height: 30
-    - id: 3
+    - id: 11
       fields:
       - title: Title
         value: 
@@ -1974,9 +1946,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
-        originDialogueID: 3
+        originDialogueID: 11
         destinationConversationID: 4
-        destinationDialogueID: 5
+        destinationDialogueID: 13
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -1986,11 +1958,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 569.9708
-        y: 251
+        x: 393.4854
+        y: 336.2039
         width: 160
         height: 30
-    - id: 4
+    - id: 12
       fields:
       - title: Title
         value: 
@@ -2029,9 +2001,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
-        originDialogueID: 4
+        originDialogueID: 12
         destinationConversationID: 4
-        destinationDialogueID: 6
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2041,11 +2013,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 325
-        y: 308
+        x: 148.51459
+        y: 393.2039
         width: 160
         height: 30
-    - id: 5
+    - id: 13
       fields:
       - title: Title
         value: 
@@ -2084,9 +2056,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
-        originDialogueID: 5
+        originDialogueID: 13
         destinationConversationID: 4
-        destinationDialogueID: 6
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2096,11 +2068,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 569
-        y: 300
+        x: 392.5146
+        y: 385.2039
         width: 160
         height: 30
-    - id: 6
+    - id: 14
       fields:
       - title: Title
         value: 
@@ -2139,9 +2111,9 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 4
-        originDialogueID: 6
+        originDialogueID: 14
         destinationConversationID: 4
-        destinationDialogueID: 7
+        destinationDialogueID: 15
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -2151,11 +2123,11 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443
-        y: 362
+        x: 266.5146
+        y: 447.2039
         width: 160
         height: 30
-    - id: 7
+    - id: 15
       fields:
       - title: Title
         value: 
@@ -2201,13 +2173,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 443
-        y: 412
+        x: 266.5146
+        y: 497.2039
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 130.32623, y: 108.76114}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 12.371155, y: 205.98184}
+    canvasZoom: 0.97
   syncInfo:
     syncActors: 0
     syncItems: 0
