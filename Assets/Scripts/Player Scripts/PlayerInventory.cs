@@ -27,13 +27,16 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         Item.OnItemCollected += Add;
         InteractableItem.OnItemCollected += Add;
         ItemFormNPC.OnItemReceived += Add;
-
+        InteractableDoor.RemoveFromInv += Remove;
+        PortalDoor.RemoveFromInv += Remove;
     }
     void OnDisable()
     {
         Item.OnItemCollected -= Add;
         InteractableItem.OnItemCollected -= Add;
         ItemFormNPC.OnItemReceived -= Add;
+        InteractableDoor.RemoveFromInv -= Remove;
+        PortalDoor.RemoveFromInv -= Remove;
     }
 
     public void Add(SOItemData soItemData)

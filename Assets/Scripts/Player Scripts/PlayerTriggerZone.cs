@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerTriggerZone : MonoBehaviour
 {
-    
-
     [Header("Interact Button in Canvas")]
     public GameObject interactButton;
 
@@ -20,13 +18,14 @@ public class PlayerTriggerZone : MonoBehaviour
 
     void OnEnable()
     {
-        Doors.OnTriggerExitBtn += DisableBtn;
+        PortalDoor.OnTriggerExitBtn += DisableBtn;
     }
 
     void OnDisable()
     {
-        Doors.OnTriggerExitBtn -= DisableBtn;
+        PortalDoor.OnTriggerExitBtn -= DisableBtn;
     }
+
     void ButtonEnabler(bool turn)
     {
         interactButton.SetActive(turn);
