@@ -12,9 +12,10 @@ public class AIPlayer : MonoBehaviour
     public GameObject goRight;
     public float mspeed;
     public bool movePlayerAI;
-    public bool moveOtherAI;
 
     public GameObject otherActor;
+    public bool startFollow;
+    public bool moveOtherAI;
     
     void Update()
     {
@@ -24,7 +25,7 @@ public class AIPlayer : MonoBehaviour
         }
         if (moveOtherAI)
         {
-            otherActor.transform.position = Vector3.MoveTowards(otherActor.transform.position, transform.position, (mspeed - 0.7f)* Time.deltaTime);
+            otherActor.transform.position = Vector3.MoveTowards(otherActor.transform.position, transform.position, (mspeed - 1f)* Time.deltaTime);
         }
     }
     void OnTriggerEnter(Collider other)
@@ -36,6 +37,17 @@ public class AIPlayer : MonoBehaviour
         if (other.tag == "InteractableNPC")
         {
             moveOtherAI = false;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (startFollow)
+        {
+            if (other.tag == "InteractableNPC")
+            {
+                moveOtherAI = true;
+            }
+
         }
     }
     public void RunLeft()
@@ -53,5 +65,6 @@ public class AIPlayer : MonoBehaviour
     public void OtherActorFollows()
     {
         moveOtherAI = true;
+        startFollow = true;
     }
 }
