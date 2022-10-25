@@ -9,9 +9,6 @@ public class InventoryManager : MonoBehaviour
     public List<InventorySlot> inventorySlots = new List<InventorySlot>(4);
     public RectTransform inventoryUI;
     
-    //For Testing
-    //Show Inventory Arrow
-    public TextMeshProUGUI arrowButton;
     
     bool showInventory;
 
@@ -24,12 +21,10 @@ public class InventoryManager : MonoBehaviour
         if (showInventory)
         {
             showInventory = false;
-            arrowButton.text = "<";
         }
         else
         {
             showInventory = true;
-            arrowButton.text = ">";
         }
         show_HideInventory.SetBool("show_HideInventory", showInventory);
     }

@@ -49,7 +49,6 @@ public class PlayerControls : MonoBehaviour, ISaveable
     {
         if (controller.isGrounded)
         {
-            playerAnimations.isFalling = false;
 
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
@@ -91,35 +90,16 @@ public class PlayerControls : MonoBehaviour, ISaveable
             }
 
         }
-        else
-        {
-            playerAnimations.isFalling = true;
-        }
 
 
         //Movement Result 
+
+        playerAnimations.moveX = moveX;
+        playerAnimations.moveZ = moveZ;
         move = new Vector3(moveX, 0f, moveZ).normalized;
         move.x *= movementSpeed * Time.deltaTime;
         move.z *= movementSpeed * Time.deltaTime;
         controller.Move(cam.rotation * ((Vector3.forward * move.z) + (Vector3.right * move.x)) + (Vector3.down * 5f * Time.deltaTime));
-
-
-        if (moveX != 0 || moveZ != 0)
-        {
-            playerAnimations.isMoving = true;
-            if (moveX > 0)
-            {
-                sprite.flipX = false;
-            }
-            if (moveX < 0)
-            {
-                sprite.flipX = true;
-            }
-        }
-        else
-        {
-            playerAnimations.isMoving = false;
-        }
     }
 
     public object SaveState()

@@ -11,11 +11,16 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     
     public SOItemData soItemData;
     
-    public AudioSource audioSource;
+    AudioSource audioSource;
     public AudioClip clip;
 
     public bool isActive;
-    
+
+    void Start()
+    {
+        GetComponentInChildren<SpriteRenderer>().sprite = soItemData.icon;
+        audioSource = GetComponent<AudioSource>();
+    }
     void FixedUpdate()
     {
         GetComponent<CapsuleCollider>().enabled = isActive;
