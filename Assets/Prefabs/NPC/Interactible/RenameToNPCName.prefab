@@ -110,7 +110,7 @@ MonoBehaviour:
     luaConditions: []
     questConditions: []
     acceptedTags:
-    - Player
+    - Burito
     acceptedGameObjects: []
     luaWizardIndex: -1
     lastEvaluationValue: 0

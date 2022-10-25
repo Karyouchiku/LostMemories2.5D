@@ -14,7 +14,7 @@ public class PlayerTriggerZone : MonoBehaviour
 
     [Header("Current Interactable Object (Should be leave null)")]
     public Collider _GOCollider;
-    bool isTalking;
+    public bool isTalking;
 
     void OnEnable()
     {
