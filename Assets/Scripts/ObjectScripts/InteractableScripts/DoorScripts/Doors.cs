@@ -75,6 +75,8 @@ public class Doors : MonoBehaviour, ISaveable, IInteractor
     Vector3 changePositionToVec;
 
     WorldActiveSaveState worldRenderer;
+    [Header("Enable Directional Light")]
+    public bool lighting;
     [Header("World to Render")]
     public bool renderClassRoom;
     public bool renderSchoolHallway;
@@ -96,7 +98,7 @@ public class Doors : MonoBehaviour, ISaveable, IInteractor
         transition.GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
 
-        worldRenderer.RenderWorlds(renderClassRoom, renderSchoolHallway, renderMCHouseOutside,
+        worldRenderer.RenderWorlds(lighting ,renderClassRoom, renderSchoolHallway, renderMCHouseOutside,
             renderMCHouseInterior, renderOutsideSchool, renderSmallTown, renderBigCity, renderTrailerPark,
             renderFlorHouse, renderWarehouse);
 

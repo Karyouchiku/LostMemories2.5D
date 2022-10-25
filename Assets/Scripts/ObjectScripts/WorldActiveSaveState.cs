@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class WorldActiveSaveState : MonoBehaviour, ISaveable
 {
+    [Header("Using Directional Light")]
+    public Light directionalLight;
+    [Header("GameObject Worlds")]
     public GameObject classRoom;
     public GameObject schoolHallway;
     public GameObject _MCHouseOutside;
@@ -16,7 +19,9 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public GameObject florHouse;
     public GameObject warehouse;
 
-    
+
+    [Header("Enable Lighting")]
+    public bool lighting;
     [Header("Render Worlds")]
     public bool renderClassRoom;
     public bool renderSchoolHallway;
@@ -33,8 +38,9 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     {
         StartRender();
     }
-    public void RenderWorlds(bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8, bool w9, bool w10)
+    public void RenderWorlds(bool lighting, bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8, bool w9, bool w10)
     {
+        this.lighting = lighting;
         renderClassRoom = w1;
         renderSchoolHallway = w2;
         renderMCHouseOutside = w3;
@@ -48,6 +54,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     }
     public void StartRender()
     {
+        directionalLight.enabled = lighting;
         WorldRenderer(classRoom, renderClassRoom);
         WorldRenderer(schoolHallway, renderSchoolHallway);
         WorldRenderer(_MCHouseOutside, renderMCHouseOutside);
@@ -85,6 +92,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     {
         return new SaveData()
         {
+            lighting = this.lighting,
             renderClassRoom = this.renderClassRoom,
             renderSchoolHallway = this.renderSchoolHallway,
             renderMCHouseOutside = this.renderMCHouseOutside,
@@ -102,6 +110,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
 
+        lighting = saveData.lighting;
         renderClassRoom = saveData.renderClassRoom;
         renderSchoolHallway = saveData.renderSchoolHallway;
         renderMCHouseOutside = saveData.renderMCHouseOutside;
@@ -119,6 +128,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     [Serializable]
     struct SaveData
     {
+        public bool lighting;
         public bool renderClassRoom;
         public bool renderSchoolHallway;
         public bool renderMCHouseOutside;
