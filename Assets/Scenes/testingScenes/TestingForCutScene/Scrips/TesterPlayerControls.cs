@@ -17,10 +17,6 @@ public class TesterPlayerControls : MonoBehaviour
     public float moveZ;
     public float targetAngle;
 
-    [Header("Joystick Settings")]
-    bool isOnScreenControls = false;
-    bool isOnKeyboardOrGamepad = false;
-
     [Header("Controller Manager")]
     public bool isControlEnable = true;
 
