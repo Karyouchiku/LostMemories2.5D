@@ -6052,7 +6052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4434350922817512365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.473, y: -0.551, z: 3.527}
+  m_LocalPosition: {x: -17.769, y: -0.551, z: 4.052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6576,8 +6576,8 @@ MonoBehaviour:
       allowPCSubtitleReminders: 0
       skipPCSubtitleAfterResponseMenu: 1
       subtitleCharsPerSecond: 30
-      minSubtitleSeconds: 2
-      continueButton: 0
+      minSubtitleSeconds: 4
+      continueButton: 2
       requireContinueOnLastLine: 0
       richTextEmphases: 1
       informSequenceStartAndEnd: 0
@@ -9455,13 +9455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ab19bdfd8011548a66631c6a376339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 4376903143679431717}
-  movementSpeed: 0
+  movementSpeed: 2
   moveX: 0
   moveZ: 0
   targetAngle: 0
   joystick: {fileID: 4376903143355215399}
-  JoystickLimiter: 0
+  JoystickLimiter: 0.5
   isControlEnable: 1
 --- !u!114 &3448758870194882770
 MonoBehaviour:

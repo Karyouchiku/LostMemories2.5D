@@ -10,7 +10,7 @@ public class PlayerControls : MonoBehaviour, ISaveable
     CharacterAnimation playerAnimations;
     CharacterController controller;
     Vector3 move;
-    public Transform cam;
+    Transform cam;
 
     [Header("Movement Settings")]
     public float movementSpeed;
@@ -33,6 +33,7 @@ public class PlayerControls : MonoBehaviour, ISaveable
     {
         controller = GetComponent<CharacterController>();
         playerAnimations = GetComponent<CharacterAnimation>();
+        cam = Camera.main.transform;
     }
 
     void Update()

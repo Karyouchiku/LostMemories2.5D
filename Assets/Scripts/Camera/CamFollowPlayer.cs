@@ -14,11 +14,19 @@ public class CamFollowPlayer : MonoBehaviour, ISaveable
     public float camY;
     public float camZ;
 
+    public bool removeAnimation;
     void Update()
     {
-
-        Vector3 newPosition = new Vector3(followTarget.position.x + camX, followTarget.position.y + camY, followTarget.position.z + camZ);
-        transform.position = Vector3.Slerp(transform.position, newPosition, followSpeed * Time.deltaTime);
+        if (!removeAnimation)
+        {
+            Vector3 newPosition = new Vector3(followTarget.position.x + camX, followTarget.position.y + camY, followTarget.position.z + camZ);
+            transform.position = Vector3.Slerp(transform.position, newPosition, followSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Vector3 newPosition = new Vector3(followTarget.position.x + camX, followTarget.position.y + camY, followTarget.position.z + camZ);
+            transform.position = newPosition;
+        }
         
     }
 

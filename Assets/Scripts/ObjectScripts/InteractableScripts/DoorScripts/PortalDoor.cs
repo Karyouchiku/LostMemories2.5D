@@ -28,6 +28,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Burito");
+        inGameUi = GameObject.Find("IngameUI");
         transition = GameObject.FindGameObjectWithTag("Canvas");
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
     }
@@ -45,7 +46,10 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
     void UnlockedDoor()
     {
-        playAudio(doorOpen, 0.7f);
+        if (doorOpen != null)
+        {
+            playAudio(doorOpen, 0.7f);
+        }
         StartCoroutine(MovePosition());
     }
 
@@ -70,6 +74,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
     //[Header("Player Gameobject")]
     GameObject player;
+    GameObject inGameUi;
     [Header("Teleport to other position")]
     GameObject transition;
     public GameObject changePositionTo;
@@ -97,7 +102,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         player.GetComponent<PlayerControls>().enabled = false;
         player.GetComponent<CharacterAnimation>().ResetAnimation();
         transition.GetComponent<BlackTransitioning>().StartTransition();
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
 
         worldRenderer.RenderWorlds(lighting, renderClassRoom, renderSchoolHallway, renderMCHouseOutside,
             renderMCHouseInterior, renderOutsideSchool, renderSmallTown, renderBigCity, renderTrailerPark,
@@ -105,8 +110,10 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
         worldRenderer.StartRender();
         player.transform.position = changePositionToVec;
-        player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerControls>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true;
+        inGameUi.SetActive(true);
+        yield return new WaitForSeconds(1f);
         OnTriggerExitBtn?.Invoke();
         yield return null;
     }

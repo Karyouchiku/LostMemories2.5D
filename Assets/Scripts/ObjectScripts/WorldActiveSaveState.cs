@@ -73,6 +73,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         MeshRenderer[] mesh = world.GetComponentsInChildren<MeshRenderer>();
         AudioSource[] sfx = world.GetComponentsInChildren<AudioSource>();
         Light[] lights = world.GetComponentsInChildren<Light>();
+        SpriteRenderer[] sprites = world.GetComponentsInChildren<SpriteRenderer>();
 
         for (int i = 0; i < mesh.Length; i++)
         {
@@ -85,6 +86,10 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         for (int i = 0; i < lights.Length; i++)
         {
             lights[i].enabled = render;
+        }
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            sprites[i].enabled = render;
         }
     }
 

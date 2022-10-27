@@ -1,9 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
-public class Prologue1 : MonoBehaviour
+public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
 {
+    [Header("Disable object and Scripts")]
+    public GameObject inGameUI;
+    public GameObject player;
+    DialogueSystemController dialogueSystemController;
+    public bool thisSceneDone;
     [Header("Actors")]
     public GameObject[] actor;
     Vector3 movingAnim;
@@ -20,49 +27,99 @@ public class Prologue1 : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < actor.Length; i++)
-        {
-            pAnim = actor[i].GetComponent<CharacterAnimation>();
-        }
+        dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
+        pAnim = actor[0].GetComponent<CharacterAnimation>();
     }
     void Update()
     {
-        if (startMove)
+        if (!thisSceneDone)
         {
-            movingAnim = target - actor[0].transform.position;
-            target.y = actor[0].transform.position.y;
-            actor[0].transform.position = Vector3.MoveTowards(actor[0].transform.position, target, mSpeed * Time.deltaTime);
-            pAnim.moveX = movingAnim.x;
-            pAnim.moveZ = movingAnim.z;
+            if (startMove)
+            {
+                movingAnim = target - actor[0].transform.position;
+                target.y = actor[0].transform.position.y;
+                actor[0].transform.position = Vector3.MoveTowards(actor[0].transform.position, target, mSpeed * Time.deltaTime);
+                pAnim.moveX = movingAnim.x;
+                pAnim.moveZ = movingAnim.z;
+            }
         }
+        else
+        {
+            StartCoroutine(thisSceneDoneCoroutine());
+        }
+    }
+    IEnumerator thisSceneDoneCoroutine()
+    {
+        door.Interact();
+        yield return new WaitForSeconds(1);
+        Disables(true);
+        gameObject.SetActive(false);
+    }
+    void Disables(bool turn)
+    {
+        inGameUI.SetActive(turn);
+        player.GetComponent<PlayerControls>().enabled = turn;
+        player.GetComponent<CharacterAnimation>().ResetAnimation();
+
+    }
+    public void ForDE1()
+    {
+        actor[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();
+        Disables(false);
     }
     public void GoOutSide()
     {
         locNum = 0;
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         target = loc[locNum].transform.position;
+        StartMoving();
+    }
+    
+    public void StartMoving()
+    {
         startMove = true;
     }
-
-    void OnEnable()
+    public void ChangeLocation(int i)
     {
-        LocationChecker.onPlayerEnterCol += ChangeLocation;
+        target = loc[i].transform.position;
     }
-    void OnDisable()
+    public void EnterDoor()
     {
-        LocationChecker.onPlayerEnterCol -= ChangeLocation;
+        startMove = false;
+        target = loc[2].transform.position;
+        target.y = actor[0].transform.position.y;
+        actor[0].transform.position = target;
+        EndingScene();
+        
+    }
+    public void EndingScene()
+    {
+        thisSceneDone = true;
+    }
+    
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            thisSceneDone = this.thisSceneDone
+        };
     }
 
-    void ChangeLocation()
+    public void LoadState(object state)
     {
-        locNum++;
-        if (locNum < loc.Length)
-        {
-            target = loc[locNum].transform.position;
-        }
-        else
-        {
-            startMove = false;
-            door.Interact();
-        }
+        var saveData = (SaveData)state;
+        this.thisSceneDone = saveData.thisSceneDone;
+    }
+
+    public void LocationCheck()
+    {
+        throw new NotImplementedException();
+    }
+
+    [Serializable]
+    struct SaveData
+    {
+        public bool thisSceneDone;
     }
 }
