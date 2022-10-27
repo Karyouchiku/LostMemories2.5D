@@ -6535,7 +6535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b685e62a9aeb4a9472b30ec2d86d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDatabase: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
+  initialDatabase: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
   displaySettings:
     conversationOverrideSettings:
       useOverrides: 0
@@ -9455,7 +9455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ab19bdfd8011548a66631c6a376339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 3971137489600593961}
   cam: {fileID: 4376903143679431717}
   movementSpeed: 2
   moveX: 0
@@ -9494,6 +9493,7 @@ MonoBehaviour:
   interactButton: {fileID: 4376903145018616727}
   inventory: {fileID: 8390022775087897596}
   _GOCollider: {fileID: 11400000, guid: c4f86e1281fa1f44b93f95f845957c71, type: 2}
+  isTalking: 0
 --- !u!114 &8390022774997457335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9582,19 +9582,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 8390022774997457331}
-          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 4376903144836011173}
+        - m_Target: {fileID: 4543056469077714770}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -9633,19 +9621,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 8390022774997457331}
-          m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 4376903144836011173}
+        - m_Target: {fileID: 4543056469077714770}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -9743,7 +9719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
-  dialoguedb: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
+  dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
 --- !u!114 &8035506602178399119
 MonoBehaviour:
   m_ObjectHideFlags: 0

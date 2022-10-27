@@ -41,7 +41,6 @@ public class PlayerControls : MonoBehaviour, ISaveable
         {
             MovementScript();
         }
-
     }
 
     private void MovementScript()
