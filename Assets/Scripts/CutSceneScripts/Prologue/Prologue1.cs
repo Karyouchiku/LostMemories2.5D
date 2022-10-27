@@ -7,7 +7,7 @@ public class Prologue1 : MonoBehaviour
     [Header("Actors")]
     public GameObject[] actor;
     Vector3 movingAnim;
-    PlayerAnimations pAnim;
+    CharacterAnimation pAnim;
     [HeaderAttribute("Goto Locations")]
     public GameObject[] loc;
     Vector3 target;
@@ -22,7 +22,7 @@ public class Prologue1 : MonoBehaviour
     {
         for (int i = 0; i < actor.Length; i++)
         {
-            pAnim = actor[i].GetComponent<PlayerAnimations>();
+            pAnim = actor[i].GetComponent<CharacterAnimation>();
         }
     }
     void Update()

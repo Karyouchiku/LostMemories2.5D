@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerControls : MonoBehaviour, ISaveable
 {
     //private Componets
-    PlayerAnimations playerAnimations;
+    CharacterAnimation playerAnimations;
     CharacterController controller;
     Vector3 move;
     public Transform cam;
@@ -32,7 +32,7 @@ public class PlayerControls : MonoBehaviour, ISaveable
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        playerAnimations = GetComponent<PlayerAnimations>();
+        playerAnimations = GetComponent<CharacterAnimation>();
     }
 
     void Update()
