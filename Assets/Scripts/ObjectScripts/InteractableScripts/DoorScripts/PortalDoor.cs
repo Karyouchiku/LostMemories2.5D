@@ -95,7 +95,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         changePositionToVec = changePositionTo.transform.position;
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<PlayerControls>().enabled = false;
-        player.GetComponent<PlayerAnimations>().resetAnimation();
+        player.GetComponent<CharacterAnimation>().ResetAnimation();
         transition.GetComponent<BlackTransitioning>().StartTransition();
         yield return new WaitForSeconds(0.8f);
 
