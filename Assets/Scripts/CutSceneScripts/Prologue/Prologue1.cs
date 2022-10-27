@@ -20,7 +20,10 @@ public class Prologue1 : MonoBehaviour
 
     void Start()
     {
-        //pAnim = actor[0].GetComponent<PlayerAnimations>();
+        for (int i = 0; i < actor.Length; i++)
+        {
+            pAnim = actor[i].GetComponent<PlayerAnimations>();
+        }
     }
     void Update()
     {

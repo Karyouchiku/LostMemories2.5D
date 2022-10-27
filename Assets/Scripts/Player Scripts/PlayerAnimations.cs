@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    public Animator spriteAnimation;
+    Animator spriteAnimation;
 
     public float moveX;
     public float moveZ;
 
+    void Start()
+    {
+        spriteAnimation = GetComponentInChildren<Animator>();
+    }
     public void resetAnimation()
     {
         moveX = 0f;

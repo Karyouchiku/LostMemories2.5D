@@ -2671,9 +2671,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8390022774997457328}
-        m_TargetAssemblyTypeName: PlayerAnimations, Assembly-CSharp
-        m_MethodName: resetAnimation
+      - m_Target: {fileID: 3448758870194882770}
+        m_TargetAssemblyTypeName: CharacterAnimation, Assembly-CSharp
+        m_MethodName: ResetAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9393,6 +9393,7 @@ GameObject:
   - component: {fileID: 8390022774997457331}
   - component: {fileID: 8390022774997457342}
   - component: {fileID: 8390022774997457328}
+  - component: {fileID: 3448758870194882770}
   - component: {fileID: 3613706432598455261}
   - component: {fileID: 8390022774997457335}
   - component: {fileID: 518608800465740527}
@@ -9475,7 +9476,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3861cf8760e5be4cb12c003a8b41411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteAnimation: {fileID: 8987313563989479697}
+  moveX: 0
+  moveZ: 0
+--- !u!114 &3448758870194882770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390022774997457338}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038a16ab47d4bbf46aac28ee1829e131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteAnimation: {fileID: 0}
   moveX: 0
   moveZ: 0
 --- !u!114 &3613706432598455261
@@ -9594,9 +9609,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 8390022774997457328}
-          m_TargetAssemblyTypeName: PlayerAnimations, Assembly-CSharp
-          m_MethodName: resetAnimation
+        - m_Target: {fileID: 3448758870194882770}
+          m_TargetAssemblyTypeName: CharacterAnimation, Assembly-CSharp
+          m_MethodName: ResetAnimation
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
