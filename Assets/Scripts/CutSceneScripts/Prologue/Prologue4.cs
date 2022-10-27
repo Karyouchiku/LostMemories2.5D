@@ -105,7 +105,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     {
         yield return new WaitForSeconds(2);
         targetLocation[1] = locations[8].position;
-        ActorsMoveSpeed[0] = 1f;
+        ActorsMoveSpeed[0] = 1.7f;
         yield return new WaitForSeconds(2);
         targetLocation[0] = locations[7].position;
         ActorsMoveSpeed[0] = 0.8f;
@@ -150,6 +150,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
         loc2.y = actors[1].transform.position.y;
         actors[0].transform.position = loc1;
         actors[1].transform.position = loc2;
+        yield return new WaitForSeconds(0.5f);
         transition.ManualTransitionOFF();
     }
     public void TurnStopLoop()

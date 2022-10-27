@@ -50,9 +50,9 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     }
     IEnumerator thisSceneDoneCoroutine()
     {
+        target = Vector3.zero;
         door.Interact();
         yield return new WaitForSeconds(1);
-        Disables(true);
         gameObject.SetActive(false);
     }
     void Disables(bool turn)
@@ -65,13 +65,13 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE1()
     {
         actor[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
-        player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();
         Disables(false);
     }
     public void GoOutSide()
     {
         locNum = 0;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        
         target = loc[locNum].transform.position;
         StartMoving();
     }
@@ -90,12 +90,15 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
         target = loc[2].transform.position;
         target.y = actor[0].transform.position.y;
         actor[0].transform.position = target;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 0.2f;
         EndingScene();
         
     }
     public void EndingScene()
     {
         thisSceneDone = true;
+        target = Vector3.zero;
+        
     }
     
     public object SaveState()

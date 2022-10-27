@@ -11,6 +11,9 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     public static event ItemHandler RemoveFromInv;
     public delegate void ItemHandler(SOItemData key);
 
+    [Header("Tick for CutScenes")]
+    public bool CutSceneDoor;
+
     PlayerInventory inventory;
     [Header("Door Info")]
     public SOItemData key;
@@ -29,7 +32,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Burito");
         inGameUi = GameObject.Find("IngameUI");
-        transition = GameObject.FindGameObjectWithTag("Canvas");
+        transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
     }
     public void Interact()
@@ -76,7 +79,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     GameObject player;
     GameObject inGameUi;
     [Header("Teleport to other position")]
-    GameObject transition;
+    BlackTransitioning transition;
     public GameObject changePositionTo;
     Vector3 changePositionToVec;
 
@@ -98,10 +101,13 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
-        player.GetComponent<CharacterController>().enabled = false;
-        player.GetComponent<PlayerControls>().enabled = false;
-        player.GetComponent<CharacterAnimation>().ResetAnimation();
-        transition.GetComponent<BlackTransitioning>().StartTransition();
+        if (!CutSceneDoor)
+        {
+            player.GetComponent<CharacterController>().enabled = false;
+            player.GetComponent<PlayerControls>().enabled = false;
+            player.GetComponent<CharacterAnimation>().ResetAnimation();
+        }
+        transition.StartTransition();
         yield return new WaitForSeconds(1f);
 
         worldRenderer.RenderWorlds(lighting, renderClassRoom, renderSchoolHallway, renderMCHouseOutside,
@@ -110,12 +116,13 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
         worldRenderer.StartRender();
         player.transform.position = changePositionToVec;
-        player.GetComponent<PlayerControls>().enabled = true;
-        player.GetComponent<CharacterController>().enabled = true;
-        inGameUi.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        if (!CutSceneDoor)
+        {
+            player.GetComponent<PlayerControls>().enabled = true;
+            player.GetComponent<CharacterController>().enabled = true;
+            inGameUi.SetActive(true);
+        }
         OnTriggerExitBtn?.Invoke();
-        yield return null;
     }
 
     //For Playing SFX

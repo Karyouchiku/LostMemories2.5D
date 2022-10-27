@@ -55,7 +55,6 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     IEnumerator DisableThisScene()
     {
         yield return new WaitForSeconds(3f);
-        Disables(true);
         gameObject.SetActive(false);
     }
     void Disables(bool turn)
@@ -79,11 +78,11 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE1()
     {
+        
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 4;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
-        player.GetComponent<PlayerControls>().enabled = false;
-        GameObject.Find("IngameUI").SetActive(false);
-
+        Disables(false);
     }
     public void ForDE17()
     {
@@ -149,7 +148,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         targetLocation[0] = locations[11].transform.position;
         ActorsMoveSpeed[0] = 0.5f;
 
-        actors[4].gameObject.SetActive(true);
+        actors[4].SetActive(true);
         startMove[4] = true;
         targetLocation[4] = locations[12].transform.position;
     }
@@ -161,7 +160,6 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
 
     public void StartMove(int id)
     {
-        Disables(false);
         startMove[id] = true;
         if (id == 0)
         {
@@ -169,14 +167,17 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         }
         if (id == 1)
         {
+            actors[id].SetActive(true);
             targetLocation[id] = locations[1].transform.position;
         }
         if (id == 2)
         {
+            actors[id].SetActive(true);
             targetLocation[id] = locations[2].transform.position;
         }
         if (id == 3)
         {
+            actors[id].SetActive(true);
             targetLocation[id] = locations[3].transform.position;
         }
 

@@ -43,7 +43,7 @@ public class BlackTransitioning : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Camera.main.GetComponentInParent<CamFollowPlayer>().removeAnimation = false;
         blackTransition.SetBool("isTransitioning", false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         manualOn = false;
         blackTransition.gameObject.SetActive(false);
     }
