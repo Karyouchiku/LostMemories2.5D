@@ -110,7 +110,7 @@ MonoBehaviour:
     luaConditions: []
     questConditions: []
     acceptedTags:
-    - Player
+    - Burito
     acceptedGameObjects: []
     luaWizardIndex: -1
     lastEvaluationValue: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2fc1cb8e8166c944b9287128881ad36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguedb: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
+  dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
 --- !u!1 &2826319948338021867
 GameObject:
   m_ObjectHideFlags: 0

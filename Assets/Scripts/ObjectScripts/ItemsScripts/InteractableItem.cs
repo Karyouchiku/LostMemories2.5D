@@ -14,8 +14,16 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
     {
         if (!itemGot)
         {
-            OnItemCollected?.Invoke(itemData);
-            itemGot = true;
+            if (itemData != null)
+            {
+                OnItemCollected?.Invoke(itemData);
+                itemGot = true;
+
+            }
+            else
+            {
+                Debug.Log("No fucking item here bro");
+            }
         }
     }
 

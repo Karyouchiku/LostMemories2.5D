@@ -62,7 +62,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Player Decision
+      value: Burito
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -1326,6 +1326,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: ed5c271a-e1ab-47ff-86a6-2cd4332e8315
+        type: 0
+        typeString: 
       conversationID: 1
       isRoot: 0
       isGroup: 0
@@ -1401,8 +1405,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.49000034
+    canvasScrollPosition: {x: 0, y: 532.23157}
+    canvasZoom: 1.2099998
   - id: 2
     fields:
     - title: Title
@@ -11443,7 +11447,7 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 6.451416, y: 0}
+    canvasScrollPosition: {x: 9.67749, y: 329.03223}
     canvasZoom: 0.30999997
   - id: 5
     fields:

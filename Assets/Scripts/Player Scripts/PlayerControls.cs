@@ -10,7 +10,6 @@ public class PlayerControls : MonoBehaviour, ISaveable
     PlayerAnimations playerAnimations;
     CharacterController controller;
     Vector3 move;
-    public SpriteRenderer sprite;
     public Transform cam;
 
     [Header("Movement Settings")]
@@ -42,7 +41,6 @@ public class PlayerControls : MonoBehaviour, ISaveable
         {
             MovementScript();
         }
-
     }
 
     private void MovementScript()
