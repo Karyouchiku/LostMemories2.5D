@@ -25,13 +25,15 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     public AudioClip doorKnocking;
 
     AudioSource audioSource;
-
+    private void Awake()
+    {
+        inGameUi = GameObject.Find("IngameUI");
+    }
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<PlayerInventory>();
         audioSource = GameObject.Find("OtherSFX").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Burito");
-        inGameUi = GameObject.Find("IngameUI");
         transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
     }

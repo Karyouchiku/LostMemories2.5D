@@ -6,25 +6,15 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveSystem : MonoBehaviour
 {
     //Checkpoints
-    public string Checkpoints => $"{Application.persistentDataPath}/LostMemoriesCheckpoint.lm";
-
-    //Slots
-    public string SavePath1 => $"{Application.persistentDataPath}/LostMemories1.lm";
-    public string SavePath2 => $"{Application.persistentDataPath}/LostMemories2.lm";
-    public string SavePath3 => $"{Application.persistentDataPath}/LostMemories3.lm";
-    public string SavePath4 => $"{Application.persistentDataPath}/LostMemories4.lm";
-    public string SavePath5 => $"{Application.persistentDataPath}/LostMemories5.lm";
-
-    //Checkpoints
     public void SaveCheckpoint()
     {
-        var state = LoadFile(Checkpoints);
+        var state = LoadFile(LoadData.Checkpoints);
         SaveState(state);
-        SaveFile(state, Checkpoints);
+        SaveFile(state, LoadData.Checkpoints);
     }
     public void LoadCheckpoint()
     {
-        var state = LoadFile(Checkpoints);
+        var state = LoadFile(LoadData.Checkpoints);
         LoadState(state);
     }
 
@@ -32,59 +22,59 @@ public class SaveSystem : MonoBehaviour
     //Save Methods
     public void Save1()
     {
-        var state = LoadFile(SavePath1);
+        var state = LoadFile(LoadData.SavePath1);
         SaveState(state);
-        SaveFile(state, SavePath1);
+        SaveFile(state, LoadData.SavePath1);
     }
     public void Save2()
     {
-        var state = LoadFile(SavePath2);
+        var state = LoadFile(LoadData.SavePath2);
         SaveState(state);
-        SaveFile(state, SavePath2);
+        SaveFile(state, LoadData.SavePath2);
     }
     public void Save3()
     {
-        var state = LoadFile(SavePath3);
+        var state = LoadFile(LoadData.SavePath3);
         SaveState(state);
-        SaveFile(state, SavePath3);
+        SaveFile(state, LoadData.SavePath3);
     }
     public void Save4()
     {
-        var state = LoadFile(SavePath4);
+        var state = LoadFile(LoadData.SavePath4);
         SaveState(state);
-        SaveFile(state, SavePath4);
+        SaveFile(state, LoadData.SavePath4);
     }
     public void Save5()
     {
-        var state = LoadFile(SavePath5);
+        var state = LoadFile(LoadData.SavePath5);
         SaveState(state);
-        SaveFile(state, SavePath5);
+        SaveFile(state, LoadData.SavePath5);
     }
     
     //Load Methods
     public void Load1()
     {
-        var state = LoadFile(SavePath1);
+        var state = LoadFile(LoadData.SavePath1);
         LoadState(state);
     }
     public void Load2()
     {
-        var state = LoadFile(SavePath2);
+        var state = LoadFile(LoadData.SavePath2);
         LoadState(state);
     }
     public void Load3()
     {
-        var state = LoadFile(SavePath3);
+        var state = LoadFile(LoadData.SavePath3);
         LoadState(state);
     }
     public void Load4()
     {
-        var state = LoadFile(SavePath4);
+        var state = LoadFile(LoadData.SavePath4);
         LoadState(state);
     }
     public void Load5()
     {
-        var state = LoadFile(SavePath5);
+        var state = LoadFile(LoadData.SavePath5);
         LoadState(state);
     }
 

@@ -1833,18 +1833,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 8390022774997457331}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
@@ -5705,6 +5693,7 @@ MonoBehaviour:
   camX: 1.26
   camY: 2
   camZ: -1.7
+  removeAnimation: 0
 --- !u!114 &625580695774533318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5813,6 +5802,7 @@ GameObject:
   - component: {fileID: 1032332702381759148}
   - component: {fileID: 891323907937902290}
   - component: {fileID: 5462235592627586395}
+  - component: {fileID: 6936310805046284669}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -5948,6 +5938,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4d942ffeb794c41b7f1198472580c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6936310805046284669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376903145061478915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5d475da7c719541aa31569d80df6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8390022774997457338}
+  ingameUI: {fileID: 4543056469077714770}
+  movePlayer: 0
+  movePlayerLocation: {fileID: 0}
 --- !u!1 &4376903145101644261
 GameObject:
   m_ObjectHideFlags: 0
@@ -9398,7 +9404,7 @@ GameObject:
   - component: {fileID: 518608800465740527}
   - component: {fileID: 1470273725385840820}
   - component: {fileID: 882053406265924524}
-  - component: {fileID: 1734086496358948555}
+  - component: {fileID: 1012798455276709237}
   - component: {fileID: 8035506602178399119}
   m_Layer: 0
   m_Name: Player
@@ -9704,7 +9710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagSpecificElements: []
   layerSpecificElements: []
---- !u!114 &1734086496358948555
+--- !u!114 &1012798455276709237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

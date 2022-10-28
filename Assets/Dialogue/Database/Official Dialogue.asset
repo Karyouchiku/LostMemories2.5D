@@ -62,7 +62,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Burito
+      value: Player
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -84,9 +84,9 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Player Dialogue
+      value: NanayMo
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -94,15 +94,11 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    - title: Display Name
-      value: Burito
-      type: 0
-      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -11687,8 +11683,8 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 1632.2566}
-    canvasZoom: 0.63999987
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8799996
   - id: 5
     fields:
     - title: Title
@@ -14963,8 +14959,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 822.17365, y: 448.13666}
-    canvasZoom: 0.64
+    canvasScrollPosition: {x: 296.2026, y: 0}
+    canvasZoom: 0.78999984
   - id: 6
     fields:
     - title: Title

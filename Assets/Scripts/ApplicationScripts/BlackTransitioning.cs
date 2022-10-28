@@ -7,6 +7,13 @@ public class BlackTransitioning : MonoBehaviour
     public Animator blackTransition;
 
     bool manualOn;
+
+    public void StartTransition2ndVer()
+    {
+        blackTransition.gameObject.SetActive(true);
+        blackTransition.SetBool("isStart", true);
+    }
+
     public void ManualTransitionON()
     {
         blackTransition.gameObject.SetActive(true);
@@ -22,6 +29,7 @@ public class BlackTransitioning : MonoBehaviour
     IEnumerator ManualTransitionOFFCoroutine()
     {
         Camera.main.GetComponentInParent<CamFollowPlayer>().removeAnimation = false;
+        blackTransition.SetBool("isStart", false);
         blackTransition.SetBool("isTransitioning", false);
         yield return new WaitForSeconds(1);
         manualOn = false;
