@@ -45,8 +45,12 @@ public class MainMenuScripts : MonoBehaviour
     {
         if (LoadData.SaveGameDataID(saveID, true))
         {
-            StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
             loadingScreen.SetActive(true);
+            StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
+        }
+        else
+        {
+            Debug.Log("No Saved data");
         }
     }
     public void QuitGame()

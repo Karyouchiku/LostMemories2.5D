@@ -33,11 +33,11 @@ public static class LoadData
                 SavePath = Checkpoints;
                 break;
             default:
-                //SavePath = Checkpoints;
+                SavePath = Checkpoints;
                 break;
         }
 
-        if (File.Exists(SavePath))
+        if (SaveGameFileChecker(SavePath))
         {
             saveDataID = id;
             isOnLoadGameData = isloadgame;
@@ -60,4 +60,16 @@ public static class LoadData
     public static string SavePath4 => $"{Application.persistentDataPath}/LostMemories4.lm";
     public static string SavePath5 => $"{Application.persistentDataPath}/LostMemories5.lm";
 
+
+    public static bool SaveGameFileChecker(string SavePath)
+    {
+        if (File.Exists(SavePath))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

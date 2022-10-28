@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class IngameMenuScript : MonoBehaviour
 {
-    
-
     public Slider loadingProgress;
+    public GameObject loadingScreen;
+
     //Delete Later start
     //This is just for keyboard controls not for mobile
     public GameObject ingameUI;
@@ -40,10 +40,12 @@ public class IngameMenuScript : MonoBehaviour
     //Delete Later End
     void Update()
     {
-        //Delete this line too
-        KeyboardControls();
-
-        loadingProgress.value = Mathf.MoveTowards(loadingProgress.value, LoadingScreenScript.target, 3 * Time.deltaTime);
+        
+        KeyboardControls();//Delete this line too
+        if (loadingScreen.activeSelf)
+        {
+            loadingProgress.value = Mathf.MoveTowards(loadingProgress.value, LoadingScreenScript.target, 3 * Time.deltaTime);
+        }
     }
 
     public void BackToMainMenu()

@@ -22,16 +22,19 @@ public class LoadDataChecker : MonoBehaviour
                     saveSystem.Load1();
                     break;
                 case 2:
-                    saveSystem.Load1();
+                    saveSystem.Load2();
                     break;
                 case 3:
-                    saveSystem.Load1();
+                    saveSystem.Load3();
                     break;
                 case 4:
-                    saveSystem.Load1();
+                    saveSystem.Load4();
                     break;
                 case 5:
-                    saveSystem.Load1();
+                    saveSystem.Load5();
+                    break;
+                case 6:
+                    saveSystem.LoadCheckpoint();
                     break;
             }
             player.GetComponent<PlayerControls>().enabled = true;
@@ -46,7 +49,7 @@ public class LoadDataChecker : MonoBehaviour
         }
     }
     Vector3 target;
-    void Update()
+    void FixedUpdate()
     {
         
         if (movePlayer)

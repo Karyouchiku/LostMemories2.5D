@@ -62,7 +62,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: Player
+      value: Burito
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -11683,7 +11683,7 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 247.72745}
     canvasZoom: 0.8799996
   - id: 5
     fields:
