@@ -68,7 +68,7 @@ MonoBehaviour:
   - id: 5
     fields:
     - title: Name
-      value: New Actor 5
+      value: NPC
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -269,7 +269,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -315,7 +315,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 416
+        x: 418.46915
         y: 78
         width: 160
         height: 30
@@ -330,7 +330,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -385,7 +385,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -425,8 +425,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 590.843
-        y: 158.86598
+        x: 592.0776
+        y: 160.10056
         width: 160
         height: 30
     - id: 4
@@ -440,7 +440,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -452,7 +452,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Would you be so kind  to spare me a few coins, Player?
+        value: "Would// you be so kind  //t\no spare me a few coins,\n /Player?"
         type: 0
         typeString: 
       - title: Sequence
@@ -486,8 +486,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 207.59796
-        y: 207.86597
+        x: 224.88193
+        y: 206.63141
         width: 160
         height: 30
     - id: 5
@@ -501,7 +501,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -556,7 +556,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -611,7 +611,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -660,7 +660,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -696,7 +696,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 309.87067
-        y: 314.68414
+        y: 315.91873
         width: 160
         height: 30
     - id: 9
@@ -710,7 +710,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -771,7 +771,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -826,7 +826,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 1
+        value: 4
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -868,8 +868,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 534.0249
-        y: 264.54782
+        x: 532.79034
+        y: 270.72064
         width: 160
         height: 30
     - id: 12
@@ -883,7 +883,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -917,8 +917,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 534.0249
-        y: 314.54782
+        x: 532.79034
+        y: 321.9552
         width: 160
         height: 30
     - id: 13
@@ -932,7 +932,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 5
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
