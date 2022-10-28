@@ -5,88 +5,20 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveSystem : MonoBehaviour
 {
-    //Checkpoints
-    public void SaveCheckpoint()
-    {
-        var state = LoadFile(LoadData.Checkpoints);
-        SaveState(state);
-        SaveFile(state, LoadData.Checkpoints);
-    }
-    public void LoadCheckpoint()
-    {
-        var state = LoadFile(LoadData.Checkpoints);
-        LoadState(state);
-    }
-
-
     //Save Methods
-    public void Save1()
+    public void Save(int id)
     {
-        var state = LoadFile(LoadData.SavePath1);
+        var state = LoadFile(LoadData.SaveDatas[id]);
         SaveState(state);
-        SaveFile(state, LoadData.SavePath1);
+        FileStreamingManager.SaveFile(state, LoadData.SaveDatas[id]);
     }
-    public void Save2()
-    {
-        var state = LoadFile(LoadData.SavePath2);
-        SaveState(state);
-        SaveFile(state, LoadData.SavePath2);
-    }
-    public void Save3()
-    {
-        var state = LoadFile(LoadData.SavePath3);
-        SaveState(state);
-        SaveFile(state, LoadData.SavePath3);
-    }
-    public void Save4()
-    {
-        var state = LoadFile(LoadData.SavePath4);
-        SaveState(state);
-        SaveFile(state, LoadData.SavePath4);
-    }
-    public void Save5()
-    {
-        var state = LoadFile(LoadData.SavePath5);
-        SaveState(state);
-        SaveFile(state, LoadData.SavePath5);
-    }
-    
     //Load Methods
-    public void Load1()
+    public void Load(int id)
     {
-        var state = LoadFile(LoadData.SavePath1);
-        LoadState(state);
-    }
-    public void Load2()
-    {
-        var state = LoadFile(LoadData.SavePath2);
-        LoadState(state);
-    }
-    public void Load3()
-    {
-        var state = LoadFile(LoadData.SavePath3);
-        LoadState(state);
-    }
-    public void Load4()
-    {
-        var state = LoadFile(LoadData.SavePath4);
-        LoadState(state);
-    }
-    public void Load5()
-    {
-        var state = LoadFile(LoadData.SavePath5);
+        var state = LoadFile(LoadData.SaveDatas[id]);
         LoadState(state);
     }
 
-
-    public void SaveFile(object state, string SavePath)
-    {
-        using (var stream = File.Open(SavePath, FileMode.Create))
-        {
-            var formatter = new BinaryFormatter();
-            formatter.Serialize(stream, state);
-        }
-    }
     Dictionary<string, object> LoadFile(string SavePath)
     {
         if (!File.Exists(SavePath))

@@ -124,12 +124,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load4
-        m_Mode: 1
+        m_MethodName: Load
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -330,12 +330,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Save5
-        m_Mode: 1
+        m_MethodName: Save
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -408,6 +408,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5462235592627586395}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -748,12 +760,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: LoadCheckpoint
-        m_Mode: 1
+        m_MethodName: Load
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1089,12 +1101,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load3
-        m_Mode: 1
+        m_MethodName: Load
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1699,12 +1711,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Save2
-        m_Mode: 1
+        m_MethodName: Save
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1777,6 +1789,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5462235592627586395}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -6255,6 +6279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
+  dialoguedbBackup: {fileID: 11400000, guid: 2f655d372570e824bbec619f23268996, type: 2}
 --- !u!114 &6956954247003500474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6267,7 +6292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cb39fec1a072e4a9bea5be07887bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
 --- !u!114 &4554699131438108087
 MonoBehaviour:
@@ -6857,7 +6881,7 @@ MonoBehaviour:
   preloadResources: 0
   warmUpConversationController: 0
   dontHideImmediateDuringWarmup: 0
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
   allowOnlyOneInstance: 1
   onStartTriggerWaitForSaveDataApplied: 0
   dialogueTimeMode: 0
@@ -7047,12 +7071,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Save4
-        m_Mode: 1
+        m_MethodName: Save
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7125,6 +7149,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5462235592627586395}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -7253,12 +7289,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load5
-        m_Mode: 1
+        m_MethodName: Load
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7875,12 +7911,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load2
-        m_Mode: 1
+        m_MethodName: Load
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8157,12 +8193,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Save3
-        m_Mode: 1
+        m_MethodName: Save
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8235,6 +8271,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5462235592627586395}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -9145,8 +9193,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Save1
-        m_Mode: 1
+        m_MethodName: Save
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9223,6 +9271,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5462235592627586395}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -10468,8 +10528,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load1
-        m_Mode: 1
+        m_MethodName: Load
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

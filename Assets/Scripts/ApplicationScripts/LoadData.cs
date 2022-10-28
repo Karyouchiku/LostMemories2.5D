@@ -12,30 +12,7 @@ public static class LoadData
     public static bool SaveGameDataID(int id, bool isloadgame)
     {
         string SavePath;
-        switch (id)
-        {
-            case 1:
-                SavePath = SavePath1;
-                break;
-            case 2:
-                SavePath = SavePath2;
-                break;
-            case 3:
-                SavePath = SavePath3;
-                break;
-            case 4:
-                SavePath = SavePath4;
-                break;
-            case 5:
-                SavePath = SavePath5;
-                break;
-            case 6:
-                SavePath = Checkpoints;
-                break;
-            default:
-                SavePath = Checkpoints;
-                break;
-        }
+        SavePath = SaveDatas[id];
 
         if (SaveGameFileChecker(SavePath))
         {
@@ -48,7 +25,21 @@ public static class LoadData
             return false;
         }
     }
+    public static string[] SaveDatas =
+    { 
+        $"{Application.persistentDataPath}/LostMemories1.lm",           //0
+        $"{Application.persistentDataPath}/LostMemories2.lm",           //1
+        $"{Application.persistentDataPath}/LostMemories3.lm",           //2
+        $"{Application.persistentDataPath}/LostMemories4.lm",           //3
+        $"{Application.persistentDataPath}/LostMemories5.lm",           //4
+        $"{Application.persistentDataPath}/LostMemoriesCheckpoint.lm",  //5
+        $"{Application.persistentDataPath}/Settings.lm",                //6
+        $"{Application.persistentDataPath}/LostMemories0.lm"            //7
+    };
 
+    /* Old string paths
+    //MainMenu
+    public static string Settings => $"{Application.persistentDataPath}/Settings.lm";
 
     //Checkpoints
     public static string Checkpoints => $"{Application.persistentDataPath}/LostMemoriesCheckpoint.lm";
@@ -59,7 +50,7 @@ public static class LoadData
     public static string SavePath3 => $"{Application.persistentDataPath}/LostMemories3.lm";
     public static string SavePath4 => $"{Application.persistentDataPath}/LostMemories4.lm";
     public static string SavePath5 => $"{Application.persistentDataPath}/LostMemories5.lm";
-
+    */
 
     public static bool SaveGameFileChecker(string SavePath)
     {

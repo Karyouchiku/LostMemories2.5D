@@ -15,6 +15,10 @@ public class IngameMenuScript : MonoBehaviour
     public Button resumeBtn;
     public Button inventoryButton;
 
+    void Start()
+    {
+        AudioListener.volume = MenuStaticVariables.soundVolume;
+    }
     void KeyboardControls()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

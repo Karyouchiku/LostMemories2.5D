@@ -16,27 +16,7 @@ public class LoadDataChecker : MonoBehaviour
         saveSystem = GetComponent<SaveSystem>();
         if (LoadData.isOnLoadGameData)
         {
-            switch (LoadData.saveDataID)
-            {
-                case 1:
-                    saveSystem.Load1();
-                    break;
-                case 2:
-                    saveSystem.Load2();
-                    break;
-                case 3:
-                    saveSystem.Load3();
-                    break;
-                case 4:
-                    saveSystem.Load4();
-                    break;
-                case 5:
-                    saveSystem.Load5();
-                    break;
-                case 6:
-                    saveSystem.LoadCheckpoint();
-                    break;
-            }
+            saveSystem.Load(LoadData.saveDataID);
             player.GetComponent<PlayerControls>().enabled = true;
             
         }
