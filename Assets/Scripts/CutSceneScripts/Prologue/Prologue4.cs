@@ -55,7 +55,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                StartCoroutine(DisableThisScene());
+                gameObject.SetActive(false);
             }
         }
     }
@@ -65,11 +65,6 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
         player.GetComponent<PlayerControls>().enabled = turn;
         player.GetComponent<CharacterAnimation>().ResetAnimation();
 
-    }
-    IEnumerator DisableThisScene()
-    {
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
     }
 
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
@@ -114,9 +109,9 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     public DialogueModifier dialogueModifier;
     public void EnterDoor()
     {
+        EndingScene();
         doors[0].Interact();
         dialogueModifier.AddListenersOnConversationEnd();
-        EndingScene();
     }
     
 
