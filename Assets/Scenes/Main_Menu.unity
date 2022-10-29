@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingProgress: {fileID: 1423023894}
-  ContinueBtn: {fileID: 0}
+  ContinueBtn: {fileID: 1995013912}
   loadingScreen: {fileID: 1148332852}
   InputPlayerNameObject: {fileID: 1040027051}
   playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}

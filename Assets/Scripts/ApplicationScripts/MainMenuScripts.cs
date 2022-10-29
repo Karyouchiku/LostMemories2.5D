@@ -20,6 +20,12 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public Slider Volume;
     void Awake()
     {
+        if (LoadDataCheckerInMainMenu.isThisLoadGame)
+        {
+            LoadDataCheckerInMainMenu.isThisLoadGame = false;
+            LoadDataCheckerInMainMenu.saveGameID = 0;
+            LoadGame(LoadDataCheckerInMainMenu.saveGameID);
+        }
         MenuStaticVariables.isContinueAvailable = LoadData.SaveGameFileChecker(LoadData.SaveDatas[7]);
         if (MenuStaticVariables.isContinueAvailable)
         {
@@ -29,6 +35,10 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
         if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[6]))
         {
             saveSystem.LoadMainMenuSettings();
+        }
+        else
+        {
+            MenuStaticVariables.soundVolume = 1;
         }
         Volume.value = MenuStaticVariables.soundVolume;
     }

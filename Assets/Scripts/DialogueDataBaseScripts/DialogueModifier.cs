@@ -4,34 +4,30 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using PixelCrushers.DialogueSystem.Wrappers;
+using UnityEngine.Events;
 
 public class DialogueModifier : MonoBehaviour, ISaveable
 {
     public PlayerName playerName;
     public DialogueDatabase dialoguedb;
     public DialogueDatabase dialoguedbBackup;
-
     string thisPlayerName;
     string namePattern = "Burito";
-    void Start()
+
+    void Awake()
     {
         thisPlayerName = playerName.playerName;
-        RestorePlayerNameInDialogues();
         ModifyPlayerNameInDialogues();
     }
-
-    public void ModifyPlayerNameInDialogueNames()
-    {
-        dialoguedb.actors[1].Name = thisPlayerName;
-    }
-
-    public void RestorePlayerNameInDialogues()
+    public void RestoreDialogues()
     {
         dialoguedb.conversations = dialoguedbBackup.conversations;
-        
+        dialoguedb.actors[1].Name = dialoguedbBackup.actors[1].Name;
     }
+    
     public void ModifyPlayerNameInDialogues()
     {
+        dialoguedb.actors[1].Name = thisPlayerName;
         for (int i = 0; i < dialoguedb.conversations.Count; i++)
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
@@ -40,7 +36,26 @@ public class DialogueModifier : MonoBehaviour, ISaveable
             }
         }
     }
-
+    //ADDING LISTENER ON ONCONVERSATIONEND
+    UnityAction<Transform> addToOnConversationEnd;
+    public GameObject inGameUI;
+    public GameObject player;
+    public void AddListenersOnConversationEnd()
+    {
+        addToOnConversationEnd += EnableIngameUI;
+        addToOnConversationEnd += EnablePlayerControls;
+        player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.AddListener(addToOnConversationEnd);
+    }
+    void EnableIngameUI(Transform inGameUI)
+    {
+        inGameUI = this.inGameUI.transform;
+        inGameUI.gameObject.SetActive(false);
+    }
+    void EnablePlayerControls(Transform player)
+    {
+        player = this.player.transform;
+        player.GetComponent<PlayerControls>().enabled = true;
+    }
 
     public object SaveState()
     {
@@ -55,8 +70,8 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         var saveData = (SaveData)state;
         playerName.playerName = saveData.playerName;
         thisPlayerName = saveData.playerName;
-        RestorePlayerNameInDialogues();
-        ModifyPlayerNameInDialogueNames();
+
+        //RestoreDialogues();
         ModifyPlayerNameInDialogues();
     }
 

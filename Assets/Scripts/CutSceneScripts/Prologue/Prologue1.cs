@@ -45,16 +45,10 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
         }
         else
         {
-            StartCoroutine(thisSceneDoneCoroutine());
+            gameObject.SetActive(false);
         }
     }
-    IEnumerator thisSceneDoneCoroutine()
-    {
-        target = Vector3.zero;
-        door.Interact();
-        yield return new WaitForSeconds(1);
-        gameObject.SetActive(false);
-    }
+
     void Disables(bool turn)
     {
         inGameUI.SetActive(turn);
@@ -86,19 +80,24 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     }
     public void EnterDoor()
     {
+        /*
         startMove = false;
         target = loc[2].transform.position;
         target.y = actor[0].transform.position.y;
         actor[0].transform.position = target;
+        */
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 0.2f;
         EndingScene();
         
     }
     public void EndingScene()
     {
+        door.Interact();
+        //target = Vector3.zero;
         thisSceneDone = true;
-        target = Vector3.zero;
-        
+    }
+    public void LocationCheck()
+    {
     }
     
     public object SaveState()
@@ -114,12 +113,6 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
     }
-
-    public void LocationCheck()
-    {
-        throw new NotImplementedException();
-    }
-
     [Serializable]
     struct SaveData
     {

@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -760,7 +760,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1101,7 +1101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6104,10 +6104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingProgress: {fileID: 2333727033802145039}
   loadingScreen: {fileID: 4630095817907657498}
-  ingameUI: {fileID: 4543056469077714770}
-  pauseBtn: {fileID: 4062689899915477587}
-  resumeBtn: {fileID: 5733831737649113533}
-  inventoryButton: {fileID: 4376903144138279413}
+  dialogueModifier: {fileID: 1518939258123976309}
+  saveValues: {fileID: 6956954247003500474}
 --- !u!114 &891323907937902290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6133,6 +6131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4d942ffeb794c41b7f1198472580c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingameMenuScript: {fileID: 1032332702381759148}
 --- !u!114 &6936310805046284669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6147,8 +6146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8390022774997457338}
   ingameUI: {fileID: 4543056469077714770}
-  movePlayer: 0
   movePlayerLocation: {fileID: 0}
+  movePlayer: 0
 --- !u!1 &4376903145101644261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6280,6 +6279,8 @@ MonoBehaviour:
   playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
   dialoguedbBackup: {fileID: 11400000, guid: 2f655d372570e824bbec619f23268996, type: 2}
+  inGameUI: {fileID: 4543056469077714770}
+  player: {fileID: 8390022774997457338}
 --- !u!114 &6956954247003500474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6293,6 +6294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
+  dialoguedbBackup: {fileID: 11400000, guid: 2f655d372570e824bbec619f23268996, type: 2}
 --- !u!114 &4554699131438108087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7289,7 +7291,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7911,7 +7913,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8567,7 +8569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Slot 1
+  m_text: Check point
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf4de473fe0f8cf49be90441ffc68e21, type: 2}
   m_sharedMaterial: {fileID: 9146487711537113910, guid: cf4de473fe0f8cf49be90441ffc68e21, type: 2}
@@ -10528,7 +10530,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5462235592627586395}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: LoadGame
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

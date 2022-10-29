@@ -20,8 +20,6 @@ public class SplashScreen : MonoBehaviour
         yield return new WaitForSeconds(4);
         blackFade.GetComponent<Animator>().SetBool("fadeOut",true);
         yield return new WaitForSeconds(2);
-        warningScreen.SetActive(false);
-        blackFade.SetActive(false);
         if (!LoadData.SaveGameFileChecker(LoadData.SaveDatas[6]))
         {
             ageConfirmationScreen.SetActive(true);
@@ -30,11 +28,14 @@ public class SplashScreen : MonoBehaviour
         {
             GoToMainMenu();
         }
+        warningScreen.SetActive(false);
+        blackFade.SetActive(false);
     }
 
     public void GoToMainMenu()
     {
         FirstSave();
+        MenuStaticVariables.soundVolume = 1;
         SceneManager.LoadScene(1);
     }
 

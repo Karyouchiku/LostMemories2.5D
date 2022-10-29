@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveSystem : MonoBehaviour
 {
+    
     //Save Methods
     public void Save(int id)
     {
@@ -17,6 +19,22 @@ public class SaveSystem : MonoBehaviour
     {
         var state = LoadFile(LoadData.SaveDatas[id]);
         LoadState(state);
+    }
+    public IngameMenuScript ingameMenuScript;
+    public void LoadGame(int id)
+    {
+        if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[id]))
+        {
+            LoadDataCheckerInMainMenu.isThisLoadGame = true;
+            LoadDataCheckerInMainMenu.saveGameID = id;
+            ingameMenuScript.BackToMainMenu();
+        }
+        else
+        {
+            Debug.Log("No Save FIle Here");
+        }
+        
+
     }
 
     Dictionary<string, object> LoadFile(string SavePath)

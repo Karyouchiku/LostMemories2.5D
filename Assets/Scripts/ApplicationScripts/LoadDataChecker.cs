@@ -6,10 +6,11 @@ public class LoadDataChecker : MonoBehaviour
 {
     SaveSystem saveSystem;
     BlackTransitioning trasitioning;
+    [Header("Data Needed for NewGame")]
     public GameObject player;
     public GameObject ingameUI;
-    public bool movePlayer;
     public GameObject movePlayerLocation;
+    public bool movePlayer;
     void Awake()
     {
         trasitioning = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();

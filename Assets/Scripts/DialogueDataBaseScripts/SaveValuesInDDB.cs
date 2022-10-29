@@ -7,8 +7,18 @@ using PixelCrushers.DialogueSystem.Wrappers;
 public class SaveValuesInDDB : MonoBehaviour, ISaveable
 {
     public DialogueDatabase dialoguedb;
+    public DialogueDatabase dialoguedbBackup;
 
     float personalityValue;
+
+    void Awake()
+    {
+        RestoreValues();
+    }
+    public void RestoreValues()
+    {
+        dialoguedb.variables[0].InitialFloatValue = dialoguedbBackup.variables[0].InitialFloatValue;
+    }
 
     public void SavePersonalityValue()
     {

@@ -105,10 +105,10 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         changePositionToVec = changePositionTo.transform.position;
         if (!CutSceneDoor)
         {
-            player.GetComponent<CharacterController>().enabled = false;
             player.GetComponent<PlayerControls>().enabled = false;
-            player.GetComponent<CharacterAnimation>().ResetAnimation();
         }
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<CharacterAnimation>().ResetAnimation();
         transition.StartTransition();
         yield return new WaitForSeconds(1f);
 
@@ -118,10 +118,10 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
         worldRenderer.StartRender();
         player.transform.position = changePositionToVec;
+        player.GetComponent<CharacterController>().enabled = true;
         if (!CutSceneDoor)
         {
             player.GetComponent<PlayerControls>().enabled = true;
-            player.GetComponent<CharacterController>().enabled = true;
             inGameUi.SetActive(true);
         }
         OnTriggerExitBtn?.Invoke();
