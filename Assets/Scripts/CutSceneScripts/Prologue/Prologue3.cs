@@ -13,7 +13,7 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
     //[Header("Initial Data")]
     bool thisSceneDone;
     bool[] startMove;
-
+    DialogueSystemController dialogueSystemController;
     [Header("Portal Doors Involved")]
     public PortalDoor[] doors;
     [Header("Actors: How many actors is present in this scene")]
@@ -31,6 +31,7 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
         startMove = new bool[actors.Length];
         targetLocation = new Vector3[actors.Length];
         anim = new CharacterAnimation[actors.Length];
+        dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
         for (int i = 0; i < actors.Length; i++)
         {
@@ -51,21 +52,9 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                StartCoroutine(DisableThisScene());
+                gameObject.SetActive(false);
             }
         }
-    }
-    void Disables(bool turn)
-    {
-        inGameUI.SetActive(turn);
-        player.GetComponent<PlayerControls>().enabled = turn;
-        player.GetComponent<CharacterAnimation>().ResetAnimation();
-
-    }
-    IEnumerator DisableThisScene()
-    {
-        yield return new WaitForSeconds(3f);
-        gameObject.SetActive(false);
     }
 
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
@@ -83,7 +72,6 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE1()
     {
         actors[2].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
-        Disables(false);
 
         for (int i = 2; i < actors.Length; i++)
         {
@@ -94,6 +82,7 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE3()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         StartCoroutine(ForDE3Coroutine());
         transition.ManualTransitionON();
     }
@@ -132,6 +121,7 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE14()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         transition.ManualTransitionON();
     }
 
@@ -154,6 +144,7 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE20()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
         targetLocation[1] = locations[12].position;
         ActorsMoveSpeed[1] = 1f;
     }
@@ -202,10 +193,8 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
     public void StartMoving()
     {
         startThisScene = true;
-        Disables(false);
-        int id = 0;
-        startMove[id] = true;
-        targetLocation[id] = locations[id].position;
+        startMove[0] = true;
+        targetLocation[0] = locations[0].position;
     }
 
     public void EnterDoor()

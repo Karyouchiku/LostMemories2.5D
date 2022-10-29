@@ -88,15 +88,17 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE17()
     {
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
-        StartCoroutine(ForDE17Coroutine());
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 1.5f;
         targetLocation[2] = locations[4].transform.position;
+        ActorsMoveSpeed[2] = 1.3f;
+        StartCoroutine(ForDE17Coroutine());
     }
     IEnumerator ForDE17Coroutine()
     {
-        targetLocation[2] = locations[4].transform.position;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         targetLocation[2] = locations[2].transform.position;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 4;
     }
     public void ForDE29()
     {
@@ -110,6 +112,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE33()
     {
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2f;
         StartCoroutine(ForDE33Coroutine());
     }
     IEnumerator ForDE33Coroutine()
@@ -150,6 +153,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE40()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         doors[0].Interact();
         EndingScene();
     }
@@ -164,11 +168,14 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE43()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2;
         doors[1].Interact();
         EndingScene();
     }
     public void ForDE44()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2;
         doors[1].Interact();
         EndingScene();
     }

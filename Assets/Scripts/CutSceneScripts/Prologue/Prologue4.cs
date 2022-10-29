@@ -59,14 +59,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
             }
         }
     }
-    void Disables(bool turn)
-    {
-        inGameUI.SetActive(turn);
-        player.GetComponent<PlayerControls>().enabled = turn;
-        player.GetComponent<CharacterAnimation>().ResetAnimation();
-
-    }
-
+   
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -82,8 +75,8 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     public void StartMoving()
     {
         startThisScene = true;
-        Disables(false);
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
         for (int i = 0; i < actors.Length; i++)
         {
             startMove[i] = true;
@@ -104,14 +97,16 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
         yield return new WaitForSeconds(2);
         targetLocation[0] = locations[7].position;
         ActorsMoveSpeed[0] = 0.8f;
+        yield return new WaitForSeconds(1);
+        actors[1].SetActive(false);
     }
 
     public DialogueModifier dialogueModifier;
     public void EnterDoor()
     {
-        EndingScene();
         doors[0].Interact();
-        dialogueModifier.AddListenersOnConversationEnd();
+        //dialogueModifier.AddListenersOnConversationEnd();
+        EndingScene();
     }
     
 

@@ -6278,7 +6278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
-  dialoguedbBackup: {fileID: 11400000, guid: 2f655d372570e824bbec619f23268996, type: 2}
+  dialoguedbBackup: {fileID: 11400000, guid: 0c089693e23c2cf4a87a4a28890c1cbe, type: 2}
   inGameUI: {fileID: 4543056469077714770}
   player: {fileID: 8390022774997457338}
 --- !u!114 &6956954247003500474
@@ -6294,7 +6294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
-  dialoguedbBackup: {fileID: 11400000, guid: 2f655d372570e824bbec619f23268996, type: 2}
+  dialoguedbBackup: {fileID: 11400000, guid: 0c089693e23c2cf4a87a4a28890c1cbe, type: 2}
 --- !u!114 &4554699131438108087
 MonoBehaviour:
   m_ObjectHideFlags: 0
