@@ -89,6 +89,7 @@ public class Prologue5 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE01_02_03()
     {
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        locations[0].GetComponent<BoxCollider>().enabled = false;
     }
     public void ForDE04()
     {

@@ -10,12 +10,13 @@ public class DialogueModifier : MonoBehaviour, ISaveable
 {
     public PlayerName playerName;
     public DialogueDatabase dialoguedb;
-    public DialogueDatabase dialoguedbBackup;
+    DialogueDatabase dialoguedbBackup;
     string thisPlayerName;
     string namePattern = "Burito";
 
     void Awake()
     {
+        dialoguedbBackup = dialoguedb;
         thisPlayerName = playerName.playerName;
         ModifyPlayerNameInDialogues();
     }
@@ -36,6 +37,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
             }
         }
     }
+
     //ADDING LISTENER ON ONCONVERSATIONEND
     UnityAction<Transform> addToOnConversationEnd;
     public GameObject inGameUI;
@@ -49,7 +51,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     void EnableIngameUI(Transform inGameUI)
     {
         inGameUI = this.inGameUI.transform;
-        inGameUI.gameObject.SetActive(false);
+        inGameUI.gameObject.SetActive(true);
     }
     void EnablePlayerControls(Transform player)
     {

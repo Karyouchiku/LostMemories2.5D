@@ -132,7 +132,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     }
     public void TurnStopLoop()
     {
-        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         stopLooping = false;
     }
     bool stopLooping;

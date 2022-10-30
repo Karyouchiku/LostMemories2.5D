@@ -23,7 +23,6 @@ public class IngameMenuScript : MonoBehaviour
     }
     [Header("Restore backup DDB")]
     public DialogueModifier dialogueModifier;
-    public SaveValuesInDDB saveValues;
     public void BackToMainMenu()
     {
         StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(1));
@@ -31,7 +30,6 @@ public class IngameMenuScript : MonoBehaviour
     public void RestoreDDB()
     {
         dialogueModifier.RestoreDialogues();
-        saveValues.RestoreValues();
     }
 
     public void ExitGame()

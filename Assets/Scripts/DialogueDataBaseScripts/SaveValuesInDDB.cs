@@ -2,36 +2,49 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PixelCrushers.DialogueSystem.Wrappers;
-
+using UnityEngine.UI;
+using PixelCrushers.DialogueSystem;
+using TMPro;
 public class SaveValuesInDDB : MonoBehaviour, ISaveable
 {
-    public DialogueDatabase dialoguedb;
-    public DialogueDatabase dialoguedbBackup;
+    [Header("For Debugging")]
+    public TMP_Text PPointsText;
 
-    float personalityValue;
 
-    void Awake()
+    double personalityValue;
+
+    
+    public void SetPersonalityPointsValue(double value)
     {
-        RestoreValues();
+        personalityValue += value;
     }
-    public void RestoreValues()
+    public double GetPersonalityPointsValue()
     {
-        dialoguedb.variables[0].InitialFloatValue = dialoguedbBackup.variables[0].InitialFloatValue;
+        return personalityValue;
+    }
+    //FOR DEBUGGING
+    
+    void OnEnable()
+    {
+        // Make the functions available to Lua: (Replace these lines with your own.)
+        Lua.RegisterFunction("GetPersonalityPoints", this, SymbolExtensions.GetMethodInfo(() => GetPersonalityPointsValue()));
+        Lua.RegisterFunction("AddPersonalityPoints", this, SymbolExtensions.GetMethodInfo(() => SetPersonalityPointsValue((double)0)));
     }
 
-    public void SavePersonalityValue()
+    void OnDisable()
     {
-        personalityValue = dialoguedb.variables[0].InitialFloatValue;
+        Lua.UnregisterFunction("GetPersonalityPoints");
+        Lua.UnregisterFunction("AddPersonalityPoints");
     }
-    public void LoadPersonalityValue()
+    void Update()
     {
-        dialoguedb.variables[0].InitialFloatValue = personalityValue;
+        PPointsText.text = $"Personality Points: {personalityValue}";
     }
+
+    //----For debugging
 
     public object SaveState()
     {
-        SavePersonalityValue();
         return new SaveData()
         {
             personalityValue = this.personalityValue
@@ -42,13 +55,12 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         this.personalityValue = saveData.personalityValue;
-        LoadPersonalityValue();
     }
 
 
     [Serializable]
     struct SaveData
     {
-        public float personalityValue;
+        public double personalityValue;
     }
 }

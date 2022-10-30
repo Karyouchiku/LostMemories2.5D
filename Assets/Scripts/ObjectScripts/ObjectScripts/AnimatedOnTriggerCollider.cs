@@ -31,7 +31,7 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
 
     void PlayAnim(Collider other, bool isOpen)
     {
-        if (other.tag == "Burito")
+        if (other.tag == "Burito" || other.tag == "InteractableNPC")
         {
             if (isOpen)
             {

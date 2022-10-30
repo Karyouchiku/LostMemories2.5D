@@ -17,12 +17,14 @@ public class LoadDataChecker : MonoBehaviour
         saveSystem = GetComponent<SaveSystem>();
         if (LoadData.isOnLoadGameData)
         {
+            //Check When this is a Load Game
             saveSystem.Load(LoadData.saveDataID);
             player.GetComponent<PlayerControls>().enabled = true;
             
         }
         else
         {
+            //This is for New Game
             player.GetComponent<PlayerControls>().enabled = false;
             ingameUI.SetActive(false);
             movePlayer = true;
