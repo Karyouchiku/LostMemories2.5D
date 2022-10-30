@@ -14,7 +14,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
 
     //[Header("Initial Data")]
     DialogueSystemController dialogueSystemController;
-    bool thisSceneDone;
+    public bool thisSceneDone;
     bool[] startMove;
 
     [Header("Portal Doors Involved")]
@@ -55,23 +55,11 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                StartCoroutine(DisableThisScene());
+                gameObject.SetActive(false);
             }
         }
     }
-    void Disables(bool turn)
-    {
-        inGameUI.SetActive(turn);
-        player.GetComponent<PlayerControls>().enabled = turn;
-        player.GetComponent<CharacterAnimation>().ResetAnimation();
-
-    }
-    IEnumerator DisableThisScene()
-    {
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
-    }
-
+   
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -87,8 +75,8 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     public void StartMoving()
     {
         startThisScene = true;
-        Disables(false);
-        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
         for (int i = 0; i < actors.Length; i++)
         {
             startMove[i] = true;
@@ -105,33 +93,22 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     {
         yield return new WaitForSeconds(2);
         targetLocation[1] = locations[8].position;
-        ActorsMoveSpeed[0] = 1.7f;
+        ActorsMoveSpeed[1] = 2f;
         yield return new WaitForSeconds(2);
         targetLocation[0] = locations[7].position;
         ActorsMoveSpeed[0] = 0.8f;
+        yield return new WaitForSeconds(1);
+        actors[1].SetActive(false);
     }
 
-    //ADDING LISTENER ON ONCONVERSATIONEND
-    UnityAction<Transform> addToOnConversationEnd;
+    public DialogueModifier dialogueModifier;
     public void EnterDoor()
     {
         doors[0].Interact();
-        addToOnConversationEnd += EnableIngameUI;
-        addToOnConversationEnd += EnablePlayerControls;
-        player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.AddListener(addToOnConversationEnd);
+        //dialogueModifier.AddListenersOnConversationEnd();
         EndingScene();
     }
-    void EnableIngameUI(Transform inGameUI)
-    {
-        inGameUI = this.inGameUI.transform;
-        inGameUI.gameObject.SetActive(false);
-    }
-    void EnablePlayerControls(Transform player)
-    {
-        player = this.player.transform;
-        player.GetComponent<PlayerControls>().enabled = true;
-    }
-
+    
 
     bool tpAvalable = true;
     public void TeleportTolocation()
@@ -155,6 +132,7 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
     }
     public void TurnStopLoop()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         stopLooping = false;
     }
     bool stopLooping;

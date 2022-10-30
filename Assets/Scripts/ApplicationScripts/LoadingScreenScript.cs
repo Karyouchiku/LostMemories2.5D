@@ -15,6 +15,7 @@ public static class LoadingScreenScript
             target = asyncOperation.progress;
             if (target >= 0.9f)
             {
+                yield return new WaitForSeconds(0.5f);
                 asyncOperation.allowSceneActivation = true;
             }
             

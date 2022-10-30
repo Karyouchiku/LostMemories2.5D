@@ -36,7 +36,6 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
-
     
     void Update()
     {
@@ -49,28 +48,16 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         }
         else
         {
-            StartCoroutine(DisableThisScene());
+            gameObject.SetActive(false);
         }
-    }
-    IEnumerator DisableThisScene()
-    {
-        yield return new WaitForSeconds(3f);
-        gameObject.SetActive(false);
-    }
-    void Disables(bool turn)
-    {
-        inGameUI.SetActive(turn);
-        player.GetComponent<PlayerControls>().enabled = turn;
-        player.GetComponent<CharacterAnimation>().ResetAnimation();
-
     }
 
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
         {
-            animVec = target - actor.transform.position;
             target.y = actor.transform.position.y;
+            animVec = target - actor.transform.position;
             actor.transform.position = Vector3.MoveTowards(actor.transform.position, target, mSpeed * Time.deltaTime);
             pAnim.moveX = animVec.x;
             pAnim.moveZ = animVec.z;
@@ -78,26 +65,44 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE1()
     {
-        
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 4;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
-        Disables(false);
+        startMove[0] = true;
+        targetLocation[0] = locations[0].transform.position;
+    }
+    public void ForDE2()
+    {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        for (int i = 1; i < (actors.Length-1); i++)
+        {
+            startMove[i] = true;
+            actors[i].SetActive(true);
+            targetLocation[i] = locations[i].transform.position;
+        }
+    }
+    public void ForDE3_8_13()
+    {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
     }
     public void ForDE17()
     {
-        StartCoroutine(ForDE17Coroutine());
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 1.5f;
         targetLocation[2] = locations[4].transform.position;
+        ActorsMoveSpeed[2] = 1.3f;
+        StartCoroutine(ForDE17Coroutine());
     }
     IEnumerator ForDE17Coroutine()
     {
-        targetLocation[2] = locations[4].transform.position;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         targetLocation[2] = locations[2].transform.position;
-        yield return null;
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 4;
     }
     public void ForDE29()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         transition.ManualTransitionON();
         targetLocation[1] = locations[8].transform.position;
         targetLocation[2] = locations[9].transform.position;
@@ -106,6 +111,8 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     
     public void ForDE33()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2f;
         StartCoroutine(ForDE33Coroutine());
     }
     IEnumerator ForDE33Coroutine()
@@ -125,6 +132,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE36()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         StartCoroutine(ForDE36Coroutine());
     }
     IEnumerator ForDE36Coroutine()
@@ -139,9 +147,15 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         }
         yield return null;
     }
+    public void ForDE38()
+    {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+    }
     public void ForDE40()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         doors[0].Interact();
+        EndingScene();
     }
     public void ForDE41()
     {
@@ -152,35 +166,18 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         startMove[4] = true;
         targetLocation[4] = locations[12].transform.position;
     }
-    
+    public void ForDE43()
+    {
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2;
+        doors[1].Interact();
+        EndingScene();
+    }
     public void ForDE44()
     {
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2;
         doors[1].Interact();
-    }
-
-    public void StartMove(int id)
-    {
-        startMove[id] = true;
-        if (id == 0)
-        {
-            targetLocation[id] = locations[0].transform.position;
-        }
-        if (id == 1)
-        {
-            actors[id].SetActive(true);
-            targetLocation[id] = locations[1].transform.position;
-        }
-        if (id == 2)
-        {
-            actors[id].SetActive(true);
-            targetLocation[id] = locations[2].transform.position;
-        }
-        if (id == 3)
-        {
-            actors[id].SetActive(true);
-            targetLocation[id] = locations[3].transform.position;
-        }
-
+        EndingScene();
     }
     public void StartMoving()
     {
@@ -198,9 +195,14 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     
     public void EndingScene()
     {
-        thisSceneDone = true;
+        StartCoroutine(EndingSceneCoroutine());
     }
 
+    IEnumerator EndingSceneCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        thisSceneDone = true;
+    }
     public object SaveState()
     {
         return new SaveData()
