@@ -1783,14 +1783,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;;
+
+'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 90
-        y: 170
+        y: 168.73419
         width: 160
         height: 30
     - id: 8
@@ -2120,7 +2122,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 690
-        y: 170
+        y: 168.73419
         width: 160
         height: 30
     - id: 14
@@ -2866,7 +2868,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 858.62067
-        y: 318.27588
+        y: 317.01004
         width: 160
         height: 30
     - id: 28
@@ -3776,8 +3778,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.098877, y: 417.58252}
-    canvasZoom: 0.90999985
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.78999996
   - id: 3
     fields:
     - title: Title
@@ -25469,8 +25471,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 81.37282, y: 353.6613}
-    canvasZoom: 0.81999993
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.2200002
   - id: 13
     fields:
     - title: Title
@@ -29859,8 +29861,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 270.01138}
-    canvasZoom: 0.19
+    canvasScrollPosition: {x: 196.65262, y: 684.74524}
+    canvasZoom: 0.43
   syncInfo:
     syncActors: 0
     syncItems: 0
