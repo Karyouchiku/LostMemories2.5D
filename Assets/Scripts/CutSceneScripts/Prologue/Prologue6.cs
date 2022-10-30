@@ -9,13 +9,14 @@ using UnityEngine.UI;
 
 public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
 {
+    public bool thisSceneDone;
+    public bool startThisScene;
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
 
     //[Header("Initial Data")]
     DialogueSystemController dialogueSystemController;
-    public bool thisSceneDone;
     bool[] startMove;
 
     [Header("Portal Doors Involved")]
@@ -42,7 +43,6 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
-    bool startThisScene;
     void Update()
     {
         if (startThisScene)
@@ -149,8 +149,6 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
         {
             actors[i].SetActive(false);
         }
-        
-        actors[6].SetActive(true);
         locations[6].gameObject.SetActive(true);
         EndingScene();
     }

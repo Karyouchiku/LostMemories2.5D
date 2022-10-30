@@ -8,13 +8,14 @@ using UnityEngine.UI;
 
 public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
 {
+    public bool thisSceneDone;
+    public bool startThisScene;
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
 
     //[Header("Initial Data")]
     DialogueSystemController dialogueSystemController;
-    public bool thisSceneDone;
     bool[] startMove;
 
     [Header("Portal Doors Involved")]
@@ -45,7 +46,6 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
-    bool startThisScene;
     void Update()
     {
         if (startThisScene)
@@ -81,19 +81,93 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
-
-        //player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Comment to activate this line
+        startThisScene = true;
+        player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Comment to activate this line
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
-        //startThisScene = true;
+        StartMoving();
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
-        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
+        }
     }
-    
+    public void ForDE13()
+    {
+        locations[0].gameObject.SetActive(true);
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        targetLocation[1] = locations[0].position;
+        targetLocation[1].y = actors[1].transform.position.y;
+        actors[1].transform.position = targetLocation[1];
+        actors[1].SetActive(true);
 
+    }
+    public void ForDE14()
+    {
+        locations[1].gameObject.SetActive(true);
+        startMove[1] = true;
+        targetLocation[1] = locations[1].position;
+    }
+    public void ForDE16()
+    {
+        locations[2].gameObject.SetActive(true);
+        startMove[0] = true;
+        targetLocation[0] = locations[2].position;
+    }
+    public void ForDE22()
+    {
+        locations[3].gameObject.SetActive(true);
+        locations[4].gameObject.SetActive(true);
+        locations[5].gameObject.SetActive(true);
+        locations[6].gameObject.SetActive(true);
+
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 6;
+        ActorsMoveSpeed[0] = 1.5f;
+        targetLocation[0] = locations[3].position;
+        actorIDforChangingLocation = 0;
+    }
+
+    public void ForDE25()
+    {
+        locations[7].gameObject.SetActive(true);
+        locations[8].gameObject.SetActive(true);
+        locations[9].gameObject.SetActive(true);
+
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
+        ActorsMoveSpeed[1] = 1;
+        targetLocation[1] = locations[8].position;
+        actorIDforChangingLocation = 1;
+    }
+    public void ForDE41()
+    {
+        ForDE22();
+        transition.ManualTransitionON();
+        StartCoroutine(ForDE41Coroutine());
+    }
+    IEnumerator ForDE41Coroutine()
+    {
+        yield return new WaitForSeconds(2);
+        EndingScene();
+    }
+    public void ForDE50()
+    {
+        transition.ManualTransitionON();
+    }
+    public void ForDE53()
+    {
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 2;
+        StartCoroutine(ForDE53Coroutine());
+    }
+    IEnumerator ForDE53Coroutine()
+    {
+        yield return new WaitForSeconds(2);
+        EndingScene();
+
+    }
     //END OF ForDE METHODS
 
     public void EndingScene()
@@ -104,13 +178,23 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
     //Calls from AutoEnterDoor
     public void EnterDoor()
     {
-        dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
-        EndingScene();
+        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
+        //EndingScene();
     }
 
     //Calls from LocationChanger
+    int actorIDforChangingLocation;//Change this in ForDE methods
     public void ChangeLocation(int i)
     {
+        StartCoroutine(ChangeLocationCoroutine(i));
+    }
+    IEnumerator ChangeLocationCoroutine(int i)
+    {
+        if (i ==4 || i == 6)
+        {
+            yield return new WaitForSeconds(0.3f);
+        }
+        targetLocation[actorIDforChangingLocation] = locations[i].position;
     }
 
     //Calls from LocationChecker

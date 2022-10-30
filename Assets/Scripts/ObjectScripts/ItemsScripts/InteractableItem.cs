@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
 {
@@ -10,6 +11,11 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
 
     public SOItemData itemData;
     bool itemGot;
+    [Header("Data or triggering Dialogue")]
+    public bool isForCutSceneTrigger;
+    public DialogueDatabase dialogueDatabase;
+    public DialogueSystemTrigger trigger;
+    public int conversationID;
     public void Interact()
     {
         if (!itemGot)
@@ -18,11 +24,19 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
             {
                 OnItemCollected?.Invoke(itemData);
                 itemGot = true;
-
             }
             else
             {
-                Debug.Log("No fucking item here bro");
+                //No Item Found
+            }
+            if (isForCutSceneTrigger)
+            {
+                if (conversationID > 0)
+                {
+                    trigger.trigger = DialogueSystemTriggerEvent.OnUse;
+                    trigger.conversation = dialogueDatabase.GetConversation(8).Title;
+                }
+                trigger.OnUse();
             }
         }
     }

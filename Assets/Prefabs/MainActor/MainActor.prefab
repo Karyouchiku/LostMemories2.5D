@@ -6106,7 +6106,6 @@ MonoBehaviour:
   loadingProgress: {fileID: 2333727033802145039}
   loadingScreen: {fileID: 4630095817907657498}
   dialogueModifier: {fileID: 1518939258123976309}
-  saveValues: {fileID: 6956954247003500474}
 --- !u!114 &891323907937902290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6149,6 +6148,7 @@ MonoBehaviour:
   ingameUI: {fileID: 4543056469077714770}
   movePlayerLocation: {fileID: 0}
   movePlayer: 0
+  isDebugging: 0
 --- !u!1 &4376903145101644261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,7 +6256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4434350922817512365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.769, y: -0.551, z: 4.052}
+  m_LocalPosition: {x: -17.769, y: -0.551, z: 4.726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6294,7 +6294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PPointsText: {fileID: 4490769560091333823}
-  dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
 --- !u!114 &4554699131438108087
 MonoBehaviour:
   m_ObjectHideFlags: 0

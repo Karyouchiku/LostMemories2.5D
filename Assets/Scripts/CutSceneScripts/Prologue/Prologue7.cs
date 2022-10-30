@@ -8,13 +8,14 @@ using UnityEngine.UI;
 
 public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
 {
+    public bool thisSceneDone;
+    public bool startThisScene;
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
 
     //[Header("Initial Data")]
     DialogueSystemController dialogueSystemController;
-    public bool thisSceneDone;
     bool[] startMove;
 
     [Header("Portal Doors Involved")]
@@ -45,7 +46,6 @@ public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
-    bool startThisScene;
     void Update()
     {
         if (startThisScene)
@@ -91,6 +91,7 @@ public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
         //actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        otherGameObjects[1].SetActive(false);
     }
     public void ForDE41()
     {
@@ -100,6 +101,11 @@ public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE45()
     {
+        //Teleports Takita to starting point
+        targetLocation[1] = locations[3].position;
+        targetLocation[1].y = actors[1].transform.position.y;
+        actors[1].transform.position = targetLocation[1];
+        actors[1].SetActive(true);
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         startMove[1] = true;
         targetLocation[1] = locations[0].position;

@@ -11,27 +11,32 @@ public class LoadDataChecker : MonoBehaviour
     public GameObject ingameUI;
     public GameObject movePlayerLocation;
     public bool movePlayer;
+    Vector3 target;
+    [Header("For Debugging")]
+    public bool isDebugging;
     void Awake()
     {
         trasitioning = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         saveSystem = GetComponent<SaveSystem>();
-        if (LoadData.isOnLoadGameData)
+        if (!isDebugging)
         {
-            //Check When this is a Load Game
-            saveSystem.Load(LoadData.saveDataID);
-            player.GetComponent<PlayerControls>().enabled = true;
+            if (LoadData.isOnLoadGameData)
+            {
+                //Check When this is a Load Game
+                saveSystem.Load(LoadData.saveDataID);
+                player.GetComponent<PlayerControls>().enabled = true;
             
-        }
-        else
-        {
-            //This is for New Game
-            player.GetComponent<PlayerControls>().enabled = false;
-            ingameUI.SetActive(false);
-            movePlayer = true;
-            trasitioning.StartTransition2ndVer();
+            }
+            else
+            {
+                //This is for New Game
+                player.GetComponent<PlayerControls>().enabled = false;
+                ingameUI.SetActive(false);
+                movePlayer = true;
+                trasitioning.StartTransition2ndVer();
+            }
         }
     }
-    Vector3 target;
     void FixedUpdate()
     {
         

@@ -9,7 +9,7 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
 {
     [Header("For Debugging")]
     public TMP_Text PPointsText;
-
+    public DialogueDatabase dialogueDatabase;
 
     double personalityValue;
 
@@ -38,7 +38,8 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     }
     void Update()
     {
-        PPointsText.text = $"Personality Points: {personalityValue}";
+        PPointsText.text = $"Conversation Name: {dialogueDatabase.GetConversation(8).Title}";
+        //PPointsText.text = $"Personality Points: {personalityValue}";
     }
 
     //----For debugging
