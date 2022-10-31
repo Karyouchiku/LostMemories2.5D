@@ -6,7 +6,7 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject slotPrefab;
-    public List<InventorySlot> inventorySlots = new List<InventorySlot>(8);
+    public List<InventorySlot> inventorySlots = new List<InventorySlot>(4);
     public RectTransform inventoryUI;
     
     
@@ -14,7 +14,7 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Inventory Animation")]
     public Animator show_HideInventory;
-   
+
     //ONClick Button
     public void OpenCloseInventory()
     {
@@ -47,7 +47,7 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(childTransform.gameObject);
         }
-        inventorySlots = new List<InventorySlot>(8);
+        inventorySlots = new List<InventorySlot>(4);
     }
     void DrawInventory(List<InventoryItem> inventory)
     {

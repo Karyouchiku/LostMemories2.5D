@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveOnTriggerEnding : MonoBehaviour
+public class RestrictedArea : MonoBehaviour
 {
     IPuzzle puzzle;
-    public float moveSpeed;
-    public int MoveToPositionID;
+    public int PostionID;
     void Start()
     {
         puzzle = GetComponentInParent<IPuzzle>();
@@ -15,9 +14,7 @@ public class MoveOnTriggerEnding : MonoBehaviour
     {
         if (other.tag == "Burito")
         {
-            puzzle.FinishingPuzzle();
-            puzzle.MovePlayer(true, moveSpeed, MoveToPositionID);
+            puzzle.RestrictedArea(PostionID);
         }
     }
-
 }

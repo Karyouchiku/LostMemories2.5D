@@ -993,11 +993,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a702a223c8176d44c9f8af9f469209be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 1148332852}
   loadingProgress: {fileID: 1423023894}
-  loadingText: {fileID: 1372191669}
   ContinueBtn: {fileID: 1995013912}
+  loadingScreen: {fileID: 1148332852}
   InputPlayerNameObject: {fileID: 1040027051}
+  playerName: {fileID: 11400000, guid: f3fb985d4f64eab4e8a30264975a448c, type: 2}
   errorMsg: {fileID: 452055777}
   Volume: {fileID: 1257722456}
 --- !u!114 &255218727
@@ -2558,6 +2558,7 @@ GameObject:
   - component: {fileID: 664186359}
   - component: {fileID: 664186358}
   - component: {fileID: 664186357}
+  - component: {fileID: 664186360}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2647,6 +2648,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &664186360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664186355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4d942ffeb794c41b7f1198472580c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668870618
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,14 @@ using UnityEngine.Events;
 public class DialogueModifier : MonoBehaviour, ISaveable
 {
     public DialogueDatabase dialoguedb;
-    public DialogueDatabase dialoguedbBackup;
+    DialogueDatabase dialoguedbBackup;
+    //string thisPlayerName;
     string namePattern = "MC";
 
     void Awake()
     {
+        dialoguedbBackup = dialoguedb;
+        //thisPlayerName = PlayerName.playerName;
         if (PlayerName.playerName == null)
         {
             PlayerName.playerName = "NullName";
@@ -22,13 +25,8 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     }
     public void RestoreDialogues()
     {
-        for (int i = 0; i < dialoguedb.conversations.Count; i++)
-        {
-            for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
-            {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = dialoguedbBackup.conversations[i].dialogueEntries[j].DialogueText;
-            }
-        }
+        dialoguedb.conversations = dialoguedbBackup.conversations;
+        dialoguedb.actors[1].Name = dialoguedbBackup.actors[1].Name;
     }
     
     public void ModifyPlayerNameInDialogues()
@@ -76,6 +74,9 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         PlayerName.playerName = saveData.playerName;
+        //thisPlayerName = saveData.playerName;
+
+        //RestoreDialogues();
         ModifyPlayerNameInDialogues();
     }
 

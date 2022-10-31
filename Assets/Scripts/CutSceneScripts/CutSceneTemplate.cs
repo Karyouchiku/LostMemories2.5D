@@ -7,50 +7,41 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
+public class CutsceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
-    //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
-
-    //Initial Data
-    DialogueSystemController dialogueSystemController;
-    bool[] startMove;
-    GameObject[] actors;
-    LMActors lmActors;
-    float[] ActorsMoveSpeed;
-    CharacterAnimation[] anim;
-    BlackTransitioning transition;
-    DialogueModifier dialogueModifier;
-
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
 
+    //[Header("Initial Data")]
+    DialogueSystemController dialogueSystemController;
+    bool[] startMove;
+
     [Header("Portal Doors Involved")]
     public PortalDoor[] doors;
-
-
-    [Header("Use for Locations: Moving object to these locations")]
-    public GameObject[] GameObjectChildrens;
+    [Header("Actors: How many actors is present in this scene")]
+    public GameObject[] actors;
+    public float[] ActorsMoveSpeed;
+    CharacterAnimation[] anim;
+    [Header("Trigger Locations: Moving object 'goto' locations")]
+    public Transform[] locations;
     Vector3[] targetLocation;
     Vector3 animVec;
-
-    [Header("For Other GameObjects involved")]
+    [Header("Other GameObjects")]
     public GameObject[] otherGameObjects;
 
+    BlackTransitioning transition;
+    DialogueModifier dialogueModifier;
     void Start()
     {
-        lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
-        transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
-        actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
-        ActorsMoveSpeed = new float[actors.Length];
         targetLocation = new Vector3[actors.Length];
         anim = new CharacterAnimation[actors.Length];
+        transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
         for (int i = 0; i < actors.Length; i++)
         {
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
@@ -69,18 +60,11 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
             }
             else
             {
-                DisableChilds();
+                gameObject.SetActive(false);
             }
         }
     }
 
-    void DisableChilds()
-    {
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
-        {
-            GameObjectChildrens[i].SetActive(false);
-        }
-    }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -99,30 +83,16 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     public void StartMoving()
     {
         startThisScene = true;
-
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         //player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Comment to activate this line
     }
     // START CREATING ForDE METHODS HERE
-    public void ForDE01()
+    public void ForDE01()//First Dialogue Entry
     {
-        //actors[2].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
-        //ContinueMode(false);
-        //SetMinSubtitleSeconds(3);
-        //SetActorStartingPosition(2, 8);
-
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
-        {
-            GameObjectChildrens[i].SetActive(false);
-        }
-
-        //Activating other Objects
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(true);
-        }
-
+        
+        actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
     }
 
 
@@ -145,31 +115,13 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = sec;
     }
 
-    void SetActorStartingPosition(int actorID, int locationID)
-    {
-        actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
-    }
     void MoveActor(int actorID, int locationID)
     {
         startMove[actorID] = true;
-        actors[actorID].SetActive(true);
-        GameObjectChildrens[locationID].SetActive(true);
-        targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
+        locations[locationID].gameObject.SetActive(true);
+        targetLocation[actorID] = locations[locationID].position;
     }
-    void MoveActor(int actorID, int locationID, float moveSpeed)
-    {
-        startMove[actorID] = true;
-        actors[actorID].SetActive(true);
-        GameObjectChildrens[locationID].SetActive(true);
-        ActorsMoveSpeed[actorID] = moveSpeed;
-        targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
-    }
-    void ResetActorPositionToOriginal(int actorID)
-    {
-        actors[actorID].transform.position = lmActors.orginalActorLocations[actorID];
-        targetLocation[actorID] = lmActors.orginalActorLocations[actorID];
-        actors[actorID].SetActive(false);
-    }
+
     public void EndingScene()
     {
         thisSceneDone = true;
@@ -178,15 +130,13 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     //Calls from AutoEnterDoor
     public void EnterDoor()
     {
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
+        
         EndingScene();
     }
 
     //Calls from LocationChanger
-    public void ChangeLocation(int actorID, int locationID)
+    public void ChangeLocation(int i)
     {
-        GameObjectChildrens[locationID].SetActive(true);
-        targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
     }
 
     //Calls from LocationChecker
@@ -202,14 +152,14 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         return new SaveData()
         {
             thisSceneDone = this.thisSceneDone,
-            startThisScene = this.startThisScene
+            startMove = this.startMove
         };
     }
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
-        this.startThisScene = saveData.startThisScene;
+        this.startMove = saveData.startMove;
     }
 
 
@@ -217,7 +167,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     struct SaveData
     {
         public bool thisSceneDone;
-        public bool startThisScene;
+        public bool[] startMove;
     }
 }
 */

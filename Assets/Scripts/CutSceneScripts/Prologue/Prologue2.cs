@@ -91,6 +91,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         for (int i = 1; i < (actors.Length-1); i++)
         {
             startMove[i] = true;
+            actors[i].SetActive(true);
             targetLocation[i] = locations[i].transform.position;
         }
     }

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public interface IPuzzle 
 {
-    
-    public void MovePlayer(bool move);//always false 
-    public void MovePlayer(bool move, float moveSpeed, int MoveToPositionID);
+    public void MovePlayer(bool move);
+    public void MovePlayer(bool move, float moveSpeed);
     public void DisableControls(bool turn);
-    public void FinishingPuzzle();
-
-
+    public void RestrictedArea(int MoveToPositionID);
 }
