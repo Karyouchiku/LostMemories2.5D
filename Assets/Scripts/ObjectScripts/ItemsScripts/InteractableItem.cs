@@ -28,7 +28,9 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
             else
             {
                 //No Item Found
+                Debug.Log("No Item Found");
             }
+            // For Triggering Dialogue
             if (isForCutSceneTrigger)
             {
                 if (conversationID > 0)
