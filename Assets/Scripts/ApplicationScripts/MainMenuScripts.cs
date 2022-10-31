@@ -14,7 +14,6 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public GameObject ContinueBtn;
     public GameObject loadingScreen;
     public GameObject InputPlayerNameObject;
-    public PlayerName playerName;
     public TMP_Text errorMsg;
     [Header("For Options")]
     public Slider Volume;
@@ -68,7 +67,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
             errorMsg.text = "Invalid Name";
             return;
         }
-        playerName.playerName = inputedPlayerName;
+        PlayerName.playerName = inputedPlayerName;
         InputPlayerNameObject.SetActive(false);
         loadingScreen.SetActive(true);
 

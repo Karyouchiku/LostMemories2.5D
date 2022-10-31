@@ -99,10 +99,6 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    - title: Display Name
-      value: Burito
-      type: 0
-      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -1505,7 +1501,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 364.27347}
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1.1199998
   - id: 2
     fields:

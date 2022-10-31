@@ -8,16 +8,19 @@ using UnityEngine.Events;
 
 public class DialogueModifier : MonoBehaviour, ISaveable
 {
-    public PlayerName playerName;
     public DialogueDatabase dialoguedb;
     DialogueDatabase dialoguedbBackup;
-    string thisPlayerName;
-    string namePattern = "Burito";
+    //string thisPlayerName;
+    string namePattern = "MC";
 
     void Awake()
     {
         dialoguedbBackup = dialoguedb;
-        thisPlayerName = playerName.playerName;
+        //thisPlayerName = PlayerName.playerName;
+        if (PlayerName.playerName == null)
+        {
+            PlayerName.playerName = "NullName";
+        }
         ModifyPlayerNameInDialogues();
     }
     public void RestoreDialogues()
@@ -28,12 +31,12 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     
     public void ModifyPlayerNameInDialogues()
     {
-        dialoguedb.actors[1].Name = thisPlayerName;
+        dialoguedb.actors[1].Name = PlayerName.playerName;
         for (int i = 0; i < dialoguedb.conversations.Count; i++)
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
             {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, thisPlayerName);
+                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, PlayerName.playerName);
             }
         }
     }
@@ -63,15 +66,15 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     {
         return new SaveData()
         {
-            playerName = thisPlayerName
+            playerName = PlayerName.playerName
         };
     }
 
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        playerName.playerName = saveData.playerName;
-        thisPlayerName = saveData.playerName;
+        PlayerName.playerName = saveData.playerName;
+        //thisPlayerName = saveData.playerName;
 
         //RestoreDialogues();
         ModifyPlayerNameInDialogues();
