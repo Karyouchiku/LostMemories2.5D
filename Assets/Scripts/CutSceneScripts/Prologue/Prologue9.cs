@@ -70,7 +70,6 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
             }
             else
             {
-                otherGameObjects[2].SetActive(true);//Activating puzzle mode
                 DisableChilds();
             }
         }

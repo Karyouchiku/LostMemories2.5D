@@ -1,4 +1,3 @@
-/*
 using PixelCrushers.DialogueSystem;
 using System;
 using System.Collections;
@@ -7,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
+public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
     public bool thisSceneDone;
@@ -106,11 +105,11 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
-        //actors[2].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
-        //ContinueMode(false);
-        //SetMinSubtitleSeconds(3);
-        //SetActorStartingPosition(2, 8);
+        actors[3].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
+        dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
+        ContinueMode(true);
+        SetMinSubtitleSeconds(3);
+        SetActorStartingPosition(3, 1);
 
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
@@ -122,7 +121,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         {
             otherGameObjects[i].SetActive(true);
         }
-
+        EndingScene();
     }
 
 
@@ -147,6 +146,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
 
     void SetActorStartingPosition(int actorID, int locationID)
     {
+        actors[actorID].SetActive(true);
         actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
     }
     void MoveActor(int actorID, int locationID)
@@ -220,4 +220,3 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         public bool startThisScene;
     }
 }
-*/

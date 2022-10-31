@@ -130,13 +130,15 @@ public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         StartCoroutine(ForDE55_56Coroutine());
     }
+    public Prologue8 disableTakita;
     IEnumerator ForDE55_56Coroutine()
     {
         targetLocation[1] = locations[0].position;
         yield return new WaitForSeconds(1);
         targetLocation[1] = locations[2].position;
         yield return new WaitForSeconds(3);
-        actors[1].SetActive(false);
+        //actors[1].SetActive(false);
+        disableTakita.DisableTAKITA = true;
     }
     public void ForDE58()
     {

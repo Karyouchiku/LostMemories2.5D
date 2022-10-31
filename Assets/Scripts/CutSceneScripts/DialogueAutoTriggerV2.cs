@@ -23,9 +23,9 @@ public class DialogueAutoTriggerV2 : MonoBehaviour
     {
         if (other.tag == "Burito")
         {
+            trigger.trigger = DialogueSystemTriggerEvent.OnUse;
             if (changeConvo)
             {
-                trigger.trigger = DialogueSystemTriggerEvent.OnUse;
                 trigger.conversation = dialogueDatabase.GetConversation(convoID).Title;
             }
             trigger.OnUse();
