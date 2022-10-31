@@ -1783,9 +1783,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["personality"] = Variable["personality"] + 1;;
-
-'
+      userScript: Variable["personality"] = Variable["personality"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3778,8 +3776,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.2099996
+    canvasScrollPosition: {x: 0, y: 286.28986}
+    canvasZoom: 0.9399998
   - id: 3
     fields:
     - title: Title
@@ -16523,7 +16521,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 323.31415}
+    canvasScrollPosition: {x: 33.773445, y: 402.1691}
     canvasZoom: 0.85
   - id: 7
     fields:
@@ -22799,8 +22797,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 897.74}
-    canvasZoom: 0.78999996
+    canvasScrollPosition: {x: 0, y: 839.7423}
+    canvasZoom: 0.5500002
   - id: 10
     fields:
     - title: Title

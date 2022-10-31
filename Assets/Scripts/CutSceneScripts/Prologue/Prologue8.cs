@@ -59,9 +59,17 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                otherGameObjects[0].SetActive(true);//Enabling for prologue 9 to start
-                gameObject.SetActive(false);
+                
+
+                DisableChilds();
             }
+        }
+    }
+    void DisableChilds()
+    {
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
         }
     }
 
@@ -173,6 +181,8 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
 
     public void EndingScene()
     {
+        actors[1].SetActive(false);
+        otherGameObjects[0].SetActive(true);//Enabling for prologue 9 to start
         thisSceneDone = true;
     }
 

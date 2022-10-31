@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
 {
+    public bool startThisPuzzle;
     public bool thisPuzzleDone;
     [Header("For Disabling Controls")]
     public GameObject player;
@@ -12,6 +13,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
 
     [Header("Portal Door to be Available")]
     public PortalDoor door;
+    public GameObject[] GameObjectChildren;
     public GameObject[] otherGameObjects;
 
     public Transform[] LocationR;//Move to position when in Restricted area
@@ -31,28 +33,37 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     }
     void Update()
     {
-        if (!thisPuzzleDone)
+        if (startThisPuzzle)
         {
-            if (movePlayer)
+            if (!thisPuzzleDone)
             {
-                animationVec = LocationRVec - player.transform.position;
-                LocationRVec.y = player.transform.position.y;
-                player.transform.position = Vector3.MoveTowards(player.transform.position, LocationRVec, playerMoveSpeed * Time.deltaTime);
-                player.gameObject.GetComponent<CharacterAnimation>().moveX = animationVec.x;
-                player.gameObject.GetComponent<CharacterAnimation>().moveZ = animationVec.z;
+                if (movePlayer)
+                {
+                    animationVec = LocationRVec - player.transform.position;
+                    LocationRVec.y = player.transform.position.y;
+                    player.transform.position = Vector3.MoveTowards(player.transform.position, LocationRVec, playerMoveSpeed * Time.deltaTime);
+                    player.gameObject.GetComponent<CharacterAnimation>().moveX = animationVec.x;
+                    player.gameObject.GetComponent<CharacterAnimation>().moveZ = animationVec.z;
+                }
+                if (CheckInventoryForRequiredItems())
+                {
+                    door.locked = false;
+                }
             }
-            if (CheckInventoryForRequiredItems())
+            else
             {
-                door.locked = false;
+                DisableChilds();
             }
-        }
-        else
-        {
-            gameObject.SetActive(false);
         }
         
     }
-    
+    void DisableChilds()
+    {
+        for (int i = 0; i < GameObjectChildren.Length; i++)
+        {
+            GameObjectChildren[i].gameObject.SetActive(false);
+        }
+    }
     bool CheckInventoryForRequiredItems()
     {
         bool[] checkSearch = new bool[isRequiredItemsAquired.Length];

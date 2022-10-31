@@ -35,9 +35,9 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     }
     void Update()
     {
-        if (startThisScene)
+        if (startThisScene)//true 
         {
-            if (!thisSceneDone)
+            if (!thisSceneDone)//true
             {
                 if (startMove)
                 {
@@ -50,10 +50,18 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                gameObject.SetActive(false);
+                DisableChilds();
             }
         }
     }
+    void DisableChilds()
+    {
+        for (int i = 0; i < loc.Length; i++)
+        {
+            loc[i].gameObject.SetActive(false);
+        }
+    }
+
 
     void Disables(bool turn)
     {

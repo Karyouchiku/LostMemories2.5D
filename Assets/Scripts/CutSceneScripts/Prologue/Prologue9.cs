@@ -71,11 +71,18 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
             else
             {
                 otherGameObjects[2].SetActive(true);//Activating puzzle mode
-                gameObject.SetActive(false);
+                DisableChilds();
             }
         }
     }
 
+    void DisableChilds()
+    {
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
+        }
+    }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -187,12 +194,14 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     void MoveActor(int actorID, int locationID)
     {
         startMove[actorID] = true;
+        actors[actorID].SetActive(true);
         locations[locationID].gameObject.SetActive(true);
         targetLocation[actorID] = locations[locationID].position;
     }
     void MoveActor(int actorID, int locationID, float moveSpeed)
     {
         startMove[actorID] = true;
+        actors[actorID].SetActive(true);
         locations[locationID].gameObject.SetActive(true);
         ActorsMoveSpeed[actorID] = moveSpeed;
         targetLocation[actorID] = locations[locationID].position;
@@ -201,6 +210,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         actors[actorID].transform.position = lmActors.orginalActorLocations[actorID];
         targetLocation[actorID] = lmActors.orginalActorLocations[actorID];
+        actors[actorID].SetActive(false);
     }
     public void EndingScene()
     {

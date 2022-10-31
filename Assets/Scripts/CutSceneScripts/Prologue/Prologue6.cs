@@ -56,11 +56,18 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                gameObject.SetActive(false);
+                DisablingNPCs();
+                DisableChilds();
             }
         }
     }
-
+    void DisableChilds()
+    {
+        for (int i = 0; i < (locations.Length-1); i++)
+        {
+            locations[i].gameObject.SetActive(false);
+        }
+    }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -147,12 +154,19 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
     IEnumerator DiableNPCs()
     {
         yield return new WaitForSeconds(1);
-        for (int i = 1; i < actors.Length; i++)
-        {
-            actors[i].SetActive(false);
-        }
+        DisablingNPCs();
         locations[6].gameObject.SetActive(true);
         EndingScene();
+    }
+    void DisablingNPCs()
+    {
+        for (int i = 1; i < actors.Length; i++)
+        {
+            if (i != 3)
+            {
+                actors[i].SetActive(false);
+            }
+        }
     }
 
     public object SaveState()

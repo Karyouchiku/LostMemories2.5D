@@ -59,11 +59,17 @@ public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                gameObject.SetActive(false);
+                DisableChilds();
             }
         }
     }
-
+    void DisableChilds()
+    {
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
+        }
+    }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -91,6 +97,7 @@ public class Prologue7 : MonoBehaviour, CutScenes, ISaveable
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
         //actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        actors[1].SetActive(true);
         otherGameObjects[1].SetActive(false);
     }
     public void ForDE41()
