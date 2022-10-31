@@ -6294,6 +6294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PPointsText: {fileID: 4490769560091333823}
+  dialogueDatabase: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
 --- !u!114 &4554699131438108087
 MonoBehaviour:
   m_ObjectHideFlags: 0

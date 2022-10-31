@@ -38,8 +38,8 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     }
     void Update()
     {
-        PPointsText.text = $"Conversation Name: {dialogueDatabase.GetConversation(8).Title}";
-        //PPointsText.text = $"Personality Points: {personalityValue}";
+        //PPointsText.text = $"Conversation Name: {dialogueDatabase.GetConversation(8).Title}";
+        PPointsText.text = $"Personality Points: {personalityValue}";
     }
 
     //----For debugging

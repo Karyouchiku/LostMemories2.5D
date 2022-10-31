@@ -61,19 +61,22 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     void LockedDoor()
     {
         Debug.Log("U r here");
-        if (!inventory.SearchItemInInventory(key))
+        if (key != null)
         {
+            if (!inventory.SearchItemInInventory(key))
+            {
 
-            playAudio(doorKnocking, 0.4f);
-            Debug.Log("The Door is Lock");
-        }
-        else
-        {
-            Debug.Log("Door Unlocked");
-            RemoveFromInv?.Invoke(key);
-            locked = false;
+                playAudio(doorKnocking, 0.4f);
+                Debug.Log("The Door is Lock");
+            }
+            else
+            {
+                Debug.Log("Door Unlocked");
+                RemoveFromInv?.Invoke(key);
+                locked = false;
 
-            playAudio(doorShut, 0.5f);
+                playAudio(doorShut, 0.5f);
+            }
         }
     }
 

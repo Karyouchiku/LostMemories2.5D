@@ -5,12 +5,14 @@ using UnityEngine;
 using PixelCrushers.DialogueSystem;
 public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
 {
+    public bool thisSceneDone;
+    public bool startThisScene;
+
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
 
     [Header("Initial Data")]
-    public bool thisSceneDone;
     bool[] startMove;
     public PortalDoor[] doors;
     DialogueSystemController dialogueSystemController;
@@ -39,16 +41,19 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     
     void Update()
     {
-        if (!thisSceneDone)
+        if (startThisScene)
         {
-            for (int i = 0; i < startMove.Length; i++)
+            if (!thisSceneDone)
             {
-                MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
+                for (int i = 0; i < startMove.Length; i++)
+                {
+                    MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
+                }
             }
-        }
-        else
-        {
-            gameObject.SetActive(false);
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -65,6 +70,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE1()
     {
+        startThisScene = true;
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 4;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
@@ -188,10 +194,12 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
 
     }
 
-    public void ChangeLocation(int i)
+    public void ChangeLocation(int actorID, int locationID)
     {
-
+        throw new NotImplementedException();
     }
+
+
     
     public void EndingScene()
     {
@@ -203,30 +211,30 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
         yield return new WaitForSeconds(1);
         thisSceneDone = true;
     }
+
+    public void LocationCheck()
+    {
+        throw new NotImplementedException();
+    }
     public object SaveState()
     {
         return new SaveData()
         {
             thisSceneDone = this.thisSceneDone,
-            startMove = this.startMove
+            startThisScene = this.startThisScene
         };
     }
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
-        this.startMove = saveData.startMove;
-    }
-
-    public void LocationCheck()
-    {
-        throw new NotImplementedException();
+        this.startThisScene = saveData.startThisScene;
     }
 
     [Serializable]
     struct SaveData
     {
         public bool thisSceneDone;
-        public bool[] startMove;
+        public bool startThisScene;
     }
 }

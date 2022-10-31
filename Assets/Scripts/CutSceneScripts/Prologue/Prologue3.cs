@@ -202,30 +202,16 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
 
     }
 
-    public void ChangeLocation(int i)
+    public void ChangeLocation(int actorID, int locationID)
     {
-        targetLocation[0] = locations[i].position;
+        locations[locationID].gameObject.SetActive(true);
+        targetLocation[actorID] = locations[locationID].position;
     }
+
 
     public void EndingScene()
     {
         thisSceneDone = true;
-    }
-
-
-    public object SaveState()
-    {
-        return new SaveData()
-        {
-            thisSceneDone = this.thisSceneDone,
-            startMove = this.startMove
-        };
-    }
-    public void LoadState(object state)
-    {
-        var saveData = (SaveData)state;
-        this.thisSceneDone = saveData.thisSceneDone;
-        this.startMove = saveData.startMove;
     }
 
     public void LocationCheck()
@@ -233,10 +219,26 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
         throw new NotImplementedException();
     }
 
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            thisSceneDone = this.thisSceneDone,
+            startThisScene = this.startThisScene
+        };
+    }
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        this.thisSceneDone = saveData.thisSceneDone;
+        this.startThisScene = saveData.startThisScene;
+    }
+
+
     [Serializable]
     struct SaveData
     {
         public bool thisSceneDone;
-        public bool[] startMove;
+        public bool startThisScene;
     }
 }

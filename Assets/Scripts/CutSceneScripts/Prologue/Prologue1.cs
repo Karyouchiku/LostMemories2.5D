@@ -6,11 +6,14 @@ using PixelCrushers.DialogueSystem;
 
 public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
 {
+    //important to be saved
+    public bool thisSceneDone;
+    public bool startThisScene;
+
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
     DialogueSystemController dialogueSystemController;
-    public bool thisSceneDone;
     [Header("Actors")]
     public GameObject[] actor;
     Vector3 movingAnim;
@@ -32,20 +35,23 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     }
     void Update()
     {
-        if (!thisSceneDone)
+        if (startThisScene)
         {
-            if (startMove)
+            if (!thisSceneDone)
             {
-                movingAnim = target - actor[0].transform.position;
-                target.y = actor[0].transform.position.y;
-                actor[0].transform.position = Vector3.MoveTowards(actor[0].transform.position, target, mSpeed * Time.deltaTime);
-                pAnim.moveX = movingAnim.x;
-                pAnim.moveZ = movingAnim.z;
+                if (startMove)
+                {
+                    movingAnim = target - actor[0].transform.position;
+                    target.y = actor[0].transform.position.y;
+                    actor[0].transform.position = Vector3.MoveTowards(actor[0].transform.position, target, mSpeed * Time.deltaTime);
+                    pAnim.moveX = movingAnim.x;
+                    pAnim.moveZ = movingAnim.z;
+                }
             }
-        }
-        else
-        {
-            gameObject.SetActive(false);
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -58,6 +64,7 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE1()
     {
+        startThisScene = true;
         actor[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
         Disables(false);
     }
@@ -74,10 +81,11 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     {
         startMove = true;
     }
-    public void ChangeLocation(int i)
+    public void ChangeLocation(int actorID, int locationID)
     {
-        target = loc[i].transform.position;
+        target = loc[locationID].transform.position;
     }
+    
     public void EnterDoor()
     {
         /*
@@ -99,23 +107,27 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     public void LocationCheck()
     {
     }
-    
+
     public object SaveState()
     {
         return new SaveData()
         {
-            thisSceneDone = this.thisSceneDone
+            thisSceneDone = this.thisSceneDone,
+            startThisScene = this.startThisScene
         };
     }
-
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
+        this.startThisScene = saveData.startThisScene;
     }
+
+
     [Serializable]
     struct SaveData
     {
         public bool thisSceneDone;
+        public bool startThisScene;
     }
 }

@@ -5,17 +5,19 @@ using UnityEditor;
 public class LocationChanger : MonoBehaviour
 {
     CutScenes cutScene;
+    public int actorID;
     public int changeLocationID;
-    public string GameObjectTag = "Burito";
+    LMActors lmActors;
     void Start()
     {
         cutScene = GetComponentInParent<CutScenes>();
+        lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == GameObjectTag)
+        if (other.tag == lmActors._LMActors[actorID].gameObject.tag)
         {
-            cutScene.ChangeLocation(changeLocationID);
+            cutScene.ChangeLocation(actorID, changeLocationID);
         }
     }
 }

@@ -134,8 +134,10 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
     {
         thisSceneDone = true;
     }
-    public void ChangeLocation(int i)
+    public void ChangeLocation(int actorID, int locationID)
     {
+        locations[locationID].gameObject.SetActive(true);
+        targetLocation[actorID] = locations[locationID].position;
     }
 
     public void LocationCheck()
@@ -158,14 +160,14 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
         return new SaveData()
         {
             thisSceneDone = this.thisSceneDone,
-            startMove = this.startMove
+            startThisScene = this.startThisScene
         };
     }
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
-        this.startMove = saveData.startMove;
+        this.startThisScene = saveData.startThisScene;
     }
 
 
@@ -173,6 +175,6 @@ public class Prologue6 : MonoBehaviour, CutScenes, ISaveable
     struct SaveData
     {
         public bool thisSceneDone;
-        public bool[] startMove;
+        public bool startThisScene;
     }
 }

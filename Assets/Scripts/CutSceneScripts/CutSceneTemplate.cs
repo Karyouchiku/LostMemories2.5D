@@ -82,12 +82,14 @@ public class CutsceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
+        startThisScene = true;
+        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         //player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Comment to activate this line
     }
     // START CREATING ForDE METHODS HERE
-    public void ForDE01()
+    public void ForDE01()//First Dialogue Entry
     {
-        startThisScene = true;
+        
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
@@ -95,6 +97,30 @@ public class CutsceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
 
 
     //END OF ForDE METHODS
+
+    //MY SHORCUT METHODS
+    void ContinueMode(bool isOptional)
+    {
+        if (isOptional)
+        {
+            dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        }
+        else
+        {
+            dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        }
+    }
+    void SetMinSubtitleSeconds(float sec)
+    {
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = sec;
+    }
+
+    void MoveActor(int actorID, int locationID)
+    {
+        startMove[actorID] = true;
+        locations[locationID].gameObject.SetActive(true);
+        targetLocation[actorID] = locations[locationID].position;
+    }
 
     public void EndingScene()
     {
@@ -104,7 +130,7 @@ public class CutsceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     //Calls from AutoEnterDoor
     public void EnterDoor()
     {
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
+        
         EndingScene();
     }
 

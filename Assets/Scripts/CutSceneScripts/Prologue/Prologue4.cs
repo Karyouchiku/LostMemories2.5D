@@ -136,11 +136,12 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
         stopLooping = false;
     }
     bool stopLooping;
-    public void ChangeLocation(int i)
+
+    public void ChangeLocation(int actorID, int locationID)
     {
         if (!stopLooping)
         {
-            StartCoroutine(LoopingTransition(i));
+            StartCoroutine(LoopingTransition(locationID));
         }
     }
     IEnumerator LoopingTransition(int i)
@@ -171,20 +172,21 @@ public class Prologue4 : MonoBehaviour, CutScenes, ISaveable
         return new SaveData()
         {
             thisSceneDone = this.thisSceneDone,
-            startMove = this.startMove
+            startThisScene = this.startThisScene
         };
     }
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
-        this.startMove = saveData.startMove;
+        this.startThisScene = saveData.startThisScene;
     }
+
 
     [Serializable]
     struct SaveData
     {
         public bool thisSceneDone;
-        public bool[] startMove;
+        public bool startThisScene;
     }
 }
