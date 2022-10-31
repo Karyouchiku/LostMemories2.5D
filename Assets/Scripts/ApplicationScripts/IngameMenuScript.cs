@@ -11,7 +11,7 @@ public class IngameMenuScript : MonoBehaviour
     void Start()
     {
         AudioListener.volume = MenuStaticVariables.soundVolume;
-        RestoreDDB();
+        dialogueModifier.RestoreDialogues();
     }
     
     void Update()
@@ -26,10 +26,6 @@ public class IngameMenuScript : MonoBehaviour
     public void BackToMainMenu()
     {
         StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(1));
-    }
-    public void RestoreDDB()
-    {
-        dialogueModifier.RestoreDialogues();
     }
 
     public void ExitGame()
