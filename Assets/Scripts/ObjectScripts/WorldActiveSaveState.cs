@@ -8,6 +8,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     [Header("Using Directional Light")]
     public Light directionalLight;
     [Header("GameObject Worlds")]
+    public GameObject[] places;
+    /*old version
     public GameObject classRoom;
     public GameObject schoolHallway;
     public GameObject _MCHouseOutside;
@@ -18,11 +20,14 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public GameObject trailerPark;
     public GameObject florHouse;
     public GameObject warehouse;
-
+    public GameObject adoptionAgency;
+    */
 
     [Header("Enable Lighting")]
     public bool lighting;
-    [Header("Render Worlds")]
+    [Header("Render World ID")]
+    public int renderPlaceID;
+    /* old version
     public bool renderClassRoom;
     public bool renderSchoolHallway;
     public bool renderMCHouseOutside;
@@ -33,14 +38,21 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public bool renderTrailerPark;
     public bool renderFlorHouse;
     public bool renderWarehouse;
-
+    public bool renderAdoptionAgency;
+    */
+    
     void Start()
     {
-        StartRender();
+        //StartRender();
+        RenderWorlds(lighting, renderPlaceID);
     }
-    public void RenderWorlds(bool lighting, bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8, bool w9, bool w10)
+    public void RenderWorlds(bool lighting, int renderPlaceID)//bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8, bool w9, bool w10, bool w11)
     {
         this.lighting = lighting;
+        directionalLight.enabled = this.lighting;
+        WorldRenderer(renderPlaceID);
+
+        /*
         renderClassRoom = w1;
         renderSchoolHallway = w2;
         renderMCHouseOutside = w3;
@@ -51,7 +63,10 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         renderTrailerPark = w8;
         renderFlorHouse = w9;
         renderWarehouse = w10;
+        renderAdoptionAgency = w11;
+        */
     }
+    /*
     public void StartRender()
     {
         directionalLight.enabled = lighting;
@@ -65,31 +80,46 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         WorldRenderer(trailerPark, renderTrailerPark);
         WorldRenderer(florHouse, renderFlorHouse);
         WorldRenderer(warehouse, renderWarehouse);
-
+        
     }
-
-    void WorldRenderer(GameObject world, bool render)
+    */
+    void WorldRenderer(int renderPlaceID)
     {
-        MeshRenderer[] mesh = world.GetComponentsInChildren<MeshRenderer>();
-        AudioSource[] sfx = world.GetComponentsInChildren<AudioSource>();
-        Light[] lights = world.GetComponentsInChildren<Light>();
-        SpriteRenderer[] sprites = world.GetComponentsInChildren<SpriteRenderer>();
+        
 
-        for (int i = 0; i < mesh.Length; i++)
+        for (int i = 0; i < places.Length; i++)
         {
-            mesh[i].enabled = render;
-        }
-        for (int i = 0; i < sfx.Length; i++)
-        {
-            sfx[i].enabled = render;
-        }
-        for (int i = 0; i < lights.Length; i++)
-        {
-            lights[i].enabled = render;
-        }
-        for (int i = 0; i < sprites.Length; i++)
-        {
-            sprites[i].enabled = render;
+            bool render;
+            if (i == renderPlaceID)
+            {
+                render = true;
+            }
+            else
+            {
+                render = false;
+            }
+
+            MeshRenderer[] mesh = places[i].GetComponentsInChildren<MeshRenderer>();
+            AudioSource[] sfx = places[i].GetComponentsInChildren<AudioSource>();
+            Light[] lights = places[i].GetComponentsInChildren<Light>();
+            SpriteRenderer[] sprites = places[i].GetComponentsInChildren<SpriteRenderer>();
+
+            for (int j = 0; j < mesh.Length; j++)
+            {
+                mesh[j].enabled = render;
+            }
+            for (int j = 0; j < sfx.Length; j++)
+            {
+                sfx[j].enabled = render;
+            }
+            for (int j = 0; j < lights.Length; j++)
+            {
+                lights[j].enabled = render;
+            }
+            for (int j = 0; j < sprites.Length; j++)
+            {
+                sprites[j].enabled = render;
+            }
         }
     }
 
@@ -98,6 +128,8 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         return new SaveData()
         {
             lighting = this.lighting,
+            renderPlaceID = this.renderPlaceID
+            /*
             renderClassRoom = this.renderClassRoom,
             renderSchoolHallway = this.renderSchoolHallway,
             renderMCHouseOutside = this.renderMCHouseOutside,
@@ -108,6 +140,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
             renderTrailerPark = this.renderTrailerPark,
             renderFlorHouse = this.renderFlorHouse,
             renderWarehouse = this.renderWarehouse
+            */
         };
     }
 
@@ -116,6 +149,10 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         var saveData = (SaveData)state;
 
         lighting = saveData.lighting;
+        renderPlaceID = saveData.renderPlaceID;
+
+        RenderWorlds(lighting, renderPlaceID);
+        /*
         renderClassRoom = saveData.renderClassRoom;
         renderSchoolHallway = saveData.renderSchoolHallway;
         renderMCHouseOutside = saveData.renderMCHouseOutside;
@@ -127,13 +164,15 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         renderWarehouse = saveData.renderWarehouse;
 
         StartRender();
-
+        */
     }
 
     [Serializable]
     struct SaveData
     {
         public bool lighting;
+        public int renderPlaceID;
+        /*
         public bool renderClassRoom;
         public bool renderSchoolHallway;
         public bool renderMCHouseOutside;
@@ -144,5 +183,6 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
         public bool renderTrailerPark;
         public bool renderFlorHouse;
         public bool renderWarehouse;
+        */
     }
 }

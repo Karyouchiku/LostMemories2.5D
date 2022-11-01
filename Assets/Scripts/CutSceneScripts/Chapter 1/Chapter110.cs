@@ -106,6 +106,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE01()
     {
         actors[3].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
+        actors[3].gameObject.tag = "Untagged";
         dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         ContinueMode(true);
         SetMinSubtitleSeconds(3);

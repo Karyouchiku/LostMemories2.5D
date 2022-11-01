@@ -36,6 +36,10 @@ public class LoadDataChecker : MonoBehaviour
                 trasitioning.StartTransition2ndVer();
             }
         }
+        else
+        {
+            MenuStaticVariables.soundVolume = 1f;
+        }
     }
     void FixedUpdate()
     {

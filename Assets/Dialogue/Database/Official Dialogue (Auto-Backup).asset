@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Burito
+      value: NullName
       type: 0
       typeString: 
     - title: Pictures
@@ -139,10 +139,6 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    - title: Display Name
-      value: Burito
-      type: 0
-      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -1633,8 +1629,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 6.25, y: 0}
-    canvasZoom: 0.64000016
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1.1199998
   - id: 2
     fields:
     - title: Title
@@ -1911,9 +1907,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["personality"] = Variable["personality"] + 1;;
-
-'
+      userScript: Variable["personality"] = Variable["personality"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3906,8 +3900,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.2099996
+    canvasScrollPosition: {x: 0, y: 286.28986}
+    canvasZoom: 0.9399998
   - id: 3
     fields:
     - title: Title
@@ -16651,7 +16645,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 323.31415}
+    canvasScrollPosition: {x: 33.773445, y: 402.1691}
     canvasZoom: 0.85
   - id: 7
     fields:
@@ -22927,8 +22921,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 897.74}
-    canvasZoom: 0.78999996
+    canvasScrollPosition: {x: 0, y: 839.7423}
+    canvasZoom: 0.5500002
   - id: 10
     fields:
     - title: Title
@@ -23059,6 +23053,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: c4453da1-8239-4b74-b57f-771700a5ff76
         type: 0
         typeString: 
       conversationID: 10
@@ -23358,8 +23356,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 124.40326}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 0, y: 27.005623}
+    canvasZoom: 1.2399998
   - id: 11
     fields:
     - title: Title
@@ -23489,6 +23487,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 798c9e49-ebeb-4ad7-a12d-6a1d8d434d02
         type: 0
         typeString: 
       conversationID: 11
@@ -23717,6 +23719,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 2467d3a5-4738-43dd-978d-bc0940c5e3fb
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -23770,6 +23776,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 3f5e87b8-73e6-4a53-be2f-4b84bfc045f3
         type: 0
         typeString: 
       conversationID: 11
@@ -24063,7 +24073,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 400.24182, y: 207.95534}
+    canvasScrollPosition: {x: 227.21117, y: 60.000015}
     canvasZoom: 1.2999997
   - id: 12
     fields:
@@ -26212,8 +26222,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 197.75706, y: 0}
-    canvasZoom: 0.8800001
+    canvasScrollPosition: {x: 252.09055, y: 0}
+    canvasZoom: 1.1799998
   - id: 14
     fields:
     - title: Title
@@ -31695,8 +31705,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 981.861, y: 456.36478}
-    canvasZoom: 1.3599992
+    canvasScrollPosition: {x: 914.3914, y: 415.73352}
+    canvasZoom: 1.1799994
   - id: 19
     fields:
     - title: Title
@@ -34834,8 +34844,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 193.6865, y: 325.6714}
-    canvasZoom: 0.16000038
+    canvasScrollPosition: {x: 0, y: 214.80005}
+    canvasZoom: 0.25
   syncInfo:
     syncActors: 0
     syncItems: 0

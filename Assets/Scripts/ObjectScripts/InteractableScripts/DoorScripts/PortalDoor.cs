@@ -84,42 +84,24 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     GameObject player;
     GameObject inGameUi;
     [Header("Teleport to other position")]
-    BlackTransitioning transition;
     public GameObject changePositionTo;
+    BlackTransitioning transition;
     Vector3 changePositionToVec;
 
     WorldActiveSaveState worldRenderer;
     [Header("Enable Directional Light")]
     public bool lighting;
     [Header("World to Render")]
-    public bool renderClassRoom;
-    public bool renderSchoolHallway;
-    public bool renderMCHouseOutside;
-    public bool renderMCHouseInterior;
-    public bool renderOutsideSchool;
-    public bool renderSmallTown;
-    public bool renderBigCity;
-    public bool renderTrailerPark;
-    public bool renderFlorHouse;
-    public bool renderWarehouse;
-
+    public int renderPlaceID;
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
-        if (!CutSceneDoor)
-        {
-            player.GetComponent<PlayerControls>().enabled = false;
-        }
+        player.GetComponent<PlayerControls>().enabled = false;
         player.GetComponent<CharacterController>().enabled = false;
         player.GetComponent<CharacterAnimation>().ResetAnimation();
         transition.StartTransition();
         yield return new WaitForSeconds(1f);
-
-        worldRenderer.RenderWorlds(lighting, renderClassRoom, renderSchoolHallway, renderMCHouseOutside,
-            renderMCHouseInterior, renderOutsideSchool, renderSmallTown, renderBigCity, renderTrailerPark,
-            renderFlorHouse, renderWarehouse);
-
-        worldRenderer.StartRender();
+        worldRenderer.RenderWorlds(lighting, renderPlaceID);
         player.transform.position = changePositionToVec;
         player.GetComponent<CharacterController>().enabled = true;
         if (!CutSceneDoor)

@@ -12,21 +12,22 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     
     public GameObject inventoryPanel;
 
-    public InventoryManager inventoryManager;
+    //public InventoryManager inventoryManager;
     void Awake()
     {
         InventoryRefresher();
     }
 
-    void InventoryRefresher()
+    public void InventoryRefresher()
     {
-        inventoryManager.Refresher(inventory);
+        //inventoryManager.Refresher(inventory);
+        OnInventoryChange?.Invoke(inventory);
     }
     void OnEnable()
     {
         Item.OnItemCollected += Add;
         InteractableItem.OnItemCollected += Add;
-        ItemFormNPC.OnItemReceived += Add;
+        ItemFromNPC.OnItemReceived += Add;
         InteractableDoor.RemoveFromInv += Remove;
         PortalDoor.RemoveFromInv += Remove;
     }
@@ -34,7 +35,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     {
         Item.OnItemCollected -= Add;
         InteractableItem.OnItemCollected -= Add;
-        ItemFormNPC.OnItemReceived -= Add;
+        ItemFromNPC.OnItemReceived -= Add;
         InteractableDoor.RemoveFromInv -= Remove;
         PortalDoor.RemoveFromInv -= Remove;
     }
@@ -45,7 +46,6 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         {
             item.addToStack();
             Debug.Log($"{soItemData.itemName} Total stack now {item.stackSize}");
-            OnInventoryChange?.Invoke(inventory);
         }
         else
         {
@@ -53,8 +53,8 @@ public class PlayerInventory : MonoBehaviour, ISaveable
             inventory.Add(newItem);
             itemDictionary.Add(soItemData.name, newItem);
             Debug.Log($"Got the {soItemData.itemName}");
-            OnInventoryChange?.Invoke(inventory);
         }
+        OnInventoryChange?.Invoke(inventory);
     }
 
     public void Remove(SOItemData soItemData)
