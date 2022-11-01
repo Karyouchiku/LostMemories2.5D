@@ -39,6 +39,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
         {
             if (!thisPuzzleDone)
             {
+                EnableOtherGameObjects();
                 if (movePlayer)
                 {
                     animationVec = LocationToMove - player.transform.position;
@@ -49,7 +50,6 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
                 }
                 if (CheckInventoryForRequiredItems())
                 {
-                    EnableOtherGameObjects();
                     UnlockTheDoor();
                 }
             }
