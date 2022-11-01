@@ -24,8 +24,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     DialogueModifier dialogueModifier;
 
     [Header("Disable object and Scripts")]
-    public GameObject inGameUI;
-    public GameObject player;
+    public DialogueSystemEvents player;
 
     [Header("Portal Doors Involved")]
     public PortalDoor[] doors;
@@ -108,7 +107,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         startThisScene = true;
 
         //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
-        //player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        //player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
@@ -163,6 +162,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
 
     void SetActorStartingPosition(int actorID, int locationID)
     {
+        actors[actorID].SetActive(true);
         actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
     }
     void MoveActor(int actorID, int locationID)

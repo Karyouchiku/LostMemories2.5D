@@ -21156,8 +21156,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 92.76901, y: 1092.3235}
-    canvasZoom: 0.33999944
+    canvasScrollPosition: {x: 946.7219, y: 52.79683}
+    canvasZoom: 0.93999904
   - id: 9
     fields:
     - title: Title
@@ -24073,7 +24073,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 197.44012, y: 0}
+    canvasScrollPosition: {x: 154.583, y: 190.1786}
     canvasZoom: 1.1199999
   - id: 12
     fields:
@@ -25801,8 +25801,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1084.2609}
-    canvasZoom: 1.2099996
+    canvasScrollPosition: {x: 0, y: 1267.1996}
+    canvasZoom: 0.99999976
   - id: 13
     fields:
     - title: Title
@@ -25932,6 +25932,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 71f48d13-af83-40c5-8961-6af256a994b0
         type: 0
         typeString: 
       conversationID: 13
@@ -26230,8 +26234,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 204.42203, y: 7.1744223}
-    canvasZoom: 1.0899999
+    canvasScrollPosition: {x: 344.22403, y: 0}
+    canvasZoom: 1.06
   - id: 14
     fields:
     - title: Title
@@ -26578,6 +26582,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 71fcc493-6bcf-4324-b65e-2eee73950981
         type: 0
         typeString: 
       conversationID: 15
@@ -27940,8 +27948,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 32.822144}
-    canvasZoom: 0.49000034
+    canvasScrollPosition: {x: 115.007385, y: 19.266052}
+    canvasZoom: 1.0899998
   - id: 16
     fields:
     - title: Title
@@ -34860,8 +34868,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 214.80005}
-    canvasZoom: 0.25
+    canvasScrollPosition: {x: 335.80658, y: 429.07004}
+    canvasZoom: 0.6099999
   syncInfo:
     syncActors: 0
     syncItems: 0

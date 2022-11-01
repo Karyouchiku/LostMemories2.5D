@@ -27,6 +27,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     {
         Item.OnItemCollected += Add;
         InteractableItem.OnItemCollected += Add;
+        InteractableItemV2.OnItemCollected += Add;
         ItemFromNPC.OnItemReceived += Add;
         InteractableDoor.RemoveFromInv += Remove;
         PortalDoor.RemoveFromInv += Remove;
@@ -35,6 +36,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     {
         Item.OnItemCollected -= Add;
         InteractableItem.OnItemCollected -= Add;
+        InteractableItemV2.OnItemCollected -= Add;
         ItemFromNPC.OnItemReceived -= Add;
         InteractableDoor.RemoveFromInv -= Remove;
         PortalDoor.RemoveFromInv -= Remove;

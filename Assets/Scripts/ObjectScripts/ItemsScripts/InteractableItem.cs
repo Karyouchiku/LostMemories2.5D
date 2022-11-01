@@ -9,17 +9,24 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
 
-    public SOItemData itemData;
+    SOItemData itemData;
+    public string itemName;
     bool itemGot;
     [Header("Data or triggering Dialogue")]
     public bool isForCutSceneTrigger;
     public DialogueDatabase dialogueDatabase;
-    public DialogueSystemTrigger trigger;
+    public int actorID;
     public int conversationID;
+    LMActors lmActors;
+    void Start()
+    {
+        lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
+    }
     public void Interact()
     {
         if (!itemGot)
         {
+            itemData = Resources.Load<SOItemData>(itemName);
             if (itemData != null)
             {
                 OnItemCollected?.Invoke(itemData);
@@ -35,10 +42,10 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
             {
                 if (conversationID > 0)
                 {
-                    trigger.trigger = DialogueSystemTriggerEvent.OnUse;
-                    trigger.conversation = dialogueDatabase.GetConversation(8).Title;
+                    lmActors._LMActors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.OnUse;
+                    lmActors._LMActors[actorID].GetComponent<DialogueSystemTrigger>().conversation = dialogueDatabase.GetConversation(conversationID).Title;
                 }
-                trigger.OnUse();
+                lmActors._LMActors[actorID].GetComponent<DialogueSystemTrigger>().OnUse();
             }
         }
     }
