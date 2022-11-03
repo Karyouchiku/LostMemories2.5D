@@ -8,6 +8,7 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
     public AudioClip open;
     public AudioClip close;
     AudioSource audioSource;
+    public bool isUnlocked = true;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,13 +21,19 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
         audioSource.clip = clip;
         audioSource.Play();
     }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        PlayAnim(other, true);
+        if (isUnlocked)
+        {
+            PlayAnim(other, true);
+        }
     }
     void OnTriggerExit(Collider other)
     {
-        PlayAnim(other, false);
+        if (isUnlocked)
+        {
+            PlayAnim(other, false);
+        }
     }
 
     void PlayAnim(Collider other, bool isOpen)

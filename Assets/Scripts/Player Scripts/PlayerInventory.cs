@@ -31,6 +31,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         ItemFromNPC.OnItemReceived += Add;
         InteractableDoor.RemoveFromInv += Remove;
         PortalDoor.RemoveFromInv += Remove;
+        LockInteractableDoors.OnUnlockInteractableDoor += Remove;
     }
     void OnDisable()
     {
@@ -40,6 +41,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         ItemFromNPC.OnItemReceived -= Add;
         InteractableDoor.RemoveFromInv -= Remove;
         PortalDoor.RemoveFromInv -= Remove;
+        LockInteractableDoors.OnUnlockInteractableDoor -= Remove;
     }
 
     public void Add(SOItemData soItemData)

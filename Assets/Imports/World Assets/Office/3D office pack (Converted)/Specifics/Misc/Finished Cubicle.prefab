@@ -378,11 +378,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86b7b08ff394784d8badd3913273cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemName: 
   isForCutSceneTrigger: 0
   dialogueDatabase: {fileID: 0}
-  trigger: {fileID: 0}
+  actorID: 0
   conversationID: 0
+--- !u!114 &3915223335544172916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976336762505099540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ebc0bb1428188419e11f7de11dd382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 816ec3b9-62bd-4984-864e-71bb29ec6e55
 --- !u!1001 &1705793341436758966
 PrefabInstance:
   m_ObjectHideFlags: 0
