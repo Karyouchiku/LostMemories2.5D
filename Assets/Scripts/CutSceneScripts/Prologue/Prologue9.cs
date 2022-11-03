@@ -146,6 +146,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         ContinueMode(false);
         MoveActor(2, 3, 0.8f);
+        locations[2].gameObject.SetActive(false);
         StartCoroutine(ForDE20Coroutine());
     }
 
@@ -188,6 +189,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     void SetActorStartingPosition(int actorID, int locationID)
     {
+        actors[actorID].SetActive(true);
         actors[actorID].transform.position = locations[locationID].position;
     }
     void MoveActor(int actorID, int locationID)
