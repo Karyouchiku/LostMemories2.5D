@@ -9,6 +9,7 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
     public AudioClip close;
     AudioSource audioSource;
     public bool isUnlocked = true;
+    //LockInteractableDoors lockInteractableDoors;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,6 +21,22 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
     {
         audioSource.clip = clip;
         audioSource.Play();
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Burito" || other.tag == "InteractableNPC")
+        {
+            if (TryGetComponent<LockInteractableDoors>(out LockInteractableDoors door))
+            {
+                if (door.isUnlocked)
+                {
+                    gameObject.tag = "Untagged";
+                    PlaySFX(open);
+                }
+                return;
+            }
+            PlaySFX(open);
+        }
     }
     void OnTriggerStay(Collider other)
     {
@@ -40,11 +57,7 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
     {
         if (other.tag == "Burito" || other.tag == "InteractableNPC")
         {
-            if (isOpen)
-            {
-                PlaySFX(open);
-            }
-            else
+            if (!isOpen)
             {
                 PlaySFX(close);
             }
