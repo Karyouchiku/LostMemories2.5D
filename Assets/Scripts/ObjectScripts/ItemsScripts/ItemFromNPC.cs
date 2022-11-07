@@ -8,7 +8,7 @@ public class ItemFromNPC : MonoBehaviour
     public delegate void HandledItemReceived(SOItemData soItemData);
 
     //public DialogueDatabase dialoguedb;
-    public SOItemData itemData;
+    public SOItemData[] itemData;
     //public string itemName;
     //string item;
 
@@ -16,6 +16,9 @@ public class ItemFromNPC : MonoBehaviour
     {
         //item = dialoguedb.GetItem(itemName).Name;
         //itemData = Resources.Load<SOItemData>(itemName);
-        OnItemReceived?.Invoke(itemData);
+        for (int i = 0; i < itemData.Length; i++)
+        {
+            OnItemReceived?.Invoke(itemData[i]);
+        }
     }
 }

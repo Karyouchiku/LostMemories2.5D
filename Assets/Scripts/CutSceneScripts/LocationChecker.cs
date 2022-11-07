@@ -5,13 +5,15 @@ using UnityEngine;
 public class LocationChecker : MonoBehaviour
 {
     CutScenes cutScenes;
+    LMActors lmActors;
     void Start()
     {
         cutScenes = GetComponentInParent<CutScenes>();
+        lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Burito")
+        if (other.tag == "Burito" || other.tag == "InteractableNPC")
         {
             cutScenes.LocationCheck();
         }

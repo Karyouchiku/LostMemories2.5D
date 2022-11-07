@@ -150,11 +150,24 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         yield return new WaitForSeconds(0.5f);
         transition.ManualTransitionON();
         yield return new WaitForSeconds(1);
+        GetComponent<ItemFromNPC>().GiveItem();
+        for (int i = 0; i < otherGameObjects.Length; i++)
+        {
+            otherGameObjects[i].SetActive(true);
+        }
+        SetActorStartingPosition(15, 7);
+        
+        yield return new WaitForSeconds(1);
+        Door(0);
         EndingScene();
     }
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
+    void Door(int doorID)
+    {
+        doors[doorID].Interact();
+    }
     void ChangeActorDialogue(int actorID, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
         if (useDialogyeManager)
@@ -182,6 +195,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     void SetActorStartingPosition(int actorID, int locationID)
     {
+        actors[actorID].SetActive(true);
         actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
     }
     void MoveActor(int actorID, int locationID)

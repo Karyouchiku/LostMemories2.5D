@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
@@ -118,32 +119,95 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         ContinueMode(false);
         SetMinSubtitleSeconds(3);
         //SetActorStartingPosition(2, 8);
-
+        
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
             GameObjectChildrens[i].SetActive(false);
         }
 
         //Activating other Objects
-        /*
+        
         for (int i = 0; i < otherGameObjects.Length; i++)
         {
-            otherGameObjects[i].SetActive(true);
+            if (i == 3)
+            {
+                continue;
+            }
+            otherGameObjects[i].SetActive(false);
         }
-        */
+        
     }
     public void ForDE02() {
         ContinueMode(true);
+    }
+    public void ForDE14()
+    {
+        transition.ManualTransitionON();
+    }
+    public void ForDE15()
+    {
+        EndingScene();
     }
     public void ForDE16()
     {
         MoveActor(0, 1, 0.8f);
     }
 
+    public void ForDE23()
+    {
+        ContinueMode(false);
+        MoveAIAgent(0, 3);
+    }
+    public void ForDE24()
+    {
+        SetActorStartingPosition(16, 4);
+        SetActorStartingPosition(17, 5);
+        MoveActor(16, 4, 1f);
+        MoveActor(17, 5, 1f);
+    }
+    public void ForDE27()
+    {
+        MoveActor(0, 6, 0.5f);
+    }
+    public void ForDE28()
+    {
+        MoveActor(15, 7, 1);
+    }
+    public void ForDE36()
+    {
+        StartCoroutine(ForDE36Coroutine());
+    }
+    IEnumerator ForDE36Coroutine()
+    {
+        SetActorStartingPosition(18, 10);
+        MoveActor(18, 11, 1f);
+        yield return new WaitForSeconds(0.3f);
+        SetActorStartingPosition(19, 10);
+        MoveActor(19, 15, 1f);
+        yield return new WaitForSeconds(2f);
+        ResetActorPositionToOriginal(18);
+        ResetActorPositionToOriginal(19);
+        otherGameObjects[1].SetActive(true);
+        MoveActor(0, 13, 0.8f);
+        MoveActor(15, 12, 0.8f);
+        yield return new WaitForSeconds(3f);
+        ResetActorPositionToOriginal(15);
+        MoveAIAgent(3, 14);
+        transition.ManualTransitionON();
+        yield return new WaitForSeconds(1f);
+        EndingScene();
+    }
 
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
+
+    void MoveAIAgent(int otherGameObjectID, int locationID)
+    {
+        otherGameObjects[otherGameObjectID].SetActive(true);
+        otherGameObjects[otherGameObjectID].GetComponent<NavMeshAgent>().SetDestination(GameObjectChildrens[locationID].transform.position);
+    }
+
     void ChangeActorDialogue(int actorIDToChange, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
         if (useDialogueManager)
@@ -220,6 +284,8 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from LocationChecker
     public void LocationCheck()
     {
+        MoveActor(0, 9, 1f);
+        MoveActor(15, 8, 1f);
     }
 
     //END OF ALL EVENT METHODS
