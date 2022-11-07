@@ -41,7 +41,8 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
     [Header("Scene Dialogue Changer")]
-    public bool useDialogyeManager;
+    public bool useDialogueManager;
+    public int actorIDToChange;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
 
@@ -135,13 +136,13 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
-    void ChangeActorDialogue(int actorID, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
+    void ChangeActorDialogue(int actorIDToChange, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
-        if (useDialogyeManager)
+        if (useDialogueManager)
         {
-            actors[actorID].gameObject.tag = "InteractableNPC";
-            actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.OnUse;
-            actors[actorID].GetComponent<DialogueSystemTrigger>().conversation = dialogueDatabase.GetConversation(convoID).Title;
+            actors[actorIDToChange].gameObject.tag = "InteractableNPC";
+            actors[actorIDToChange].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.OnUse;
+            actors[actorIDToChange].GetComponent<DialogueSystemTrigger>().conversation = dialogueDatabase.GetConversation(convoID).Title;
         }
     }
     void ContinueMode(bool isOptional)
@@ -160,6 +161,10 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = sec;
     }
 
+    void Door(int doorID)
+    {
+        doors[doorID].Interact();
+    }
     void SetActorStartingPosition(int actorID, int locationID)
     {
         actors[actorID].SetActive(true);
@@ -201,8 +206,10 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     //Calls from LocationChanger
     public void ChangeLocation(int actorID, int locationID)
     {
-        GameObjectChildrens[locationID].SetActive(true);
-        targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
+        //GameObjectChildrens[locationID].SetActive(true);
+        //targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
+        
+        MoveActor(actorID, locationID);
     }
 
     //Calls from LocationChecker

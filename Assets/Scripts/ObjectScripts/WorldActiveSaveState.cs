@@ -33,17 +33,10 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
 
         for (int i = 0; i < places.Length; i++)
         {
-            bool render;
-            if (i == renderPlaceID)
-            {
-                render = true;
-            }
-            else
-            {
-                render = false;
-            }
-            places[i].SetActive(render);
-            /*
+            bool render = i == renderPlaceID ? true : false;
+            
+            //places[i].SetActive(render);
+            
             MeshRenderer[] mesh = places[i].GetComponentsInChildren<MeshRenderer>();
             AudioSource[] sfx = places[i].GetComponentsInChildren<AudioSource>();
             Light[] lights = places[i].GetComponentsInChildren<Light>();
@@ -65,7 +58,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
             {
                 sprites[j].enabled = render;
             }
-            */
+            
         }
     }
 

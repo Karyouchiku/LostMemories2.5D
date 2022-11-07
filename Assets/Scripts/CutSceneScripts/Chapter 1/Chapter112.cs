@@ -42,6 +42,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     public int actorID;
     [Header("Scene Dialogue Changer")]
     public bool useDialogyeManager;
+    public int actorIDToChange;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
 
@@ -115,6 +116,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         ContinueMode(true);
+        StartMoving();
         //SetMinSubtitleSeconds(3);
         //SetActorStartingPosition(2, 8);
         /*
@@ -130,22 +132,39 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         }
         */
     }
+    public void ForDE26()
+    {
+        SetActorStartingPosition(15, 0);
+        MoveActor(15, 1, 0.7f);
+    }
     public void ForDE30()
     {
+        ContinueMode(false);
+        //ChangeActorDialogue(actorIDToChange, convoID);
         GetComponent<ItemFromNPC>().GiveItem();
+        for (int i = 0; i < otherGameObjects.Length; i++)
+        {
+            otherGameObjects[i].SetActive(true);
+        }
+        StartCoroutine(ForDE30Coroutine());
+    }
+    IEnumerator ForDE30Coroutine()
+    {
+        yield return new WaitForSeconds(2);
         EndingScene();
     }
+
 
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
-    void ChangeActorDialogue(int actorID, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
+    void ChangeActorDialogue(int actorIDToChange, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
         if (useDialogyeManager)
         {
-            actors[actorID].gameObject.tag = "InteractableNPC";
-            actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.OnUse;
-            actors[actorID].GetComponent<DialogueSystemTrigger>().conversation = dialogueDatabase.GetConversation(convoID).Title;
+            actors[actorIDToChange].gameObject.tag = "InteractableNPC";
+            actors[actorIDToChange].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.OnUse;
+            actors[actorIDToChange].GetComponent<DialogueSystemTrigger>().conversation = dialogueDatabase.GetConversation(convoID).Title;
         }
     }
     void ContinueMode(bool isOptional)

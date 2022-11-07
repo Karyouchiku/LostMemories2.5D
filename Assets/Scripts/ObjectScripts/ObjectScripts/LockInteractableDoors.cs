@@ -13,10 +13,12 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
     
     AnimatedOnTriggerCollider anim;
     PlayerInventory inventory;
-
-    bool isUnlocked;
+    public AudioClip unlockedSfx;
+    AudioSource audioSource;
+    public bool isUnlocked;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
         anim = GetComponent<AnimatedOnTriggerCollider>();
     }
@@ -31,6 +33,9 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
         if (inventory.SearchItemInInventory(key))
         {
             OnUnlockInteractableDoor?.Invoke(key);
+
+            audioSource.clip = unlockedSfx;
+            audioSource.Play();
             isUnlocked = true;
         }
     }

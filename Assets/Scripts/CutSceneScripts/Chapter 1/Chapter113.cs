@@ -116,7 +116,7 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         StartMoving();
         ContinueMode(true);
         SetMinSubtitleSeconds(3);
-        SetActorStartingPosition(3, 0);
+        //SetActorStartingPosition(3, 0);
         /*
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {

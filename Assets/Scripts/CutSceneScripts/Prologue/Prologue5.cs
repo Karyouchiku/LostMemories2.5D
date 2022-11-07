@@ -83,6 +83,7 @@ public class Prologue5 : MonoBehaviour, CutScenes, ISaveable
     public void StartMoving()
     {
         startThisScene = true;
+        
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
         dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
         startMove[0] = true;

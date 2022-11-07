@@ -106,16 +106,18 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         startThisScene = true;
 
         //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
-        //player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
+        actors[actorID].tag = "Untagged";
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
-        //ContinueMode(false);
+        ContinueMode(false);
         //SetMinSubtitleSeconds(3);
-        //SetActorStartingPosition(2, 8);
+        StartMoving();
+        SetActorStartingPosition(3, 1);
         
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
@@ -128,9 +130,28 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
             otherGameObjects[i].SetActive(true);
         }
         */
+        MoveActor(3, 2, 1f);
+    }
+    public void ForDE02()
+    {
+        ContinueMode(true);
+        MoveActor(3, 3);
     }
 
+    public void ForDE20()
+    {
+        MoveActor(3, 1);
+        MoveActor(0, 4, 0.8f);
+        StartCoroutine(ForDE20Coroutine());
+    }
 
+    IEnumerator ForDE20Coroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        transition.ManualTransitionON();
+        yield return new WaitForSeconds(1);
+        EndingScene();
+    }
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
