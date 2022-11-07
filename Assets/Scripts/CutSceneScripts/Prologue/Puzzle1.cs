@@ -128,7 +128,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
         yield return new WaitForSeconds(2);
         DisableControls(false);
         portalDoors[1].Interact();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         thisPuzzleDone = true;
     }
     //Unique Methods

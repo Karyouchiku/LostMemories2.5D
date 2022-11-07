@@ -47,10 +47,12 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     UnityAction<Transform> addToOnConversationEnd;
     public GameObject inGameUI;
     public GameObject player;
+    public GameObject playerInventory;
     public void AddListenersOnConversationEnd()
     {
         addToOnConversationEnd += EnableIngameUI;
         addToOnConversationEnd += EnablePlayerControls;
+        addToOnConversationEnd += InventoryRefresher;
         player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.AddListener(addToOnConversationEnd);
     }
     void EnableIngameUI(Transform inGameUI)
@@ -63,6 +65,12 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         player = this.player.transform;
         player.GetComponent<PlayerControls>().enabled = true;
     }
+    void InventoryRefresher(Transform playerInventory)
+    {
+        playerInventory = this.playerInventory.transform;
+        playerInventory.GetComponent<PlayerInventory>().InventoryRefresher();
+    }
+
 
     public object SaveState()
     {
