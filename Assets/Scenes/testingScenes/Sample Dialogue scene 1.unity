@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: initialDatabase
       value: 
-      objectReference: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
+      objectReference: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.dialogueUI
       value: 
@@ -748,10 +748,8 @@ MonoBehaviour:
   portraitImage: {fileID: 1086079066}
   portraitName:
     m_uiText: {fileID: 1338752483}
-    m_textMeshProUGUI: {fileID: 0}
   subtitleText:
     m_uiText: {fileID: 1865821374}
-    m_textMeshProUGUI: {fileID: 0}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
@@ -1238,7 +1236,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: (Chapter 2) Mario Scene
+  conversation: New Conversation 1
   conversationConversant: {fileID: 126368263}
   conversationActor: {fileID: 385911184}
   startConversationEntryID: -1
@@ -1261,7 +1259,7 @@ MonoBehaviour:
   useConversationTitlePicker: 1
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
-  selectedDatabase: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
+  selectedDatabase: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
 --- !u!65 &126368260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1662,7 +1660,6 @@ MonoBehaviour:
   pcImage: {fileID: 0}
   pcName:
     m_uiText: {fileID: 0}
-    m_textMeshProUGUI: {fileID: 0}
   usePortraitNativeSize: 0
   timerSlider: {fileID: 21860703}
   buttonAlignment: 0
@@ -2578,10 +2575,8 @@ MonoBehaviour:
   panel: {fileID: 869494393}
   label:
     m_uiText: {fileID: 466654034}
-    m_textMeshProUGUI: {fileID: 0}
   inputField:
     m_uiInputField: {fileID: 466131032}
-    m_textMeshProInputField: {fileID: 0}
   acceptKey: 13
   cancelKey: 27
   showTouchScreenKeyboard: 0
@@ -2752,10 +2747,8 @@ MonoBehaviour:
   portraitImage: {fileID: 1025276080}
   portraitName:
     m_uiText: {fileID: 791340038}
-    m_textMeshProUGUI: {fileID: 0}
   subtitleText:
     m_uiText: {fileID: 1898403181}
-    m_textMeshProUGUI: {fileID: 0}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
@@ -3093,7 +3086,6 @@ MonoBehaviour:
     panel: {fileID: 27235151}
     alertText:
       m_uiText: {fileID: 1924311904}
-      m_textMeshProUGUI: {fileID: 0}
     queueAlerts: 1
     dontQueueDuplicates: 0
     waitForHideAnimation: 1
@@ -4411,7 +4403,6 @@ MonoBehaviour:
   button: {fileID: 1637161493}
   label:
     m_uiText: {fileID: 1979874376}
-    m_textMeshProUGUI: {fileID: 0}
   setLabelColor: 1
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1637161492
