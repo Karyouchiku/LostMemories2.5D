@@ -4579,7 +4579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1771702335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4923,6 +4923,46 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: Year
+      m_Image: {fileID: 0}
+    - m_Text: 1980
+      m_Image: {fileID: 0}
+    - m_Text: 1981
+      m_Image: {fileID: 0}
+    - m_Text: 1982
+      m_Image: {fileID: 0}
+    - m_Text: 1983
+      m_Image: {fileID: 0}
+    - m_Text: 1984
+      m_Image: {fileID: 0}
+    - m_Text: 1985
+      m_Image: {fileID: 0}
+    - m_Text: 1986
+      m_Image: {fileID: 0}
+    - m_Text: 1987
+      m_Image: {fileID: 0}
+    - m_Text: 1988
+      m_Image: {fileID: 0}
+    - m_Text: 1989
+      m_Image: {fileID: 0}
+    - m_Text: 1990
+      m_Image: {fileID: 0}
+    - m_Text: 1991
+      m_Image: {fileID: 0}
+    - m_Text: 1992
+      m_Image: {fileID: 0}
+    - m_Text: 1993
+      m_Image: {fileID: 0}
+    - m_Text: 1994
+      m_Image: {fileID: 0}
+    - m_Text: 1995
+      m_Image: {fileID: 0}
+    - m_Text: 1996
+      m_Image: {fileID: 0}
+    - m_Text: 1997
+      m_Image: {fileID: 0}
+    - m_Text: 1998
+      m_Image: {fileID: 0}
+    - m_Text: 1999
       m_Image: {fileID: 0}
     - m_Text: 2000
       m_Image: {fileID: 0}

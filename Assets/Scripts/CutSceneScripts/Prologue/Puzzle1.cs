@@ -37,8 +37,10 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     {
         if (startThisPuzzle)
         {
+
             if (!thisPuzzleDone)
             {
+                PuzzleChilds(true);
                 EnableOtherGameObjects();
                 if (movePlayer)
                 {
@@ -55,18 +57,21 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
             }
             else
             {
-                DisableChilds();
+                PuzzleChilds(false);
             }
         }
         
     }
-    void DisableChilds()
+    void PuzzleChilds(bool isEnable)
     {
         for (int i = 0; i < GameObjectChildren.Length; i++)
         {
-            GameObjectChildren[i].gameObject.SetActive(false);
+            GameObjectChildren[i].gameObject.SetActive(isEnable);
         }
-        startThisPuzzle = false;
+        if (!isEnable)
+        {
+            startThisPuzzle = false;
+        }
     }
     bool CheckInventoryForRequiredItems()
     {

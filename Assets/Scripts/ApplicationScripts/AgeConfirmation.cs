@@ -20,7 +20,7 @@ public class AgeConfirmation : MonoBehaviour
     public void ConfirmBTN()
     {
 
-        year = tmp_year.value + 1999;
+        year = tmp_year.value + 1979;
         month = tmp_month.value;
         day = tmp_day.value;
         int age;
@@ -37,6 +37,7 @@ public class AgeConfirmation : MonoBehaviour
         }
         if (age >=16)
         {
+            //Debug.Log($"Age: {age}");
             ss.GoToMainMenu();
         }
         else
