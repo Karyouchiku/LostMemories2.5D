@@ -3906,8 +3906,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2.9324303}
-    canvasZoom: 0.4000001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.3400001
   - id: 3
     fields:
     - title: Title
@@ -6535,7 +6535,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.30999997
+    canvasZoom: 0.24999997
   - id: 4
     fields:
     - title: Title
@@ -11818,7 +11818,7 @@ MonoBehaviour:
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.36999986
+    canvasZoom: 0.1
   - id: 5
     fields:
     - title: Title
@@ -15129,8 +15129,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 90.03865, y: 0}
-    canvasZoom: 0.4900001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.3700001
   - id: 6
     fields:
     - title: Title
@@ -16651,8 +16651,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 101.42856}
-    canvasZoom: 0.70000017
+    canvasScrollPosition: {x: 0, y: 29.488468}
+    canvasZoom: 0.46000022
   - id: 7
     fields:
     - title: Title
@@ -18089,8 +18089,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 505.53442, y: 459.99982}
-    canvasZoom: 0.5500003
+    canvasScrollPosition: {x: 383.14984, y: 406.16068}
+    canvasZoom: 0.43000033
   - id: 8
     fields:
     - title: Title
