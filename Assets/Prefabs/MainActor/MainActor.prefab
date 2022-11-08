@@ -5210,7 +5210,7 @@ MonoBehaviour:
       cancelConversation:
         key: 27
         buttonName: 
-    dialogueUI: {fileID: 191644, guid: ec86157352090354fba5ec5ba5f2e9aa, type: 3}
+    dialogueUI: {fileID: 191644, guid: 701afe115eebc714e97571b28ede8c36, type: 3}
     defaultCanvas: {fileID: 4376903145061478916}
     localizationSettings:
       language: 
