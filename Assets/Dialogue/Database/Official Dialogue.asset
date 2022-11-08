@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Burito
+      value: NullName
       type: 0
       typeString: 
     - title: Pictures
@@ -1633,8 +1633,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 31.070087}
-    canvasZoom: 0.7
+    canvasScrollPosition: {x: 0, y: 501.55612}
+    canvasZoom: 0.96999973
   - id: 2
     fields:
     - title: Title
@@ -3906,8 +3906,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 357.7657}
-    canvasZoom: 0.61
+    canvasScrollPosition: {x: 61.25242, y: 771.6785}
+    canvasZoom: 1.0299996
   - id: 3
     fields:
     - title: Title
@@ -6534,7 +6534,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 53.63974, y: 687.8911}
+    canvasScrollPosition: {x: 0, y: 935.25916}
     canvasZoom: 0.75999975
   - id: 4
     fields:
@@ -11817,8 +11817,8 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 32.81244, y: 1656.603}
-    canvasZoom: 0.63999975
+    canvasScrollPosition: {x: 26.836975, y: 2092.644}
+    canvasZoom: 0.9099995
   - id: 5
     fields:
     - title: Title
@@ -15129,7 +15129,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 81.818146, y: 0}
+    canvasScrollPosition: {x: 21.818146, y: 412.72723}
     canvasZoom: 0.5500001
   - id: 6
     fields:
@@ -16651,8 +16651,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 4.6875, y: 121.87497}
-    canvasZoom: 0.6400002
+    canvasScrollPosition: {x: 1.3157959, y: 411.43076}
+    canvasZoom: 0.7600001
   - id: 7
     fields:
     - title: Title
@@ -18089,7 +18089,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 818.37, y: 165.45126}
+    canvasScrollPosition: {x: 711.5207, y: 907.91705}
     canvasZoom: 0.73000014
   - id: 8
     fields:
@@ -21163,7 +21163,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1126.4695, y: 778.6643}
+    canvasScrollPosition: {x: 679.9573, y: 1660.061}
     canvasZoom: 0.42999944
   - id: 9
     fields:
@@ -22928,7 +22928,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 34.177216, y: 825.2909}
+    canvasScrollPosition: {x: 0, y: 1146.81}
     canvasZoom: 0.78999996
   - id: 10
     fields:
@@ -23060,6 +23060,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 29df222a-a088-4379-9e1f-bf6e139405ef
         type: 0
         typeString: 
       conversationID: 10
@@ -23359,7 +23363,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 13.392883, y: 67.85715}
+    canvasScrollPosition: {x: 0, y: 88.39287}
     canvasZoom: 1.1199999
   - id: 11
     fields:
@@ -23490,6 +23494,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: f146d7ad-d010-42de-8bd3-95de6f084f69
         type: 0
         typeString: 
       conversationID: 11
@@ -23718,6 +23726,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 89a621b4-0464-40c8-9a1a-1d94b5750139
+        type: 0
+        typeString: 
       conversationID: 11
       isRoot: 0
       isGroup: 0
@@ -23739,7 +23751,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 486.89148
+        x: 487.95532
         y: 292.64438
         width: 160
         height: 30
@@ -23771,6 +23783,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 73bd3d07-9230-4351-a7d2-6e7f95c09549
         type: 0
         typeString: 
       conversationID: 11
@@ -24064,7 +24080,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 272.52142, y: 0}
+    canvasScrollPosition: {x: 201.24475, y: 189.3617}
     canvasZoom: 0.94000006
   - id: 12
     fields:
@@ -24195,6 +24211,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 2f40300f-9b4e-4cb3-849a-3b6a456ee220
         type: 0
         typeString: 
       conversationID: 12
@@ -25544,6 +25564,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 8e6fd5cd-b206-4319-8fcd-5157f2da6365
+        type: 0
+        typeString: 
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -25764,6 +25788,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 0565d1e7-f4fd-4518-901e-484d76591c1c
+        type: 0
+        typeString: 
       conversationID: 12
       isRoot: 0
       isGroup: 0
@@ -25784,8 +25812,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5200002
+    canvasScrollPosition: {x: 9.890137, y: 1265.0767}
+    canvasZoom: 0.90999985
   - id: 13
     fields:
     - title: Title
@@ -25915,6 +25943,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 5de1bd47-d7f1-4d29-87b8-832100e79c1f
         type: 0
         typeString: 
       conversationID: 13
@@ -26213,7 +26245,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 149.96078, y: 0}
+    canvasScrollPosition: {x: 128.4418, y: 10.126556}
     canvasZoom: 0.7900002
   - id: 14
     fields:
@@ -26347,6 +26379,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 9724b55b-77e5-48bf-92aa-e1e06a531ad1
+        type: 0
+        typeString: 
       conversationID: 14
       isRoot: 0
       isGroup: 0
@@ -26400,6 +26436,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 3b261503-5858-4445-96e7-620434b4270a
         type: 0
         typeString: 
       conversationID: 14
@@ -26555,6 +26595,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 34071507-5a59-4f13-9e56-ce48e61b053b
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -26608,6 +26652,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: c8b6113c-cf33-477d-b323-c2ab9efdee5d
         type: 0
         typeString: 
       conversationID: 15
@@ -27617,6 +27665,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 4bc404ef-6387-452f-9368-9e05134a5be0
+        type: 0
+        typeString: 
       conversationID: 15
       isRoot: 0
       isGroup: 0
@@ -27915,8 +27967,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.46000034
+    canvasScrollPosition: {x: 0, y: 526.8293}
+    canvasZoom: 0.82000005
   - id: 16
     fields:
     - title: Title
@@ -28049,6 +28101,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 23dc36d0-1f1a-42d8-8e9a-cd831dee8bdd
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -28103,6 +28159,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 84b90567-51cb-4b8a-a7fa-550ee3658fc9
         type: 0
         typeString: 
       conversationID: 16
@@ -28779,6 +28839,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 8caa4263-d09b-4476-8753-a3d8d179db65
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -28834,6 +28898,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: e64be8e1-7a09-4394-abe9-0c04bc74fc59
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -28882,6 +28950,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 96cbcfc8-6030-4fb0-9678-922ddcdaec5b
         type: 0
         typeString: 
       conversationID: 16
@@ -29270,6 +29342,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 01bde44d-2841-417b-a328-223bbc1cc677
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -29323,6 +29399,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 2f809efa-22fb-4a3b-9d2f-0ec7568ee13e
         type: 0
         typeString: 
       conversationID: 16
@@ -29490,6 +29570,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 9a4193ae-6137-48e9-9bec-af3ce9725f6f
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -29543,6 +29627,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 45ccd331-c2ea-41b6-8765-1d10c9867f97
         type: 0
         typeString: 
       conversationID: 16
@@ -29987,6 +30075,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 3f3abf3f-5323-4116-9e9c-18d3551b1faa
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -30174,8 +30266,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 293.81104, y: 0}
-    canvasZoom: 0.72999966
+    canvasScrollPosition: {x: 321.9349, y: 1321.9736}
+    canvasZoom: 0.8199996
   - id: 17
     fields:
     - title: Title
@@ -42224,8 +42316,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 893.9142, y: 170.33582}
-    canvasZoom: 0.37
+    canvasScrollPosition: {x: 719.52234, y: 0}
+    canvasZoom: 0.4
   syncInfo:
     syncActors: 0
     syncItems: 0
@@ -42235,9 +42327,11 @@ MonoBehaviour:
     syncItemsDatabase: {fileID: 0}
     syncLocationsDatabase: {fileID: 0}
     syncVariablesDatabase: {fileID: 0}
-  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Is
-    Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Success
-    Description","value":"","type":0,"typeString":""},{"title":"Failure Description","value":"","type":0,"typeString":""},{"title":"State","value":"unassigned","type":0,"typeString":""},{"title":"Is
-    Item","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"locationFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"variableFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Initial
-    Value","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"conversationFields":[{"title":"Title","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Actor","value":"0","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"0","type":5,"typeString":"CustomFieldType_Actor"}],"dialogueEntryFields":[{"title":"Title","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Actor","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Menu
-    Text","value":"","type":0,"typeString":""},{"title":"Dialogue Text","value":"","type":0,"typeString":""},{"title":"Sequence","value":"","type":0,"typeString":""}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"pcLineColor":{"r":0.0,"g":0.0,"b":1.0,"a":1.0},"repeatLineColor":{"r":0.5,"g":0.5,"b":0.5,"a":1.0}}'
+  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Is
+    Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Success
+    Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Failure
+    Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"State","value":"unassigned","type":0,"typeString":"CustomFieldType_QuestState"},{"title":"Is
+    Item","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"locationFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"}],"variableFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Initial
+    Value","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"}],"conversationFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"0","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"0","type":5,"typeString":"CustomFieldType_Actor"}],"dialogueEntryFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Menu
+    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Dialogue
+    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Sequence","value":"","type":0,"typeString":"CustomFieldType_Text"}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"pcLineColor":{"r":0.0,"g":0.0,"b":1.0,"a":1.0},"repeatLineColor":{"r":0.6037735939025879,"g":0.6037735939025879,"b":0.6037735939025879,"a":1.0}}'
