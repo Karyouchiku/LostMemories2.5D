@@ -748,10 +748,8 @@ MonoBehaviour:
   portraitImage: {fileID: 1086079066}
   portraitName:
     m_uiText: {fileID: 1338752483}
-    m_textMeshProUGUI: {fileID: 0}
   subtitleText:
     m_uiText: {fileID: 1865821374}
-    m_textMeshProUGUI: {fileID: 0}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
@@ -1662,7 +1660,6 @@ MonoBehaviour:
   pcImage: {fileID: 0}
   pcName:
     m_uiText: {fileID: 0}
-    m_textMeshProUGUI: {fileID: 0}
   usePortraitNativeSize: 0
   timerSlider: {fileID: 21860703}
   buttonAlignment: 0
@@ -2578,10 +2575,8 @@ MonoBehaviour:
   panel: {fileID: 869494393}
   label:
     m_uiText: {fileID: 466654034}
-    m_textMeshProUGUI: {fileID: 0}
   inputField:
     m_uiInputField: {fileID: 466131032}
-    m_textMeshProInputField: {fileID: 0}
   acceptKey: 13
   cancelKey: 27
   showTouchScreenKeyboard: 0
@@ -2752,10 +2747,8 @@ MonoBehaviour:
   portraitImage: {fileID: 1025276080}
   portraitName:
     m_uiText: {fileID: 791340038}
-    m_textMeshProUGUI: {fileID: 0}
   subtitleText:
     m_uiText: {fileID: 1898403181}
-    m_textMeshProUGUI: {fileID: 0}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
@@ -3093,7 +3086,6 @@ MonoBehaviour:
     panel: {fileID: 27235151}
     alertText:
       m_uiText: {fileID: 1924311904}
-      m_textMeshProUGUI: {fileID: 0}
     queueAlerts: 1
     dontQueueDuplicates: 0
     waitForHideAnimation: 1
@@ -4411,7 +4403,6 @@ MonoBehaviour:
   button: {fileID: 1637161493}
   label:
     m_uiText: {fileID: 1979874376}
-    m_textMeshProUGUI: {fileID: 0}
   setLabelColor: 1
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1637161492
