@@ -108,7 +108,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         startThisScene = true;
 
-        //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
+        dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
         //player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE

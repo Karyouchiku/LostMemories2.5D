@@ -144,6 +144,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         //Look for an entrance to sneak through the adoption agency building.
         questText.text = "Find another way through the building";
         otherGameObjects[0].SetActive(true);
+        otherGameObjects[1].SetActive(true);
         EndingScene();
     }
 

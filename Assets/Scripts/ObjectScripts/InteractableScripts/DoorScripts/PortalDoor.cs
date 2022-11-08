@@ -28,6 +28,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     private void Awake()
     {
         inGameUi = GameObject.Find("IngameUI");
+        playerInventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
     }
     void Start()
     {
@@ -93,6 +94,8 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     public bool lighting;
     [Header("World to Render")]
     public int renderPlaceID;
+
+    PlayerInventory playerInventory;
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
@@ -108,6 +111,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         {
             player.GetComponent<PlayerControls>().enabled = true;
             inGameUi.SetActive(true);
+            playerInventory.InventoryRefresher();
         }
         OnTriggerExitBtn?.Invoke();
     }

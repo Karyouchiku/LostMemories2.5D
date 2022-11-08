@@ -86,7 +86,7 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         {
             GameObjectChildrens[i].SetActive(false);
         }
-        ResetActorPositionToOriginal(1);
+        
         ResetActorPositionToOriginal(11);
         ResetActorPositionToOriginal(12);
         ResetActorPositionToOriginal(13);
@@ -246,7 +246,7 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     IEnumerator DiableNPCs()
     {
         yield return new WaitForSeconds(1);
-        
+        ResetActorPositionToOriginal(1);
         otherGameObjects[0].SetActive(true);
         EndingScene();
     }

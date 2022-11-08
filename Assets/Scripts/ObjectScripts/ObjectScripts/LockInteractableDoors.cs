@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
 {
     public static event HandlingLockedDoor OnUnlockInteractableDoor;
@@ -16,11 +16,13 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
     public AudioClip unlockedSfx;
     AudioSource audioSource;
     public bool isUnlocked;
+    TMP_Text questText;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
         anim = GetComponent<AnimatedOnTriggerCollider>();
+        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
     }
     void Update()
     {
@@ -37,6 +39,11 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
             audioSource.clip = unlockedSfx;
             audioSource.Play();
             isUnlocked = true;
+            questText.text = "Find the information of your real parents";
+        }
+        else
+        {
+            questText.text = "Find The key to the Attorney's Room";
         }
     }
 

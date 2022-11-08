@@ -31,7 +31,7 @@ public class LoadDataChecker : MonoBehaviour
             {
                 //This is for New Game
                 player.GetComponent<PlayerControls>().enabled = false;
-                ingameUI.SetActive(false);
+                //ingameUI.SetActive(false);
                 movePlayer = true;
                 trasitioning.StartTransition2ndVer();
             }
