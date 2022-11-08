@@ -26,7 +26,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
             {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = dialoguedbBackup.conversations[i].dialogueEntries[j].DialogueText;
+                //dialoguedb.conversations[i].dialogueEntries[j].DialogueText = dialoguedbBackup.conversations[i].dialogueEntries[j].DialogueText;
             }
         }
     }
@@ -38,7 +38,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
             {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, PlayerName.playerName);
+                //dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, PlayerName.playerName);
             }
         }
     }
