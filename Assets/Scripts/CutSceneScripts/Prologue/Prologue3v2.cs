@@ -115,7 +115,7 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         //ContinueMode(false);
-        //SetMinSubtitleSeconds(3);
+        SetMinSubtitleSeconds(3);
         //SetActorStartingPosition(2, 8);
         SetActorStartingPosition(8, 14);
         SetActorStartingPosition(9, 15);

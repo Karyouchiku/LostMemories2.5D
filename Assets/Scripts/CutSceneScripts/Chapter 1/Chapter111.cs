@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using TMPro;
 public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
@@ -37,6 +37,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
+    TMP_Text questText;
 
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
@@ -52,7 +53,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
+        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -133,11 +134,15 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     }
     public void ForDE05()
     {
+        //Look around and ask if someone is willing to help. Preferrably someone who works in the agency.
+        questText.text = "Ask someone for help.";
         ChangeActorDialogue(actorID, convoID);
         EndingScene();
     }
     public void ForDE06()
     {
+        //Look for an entrance to sneak through the adoption agency building.
+        questText.text = "Find another way through the building";
         otherGameObjects[0].SetActive(true);
         EndingScene();
     }

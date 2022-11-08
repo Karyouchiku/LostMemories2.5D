@@ -10,7 +10,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
 {
     public DialogueDatabase dialoguedb;
     public DialogueDatabase dialoguedbBackup;
-    string namePattern = "MC";
+    string namePattern = "Burito";
 
     void Awake()
     {

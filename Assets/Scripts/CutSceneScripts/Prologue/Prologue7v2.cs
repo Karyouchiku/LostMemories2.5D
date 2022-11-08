@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class Prologue7v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
@@ -36,6 +37,7 @@ public class Prologue7v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
+    public TMP_Text questText;//Find your old pictures for your assignment tomorrow.
 
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
@@ -171,6 +173,7 @@ public class Prologue7v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     public void ForDE61()
     {
         ContinueMode(false);
+        questText.text = "Find your old pictures for your assignment tomorrow.";
         EnterDoor();
     }
 

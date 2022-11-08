@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using TMPro;
 public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
@@ -37,14 +37,14 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
-
+    TMP_Text questText;
     void Start()
     {
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
+        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -122,6 +122,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             otherGameObjects[i].SetActive(true);
         }
+        questText.text = "Find the Adoption Agency";
         EndingScene();
     }
 

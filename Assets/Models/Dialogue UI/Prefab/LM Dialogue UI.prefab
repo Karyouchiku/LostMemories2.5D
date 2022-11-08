@@ -2173,7 +2173,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 00e61b8655d3f7941ad241422bdb205a, type: 3}
-    m_FontSize: 32
+    m_FontSize: 24
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -2184,7 +2184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RESPONSE
+  m_Text: REasdsfdksdfmlaksfd asfds fsndf nasnfnaskdn fknsakdnfk
 --- !u!114 &11454196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4043,8 +4043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1340, y: 0}
-  m_SizeDelta: {x: -1479.7001, y: 400}
+  m_AnchoredPosition: {x: 1000, y: 0}
+  m_SizeDelta: {x: -1140, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &11404258
 MonoBehaviour:
