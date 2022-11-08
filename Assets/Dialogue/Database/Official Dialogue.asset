@@ -16651,8 +16651,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.3157959, y: 411.43076}
-    canvasZoom: 0.7600001
+    canvasScrollPosition: {x: 38.732056, y: 32.249954}
+    canvasZoom: 0.70000017
   - id: 7
     fields:
     - title: Title
@@ -17829,7 +17829,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: '[em1]You heard your mom leave and right after she left, you remembered
-          something you have to do.'
+          something you have to do.[/em1]'
         type: 0
         typeString: 
       - title: Sequence
@@ -18089,8 +18089,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 784.96967, y: 316.13934}
-    canvasZoom: 1.0899998
+    canvasScrollPosition: {x: 828.82794, y: 468.22147}
+    canvasZoom: 0.85
   - id: 8
     fields:
     - title: Title
@@ -21163,8 +21163,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 679.9573, y: 1660.061}
-    canvasZoom: 0.42999944
+    canvasScrollPosition: {x: 1142.9253, y: 0}
+    canvasZoom: 0.63999933
   - id: 9
     fields:
     - title: Title
