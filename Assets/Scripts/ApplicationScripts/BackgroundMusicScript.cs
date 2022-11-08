@@ -18,6 +18,10 @@ public class BackgroundMusicScript : MonoBehaviour
         {
             bgMusic.volume += 1.5f * Time.deltaTime;
         }
+        if (bgMusic.volume > maxVolume)
+        {
+            bgMusic.volume -= 1.5f * Time.deltaTime;
+        }
     }
     void OnDisable()
     {

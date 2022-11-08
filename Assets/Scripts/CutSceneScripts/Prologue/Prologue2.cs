@@ -52,10 +52,18 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                gameObject.SetActive(false);
+                DisableChilds();
             }
         }
     }
+    void DisableChilds()
+    {
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
+        }
+    }
+
 
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
@@ -72,7 +80,7 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     {
         startThisScene = true;
         actors[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
-        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 4;
+        dialogueSystemController.displaySettings.subtitleSettings.minSubtitleSeconds = 3;
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
         startMove[0] = true;
         targetLocation[0] = locations[0].transform.position;
@@ -80,10 +88,10 @@ public class Prologue2 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE2()
     {
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        
         for (int i = 1; i < (actors.Length-1); i++)
         {
             startMove[i] = true;
-            actors[i].SetActive(true);
             targetLocation[i] = locations[i].transform.position;
         }
     }

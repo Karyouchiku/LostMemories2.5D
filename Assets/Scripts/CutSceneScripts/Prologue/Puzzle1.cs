@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
 {
+    public bool startThisPuzzle;
     public bool thisPuzzleDone;
     [Header("For Disabling Controls")]
     public GameObject player;
     public GameObject InGameUI;
 
     [Header("Portal Door to be Available")]
-    public PortalDoor door;
+    public PortalDoor[] portalDoors;
+    public GameObject[] GameObjectChildren;
     public GameObject[] otherGameObjects;
 
-    public Transform[] LocationR;//Move to position when in Restricted area
-    Vector3 LocationRVec;
+    public Transform[] LocationsToMove;//Move to position
+    Vector3 LocationToMove;
     bool movePlayer;
     float playerMoveSpeed;
     Vector3 animationVec;
@@ -24,35 +26,48 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     public SOItemData[] requiredItems;
     bool[] isRequiredItemsAquired;
 
+    BlackTransitioning transition;
     void Start()
     {
+        transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         playerInventory = GameObject.FindWithTag("Player Inventory").GetComponent<PlayerInventory>();
         isRequiredItemsAquired = new bool[requiredItems.Length];
     }
     void Update()
     {
-        if (!thisPuzzleDone)
+        if (startThisPuzzle)
         {
-            if (movePlayer)
+            if (!thisPuzzleDone)
             {
-                animationVec = LocationRVec - player.transform.position;
-                LocationRVec.y = player.transform.position.y;
-                player.transform.position = Vector3.MoveTowards(player.transform.position, LocationRVec, playerMoveSpeed * Time.deltaTime);
-                player.gameObject.GetComponent<CharacterAnimation>().moveX = animationVec.x;
-                player.gameObject.GetComponent<CharacterAnimation>().moveZ = animationVec.z;
+                EnableOtherGameObjects();
+                if (movePlayer)
+                {
+                    animationVec = LocationToMove - player.transform.position;
+                    LocationToMove.y = player.transform.position.y;
+                    player.transform.position = Vector3.MoveTowards(player.transform.position, LocationToMove, playerMoveSpeed * Time.deltaTime);
+                    player.gameObject.GetComponent<CharacterAnimation>().moveX = animationVec.x;
+                    player.gameObject.GetComponent<CharacterAnimation>().moveZ = animationVec.z;
+                }
+                if (CheckInventoryForRequiredItems())
+                {
+                    UnlockTheDoor();
+                }
             }
-            if (CheckInventoryForRequiredItems())
+            else
             {
-                door.locked = false;
+                DisableChilds();
             }
-        }
-        else
-        {
-            gameObject.SetActive(false);
         }
         
     }
-    
+    void DisableChilds()
+    {
+        for (int i = 0; i < GameObjectChildren.Length; i++)
+        {
+            GameObjectChildren[i].gameObject.SetActive(false);
+        }
+        startThisPuzzle = false;
+    }
     bool CheckInventoryForRequiredItems()
     {
         bool[] checkSearch = new bool[isRequiredItemsAquired.Length];
@@ -83,42 +98,40 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
             return false;
         }
     }
-    /*
-    bool CheckIsRequiredItemsAquired(bool isRequiredItemAquired)
-    {
-        if (isRequiredItemAquired)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    */
 
+    //IPuzzle Methods
     public void MovePlayer(bool move)
     {
         movePlayer = move;
+        DisableControls(true);
     }
-    public void MovePlayer(bool move, float moveSpeed)
+    public void MovePlayer(bool move, float moveSpeed, int MoveToPositionID)
     {
         movePlayer = move;
         playerMoveSpeed = moveSpeed;
-    }
-    public void RestrictedArea(int MoveToPositionID)
-    {
+        LocationToMove = LocationsToMove[MoveToPositionID].position;
         DisableControls(false);
-        LocationRVec = LocationR[MoveToPositionID].position;
-        MovePlayer(true, 0.8f);
     }
     public void DisableControls(bool turn)
     {
         player.GetComponent<PlayerControls>().enabled = turn;
-        player.GetComponent<CharacterAnimation>().ResetAnimation();
         InGameUI.SetActive(turn);
+        player.GetComponent<CharacterAnimation>().ResetAnimation();
     }
-
+    public void FinishingPuzzle()
+    {
+        transition.ManualTransitionON();
+        StartCoroutine(TeleportPlayer());
+    }
+    IEnumerator TeleportPlayer()
+    {
+        yield return new WaitForSeconds(2);
+        DisableControls(false);
+        portalDoors[1].Interact();
+        yield return new WaitForSeconds(1);
+        thisPuzzleDone = true;
+    }
+    //Unique Methods
     void EnableOtherGameObjects()
     {
         for (int i = 0; i < otherGameObjects.Length; i++)
@@ -128,7 +141,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     }
     void UnlockTheDoor()
     {
-        door.locked = false;
+        portalDoors[0].locked = false;
     }
     public object SaveState()
     {

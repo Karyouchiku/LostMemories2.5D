@@ -15,7 +15,6 @@ public class StopPlayerToMoveAutomatically : MonoBehaviour
         if (other.tag == "Burito")
         {
             puzzle.MovePlayer(false);
-            puzzle.DisableControls(true);
         }
     }
 }

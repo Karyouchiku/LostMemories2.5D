@@ -52,11 +52,18 @@ public class Prologue3 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                gameObject.SetActive(false);
+                DisableChilds();
             }
         }
     }
 
+    void DisableChilds()
+    {
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
+        }
+    }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)

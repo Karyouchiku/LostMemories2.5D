@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class PlayerName : ScriptableObject
+public static class PlayerName 
 {
-    public string playerName;
+    public static string playerName;
 }

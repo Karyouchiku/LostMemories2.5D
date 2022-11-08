@@ -8,7 +8,7 @@ using PixelCrushers.DialogueSystem;
 public class PlayerNameInput : MonoBehaviour
 {
     public DialogueDatabase dialogueDB;
-    public PlayerName playerName;
+    //public PlayerName playerName;
 
     public TextMeshProUGUI inputPlayerName;
 
@@ -19,13 +19,13 @@ public class PlayerNameInput : MonoBehaviour
 
     public void SetPlayerName()
     {
-        playerName.playerName = inputPlayerName.text;
+        PlayerName.playerName = inputPlayerName.text;
 
-        displayPlayerName.text = playerName.playerName;
+        displayPlayerName.text = PlayerName.playerName;
         
         Debug.Log(dialogueDB.GetVariable("Alert").InitialValue);
         Debug.Log($"This is the Boolean: {dialogueDB.GetVariable("testBool").InitialValue}");
-        dialogueDB.actors[0].Name = playerName.playerName;
+        dialogueDB.actors[0].Name = PlayerName.playerName;
 
 
     }

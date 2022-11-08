@@ -46,6 +46,7 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
+    public bool DisableTAKITA;
     void Update()
     {
         if (startThisScene)
@@ -59,9 +60,17 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
             }
             else
             {
-                otherGameObjects[0].SetActive(true);//Enabling for prologue 9 to start
-                gameObject.SetActive(false);
+                
+                DisableChilds();
             }
+        }
+        actors[1].SetActive(DisableTAKITA);
+    }
+    void DisableChilds()
+    {
+        for (int i = 0; i < locations.Length; i++)
+        {
+            locations[i].gameObject.SetActive(false);
         }
     }
 
@@ -104,7 +113,7 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
         targetLocation[1] = locations[0].position;
         targetLocation[1].y = actors[1].transform.position.y;
         actors[1].transform.position = targetLocation[1];
-        actors[1].SetActive(true);
+        DisableTAKITA = true;
 
     }
     public void ForDE14()
@@ -170,9 +179,11 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
 
     }
     //END OF ForDE METHODS
-
+    
     public void EndingScene()
     {
+        DisableTAKITA = false;
+        otherGameObjects[0].SetActive(true);//Enabling for prologue 9 to start
         thisSceneDone = true;
     }
 
@@ -211,6 +222,7 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
         return new SaveData()
         {
             thisSceneDone = this.thisSceneDone,
+            DisableTAKITA = this.DisableTAKITA,
             startThisScene = this.startThisScene
         };
     }
@@ -219,6 +231,7 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
         var saveData = (SaveData)state;
         this.thisSceneDone = saveData.thisSceneDone;
         this.startThisScene = saveData.startThisScene;
+        this.DisableTAKITA = saveData.DisableTAKITA;
     }
 
 
@@ -227,5 +240,7 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
     {
         public bool thisSceneDone;
         public bool startThisScene;
+
+        public bool DisableTAKITA;
     }
 }

@@ -8,32 +8,37 @@ using UnityEngine.Events;
 
 public class DialogueModifier : MonoBehaviour, ISaveable
 {
-    public PlayerName playerName;
     public DialogueDatabase dialoguedb;
-    DialogueDatabase dialoguedbBackup;
-    string thisPlayerName;
-    string namePattern = "Burito";
+    public DialogueDatabase dialoguedbBackup;
+    string namePattern = "MC";
 
     void Awake()
     {
-        dialoguedbBackup = dialoguedb;
-        thisPlayerName = playerName.playerName;
+        if (PlayerName.playerName == null)
+        {
+            PlayerName.playerName = "NullName";
+        }
         ModifyPlayerNameInDialogues();
     }
     public void RestoreDialogues()
     {
-        dialoguedb.conversations = dialoguedbBackup.conversations;
-        dialoguedb.actors[1].Name = dialoguedbBackup.actors[1].Name;
-    }
-    
-    public void ModifyPlayerNameInDialogues()
-    {
-        dialoguedb.actors[1].Name = thisPlayerName;
         for (int i = 0; i < dialoguedb.conversations.Count; i++)
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
             {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, thisPlayerName);
+                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = dialoguedbBackup.conversations[i].dialogueEntries[j].DialogueText;
+            }
+        }
+    }
+    
+    public void ModifyPlayerNameInDialogues()
+    {
+        dialoguedb.actors[1].Name = PlayerName.playerName;
+        for (int i = 0; i < dialoguedb.conversations.Count; i++)
+        {
+            for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
+            {
+                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, PlayerName.playerName);
             }
         }
     }
@@ -42,10 +47,12 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     UnityAction<Transform> addToOnConversationEnd;
     public GameObject inGameUI;
     public GameObject player;
+    public GameObject playerInventory;
     public void AddListenersOnConversationEnd()
     {
         addToOnConversationEnd += EnableIngameUI;
         addToOnConversationEnd += EnablePlayerControls;
+        addToOnConversationEnd += InventoryRefresher;
         player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.AddListener(addToOnConversationEnd);
     }
     void EnableIngameUI(Transform inGameUI)
@@ -58,22 +65,25 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         player = this.player.transform;
         player.GetComponent<PlayerControls>().enabled = true;
     }
+    void InventoryRefresher(Transform playerInventory)
+    {
+        playerInventory = this.playerInventory.transform;
+        playerInventory.GetComponent<PlayerInventory>().InventoryRefresher();
+    }
+
 
     public object SaveState()
     {
         return new SaveData()
         {
-            playerName = thisPlayerName
+            playerName = PlayerName.playerName
         };
     }
 
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        playerName.playerName = saveData.playerName;
-        thisPlayerName = saveData.playerName;
-
-        //RestoreDialogues();
+        PlayerName.playerName = saveData.playerName;
         ModifyPlayerNameInDialogues();
     }
 

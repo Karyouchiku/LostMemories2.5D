@@ -9,12 +9,13 @@ using TMPro;
 public class MainMenuScripts : MonoBehaviour, ISaveable
 {
     SaveSystemInMainMenu saveSystem;
-    [Header("For Menu")]
-    public Slider loadingProgress;
-    public GameObject ContinueBtn;
+    [Header("LoadingScreen Data")]
     public GameObject loadingScreen;
+    public Slider loadingProgress;
+    public TMP_Text loadingText;
+    [Header("For Menu")]
+    public GameObject ContinueBtn;
     public GameObject InputPlayerNameObject;
-    public PlayerName playerName;
     public TMP_Text errorMsg;
     [Header("For Options")]
     public Slider Volume;
@@ -47,6 +48,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
         
         if (loadingScreen.activeSelf)
         {
+            loadingText.text = $"Loading: {(int)(LoadingScreenScript.target * 100)}%";
             loadingProgress.value = Mathf.MoveTowards(loadingProgress.value, LoadingScreenScript.target, Time.deltaTime);
         }
         //ChangeSoundVolume
@@ -68,7 +70,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
             errorMsg.text = "Invalid Name";
             return;
         }
-        playerName.playerName = inputedPlayerName;
+        PlayerName.playerName = inputedPlayerName;
         InputPlayerNameObject.SetActive(false);
         loadingScreen.SetActive(true);
 
