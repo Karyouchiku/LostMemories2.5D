@@ -20,7 +20,7 @@ public class SplashScreen : MonoBehaviour
         yield return new WaitForSeconds(4);
         blackFade.GetComponent<Animator>().SetBool("fadeOut",true);
         yield return new WaitForSeconds(2);
-        if (!LoadData.SaveGameFileChecker(LoadData.SaveDatas[6]))
+        if (!File.Exists(LoadData.SaveDatas[6]))
         {
             ageConfirmationScreen.SetActive(true);
         }

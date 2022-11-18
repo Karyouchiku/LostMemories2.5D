@@ -26,19 +26,19 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
             {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = dialoguedbBackup.conversations[i].dialogueEntries[j].DialogueText;
+                //dialoguedb.conversations[i].dialogueEntries[j].DialogueText = dialoguedbBackup.conversations[i].dialogueEntries[j].DialogueText;
             }
         }
     }
     
     public void ModifyPlayerNameInDialogues()
     {
-        dialoguedb.actors[1].Name = PlayerName.playerName;
+        //dialoguedb.actors[1].Name = PlayerName.playerName;
         for (int i = 0; i < dialoguedb.conversations.Count; i++)
         {
             for (int j = 0; j < dialoguedb.conversations[i].dialogueEntries.Count; j++)
             {
-                dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, PlayerName.playerName);
+                //dialoguedb.conversations[i].dialogueEntries[j].DialogueText = Regex.Replace(dialoguedb.conversations[i].dialogueEntries[j].DialogueText,namePattern, PlayerName.playerName);
             }
         }
     }

@@ -43,14 +43,14 @@ public class Prologue4v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     public bool useDialogueManager;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
-
+    SaveSystem saveSystem;
     void Start()
     {
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
-        transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
+        transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -103,10 +103,11 @@ public class Prologue4v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
+        saveSystem.Save(5);
         startThisScene = true;
         
         //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
-        //player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()

@@ -15,37 +15,30 @@ public static class LoadData
         $"{Application.persistentDataPath}/LostMemories3.lm",           //2
         $"{Application.persistentDataPath}/LostMemories4.lm",           //3
         $"{Application.persistentDataPath}/LostMemories5.lm",           //4
-        $"{Application.persistentDataPath}/LostMemoriesCheckpoint.lm",  //5
+        $"{Application.persistentDataPath}/LostMemories0.lm",           //5
         $"{Application.persistentDataPath}/Settings.lm",                //6
-        $"{Application.persistentDataPath}/LostMemories0.lm"            //7
     };
 
-    public static bool SaveGameDataID(int id, bool isloadgame)
+    public static bool SaveGameDataID(int id)
     {
         string SavePath;
         SavePath = SaveDatas[id];
 
-        if (SaveGameFileChecker(SavePath))
+        if (File.Exists(SavePath))
         {
             saveDataID = id;
-            isOnLoadGameData = isloadgame;
+            isOnLoadGameData = true;
             return true;
         }
         else
         {
+            isOnLoadGameData = false;
             return false;
         }
     }
 
     public static bool SaveGameFileChecker(string SavePath)
     {
-        if (File.Exists(SavePath))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return File.Exists(SavePath);
     }
 }

@@ -23,7 +23,7 @@ public class SaveSystem : MonoBehaviour
     public IngameMenuScript ingameMenuScript;
     public void LoadGame(int id)
     {
-        if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[id]))
+        if (File.Exists(LoadData.SaveDatas[id]))
         {
             LoadDataCheckerInMainMenu.isThisLoadGame = true;
             LoadDataCheckerInMainMenu.saveGameID = id;
@@ -31,7 +31,7 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Save FIle Here");
+            Debug.Log("No Save File Here");
         }
         
 

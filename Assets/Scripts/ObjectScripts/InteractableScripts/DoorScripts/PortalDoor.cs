@@ -25,6 +25,23 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     public AudioClip doorKnocking;
 
     AudioSource audioSource;
+
+    //[Header("Player Gameobject")]
+    GameObject player;
+    GameObject inGameUi;
+    [Header("Teleport to other position")]
+    public GameObject changePositionTo;
+    BlackTransitioning transition;
+    Vector3 changePositionToVec;
+
+    WorldActiveSaveState worldRenderer;
+    [Header("Enable Directional Light")]
+    public bool lighting;
+    [Header("World to Render")]
+    public int renderPlaceID;
+
+    PlayerInventory playerInventory;
+    SaveSystem saveSystem;
     private void Awake()
     {
         inGameUi = GameObject.Find("IngameUI");
@@ -37,6 +54,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         player = GameObject.FindGameObjectWithTag("Burito");
         transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
     }
     public void Interact()
     {
@@ -81,21 +99,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         }
     }
 
-    //[Header("Player Gameobject")]
-    GameObject player;
-    GameObject inGameUi;
-    [Header("Teleport to other position")]
-    public GameObject changePositionTo;
-    BlackTransitioning transition;
-    Vector3 changePositionToVec;
-
-    WorldActiveSaveState worldRenderer;
-    [Header("Enable Directional Light")]
-    public bool lighting;
-    [Header("World to Render")]
-    public int renderPlaceID;
-
-    PlayerInventory playerInventory;
+    
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
@@ -114,6 +118,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
             playerInventory.InventoryRefresher();
         }
         OnTriggerExitBtn?.Invoke();
+        saveSystem.Save(5);
     }
 
     //For Playing SFX

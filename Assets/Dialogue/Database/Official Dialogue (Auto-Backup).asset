@@ -139,10 +139,6 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    - title: Display Name
-      value: Burito
-      type: 0
-      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -929,7 +925,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: How about you, Burito?
+        value: How about you at the back?
         type: 0
         typeString: 
       - title: Dialogue Text
@@ -1633,8 +1629,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 501.55612}
-    canvasZoom: 0.96999973
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1.1199996
   - id: 2
     fields:
     - title: Title
@@ -1911,9 +1907,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["personality"] = Variable["personality"] + 1;;
-
-'
+      userScript: Variable["personality"] = Variable["personality"] + 1;
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3906,7 +3900,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 61.25242, y: 771.6785}
+    canvasScrollPosition: {x: 3.883484, y: 508.73804}
     canvasZoom: 1.0299996
   - id: 3
     fields:
@@ -15129,7 +15123,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 81.818146, y: 0}
+    canvasScrollPosition: {x: 21.818146, y: 412.72723}
     canvasZoom: 0.5500001
   - id: 6
     fields:
@@ -25812,8 +25806,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 9.890137, y: 1265.0767}
-    canvasZoom: 0.90999985
+    canvasScrollPosition: {x: 0, y: 1259.0564}
+    canvasZoom: 0.9399998
   - id: 13
     fields:
     - title: Title
@@ -26404,7 +26398,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 491
+        x: 490
         y: 144
         width: 160
         height: 30

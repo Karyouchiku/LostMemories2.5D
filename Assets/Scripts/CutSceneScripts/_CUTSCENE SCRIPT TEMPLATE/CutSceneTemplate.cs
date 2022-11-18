@@ -51,7 +51,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
-        transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];

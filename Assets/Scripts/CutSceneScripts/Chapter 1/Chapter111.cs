@@ -42,7 +42,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
     [Header("Scene Dialogue Manager")]
-    public bool useDialogyeManager;
+    public bool useDialogueManager;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
 
@@ -108,8 +108,8 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         startThisScene = true;
 
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
-        //player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Comment to activate this line
+        player.GetComponent<DialogueSystemEvents>().conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Comment to activate this line
+        dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
@@ -124,7 +124,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
+        StartMoving();
         //Activating other Objects
         //for (int i = 0; i < otherGameObjects.Length; i++)
         //{
@@ -145,6 +145,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         questText.text = "Find another way through the building";
         otherGameObjects[0].SetActive(true);
         otherGameObjects[1].SetActive(true);
+        
         EndingScene();
     }
 
@@ -155,7 +156,7 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     //MY SHORCUT METHODS
     void ChangeActorDialogue(int actorID, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
-        if (useDialogyeManager)
+        if (useDialogueManager)
         {
             actors[actorID].gameObject.tag = "InteractableNPC";
             actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.OnUse;
@@ -234,22 +235,34 @@ public class Chapter111: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         return new SaveData()
         {
+            startThisScene = this.startThisScene,
             thisSceneDone = this.thisSceneDone,
-            startThisScene = this.startThisScene
+
+            actorID = this.actorID,
+            convoID = this.convoID
         };
     }
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        this.thisSceneDone = saveData.thisSceneDone;
-        this.startThisScene = saveData.startThisScene;
-    }
+        startThisScene = saveData.startThisScene;
+        thisSceneDone = saveData.thisSceneDone;
 
+        ChangingActorDialogue(saveData.actorID, saveData.convoID);
+    }
+    IEnumerator ChangingActorDialogue(int actorID, int convoID)
+    {
+        yield return new WaitForFixedUpdate();
+        ChangeActorDialogue(actorID, convoID);
+    }
 
     [Serializable]
     struct SaveData
     {
-        public bool thisSceneDone;
         public bool startThisScene;
+        public bool thisSceneDone;
+
+        public int actorID;
+        public int convoID;
     }
 }

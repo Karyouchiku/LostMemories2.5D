@@ -15,23 +15,41 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public TMP_Text loadingText;
     [Header("For Menu")]
     public GameObject ContinueBtn;
+    public GameObject LoadGameBtn;
     public GameObject InputPlayerNameObject;
     public TMP_Text errorMsg;
     [Header("For Options")]
     public Slider Volume;
     void Awake()
     {
+        //Identify if going here is for loading save game only
         if (LoadDataCheckerInMainMenu.isThisLoadGame)
         {
             LoadDataCheckerInMainMenu.isThisLoadGame = false;
-            LoadDataCheckerInMainMenu.saveGameID = 0;
             LoadGame(LoadDataCheckerInMainMenu.saveGameID);
         }
-        MenuStaticVariables.isContinueAvailable = LoadData.SaveGameFileChecker(LoadData.SaveDatas[7]);
-        if (MenuStaticVariables.isContinueAvailable)
+
+        //Determining if there is the file name lm0
+        if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[5]))
         {
             ContinueBtn.SetActive(true);
         }
+
+        //If there is any save game file existed, avail the loadgame btn
+        for (int i = 0; i < LoadData.SaveDatas.Length; i++)
+        {
+            if (i == 5)
+            {
+                break;
+            }
+            if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[i]) == true)
+            {
+                LoadGameBtn.SetActive(true);
+                break;
+            }
+
+        }
+        //For Settings
         saveSystem = GetComponent<SaveSystemInMainMenu>();
         if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[6]))
         {
@@ -77,11 +95,14 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
         LoadData.isOnLoadGameData = false;
         StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
     }
-
+    public void BackFromPlayerNameInputWindow()
+    {
+        InputPlayerNameObject.GetComponentInChildren<TMP_InputField>().text = "";
+    }
 
     public void LoadGame(int saveID)
     {
-        if (LoadData.SaveGameDataID(saveID, true))
+        if (LoadData.SaveGameDataID(saveID))
         {
             loadingScreen.SetActive(true);
             StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));

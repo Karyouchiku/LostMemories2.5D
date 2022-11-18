@@ -37,7 +37,6 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
-    TMP_Text questText;
 
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
@@ -53,7 +52,6 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -152,7 +150,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     IEnumerator ForDE30Coroutine()
     {
         yield return new WaitForSeconds(2);
-        questText.text = "Meet the receiver behind the store from the otherside of the road";
+        IQuest.SetQuest("Meet the receiver behind the store from the otherside of the road");
         EndingScene();
     }
 

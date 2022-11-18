@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveSystemInMainMenu : MonoBehaviour
 {
-    //Checkpoints
+    //For settings
     public void SaveMainMenuSettings()
     {
         var state = LoadFile(LoadData.SaveDatas[6]);

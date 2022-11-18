@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
 {
@@ -32,6 +33,9 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
         transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         playerInventory = GameObject.FindWithTag("Player Inventory").GetComponent<PlayerInventory>();
         isRequiredItemsAquired = new bool[requiredItems.Length];
+        PuzzleChilds(false);
+        EnableInteractableObjects(false);
+
     }
     void Update()
     {
@@ -50,6 +54,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
                     player.gameObject.GetComponent<CharacterAnimation>().moveX = animationVec.x;
                     player.gameObject.GetComponent<CharacterAnimation>().moveZ = animationVec.z;
                 }
+                
                 if (CheckInventoryForRequiredItems())
                 {
                     UnlockTheDoor();
@@ -73,14 +78,35 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
             startThisPuzzle = false;
         }
     }
+    bool objectiveIsOngoing = true;
     bool CheckInventoryForRequiredItems()
     {
         bool[] checkSearch = new bool[isRequiredItemsAquired.Length];
+        int objectiveItemCount = requiredItems.Length;
         for (int i = 0; i < requiredItems.Length; i++)
         {
             checkSearch[i] = playerInventory.SearchItemInInventory(requiredItems[i]);
-        }
 
+            if (playerInventory.SearchItemInInventory(requiredItems[i]))
+            {
+                if (objectiveIsOngoing)
+                {
+                    if (objectiveItemCount > 1)
+                    {
+                        objectiveItemCount--;
+                        IObjectives.SetObjectives($"Item Left{objectiveItemCount}");
+
+                    }
+                    else
+                    {
+                        objectiveIsOngoing = false;
+                        IObjectives.SetObjectives("");
+                        IQuest.SetQuest("Get out of the House");
+                    }
+                }
+            }
+        }
+        
         if (Array.TrueForAll(checkSearch, 
             CheckIsRequiredItemsAquired =>
                 {
@@ -143,7 +169,19 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
         {
             otherGameObjects[i].SetActive(true);
         }
+        otherGameObjects[1].tag = "Untagged";
+        otherGameObjects[1].SetActive(false);
     }
+    public void EnableInteractableObjects(bool turn)
+    {
+        string tag = turn ? "InteractableObject" : "Untagged";
+        foreach (InteractableItem item in otherGameObjects[2].GetComponentsInChildren<InteractableItem>())
+        {
+            item.tag = tag;
+        }
+        otherGameObjects[3].tag = "InteractableObject";
+    }
+
     void UnlockTheDoor()
     {
         portalDoors[0].locked = false;
@@ -152,19 +190,32 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     {
         return new SaveData()
         {
-            thisPuzzleDone = this.thisPuzzleDone
+            thisPuzzleDone = this.thisPuzzleDone,
+            startThisPuzzle = this.startThisPuzzle
         };
     }
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         this.thisPuzzleDone = saveData.thisPuzzleDone;
-    }
+        this.startThisPuzzle = saveData.startThisPuzzle;
+        StartCoroutine(EnabllingIOForLoadGame());
 
+        
+    }
+    IEnumerator EnabllingIOForLoadGame()
+    {
+        yield return new WaitForFixedUpdate();
+        if (startThisPuzzle && !thisPuzzleDone)
+        {
+            EnableInteractableObjects(true);
+        }
+    }
 
     [Serializable]
     struct SaveData
     {
         public bool thisPuzzleDone;
+        public bool startThisPuzzle;
     }
 }

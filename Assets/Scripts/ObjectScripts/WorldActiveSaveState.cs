@@ -34,7 +34,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
 
         for (int i = 0; i < places.Length; i++)
         {
-            bool render = i == renderPlaceID ? true : false;
+            bool render = i == renderPlaceID;
             
             //places[i].SetActive(render);
             

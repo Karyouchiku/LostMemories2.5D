@@ -102,10 +102,15 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         var saveData = (SaveData)state;
         this.inventory = saveData.inventory;
         this.itemDictionary = saveData.itemDictionary;
-        InventoryRefresher(); 
+        StartCoroutine(RefreshAfterFixedFrameUpdate());
+        
 
     }
-
+    IEnumerator RefreshAfterFixedFrameUpdate()
+    {
+        yield return new WaitForFixedUpdate();
+        InventoryRefresher();
+    }
     [Serializable]
     struct SaveData
     {

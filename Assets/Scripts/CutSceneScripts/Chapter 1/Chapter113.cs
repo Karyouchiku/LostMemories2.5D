@@ -36,7 +36,6 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
-    TMP_Text questText;
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
     [Header("Scene Dialogue Changer")]
@@ -50,7 +49,6 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -128,7 +126,7 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             otherGameObjects[i].SetActive(true);
         }
-        questText.text = "Leave the Building";
+        IQuest.SetQuest("Leave the Building");
         EndingScene();
     }
 
