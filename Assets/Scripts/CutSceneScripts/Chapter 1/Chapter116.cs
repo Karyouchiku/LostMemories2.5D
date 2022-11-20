@@ -142,7 +142,8 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE14()
     {
-        transition.ManualTransitionON();
+        //transition.ManualTransitionON();
+        Door(0);
     }
     public void ForDE15()
     {

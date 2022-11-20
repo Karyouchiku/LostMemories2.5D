@@ -131,7 +131,7 @@ public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     }
     public void ForDE13()
     {
-        ContinueMode(false);
+        //ContinueMode(false);
         SetActorStartingPosition(1, 0);
     }
     public void ForDE14()
