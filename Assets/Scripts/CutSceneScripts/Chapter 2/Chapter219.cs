@@ -106,14 +106,13 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         startThisScene = true;
 
-        //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
-        //player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         ContinueMode(false);
         SetMinSubtitleSeconds(3);
         //SetActorStartingPosition(2, 8);
@@ -130,8 +129,46 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         }
 
     }
-
-
+    public void ForDE76()
+    {
+        ContinueMode(true);
+    }
+    public void forDE108_107_85_127()//papasok si Goon
+    {
+        SetActorStartingPosition(19, 8);
+        MoveActor(19, 2, 0.4f);
+        actors[19].tag = "InteractableNPC";
+        ContinueMode(false);
+    }
+    public void ForDe86()
+    {
+        ContinueMode(true);
+    }
+    public void ForDE100()//aalis na si randy
+    {
+        for (int i = 0; i < GameObjectChildrens.Length; i++)
+        {
+            GameObjectChildrens[i].SetActive(false);
+        }
+        ContinueMode(false);
+        MoveActor(3, 4, 0.4f);
+        actors[19].tag = "InteractableNPC";
+    }
+    public void ForDE109()//aalis na rin si goon
+    {
+        ContinueMode(true);
+        MoveActor(19, 6, 0.4f);
+    }
+    public void ForDE116()//Last Dialogue
+    {
+        ContinueMode(false);
+        ResetActorPositionToOriginal(19);
+        ResetActorPositionToOriginal(3);
+        otherGameObjects[0].GetComponent<LockInteractableDoors>().isUnlocked = false;
+        otherGameObjects[0].tag = "InteractableObject";
+        IQuest.SetQuest("Find your way out to scape");
+        EndingScene();
+    }
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
@@ -186,6 +223,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     void ResetActorPositionToOriginal(int actorID)
     {
+        actors[actorID].tag = "Untagged";
         actors[actorID].transform.position = lmActors.orginalActorLocations[actorID];
         targetLocation[actorID] = lmActors.orginalActorLocations[actorID];
         actors[actorID].GetComponent<CharacterAnimation>().ResetAnimation();
@@ -206,7 +244,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from LocationChanger
     public void ChangeLocation(int actorID, int locationID)
     {
-        //GameObjectChildrens[locationID].SetActive(true);
+        GameObjectChildrens[locationID].SetActive(true);
         //targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
         
         MoveActor(actorID, locationID);

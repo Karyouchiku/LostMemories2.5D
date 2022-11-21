@@ -17,7 +17,7 @@ public class HideRooms : MonoBehaviour
     }
     void Update()
     {
-        if (other == null)
+        if (other == null || other.tag != "Burito")
         {
             Renderer(false);
         }
@@ -51,7 +51,14 @@ public class HideRooms : MonoBehaviour
         }
         foreach (SpriteRenderer sprite in sprites)
         {
-            if (sprite.GetComponentInParent<Item>().isActive)
+            try
+            {
+                if (sprite.GetComponentInParent<Item>().isActive)
+                {
+                    sprite.enabled = render;
+                }
+            }
+            catch
             {
                 sprite.enabled = render;
             }
