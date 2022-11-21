@@ -8,6 +8,12 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
     public static event HandlingLockedDoor OnUnlockInteractableDoor;
     public delegate void HandlingLockedDoor(SOItemData key);
 
+    [Header("Quest Settings")]
+    public bool useOnDoorUnlockedQuest;
+    public string questDesc1;
+    public bool useOnDoorLockedQuest;
+    public string questDesc2;
+
     SOItemData key;
     public string keyName;
     
@@ -16,13 +22,11 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
     public AudioClip unlockedSfx;
     AudioSource audioSource;
     public bool isUnlocked;
-    TMP_Text questText;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
         anim = GetComponent<AnimatedOnTriggerCollider>();
-        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
     }
     void Update()
     {
@@ -39,11 +43,17 @@ public class LockInteractableDoors : MonoBehaviour, IInteractor, ISaveable
             audioSource.clip = unlockedSfx;
             audioSource.Play();
             isUnlocked = true;
-            questText.text = "Find the information of your real parents";
+            if (useOnDoorUnlockedQuest)
+            {
+                IQuest.SetQuest(questDesc1);
+            }
         }
         else
         {
-            questText.text = "Find The key to the Attorney's Room";
+            if (useOnDoorLockedQuest)
+            {
+                IQuest.SetQuest(questDesc2);
+            }
         }
     }
 

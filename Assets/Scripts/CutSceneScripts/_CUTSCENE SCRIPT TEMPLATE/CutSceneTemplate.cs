@@ -189,6 +189,7 @@ public class CutSceneTemplate : MonoBehaviour, CutScenes, ISaveable//Rename Clas
     {
         actors[actorID].transform.position = lmActors.orginalActorLocations[actorID];
         targetLocation[actorID] = lmActors.orginalActorLocations[actorID];
+        actors[actorID].GetComponent<CharacterAnimation>().ResetAnimation();
         actors[actorID].SetActive(false);
     }
     public void EndingScene()

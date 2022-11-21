@@ -6528,8 +6528,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 935.25916}
-    canvasZoom: 0.75999975
+    canvasScrollPosition: {x: 51.37951, y: 87.720276}
+    canvasZoom: 0.90999955
   - id: 4
     fields:
     - title: Title
@@ -11811,8 +11811,8 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 26.836975, y: 2092.644}
-    canvasZoom: 0.9099995
+    canvasScrollPosition: {x: 1105.8041, y: 342.86258}
+    canvasZoom: 0.96999925
   - id: 5
     fields:
     - title: Title
@@ -30240,6 +30240,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 5993e46f-68eb-448b-8692-fe954a2f639a
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -30260,8 +30264,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 89.007996, y: 335.366}
-    canvasZoom: 0.8199996
+    canvasScrollPosition: {x: 557.84607, y: 1242.3523}
+    canvasZoom: 1.1799992
   - id: 17
     fields:
     - title: Title
@@ -30393,6 +30397,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 240e9010-c7a6-4334-b0f8-2a5f0df268fb
+        type: 0
+        typeString: 
       conversationID: 17
       isRoot: 0
       isGroup: 0
@@ -30448,6 +30456,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 270247ac-cc29-4a7c-8e9d-afada549bf8f
+        type: 0
+        typeString: 
       conversationID: 17
       isRoot: 0
       isGroup: 0
@@ -30501,6 +30513,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: da7edb46-eb18-4987-90fd-2aab12b3d794
         type: 0
         typeString: 
       conversationID: 17
@@ -30835,6 +30851,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 8d9cea2d-a182-4901-812c-20b82551ee6d
+        type: 0
+        typeString: 
       conversationID: 17
       isRoot: 0
       isGroup: 0
@@ -31000,6 +31020,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 9b39bc6e-6892-4503-b57f-9fce1435d216
+        type: 0
+        typeString: 
       conversationID: 17
       isRoot: 0
       isGroup: 0
@@ -31020,8 +31044,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 21.038803, y: 479.2427}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 70.18063, y: 465.29376}
+    canvasZoom: 1.2999997
   - id: 18
     fields:
     - title: Title
@@ -31350,7 +31374,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1237.914
+        x: 1237.0444
         y: 287.5968
         width: 160
         height: 30
@@ -31782,6 +31806,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: edfa30c7-d00a-48e1-972a-173345f43fa9
+        type: 0
+        typeString: 
       conversationID: 18
       isRoot: 0
       isGroup: 0
@@ -31802,8 +31830,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 923.8653, y: 577.2799}
-    canvasZoom: 1.1499993
+    canvasScrollPosition: {x: 902.5454, y: 80.357185}
+    canvasZoom: 1.1199993
   - id: 19
     fields:
     - title: Title
@@ -31935,6 +31963,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: fb57827a-50aa-4efd-b57f-9604eeb68da4
         type: 0
         typeString: 
       conversationID: 19
@@ -34941,8 +34973,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1064.9119, y: 1563.2303}
-    canvasZoom: 0.6999997
+    canvasScrollPosition: {x: 1081.7039, y: 143.16827}
+    canvasZoom: 1.0299994
   - id: 20
     fields:
     - title: Title

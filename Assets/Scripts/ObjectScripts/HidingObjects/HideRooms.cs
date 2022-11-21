@@ -6,12 +6,14 @@ public class HideRooms : MonoBehaviour
 {
     MeshRenderer[] mesh;
     Light[] lights;
+    SpriteRenderer[] sprites;
     Collider other;
 
     void Start()
     {
         mesh = GetComponentsInChildren<MeshRenderer>();
         lights = GetComponentsInChildren<Light>();
+        sprites = GetComponentsInChildren<SpriteRenderer>();
     }
     void Update()
     {
@@ -39,13 +41,20 @@ public class HideRooms : MonoBehaviour
 
     void Renderer(bool render)
     {
-        for (int i = 0; i < mesh.Length; i++)
+        foreach (MeshRenderer item in mesh)
         {
-            mesh[i].enabled = render;
+            item.enabled = render;
         }
-        for (int i = 0; i < lights.Length; i++)
+        foreach (Light light in lights)
         {
-            lights[i].enabled = render;
+            light.enabled = render;
+        }
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            if (sprite.GetComponentInParent<Item>().isActive)
+            {
+                sprite.enabled = render;
+            }
         }
     }
 }

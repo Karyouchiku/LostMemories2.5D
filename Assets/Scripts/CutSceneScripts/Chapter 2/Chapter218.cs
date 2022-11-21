@@ -133,24 +133,30 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         }
         */
     }
-    public void ForDE2()
+    public void ForDE02()
     {
         SetActorStartingPosition(3,0);
         actors[3].GetComponentInChildren<SpriteRenderer>().color = Color.black;//unique Line
         MoveActor(3,2, 0.7f);
 
     }
-    public void ForDE7()
+    public void ForDE07()
     {
         MoveAIAgent(1, 3);
     }
-    public void ForDE8()
+    public void ForDE08()
     {
         actors[3].GetComponentInChildren<SpriteRenderer>().color = Color.white;//unique Line
     }
-    public void ForDE9()
+    public void ForDE09()
     {
         transition.ManualTransitionON();
+    }
+    public void ForDE12()
+    {
+        ContinueMode(false);
+        Door(0);
+        EndingScene();
     }
 
     //END OF ForDE METHODS

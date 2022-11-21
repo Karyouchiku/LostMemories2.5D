@@ -196,6 +196,10 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         MoveAIAgent(3, 14);
         transition.ManualTransitionON();
         yield return new WaitForSeconds(1f);
+    }
+    public void ForDE39()
+    {
+        Door(1);
         EndingScene();
     }
 

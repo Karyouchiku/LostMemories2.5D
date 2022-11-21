@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HideWalls : MonoBehaviour
 {
+    
     MeshRenderer[] walls;
     void Start()
     {
