@@ -105,7 +105,7 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void StartMoving()
     {
         startThisScene = true;
-
+        player.GetComponent<FlashlightControls>().FLSwitch(false);
         player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
         //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
     }
@@ -216,6 +216,7 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void EndingScene()
     {
         thisSceneDone = true;
+        //player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
 
     //Calls from AutoEnterDoor
@@ -257,6 +258,10 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

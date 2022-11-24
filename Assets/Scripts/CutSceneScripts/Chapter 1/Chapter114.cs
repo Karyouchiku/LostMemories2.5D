@@ -111,6 +111,7 @@ public class Chapter114: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         ContinueMode(false);
@@ -140,6 +141,7 @@ public class Chapter114: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         Door(0);
         yield return new WaitForSeconds(1);
         IQuest.SetQuest("Find the information of your real parents");
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
         EndingScene();
     }
 
@@ -243,6 +245,10 @@ public class Chapter114: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

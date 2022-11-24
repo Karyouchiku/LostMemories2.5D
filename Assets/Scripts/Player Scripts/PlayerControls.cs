@@ -43,8 +43,11 @@ public class PlayerControls : MonoBehaviour//, ISaveable
             MovementScript();
         }
     }
-
-    private void MovementScript()
+    public void ResetJoystickValue()
+    {
+        joystick.ResetValue();
+    }
+    void MovementScript()
     {
         if (controller.isGrounded)
         {

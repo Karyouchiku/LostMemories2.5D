@@ -8,8 +8,8 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
 
-    public static event HandledNotification OnItemGet;
-    public delegate void HandledNotification(string notif);
+    public static event HandledItemNotification OnItemGet;
+    public delegate void HandledItemNotification(string notif);
 
     public SOItemData soItemData;
     
@@ -36,7 +36,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
         audioSource.clip = clip;
         audioSource.Play();
         isActive = false;
-        Debug.Log($"{soItemData.itemName} is Collected");
+        //Debug.Log($"{soItemData.itemName} is Collected");
     }
     
     public object SaveState()

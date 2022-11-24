@@ -18,6 +18,7 @@ public class LocationChanger : MonoBehaviour
         if (other.tag == lmActors._LMActors[actorID].gameObject.tag)
         {
             cutScene.ChangeLocation(actorID, changeLocationID);
+            gameObject.SetActive(false);
         }
     }
 }

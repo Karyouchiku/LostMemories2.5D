@@ -4909,7 +4909,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notificationSection: {fileID: 2246746124184460884}
   itemNotifPrefab: {fileID: 6405819159428094015, guid: 5b2f3634b1ca8ed44ad88c9f6e508f3e, type: 3}
-  questText: {fileID: 1035153149821151099}
 --- !u!114 &4994403340054665044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8624,6 +8623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8390022774997457343}
   - component: {fileID: 8390022774997457331}
+  - component: {fileID: 8457619396262195159}
   - component: {fileID: 3795996256065942050}
   - component: {fileID: 3448758870194882770}
   - component: {fileID: 3613706432598455261}
@@ -8676,6 +8676,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8457619396262195159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390022774997457338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de58d22be719e64480db7dce7f25667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 4376903143355215399}
+  flashlight: {fileID: 8770862863202112746}
+  turnSmoothTime: 0.1
 --- !u!114 &3795996256065942050
 MonoBehaviour:
   m_ObjectHideFlags: 0

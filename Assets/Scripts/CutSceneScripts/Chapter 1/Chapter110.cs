@@ -103,6 +103,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
         actors[3].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         actors[3].gameObject.tag = "Untagged";
         dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
@@ -213,6 +214,10 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

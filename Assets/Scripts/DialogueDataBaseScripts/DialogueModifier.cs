@@ -64,6 +64,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     {
         player = this.player.transform;
         player.GetComponent<PlayerControls>().enabled = true;
+        player.GetComponent<PlayerControls>().ResetJoystickValue();
     }
     void InventoryRefresher(Transform playerInventory)
     {

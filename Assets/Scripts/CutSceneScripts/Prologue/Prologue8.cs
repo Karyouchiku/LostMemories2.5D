@@ -234,6 +234,10 @@ public class Prologue8 : MonoBehaviour, CutScenes, ISaveable
         this.DisableTAKITA = saveData.DisableTAKITA;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

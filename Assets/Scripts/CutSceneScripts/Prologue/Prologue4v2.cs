@@ -287,6 +287,10 @@ public class Prologue4v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

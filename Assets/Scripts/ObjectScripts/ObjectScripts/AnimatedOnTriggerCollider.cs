@@ -24,7 +24,7 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Burito" || other.tag == "InteractableNPC")
+        if (other.tag == "Burito" || other.tag == "InteractableNPC" || other.tag == "NPC")
         {
             if (TryGetComponent<LockInteractableDoors>(out LockInteractableDoors door))
             {
@@ -55,7 +55,7 @@ public class AnimatedOnTriggerCollider : MonoBehaviour
 
     void PlayAnim(Collider other, bool isOpen)
     {
-        if (other.tag == "Burito" || other.tag == "InteractableNPC")
+        if (other.tag == "Burito" || other.tag == "InteractableNPC" || other.tag == "NPC")
         {
             if (!isOpen)
             {

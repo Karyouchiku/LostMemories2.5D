@@ -7,37 +7,31 @@ public class HideFloors : MonoBehaviour
     //Exclusive to Warehouse Interior
     MeshRenderer[] mesh;
     Light[] lights;
-    Collider other;
+    public static bool enableDisablingActors;
+    public GameObject[] actors;
 
     void Start()
     {
         mesh = GetComponentsInChildren<MeshRenderer>();
         lights = GetComponentsInChildren<Light>();
     }
-    void Update()
-    {
-        if (other == null)
-        {
-            //Renderer(true);
-        }
-    }
+    
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Burito")
         {
             Renderer(false);
+            Debug.Log($"Wala si Burito sa: {gameObject.name}");
         }
-        this.other = other;
     }
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Burito")
         {
             Renderer(true);
+            Debug.Log($"Wala si Burito sa: {gameObject.name}");
         }
-        this.other = null;
     }
-
     void Renderer(bool render)
     {
         for (int i = 0; i < mesh.Length; i++)
@@ -47,6 +41,20 @@ public class HideFloors : MonoBehaviour
         for (int i = 0; i < lights.Length; i++)
         {
             lights[i].enabled = render;
+        }
+        if (enableDisablingActors)
+        {
+            foreach (GameObject sprite in actors)
+            {
+                sprite.GetComponentInChildren<SpriteRenderer>().enabled = render;
+            }
+        }
+    }
+    public void ManualEnableActorSprites(bool render)
+    {
+        foreach (GameObject sprite in actors)
+        {
+            sprite.GetComponentInChildren<SpriteRenderer>().enabled = render;
         }
     }
 }

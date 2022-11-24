@@ -112,6 +112,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
+        player.GetComponent<FlashlightControls>().FLSwitch(false);
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         ContinueMode(true);
@@ -211,6 +212,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     public void EndingScene()
     {
         thisSceneDone = true;
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
     }
 
     //Calls from AutoEnterDoor
@@ -250,6 +252,10 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

@@ -29049,6 +29049,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 47733cc1-dc5f-4121-a7d6-cec218604a8e
+        type: 0
+        typeString: 
       conversationID: 16
       isRoot: 0
       isGroup: 0
@@ -30308,8 +30312,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.27999985
+    canvasScrollPosition: {x: 332.58765, y: 235.64137}
+    canvasZoom: 0.93999946
   - id: 17
     fields:
     - title: Title
@@ -31088,7 +31092,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 37.304825, y: 0}
+    canvasScrollPosition: {x: 20.849136, y: 48.101242}
     canvasZoom: 0.7900002
   - id: 18
     fields:
@@ -34271,11 +34275,11 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 2
         type: 5
@@ -34287,15 +34291,19 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "But that\u2019s exactly why I have to get out of here. I have to
           find my real parents and maybe, just maybe, I\u2019ll have a place where
           I\u2019ll feel that I really belong. "
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: EventGuid
+        value: b2cef97e-5961-448c-8e36-bc03a6f8e3cb
         type: 0
         typeString: 
       conversationID: 19
@@ -35053,8 +35061,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1108.8907, y: 1563.0143}
-    canvasZoom: 0.8799995
+    canvasScrollPosition: {x: 1065.5444, y: 1891.9285}
+    canvasZoom: 0.96999943
   - id: 20
     fields:
     - title: Title
@@ -35185,6 +35193,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 612f5609-f33b-41f9-bad7-ba101b327cbd
         type: 0
         typeString: 
       conversationID: 20
@@ -35410,6 +35422,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 94e01d65-f644-4406-842c-38bf992aa600
+        type: 0
+        typeString: 
       conversationID: 20
       isRoot: 0
       isGroup: 0
@@ -35430,8 +35446,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 98.38962, y: 0}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 228.0841, y: 56.880753}
+    canvasZoom: 1.0899999
   - id: 21
     fields:
     - title: Title
@@ -35562,6 +35578,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: cbeb7563-72af-4320-83bd-938121f1e985
         type: 0
         typeString: 
       conversationID: 21
@@ -35784,6 +35804,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 4a6d0445-2bfe-4b09-9d86-fd2a6f8df412
         type: 0
         typeString: 
       conversationID: 21
@@ -36120,6 +36144,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 31db7f58-3f43-4724-b711-b7183da94d64
+        type: 0
+        typeString: 
       conversationID: 21
       isRoot: 0
       isGroup: 0
@@ -36230,6 +36258,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 2d5f9503-13f1-4604-9e24-f8817fd616e0
         type: 0
         typeString: 
       conversationID: 21
@@ -39796,6 +39828,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: d49b67b0-6b88-4eca-8f73-d980878720c1
+        type: 0
+        typeString: 
       conversationID: 21
       isRoot: 0
       isGroup: 0
@@ -39850,6 +39886,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 036e3570-a7a4-444d-9a09-f7ff567daa37
         type: 0
         typeString: 
       conversationID: 21
@@ -39964,6 +40004,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 16022852-5101-403d-a9b9-926262051184
+        type: 0
+        typeString: 
       conversationID: 21
       isRoot: 0
       isGroup: 0
@@ -39979,7 +40023,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1868.0509
+        x: 1867.2445
         y: 3925.6497
         width: 160
         height: 30
@@ -42442,8 +42486,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 971.6282, y: 3053.6714}
-    canvasZoom: 0.43
+    canvasScrollPosition: {x: 1474.5181, y: 3751.0225}
+    canvasZoom: 1.2399993
   - id: 22
     fields:
     - title: Title
@@ -42574,6 +42618,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: d0a6b4ee-bc22-49a2-a203-bd26f32bc91f
         type: 0
         typeString: 
       conversationID: 22
@@ -42851,6 +42899,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 94a71799-0a23-4404-a8d3-c7c946400094
+        type: 0
+        typeString: 
       conversationID: 22
       isRoot: 0
       isGroup: 0
@@ -42872,7 +42924,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 945.5365
+        x: 944.8323
         y: 356.31708
         width: 160
         height: 30
@@ -43070,6 +43122,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 0cf388aa-39a2-490a-83b1-35e7a874c9a4
         type: 0
         typeString: 
       conversationID: 22
@@ -43402,6 +43458,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 783b6fcc-5d79-4077-b891-956f362e0b55
+        type: 0
+        typeString: 
       conversationID: 22
       isRoot: 0
       isGroup: 0
@@ -43422,8 +43482,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 692.13556, y: 524.66315}
-    canvasZoom: 1.3599997
+    canvasScrollPosition: {x: 572.0893, y: 690.82574}
+    canvasZoom: 1.0899997
   - id: 23
     fields:
     - title: Title
@@ -43555,6 +43615,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: d35f5481-d114-4065-95e8-7898cb26434a
+        type: 0
+        typeString: 
       conversationID: 23
       isRoot: 0
       isGroup: 0
@@ -43576,7 +43640,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 581.56104
+        x: 580.69147
         y: 86.035965
         width: 160
         height: 30
@@ -43608,6 +43672,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 31404238-ad82-4955-9615-ac2b7c9f5a5c
         type: 0
         typeString: 
       conversationID: 23
@@ -43665,6 +43733,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: b3606e5a-b287-4c3a-b27b-9ba012aa5f9c
+        type: 0
+        typeString: 
       conversationID: 23
       isRoot: 0
       isGroup: 0
@@ -43718,6 +43790,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 20d5bbc2-5f50-4192-9a15-acd385278d11
         type: 0
         typeString: 
       conversationID: 23
@@ -43775,6 +43851,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 3febf69b-b36a-41b8-9b69-cc08bf739a1f
+        type: 0
+        typeString: 
       conversationID: 23
       isRoot: 0
       isGroup: 0
@@ -43795,8 +43875,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 277.0576, y: 0}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 285.24863, y: 75.652176}
+    canvasZoom: 1.1499999
   - id: 24
     fields:
     - title: Title
@@ -43926,6 +44006,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 57dbdbdd-1af6-4557-9c53-f0cc7d6f7f6c
         type: 0
         typeString: 
       conversationID: 24
@@ -45668,8 +45752,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 69.642334, y: 302.4997}
-    canvasZoom: 0.4000004
+    canvasScrollPosition: {x: 275.55283, y: 79.1466}
+    canvasZoom: 1.3599997
   - id: 25
     fields:
     - title: Title

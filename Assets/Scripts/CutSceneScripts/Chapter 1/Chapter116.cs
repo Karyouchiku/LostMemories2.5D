@@ -106,7 +106,7 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void StartMoving()
     {
         startThisScene = true;
-
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
         //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
         player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
@@ -143,6 +143,7 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE14()
     {
         //transition.ManualTransitionON();
+        otherGameObjects[4].SetActive(true);
         Door(0);
     }
     public void ForDE15()
@@ -152,6 +153,10 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE16()
     {
         MoveActor(0, 1, 0.8f);
+    }
+    public void ForDE17()
+    {
+        player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
 
     public void ForDE23()
@@ -202,6 +207,7 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         Door(1);
         EndingScene();
     }
+    
 
     //END OF ForDE METHODS
 
@@ -271,6 +277,7 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void EndingScene()
     {
         thisSceneDone = true;
+        player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
 
     //Calls from AutoEnterDoor
@@ -301,7 +308,7 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         return new SaveData()
         {
             thisSceneDone = this.thisSceneDone,
-            startThisScene = this.startThisScene
+            startThisScene = this.startThisScene,
         };
     }
     public void LoadState(object state)
@@ -311,6 +318,10 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

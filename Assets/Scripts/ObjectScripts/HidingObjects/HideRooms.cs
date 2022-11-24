@@ -27,16 +27,16 @@ public class HideRooms : MonoBehaviour
         if (other.tag == "Burito")
         {
             Renderer(true);
+            this.other = other;
         }
-        this.other = other;
     }
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Burito")
         {
             Renderer(false);
+            this.other = null;
         }
-        this.other = null;
     }
 
     void Renderer(bool render)

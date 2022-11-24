@@ -146,8 +146,9 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     public void DisableControls(bool turn)
     {
         player.GetComponent<PlayerControls>().enabled = turn;
-        InGameUI.SetActive(turn);
+        player.GetComponent<PlayerControls>().ResetJoystickValue();
         player.GetComponent<CharacterAnimation>().ResetAnimation();
+        InGameUI.SetActive(turn);
     }
     public void FinishingPuzzle()
     {

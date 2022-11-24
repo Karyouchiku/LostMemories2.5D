@@ -25,6 +25,10 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     [Header("Disable object and Scripts")]
     public DialogueSystemEvents player;
 
+    [Header("Remove items in Inventory")]
+    public SOItemData[] items;
+    PlayerInventory inventory;
+
     [Header("Portal Doors Involved")]
     public PortalDoor[] doors;
 
@@ -51,6 +55,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
@@ -114,7 +119,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         ContinueMode(false);
-        SetMinSubtitleSeconds(3);
+        SetMinSubtitleSeconds(5);
         //SetActorStartingPosition(2, 8);
         StartMoving();
         for (int i = 0; i < GameObjectChildrens.Length; i++)
@@ -128,6 +133,10 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             otherGameObjects[i].SetActive(true);
         }
 
+        foreach (SOItemData item in items)
+        {
+            inventory.Remove(item);
+        }
     }
     public void ForDE76()
     {
@@ -159,12 +168,17 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         ContinueMode(true);
         MoveActor(19, 6, 0.4f);
     }
+    public void ForDE114()
+    {
+        ContinueMode(false);
+    }
     public void ForDE116()//Last Dialogue
     {
         ContinueMode(false);
         ResetActorPositionToOriginal(19);
         ResetActorPositionToOriginal(3);
         otherGameObjects[0].GetComponent<LockInteractableDoors>().isUnlocked = false;
+        otherGameObjects[1].GetComponent<LockInteractableDoors>().isUnlocked = true;
         otherGameObjects[0].tag = "InteractableObject";
         IQuest.SetQuest("Find your way out to scape");
         EndingScene();
@@ -229,9 +243,11 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         actors[actorID].GetComponent<CharacterAnimation>().ResetAnimation();
         actors[actorID].SetActive(false);
     }
+    public PuzzleCh2 puzzle;
     public void EndingScene()
     {
         thisSceneDone = true;
+        puzzle.StartThisPuzzle();
     }
 
     //Calls from AutoEnterDoor
@@ -273,6 +289,10 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

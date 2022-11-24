@@ -9,7 +9,10 @@ public class PlayerInventory : MonoBehaviour, ISaveable
 
     public List<InventoryItem> inventory = new List<InventoryItem>();
     Dictionary<string, InventoryItem> itemDictionary = new Dictionary<string, InventoryItem>();
-    
+
+    public static event HandledNotificationRemove OnItemRemoved;
+    public delegate void HandledNotificationRemove(string notif);
+
     public GameObject inventoryPanel;
 
     //public InventoryManager inventoryManager;
@@ -56,7 +59,6 @@ public class PlayerInventory : MonoBehaviour, ISaveable
             InventoryItem newItem = new InventoryItem(soItemData.name);
             inventory.Add(newItem);
             itemDictionary.Add(soItemData.name, newItem);
-            Debug.Log($"Got the {soItemData.itemName}");
         }
         OnInventoryChange?.Invoke(inventory);
     }
@@ -71,6 +73,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
                 inventory.Remove(item);
                 itemDictionary.Remove(soItemData.name);
                 OnInventoryChange?.Invoke(inventory);
+                OnItemRemoved?.Invoke($"Removed: {soItemData.itemName}");
             }
         }
     }
