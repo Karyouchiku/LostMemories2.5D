@@ -2,27 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndingOfPuzzle2 : MonoBehaviour, IInteractor
+public class EndingOfPuzzle2 : MonoBehaviour
 {
-    IPuzzle2 puzzle;
-    PortalDoor thisDoor;
-    void Start()
-    {
-        puzzle = GetComponentInParent<IPuzzle2>();
-        thisDoor = GetComponent<PortalDoor>();
-    }
+    public PuzzleCh2 puzzle;
 
-    public void Interact()
+    void OnTriggerEnter(Collider other)
     {
-        if (thisDoor.locked)
+        if (other.tag == "Burito")
         {
-            IObjectives.SetObjectives("Find the Main Door's key");
-        }
-        else
-        {
-            IQuest.SetQuest("Get out of the warehouse");
-            IObjectives.SetObjectives("");
             puzzle.EndingPuzzle();
+            Debug.Log("Puzzle 2 Endded");
         }
     }
 }

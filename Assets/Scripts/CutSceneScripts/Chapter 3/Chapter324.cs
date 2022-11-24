@@ -135,6 +135,7 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE25()
     {
         startMove[0] = false;
+        IQuest.SetQuest("Have a sit and have a dinner with Flor");
         StartCoroutine(ForDE25Coroutine());
     }
     

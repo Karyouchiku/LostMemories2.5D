@@ -16,7 +16,6 @@ public class LocationChecker : MonoBehaviour
         if (other.tag == "Burito" || other.tag == "InteractableNPC" || other.tag == "NPC")
         {
             cutScenes.LocationCheck();
-            Debug.Log(other.name);
         }
     }
 }
