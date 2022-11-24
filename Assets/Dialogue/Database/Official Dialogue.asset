@@ -35446,8 +35446,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 228.0841, y: 56.880753}
-    canvasZoom: 1.0899999
+    canvasScrollPosition: {x: 255.72646, y: 85.236336}
+    canvasZoom: 1.1499999
   - id: 21
     fields:
     - title: Title
@@ -36031,6 +36031,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 74d3e425-2f40-4985-90fa-ca37f6271030
         type: 0
         typeString: 
       conversationID: 21
@@ -42486,8 +42490,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1474.5181, y: 3751.0225}
-    canvasZoom: 1.2399993
+    canvasScrollPosition: {x: 1264.8215, y: 3722.2236}
+    canvasZoom: 0.76999974
   - id: 22
     fields:
     - title: Title
@@ -44122,6 +44126,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: a63289ca-2e69-4fe6-85a6-b98618ededf9
+        type: 0
+        typeString: 
       conversationID: 24
       isRoot: 0
       isGroup: 0
@@ -45346,6 +45354,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 22509c46-5b53-41d2-8196-b8ed13a3fe17
+        type: 0
+        typeString: 
       conversationID: 24
       isRoot: 0
       isGroup: 0
@@ -45752,8 +45764,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 275.55283, y: 79.1466}
-    canvasZoom: 1.3599997
+    canvasScrollPosition: {x: 154.84122, y: 0}
+    canvasZoom: 1.1199999
   - id: 25
     fields:
     - title: Title
@@ -49905,8 +49917,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.15999955
+    canvasScrollPosition: {x: 292.74698, y: 81.441925}
+    canvasZoom: 1.059999
   - id: 26
     fields:
     - title: Title
@@ -54465,7 +54477,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.10000026
+    canvasZoom: 0.28000027
   - id: 27
     fields:
     - title: Title
@@ -56315,7 +56327,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 34.261276, y: 6.3920326}
     canvasZoom: 0.64000034
   syncInfo:
     syncActors: 0

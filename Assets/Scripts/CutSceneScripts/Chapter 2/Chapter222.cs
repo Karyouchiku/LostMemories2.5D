@@ -127,7 +127,7 @@ public class Chapter222 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             otherGameObjects[i].SetActive(true);
         }
-        MoveActor(0, 1, 0.4f);
+        MoveActor(0, 1, 0.6f);
     }
     public void ForDE06()
     {
@@ -146,7 +146,6 @@ public class Chapter222 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE16()//last dialogue
     {
         SetActorStartingPosition(7, 2);
-        otherGameObjects[0].SetActive(true);
         Door(0);
         EndingScene();
     }

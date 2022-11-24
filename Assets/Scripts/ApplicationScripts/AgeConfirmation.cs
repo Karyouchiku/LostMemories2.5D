@@ -46,14 +46,22 @@ public class AgeConfirmation : MonoBehaviour
             
             return;
         }
-        if (age >=16)
+        if (age >=16 && age <= 25)
         {
-            Debug.Log($"Age: {age}");
-            //ss.GoToMainMenu();
+            //Debug.Log($"Age: {age}");
+            ss.GoToMainMenu();
         }
-        else
+        else if (age < 16)
         {
             message.text = "We apologize that your age is not eligible for playing the game because of its explicit content. The game will quit automatically after few seconds.";
+            inputDate.SetActive(false);
+            toggle.gameObject.SetActive(false);
+            confirmBtn.gameObject.SetActive(false);
+            StartCoroutine(ExitApplication());
+        }
+        else if (age > 25)
+        {
+            message.text = "We apologize that your age is not eligible for playing the game. The game will quit automatically after few seconds.";
             inputDate.SetActive(false);
             toggle.gameObject.SetActive(false);
             confirmBtn.gameObject.SetActive(false);

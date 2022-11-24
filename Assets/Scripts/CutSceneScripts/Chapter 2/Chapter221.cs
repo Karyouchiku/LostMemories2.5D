@@ -115,6 +115,8 @@ public class Chapter221 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         ContinueMode(false);
         SetMinSubtitleSeconds(5);
+        actors[4].GetComponentInChildren<SpriteRenderer>().color = Color.black;
+
         //SetActorStartingPosition(4, 1);
         StartMoving();
         for (int i = 0; i < GameObjectChildrens.Length; i++)
@@ -139,6 +141,10 @@ public class Chapter221 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE05()
     {
         ContinueMode(true);
+    }
+    public void ForDE09()
+    {
+        actors[4].GetComponentInChildren<SpriteRenderer>().color = Color.white;
     }
     public void ForDE11()
     {

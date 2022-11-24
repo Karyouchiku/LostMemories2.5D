@@ -13,9 +13,10 @@ public class LocationChecker : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Burito" || other.tag == "InteractableNPC")
+        if (other.tag == "Burito" || other.tag == "InteractableNPC" || other.tag == "NPC")
         {
             cutScenes.LocationCheck();
+            Debug.Log(other.name);
         }
     }
 }

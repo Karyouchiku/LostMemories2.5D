@@ -138,7 +138,7 @@ public class Chapter323 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDe05()
     {
         ResetActorPositionToOriginal(7);
-        SetActorStartingPosition(3, 3);
+        SetActorStartingPosition(5, 2);
         Door(0);
         EndingScene();
     }

@@ -105,20 +105,18 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void StartMoving()
     {
         startThisScene = true;
-        player.GetComponent<FlashlightControls>().FLSwitch(false);
         player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
-        //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
+        dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
         StartMoving();
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
+        actors[actorID].tag = "NPC";
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         ContinueMode(false);
-        SetMinSubtitleSeconds(3);
-        
-        actors[7].GetComponentInChildren<SpriteRenderer>().color = Color.black;
+        SetMinSubtitleSeconds(4);
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
             GameObjectChildrens[i].SetActive(false);
@@ -130,17 +128,20 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             otherGameObjects[i].SetActive(true);
         }
     }
-    
-    public void ForDE04()
+    public void ForDE03()
     {
-        transition.ManualTransitionON();
+        ContinueMode(true);
     }
-    public void ForDe05()
+    public void ForDE25()
     {
-        ResetActorPositionToOriginal(7);
-        SetActorStartingPosition(3, 3);
-        Door(0);
-        EndingScene();
+        startMove[0] = false;
+        StartCoroutine(ForDE25Coroutine());
+    }
+    
+    IEnumerator ForDE25Coroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        MoveActor(5, 2, 0.5f);
     }
 
     //END OF ForDE METHODS
@@ -227,6 +228,9 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from LocationChecker
     public void LocationCheck()
     {
+        anim[actorID].moveX = 0;
+        anim[actorID].moveZ = 0;
+        EndingScene();
     }
 
     //END OF ALL EVENT METHODS

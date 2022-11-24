@@ -217,6 +217,7 @@ public class Chapter220 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from LocationChecker
     public void LocationCheck()
     {
+        EndingScene();
     }
 
     //END OF ALL EVENT METHODS

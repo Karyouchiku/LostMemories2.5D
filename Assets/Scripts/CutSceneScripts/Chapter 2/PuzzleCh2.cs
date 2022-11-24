@@ -315,8 +315,8 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         startThisPuzzle = saveData.startThisPuzzle;
         if (!thisPuzzleDone && startThisPuzzle)
         {
-            GotoPosition(18, saveData.actorLocationIDs[0,1], saveData.actormoveSpeed[0,1]);
-            GotoPosition(19, saveData.actorLocationIDs[1,1], saveData.actormoveSpeed[1,1]);
+            //GotoPosition(18, saveData.actorLocationIDs[0,1], saveData.actormoveSpeed[0,1]);
+            //GotoPosition(19, saveData.actorLocationIDs[1,1], saveData.actormoveSpeed[1,1]);
         }
     }
 

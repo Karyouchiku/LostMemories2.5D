@@ -79,7 +79,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
     void LockedDoor()
     {
-        Debug.Log("U r here");
+        //Debug.Log("U r here");
         if (key != null)
         {
             if (!inventory.SearchItemInInventory(key))
