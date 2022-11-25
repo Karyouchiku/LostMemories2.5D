@@ -253,7 +253,7 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from LocationChecker
     public void LocationCheck()
     {
-        ResetActorPositionToOriginal(6);
+        
     }
 
     //END OF ALL EVENT METHODS

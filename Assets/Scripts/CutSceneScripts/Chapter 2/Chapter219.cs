@@ -120,6 +120,8 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         ContinueMode(false);
         SetMinSubtitleSeconds(5);
+        MoveActor(3, 1, 1f);
+        actors[actorID].tag = "NPC";
         //SetActorStartingPosition(2, 8);
         StartMoving();
         for (int i = 0; i < GameObjectChildrens.Length; i++)
@@ -146,7 +148,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         SetActorStartingPosition(19, 8);
         MoveActor(19, 2, 0.4f);
-        actors[19].tag = "InteractableNPC";
+        actors[19].tag = "NPC";
         ContinueMode(false);
     }
     public void ForDe86()
