@@ -7,10 +7,10 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
 {
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
-
+    /*
     public static event HandledItemNotification OnItemGet;
     public delegate void HandledItemNotification(string notif);
-
+    */
     public SOItemData soItemData;
     
     AudioSource audioSource;
@@ -32,7 +32,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     public void Collect()
     {
         OnItemCollected?.Invoke(soItemData);
-        OnItemGet?.Invoke(soItemData.itemName);
+        //OnItemGet?.Invoke(soItemData.itemName);
         audioSource.clip = clip;
         audioSource.Play();
         isActive = false;

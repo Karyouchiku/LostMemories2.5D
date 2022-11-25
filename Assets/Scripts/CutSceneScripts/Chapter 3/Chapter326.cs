@@ -121,12 +121,13 @@ public class Chapter326 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
+        /*
         //Activating other Objects
         for (int i = 0; i < otherGameObjects.Length; i++)
         {
             otherGameObjects[i].SetActive(true);
         }
+        */
     }
     public void ForDE77()
     {
@@ -219,9 +220,14 @@ public class Chapter326 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void LocationCheck()
     {
         transition.ManualTransitionON();
+        StartCoroutine(LocationCheckCoroutine());
+    }
+    IEnumerator LocationCheckCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        otherGameObjects[0].SetActive(true);
         EndingScene();
     }
-
     //END OF ALL EVENT METHODS
 
 

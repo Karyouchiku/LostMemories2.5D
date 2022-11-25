@@ -60,6 +60,7 @@ public class PlayerTriggerZone : MonoBehaviour
     {
         if (other == null)
         {
+            ButtonEnabler(false);
             return;
         }
         if (!isTalking)

@@ -122,12 +122,13 @@ public class Chapter325 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
+        /*
         //Activating other Objects
         for (int i = 0; i < otherGameObjects.Length; i++)
         {
             otherGameObjects[i].SetActive(true);
         }
+        */
         transition.ManualTransitionON();
     }
     public void ForDE05()
@@ -137,6 +138,7 @@ public class Chapter325 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE73()
     {
+        ContinueMode(false);
         MoveActor(0, 1, 0.4f);
         StartCoroutine(ForDE73Coroutine());
     }
@@ -147,7 +149,6 @@ public class Chapter325 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE75()
     {
-        ContinueMode(false);
         SetActorStartingPosition(5, 3);
         player.GetComponent<CharacterController>().enabled = false;
         SetActorStartingPosition(0, 4);

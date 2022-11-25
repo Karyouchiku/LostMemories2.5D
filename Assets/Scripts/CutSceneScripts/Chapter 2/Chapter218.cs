@@ -77,16 +77,28 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             else
             {
                 DisableChilds();
+                OtherGOSwitch(false, 1);
             }
         }
     }
 
     void DisableChilds()
     {
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
+        foreach (GameObject go in GameObjectChildrens)
         {
-            GameObjectChildrens[i].SetActive(false);
+            go.SetActive(false);
         }
+    }
+    void OtherGOSwitch(bool turn)
+    {
+        foreach (GameObject go in otherGameObjects)
+        {
+            go.SetActive(turn);
+        }
+    }
+    void OtherGOSwitch(bool turn, int id)
+    {
+        otherGameObjects[id].SetActive(turn);
     }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
@@ -114,24 +126,11 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE01()
     {
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         StartMoving();
         ContinueMode(false);
         SetMinSubtitleSeconds(3);
-
-        //SetActorStartingPosition(2, 8);
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
-        {
-            GameObjectChildrens[i].SetActive(false);
-        }
+        DisableChilds();
         MoveActor(0, 1, 0.4f);
-        /*
-        //Activating other Objects
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(false);
-        }
-        */
     }
     public void ForDE02()
     {

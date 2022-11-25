@@ -9,9 +9,9 @@ public class PlayerInventory : MonoBehaviour, ISaveable
 
     public List<InventoryItem> inventory = new List<InventoryItem>();
     Dictionary<string, InventoryItem> itemDictionary = new Dictionary<string, InventoryItem>();
-
-    public static event HandledNotificationRemove OnItemRemoved;
-    public delegate void HandledNotificationRemove(string notif);
+    
+    public static event HandledNotification OnItemAddedOrRemoved;
+    public delegate void HandledNotification(string notif);
 
     public GameObject inventoryPanel;
 
@@ -32,6 +32,8 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         InteractableItem.OnItemCollected += Add;
         InteractableItemV2.OnItemCollected += Add;
         ItemFromNPC.OnItemReceived += Add;
+
+        ItemFromNPC.OnItemRemoved += Remove;
         InteractableDoor.RemoveFromInv += Remove;
         PortalDoor.RemoveFromInv += Remove;
         LockInteractableDoors.OnUnlockInteractableDoor += Remove;
@@ -42,6 +44,8 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         InteractableItem.OnItemCollected -= Add;
         InteractableItemV2.OnItemCollected -= Add;
         ItemFromNPC.OnItemReceived -= Add;
+
+        ItemFromNPC.OnItemRemoved -= Remove;
         InteractableDoor.RemoveFromInv -= Remove;
         PortalDoor.RemoveFromInv -= Remove;
         LockInteractableDoors.OnUnlockInteractableDoor -= Remove;
@@ -61,6 +65,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
             itemDictionary.Add(soItemData.name, newItem);
         }
         OnInventoryChange?.Invoke(inventory);
+        OnItemAddedOrRemoved?.Invoke(soItemData.itemName);
     }
 
     public void Remove(SOItemData soItemData)
@@ -73,7 +78,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
                 inventory.Remove(item);
                 itemDictionary.Remove(soItemData.name);
                 OnInventoryChange?.Invoke(inventory);
-                OnItemRemoved?.Invoke($"Removed: {soItemData.itemName}");
+                OnItemAddedOrRemoved?.Invoke($"Removed: {soItemData.itemName}");
             }
         }
     }

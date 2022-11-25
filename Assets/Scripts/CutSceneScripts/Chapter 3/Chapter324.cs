@@ -76,16 +76,32 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             else
             {
                 DisableChilds();
+                if (!onTimeMethod)
+                {
+                    OtherGOSwitch(true, 0);
+                    onTimeMethod = true;
+                }
             }
         }
     }
-
+    bool onTimeMethod;
     void DisableChilds()
     {
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
+        foreach (GameObject go in GameObjectChildrens)
         {
-            GameObjectChildrens[i].SetActive(false);
+            go.SetActive(false);
         }
+    }
+    void OtherGOSwitch(bool turn)
+    {
+        foreach (GameObject go in otherGameObjects)
+        {
+            go.SetActive(turn);
+        }
+    }
+    void OtherGOSwitch(bool turn, int id)
+    {
+        otherGameObjects[id].SetActive(turn);
     }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
@@ -121,12 +137,13 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
+        /*
         //Activating other Objects
         for (int i = 0; i < otherGameObjects.Length; i++)
         {
             otherGameObjects[i].SetActive(true);
         }
+        */
     }
     public void ForDE03()
     {
@@ -231,7 +248,9 @@ public class Chapter324 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         anim[actorID].moveX = 0;
         anim[actorID].moveZ = 0;
+        otherGameObjects[0].SetActive(true);
         EndingScene();
+
     }
 
     //END OF ALL EVENT METHODS

@@ -9,7 +9,7 @@ public class InteractableItemV2 : MonoBehaviour, IInteractor, ISaveable
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
 
-    public static event HandledNotification OnItemGet;
+    public static event HandledNotification OnNoItemFound;
     public delegate void HandledNotification(string notif);
 
     SOItemData itemData;
@@ -33,14 +33,14 @@ public class InteractableItemV2 : MonoBehaviour, IInteractor, ISaveable
             if (itemData != null)
             {
                 OnItemCollected?.Invoke(itemData);
-                OnItemGet?.Invoke(itemData.itemName);
+                //OnItemGet?.Invoke(itemData.itemName);
                 itemGot = true;
             }
             else
             {
                 //No Item Found
                 //Debug.Log("No Item Found");
-                OnItemGet?.Invoke("No Item Found");
+                OnNoItemFound?.Invoke("No Item Found");
             }
             // For Triggering Dialogue
             if (isForCutSceneTrigger)

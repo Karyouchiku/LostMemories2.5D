@@ -13,6 +13,7 @@ public class SaveSystem : MonoBehaviour
         var state = LoadFile(LoadData.SaveDatas[id]);
         SaveState(state);
         FileStreamingManager.SaveFile(state, LoadData.SaveDatas[id]);
+
     }
     //Load Methods
     public void Load(int id)

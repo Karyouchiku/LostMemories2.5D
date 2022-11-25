@@ -2157,13 +2157,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2246746124184460884}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1542744946823732131}
-  m_RootOrder: 0
+  m_Father: {fileID: 4376903145061478919}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2701,7 +2701,7 @@ RectTransform:
   m_Children:
   - {fileID: 1210835971701508446}
   m_Father: {fileID: 1542744946823732131}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2882,7 +2882,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4376903145061478919}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3244,7 +3244,7 @@ RectTransform:
   - {fileID: 7242432050315769665}
   - {fileID: 6410937217952200217}
   m_Father: {fileID: 1542744946823732131}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4098,7 +4098,7 @@ RectTransform:
   - {fileID: 4376903144988691111}
   - {fileID: 4376903144138279410}
   m_Father: {fileID: 1542744946823732131}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -4311,7 +4311,7 @@ RectTransform:
   m_Children:
   - {fileID: 4376903144687981939}
   m_Father: {fileID: 1542744946823732131}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4544,7 +4544,7 @@ RectTransform:
   m_Children:
   - {fileID: 4087642425956067980}
   m_Father: {fileID: 1542744946823732131}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -4762,6 +4762,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4376903143200496123}
+  - {fileID: 9194262648705551469}
   - {fileID: 1542744946823732131}
   - {fileID: 1578558481886078125}
   - {fileID: 218223931661301323}
@@ -5050,7 +5051,7 @@ RectTransform:
   - {fileID: 5684205477200281961}
   - {fileID: 912302378884348616}
   m_Father: {fileID: 4376903145061478919}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5123,14 +5124,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9194262648705551469}
   - {fileID: 4376903143355215396}
   - {fileID: 4376903145018616726}
   - {fileID: 4376903144457430060}
   - {fileID: 541751888996675024}
   - {fileID: 7210804861898436239}
   m_Father: {fileID: 4376903145061478919}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5439,7 +5439,7 @@ RectTransform:
   - {fileID: 3392582869316606181}
   - {fileID: 6905555334148589863}
   m_Father: {fileID: 4376903145061478919}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7310,7 +7310,7 @@ RectTransform:
   m_Children:
   - {fileID: 6280038822543968434}
   m_Father: {fileID: 4376903145061478919}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8738,7 +8738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 4376903145018616727}
   inventory: {fileID: 8390022775087897596}
-  _GOCollider: {fileID: 11400000, guid: c4f86e1281fa1f44b93f95f845957c71, type: 2}
+  _GOCollider: {fileID: 0}
   isTalking: 0
 --- !u!114 &8390022774997457335
 MonoBehaviour:
