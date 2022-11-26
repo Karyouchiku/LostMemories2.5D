@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    #region Starting Codes
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -116,9 +117,9 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             pAnim.moveZ = animVec.z;
         }
     }
+    #endregion
 
-    //START OF ALL EVENT METHODS
-
+    #region ForDE METHODS
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
@@ -146,7 +147,7 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE71()
     {
         ContinueMode(false);
-        MoveActor(6, 1, 1f);
+        MoveActor(6, 2, 1f);
     }
     public void ForDE75()
     {
@@ -161,9 +162,9 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         GetComponent<ItemFromNPC>().GiveItem();
     }
-    
+    #endregion
     //END OF ForDE METHODS
-
+    #region Shortcuts
     //MY SHORCUT METHODS
     void Checkpoint()
     {
@@ -257,8 +258,8 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
 
     //END OF ALL EVENT METHODS
-
-
+    #endregion
+    #region savegame system
     public object SaveState()
     {
         return new SaveData()
@@ -285,4 +286,5 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         public bool thisSceneDone;
         public bool startThisScene;
     }
+    #endregion
 }

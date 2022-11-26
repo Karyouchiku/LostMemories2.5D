@@ -62,6 +62,7 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
+    bool oneTimeSwitch;
     void Update()
     {
         if (startThisScene)
@@ -76,6 +77,11 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             else
             {
                 DisableChilds();
+                if (!oneTimeSwitch)
+                {
+                    oneTimeSwitch = true;
+                    OtherGOSwitch(true);
+                }
             }
         }
     }
@@ -85,6 +91,15 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
             GameObjectChildrens[i].SetActive(false);
+        }
+
+        
+    }
+    void OtherGOSwitch(bool turn)
+    {
+        foreach (GameObject item in otherGameObjects)
+        {
+            item.SetActive(turn);
         }
     }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
@@ -124,11 +139,6 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             GameObjectChildrens[i].SetActive(false);
         }
 
-        //Activating other Objects
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(true);
-        }
     }
     public void ForDE02()
     {
@@ -150,6 +160,7 @@ public class Chapter117 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         ResetActorPositionToOriginal(7);
         SetActorStartingPosition(3, 3);
+        MoveActor(3, 3, 1f);
         Door(0);
         EndingScene();
     }

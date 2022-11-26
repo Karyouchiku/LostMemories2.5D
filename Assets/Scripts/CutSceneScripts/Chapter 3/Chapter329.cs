@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Chapter329 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    #region Starting Codes
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -124,7 +125,8 @@ public class Chapter329 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             pAnim.moveZ = animVec.z;
         }
     }
-
+    #endregion
+    
     //START OF ALL EVENT METHODS
 
     //Calls from TriggerCutscene 
@@ -132,7 +134,7 @@ public class Chapter329 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         startThisScene = true;
         player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
-        dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
+        //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()

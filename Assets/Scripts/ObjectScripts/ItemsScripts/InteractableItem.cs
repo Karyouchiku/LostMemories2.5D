@@ -30,17 +30,22 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
         if (!itemGot)
         {
             itemData = Resources.Load<SOItemData>(itemName);
-            if (itemData != null)
+            try
             {
-                OnItemCollected?.Invoke(itemData);
-                //OnItemGet?.Invoke(itemData.itemName);
+                if (!isForCutSceneTrigger)
+                {
+                    OnItemCollected?.Invoke(itemData);
+                }
                 itemGot = true;
+                //OnItemGet?.Invoke(itemData.itemName);
             }
-            else
+            catch
             {
-                //No Item Found
                 OnNoItemFound?.Invoke("No Item Found");
+
             }
+            
+
             // For Triggering Dialogue
             if (isForCutSceneTrigger)
             {

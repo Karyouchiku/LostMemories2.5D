@@ -63,6 +63,7 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
+    bool oneTimeSwitch;
     void Update()
     {
         if (startThisScene)
@@ -77,7 +78,12 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             else
             {
                 DisableChilds();
-                OtherGOSwitch(false, 1);
+                if (!oneTimeSwitch)
+                {
+                    oneTimeSwitch = true;
+                    OtherGOSwitch(false, 1);
+                    OtherGOSwitch(true, 2);
+                }
             }
         }
     }
@@ -131,6 +137,7 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         SetMinSubtitleSeconds(3);
         DisableChilds();
         MoveActor(0, 1, 0.4f);
+        OtherGOSwitch(true, 1);
     }
     public void ForDE02()
     {

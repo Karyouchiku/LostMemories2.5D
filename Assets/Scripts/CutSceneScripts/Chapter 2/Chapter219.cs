@@ -25,9 +25,9 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     [Header("Disable object and Scripts")]
     public DialogueSystemEvents player;
 
-    [Header("Remove items in Inventory")]
-    public SOItemData[] items;
-    PlayerInventory inventory;
+    //[Header("Remove items in Inventory")]
+    //public SOItemData[] items;
+    //PlayerInventory inventory;
 
     [Header("Portal Doors Involved")]
     public PortalDoor[] doors;
@@ -55,7 +55,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-        inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
+        //inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
@@ -117,13 +117,13 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
+        actors[actorID].tag = "NPC";
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         ContinueMode(false);
         SetMinSubtitleSeconds(5);
-        MoveActor(3, 1, 1f);
-        actors[actorID].tag = "NPC";
         //SetActorStartingPosition(2, 8);
         StartMoving();
+        MoveActor(3, 1, 1f);
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
             GameObjectChildrens[i].SetActive(false);
@@ -135,10 +135,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             otherGameObjects[i].SetActive(true);
         }
 
-        foreach (SOItemData item in items)
-        {
-            inventory.Remove(item);
-        }
+        GetComponent<ItemFromNPC>().RemoveItem();
     }
     public void ForDE76()
     {

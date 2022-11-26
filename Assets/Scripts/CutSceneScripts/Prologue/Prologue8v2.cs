@@ -132,6 +132,7 @@ public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     public void ForDE13()
     {
         //ContinueMode(false);
+        GetComponent<ItemFromNPC>().GiveItem();
         SetActorStartingPosition(1, 0);
     }
     public void ForDE14()

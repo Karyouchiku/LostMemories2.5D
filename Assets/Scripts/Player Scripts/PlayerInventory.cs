@@ -78,7 +78,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
                 inventory.Remove(item);
                 itemDictionary.Remove(soItemData.name);
                 OnInventoryChange?.Invoke(inventory);
-                OnItemAddedOrRemoved?.Invoke($"Removed: {soItemData.itemName}");
+                OnItemAddedOrRemoved?.Invoke($"{soItemData.itemName} Removed");
             }
         }
     }
