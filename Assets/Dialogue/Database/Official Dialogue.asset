@@ -78703,6 +78703,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: ca9782dc-0bb2-4480-8341-d97023d0b8e1
+        type: 0
+        typeString: 
       conversationID: 34
       isRoot: 0
       isGroup: 0
@@ -79145,6 +79149,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 880b6eb9-379d-435c-8d4b-f1c375b809fc
+        type: 0
+        typeString: 
       conversationID: 34
       isRoot: 0
       isGroup: 0
@@ -79165,8 +79173,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 335.70728, y: 0}
-    canvasZoom: 1.2200007
+    canvasScrollPosition: {x: 133.15442, y: 0}
+    canvasZoom: 0.8600011
   - id: 35
     fields:
     - title: Title
@@ -80033,8 +80041,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.61000013
+    canvasScrollPosition: {x: 137.85117, y: 0}
+    canvasZoom: 0.9699998
   - id: 36
     fields:
     - title: Title
@@ -90646,8 +90654,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 982.1627}
-    canvasZoom: 0.19
+    canvasScrollPosition: {x: 361.86066, y: 0}
+    canvasZoom: 0.42999998
   - id: 37
     fields:
     - title: Title
@@ -91461,8 +91469,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 167.91608}
-    canvasZoom: 0.92000103
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.860001
   - id: 38
     fields:
     - title: Title
@@ -92605,8 +92613,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 229.05121, y: 390.74496}
-    canvasZoom: 0.8500002
+    canvasScrollPosition: {x: 0, y: 369.86288}
+    canvasZoom: 0.7300003
   - id: 39
     fields:
     - title: Title
@@ -92758,8 +92766,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 41.394806, y: 0}
+    canvasZoom: 1.1799998
   - id: 40
     fields:
     - title: Title

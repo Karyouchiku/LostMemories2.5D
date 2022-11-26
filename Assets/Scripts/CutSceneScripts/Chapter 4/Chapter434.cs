@@ -112,14 +112,24 @@ public class Chapter434 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         StartMoving();
         EnableListenersOnConvoEnd(false);
         DisableInteractable();
-        ContinueMode(false);
+        ContinueMode(true);
         SetMinSubtitleSeconds(4);
         //SetActorStartingPosition(5, 8);
         //ShadowyActor(5, true);
         DisableChilds();
         //ChangeActorDialogue();
     }
-    
+    public void ForDE09()
+    {
+        ContinueMode(false);
+        StartCoroutine(ForDE09Coroutine());
+    }
+    IEnumerator ForDE09Coroutine()
+    {
+        transition.ManualTransitionON();
+        yield return new WaitForSeconds(3f);
+        Door(0);
+    }
 
     public void ForDE_ThatGivesItem()
     {
