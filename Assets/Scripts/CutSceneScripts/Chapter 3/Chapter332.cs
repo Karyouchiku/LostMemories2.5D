@@ -158,6 +158,8 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     IEnumerator ForDE19Coroutine()
     {
         yield return new WaitForSeconds(2f);
+        SetActorStartingPosition(5, 9);
+        SetActorStartingPosition(20, 10);
         EndingScene();
         Door(0);
     }
@@ -245,6 +247,7 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         actors[actorID].SetActive(true);
         actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
+        MoveActor(actorID, locationID);
     }
     void ShadowyActor(int actorID, bool isShadow)
     {

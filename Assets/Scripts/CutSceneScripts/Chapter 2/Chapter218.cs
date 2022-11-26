@@ -148,6 +148,7 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE07()
     {
+        OtherGOSwitch(true, 1);
         MoveAIAgent(1, 3);
     }
     public void ForDE08()

@@ -152,6 +152,7 @@ public class Chapter330 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE75()
     {
         //OtherGOSwitch(true, 0);
+        ResetActorPositionToOriginal(6);
         IQuest.SetQuest("Return to Flor's House");
         EndingScene();
         Checkpoint();
