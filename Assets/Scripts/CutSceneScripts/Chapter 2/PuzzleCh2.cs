@@ -93,6 +93,7 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
                     ar.canSeePlayer = false;
                     ped.canSeePlayer = false;
                     shady.canSeePlayer = false;
+                    Debug.Log("Someone saw you");
                     RestartPuzzle(true);
                 }
             }
@@ -141,6 +142,7 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         ResetActorPositionToOriginal(19);
     }
 
+    #region Shortcuts
     int saveLocation18, saveLocation19;
     float saveMoveSpeed18, saveMoveSpeed19;
     public void GotoPosition(int actorID, int locationID)// 1
@@ -198,8 +200,6 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         yield return new WaitForSeconds(waitSec);
         targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
     }
-
-    //shortcuts
     void RestartPuzzle(bool onRestart)
     {
         actors[18].tag = "NPC";
@@ -281,7 +281,8 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         actors[actorID].GetComponent<CharacterAnimation>().ResetAnimation();
         actors[actorID].SetActive(false);
     }
-
+    #endregion
+    #region Save System
     public object SaveState()
     {
         int[,] locationCollections = new int[2, 2];
@@ -330,4 +331,5 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         public float[,] actormoveSpeed;
 
     }
+    #endregion
 }

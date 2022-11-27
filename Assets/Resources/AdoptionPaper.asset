@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511de5b1c0b22364ca3f477e868b58e5, type: 3}
   m_Name: AdoptionPaper
   m_EditorClassIdentifier: 
-  itemName: Adaption Paper
+  itemName: Adoption Paper
   icon: {fileID: 21300000, guid: 4132801ac05bab64eae5d0bf4cb1a3dd, type: 3}

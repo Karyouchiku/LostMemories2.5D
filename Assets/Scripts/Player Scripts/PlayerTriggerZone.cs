@@ -19,11 +19,15 @@ public class PlayerTriggerZone : MonoBehaviour
     void OnEnable()
     {
         PortalDoor.OnTriggerExitBtn += DisableBtn;
+        PortalDoorV2.OnTriggerExitBtn += DisableBtn;
+
     }
 
     void OnDisable()
     {
         PortalDoor.OnTriggerExitBtn -= DisableBtn;
+        PortalDoorV2.OnTriggerExitBtn -= DisableBtn;
+
     }
 
     void ButtonEnabler(bool turn)

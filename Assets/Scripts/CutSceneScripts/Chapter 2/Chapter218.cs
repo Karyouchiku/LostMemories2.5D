@@ -137,23 +137,21 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         SetMinSubtitleSeconds(3);
         DisableChilds();
         MoveActor(0, 1, 0.4f);
-        OtherGOSwitch(true, 1);
     }
     public void ForDE02()
     {
         SetActorStartingPosition(3,0);
-        actors[3].GetComponentInChildren<SpriteRenderer>().color = Color.black;//unique Line
+        ShadowyActor(3, true);
         MoveActor(3,2, 0.7f);
 
     }
     public void ForDE07()
     {
-        OtherGOSwitch(true, 1);
         MoveAIAgent(1, 3);
     }
     public void ForDE08()
     {
-        actors[3].GetComponentInChildren<SpriteRenderer>().color = Color.white;//unique Line
+        ShadowyActor(3, false);
     }
     public void ForDE09()
     {
@@ -169,9 +167,21 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
+    void ShadowyActor(int actorID, bool isShadow)
+    {
+        if (isShadow)
+        {
+            actors[actorID].GetComponentInChildren<SpriteRenderer>().color = Color.black;//unique Line
+        }
+        else
+        {
+            actors[actorID].GetComponentInChildren<SpriteRenderer>().color = Color.white;//unique Line
+        }
+    }
     void MoveAIAgent(int otherGameObjectID, int locationID)
     {
         otherGameObjects[otherGameObjectID].SetActive(true);
+        GameObjectChildrens[locationID].SetActive(true);
         otherGameObjects[otherGameObjectID].GetComponent<NavMeshAgent>().SetDestination(GameObjectChildrens[locationID].transform.position);
     }
 

@@ -192,6 +192,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     public void ForDE56()//back to hospital
     {
+        renderWorld.RenderWorlds(false, 12);
         TransitioningToOtherPlaces(20);
         SetActorStartingPosition(6, 6);
         SetActorStartingPosition(20, 24);
@@ -250,13 +251,13 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE137()
     {
-        MoveActor(6, 32, 0.4f);
+        MoveActor(6, 33, 0.4f);
         StartCoroutine(ForDE137Coroutine());
     }
     IEnumerator ForDE137Coroutine()
     {
         yield return new WaitForSeconds(3f);
-        MoveActor(6, 6, 0.4f);
+        MoveActor(6, 34, 0.4f);
     }
     public void ForDE171()
     {

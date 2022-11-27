@@ -11,19 +11,15 @@ public class Notification : MonoBehaviour
     void OnEnable()
     {
 
-        //Item.OnItemGet += ShowNotif;
         InteractableItem.OnNoItemFound += ShowNotif;
         InteractableItemV2.OnNoItemFound += ShowNotif;
-        //ItemFromNPC.OnItemGetNotif += ShowNotif;
 
         PlayerInventory.OnItemAddedOrRemoved += ShowNotif;
     }
     void OnDisable()
     {
-        //Item.OnItemGet -= ShowNotif;
         InteractableItem.OnNoItemFound -= ShowNotif;
         InteractableItemV2.OnNoItemFound -= ShowNotif;
-        //ItemFromNPC.OnItemGetNotif -= ShowNotif;
 
         PlayerInventory.OnItemAddedOrRemoved -= ShowNotif;
 

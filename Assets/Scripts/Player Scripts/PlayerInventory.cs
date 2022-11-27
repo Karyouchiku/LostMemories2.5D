@@ -31,11 +31,14 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         Item.OnItemCollected += Add;
         InteractableItem.OnItemCollected += Add;
         InteractableItemV2.OnItemCollected += Add;
+        InteractableItemV3.OnItemCollected += Add;
         ItemFromNPC.OnItemReceived += Add;
 
         ItemFromNPC.OnItemRemoved += Remove;
         InteractableDoor.RemoveFromInv += Remove;
         PortalDoor.RemoveFromInv += Remove;
+        PortalDoorV2.RemoveFromInv += Remove;
+
         LockInteractableDoors.OnUnlockInteractableDoor += Remove;
     }
     void OnDisable()
@@ -43,11 +46,14 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         Item.OnItemCollected -= Add;
         InteractableItem.OnItemCollected -= Add;
         InteractableItemV2.OnItemCollected -= Add;
+        InteractableItemV3.OnItemCollected -= Add;
         ItemFromNPC.OnItemReceived -= Add;
 
         ItemFromNPC.OnItemRemoved -= Remove;
         InteractableDoor.RemoveFromInv -= Remove;
         PortalDoor.RemoveFromInv -= Remove;
+        PortalDoorV2.RemoveFromInv -= Remove;
+
         LockInteractableDoors.OnUnlockInteractableDoor -= Remove;
     }
 

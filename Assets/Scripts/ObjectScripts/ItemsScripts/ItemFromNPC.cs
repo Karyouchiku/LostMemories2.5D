@@ -18,25 +18,36 @@ public class ItemFromNPC : MonoBehaviour
 
     public void GiveItem()//Give all in array
     {
+        StartCoroutine(GiveItemDeley());
+    }
+    IEnumerator GiveItemDeley()
+    {
         foreach (SOItemData item in itemData)
         {
+            yield return new WaitForSeconds(0.6f);
             OnItemReceived?.Invoke(item);
-            //OnItemGetNotif?.Invoke(item.itemName);
         }
     }
+
     public void GiveItem(int itemID)//give specifically
     {
         OnItemReceived?.Invoke(itemData[itemID]);
-        //OnItemGetNotif?.Invoke(itemData[itemID].itemName);
     }
 
     public void RemoveItem()//remove all in array
     {
+        StartCoroutine(RemoveItemDelay());
+    }
+    IEnumerator RemoveItemDelay()
+    {
         foreach (SOItemData item in itemData)
         {
+            yield return new WaitForSeconds(0.6f);
             OnItemRemoved?.Invoke(item);
         }
+
     }
+
     public void RemoveItem(int itemID)//remove specifically
     {
         OnItemRemoved?.Invoke(itemData[itemID]);

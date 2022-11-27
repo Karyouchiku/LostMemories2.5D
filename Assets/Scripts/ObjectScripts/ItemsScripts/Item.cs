@@ -18,6 +18,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
 
     public bool isActive;
 
+    public bool isObjectiveRelated;
     void Start()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = soItemData.icon;
@@ -32,11 +33,13 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     public void Collect()
     {
         OnItemCollected?.Invoke(soItemData);
-        //OnItemGet?.Invoke(soItemData.itemName);
         audioSource.clip = clip;
         audioSource.Play();
         isActive = false;
-        //Debug.Log($"{soItemData.itemName} is Collected");
+        if (isObjectiveRelated)
+        {
+            IObjectives.SetObjective2();
+        }
     }
     
     public object SaveState()

@@ -179,7 +179,8 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         otherGameObjects[0].GetComponent<LockInteractableDoors>().isUnlocked = false;
         otherGameObjects[1].GetComponent<LockInteractableDoors>().isUnlocked = true;
         otherGameObjects[0].tag = "InteractableObject";
-        IQuest.SetQuest("Find your way out to scape");
+        IQuest.SetQuest("Find your way out to escape");
+        IObjectives.SetObjective1("Find your confiscated things before you leave");
         EndingScene();
     }
     //END OF ForDE METHODS

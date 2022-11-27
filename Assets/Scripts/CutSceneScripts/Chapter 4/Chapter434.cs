@@ -128,7 +128,10 @@ public class Chapter434 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         transition.ManualTransitionON();
         yield return new WaitForSeconds(3f);
+        SetActorStartingPosition(7, 1);
+        ShadowyActor(7, true);
         Door(0);
+        EndingScene();
     }
 
     public void ForDE_ThatGivesItem()

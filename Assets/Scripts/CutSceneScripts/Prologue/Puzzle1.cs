@@ -94,13 +94,13 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
                     if (objectiveItemCount > 1)
                     {
                         objectiveItemCount--;
-                        IObjectives.SetObjectives($"Item Left{objectiveItemCount}");
+                        IObjectives.SetObjective1($"Item Left: {objectiveItemCount}");
 
                     }
                     else
                     {
                         objectiveIsOngoing = false;
-                        IObjectives.SetObjectives("");
+                        IObjectives.SetObjective1("");
                         IQuest.SetQuest("Get out of the House");
                     }
                 }
