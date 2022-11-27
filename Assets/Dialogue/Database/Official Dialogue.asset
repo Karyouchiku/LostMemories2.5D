@@ -48054,6 +48054,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
       conversationID: 25
       isRoot: 0
       isGroup: 0
@@ -48075,7 +48079,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 922.94586
+        x: 923.94586
         y: 623.3158
         width: 160
         height: 30
@@ -50310,8 +50314,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 334.12836, y: 150.00006}
-    canvasZoom: 0.9999995
+    canvasScrollPosition: {x: 12.0503845, y: 0}
+    canvasZoom: 0.87999964
   - id: 26
     fields:
     - title: Title
@@ -80272,8 +80276,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 326.12683, y: 508.96558}
-    canvasZoom: 1.4499997
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8200002
   - id: 36
     fields:
     - title: Title
