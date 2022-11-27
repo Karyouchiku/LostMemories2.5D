@@ -42753,8 +42753,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1326.7288, y: 3325.9165}
-    canvasZoom: 0.6799998
+    canvasScrollPosition: {x: 1290.8734, y: 642.89484}
+    canvasZoom: 1.0699995
   - id: 22
     fields:
     - title: Title
@@ -46027,7 +46027,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 90.21378, y: 263.63635}
+    canvasScrollPosition: {x: 212.94101, y: 728.40894}
     canvasZoom: 0.88000023
   - id: 25
     fields:
@@ -46126,8 +46126,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 642
-        y: 37
+        x: 641
+        y: 16
         width: 160
         height: 30
     - id: 1
@@ -46185,8 +46185,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 642
-        y: 87
+        x: 641
+        y: 63.99997
         width: 160
         height: 30
     - id: 2
@@ -46240,8 +46240,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 642
-        y: 137
+        x: 641
+        y: 109.999954
         width: 160
         height: 30
     - id: 3
@@ -46295,8 +46295,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 642
-        y: 187
+        x: 641
+        y: 161.99997
         width: 160
         height: 30
     - id: 4
@@ -46350,8 +46350,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 642
-        y: 237
+        x: 641
+        y: 209.99997
         width: 160
         height: 30
     - id: 5
@@ -46409,8 +46409,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 640.773
-        y: 288.84048
+        x: 638.773
+        y: 254.93317
         width: 160
         height: 30
     - id: 6
@@ -46455,7 +46455,7 @@ MonoBehaviour:
       - originConversationID: 25
         originDialogueID: 6
         destinationConversationID: 25
-        destinationDialogueID: 7
+        destinationDialogueID: 76
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -46465,8 +46465,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 640.773
-        y: 338.84048
+        x: 638.77295
+        y: 302.4333
         width: 160
         height: 30
     - id: 7
@@ -46527,8 +46527,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 640.773
-        y: 388.84048
+        x: 637.29474
+        y: 446.2318
         width: 160
         height: 30
     - id: 8
@@ -50199,9 +50199,119 @@ MonoBehaviour:
         y: 3150.7722
         width: 160
         height: 30
+    - id: 76
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 25
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I never got to know your name.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 25
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 25
+        originDialogueID: 76
+        destinationConversationID: 25
+        destinationDialogueID: 77
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 639.77295
+        y: 347.6072
+        width: 160
+        height: 30
+    - id: 77
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 25
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Oh... uhm, I'm Burito.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 25
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 25
+        originDialogueID: 77
+        destinationConversationID: 25
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 637.16425
+        y: 396.86807
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 213.97896, y: 2726.3643}
-    canvasZoom: 0.8199992
+    canvasScrollPosition: {x: 334.12836, y: 150.00006}
+    canvasZoom: 0.9999995
   - id: 26
     fields:
     - title: Title
@@ -54767,8 +54877,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 640.91266, y: 2785.7344}
-    canvasZoom: 1.1499997
+    canvasScrollPosition: {x: 651.59985, y: 1039.0001}
+    canvasZoom: 0.9999999
   - id: 27
     fields:
     - title: Title
@@ -90844,8 +90954,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 337.19403, y: 493.5857}
-    canvasZoom: 0.43000004
+    canvasScrollPosition: {x: 334.0736, y: 902.49695}
+    canvasZoom: 0.75999975
   - id: 37
     fields:
     - title: Title
