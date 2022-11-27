@@ -7,27 +7,38 @@ using PixelCrushers.DialogueSystem;
 using TMPro;
 public class SaveValuesInDDB : MonoBehaviour, ISaveable
 {
+
     [Header("For Debugging")]
     public TMP_Text PPointsText;
     public DialogueDatabase dialogueDatabase;
 
+    #region Variables
     double personalityValue;
 
-    
-    public void SetPersonalityPointsValue(double value)
-    {
-        personalityValue += value;
-    }
+    #endregion
+    #region Methods
+    //For Condition
     public double GetPersonalityPointsValue()
     {
         return personalityValue;
     }
-    //FOR DEBUGGING
-    
+
+    //Modify
+    public void SetPersonalityPointsValue(double value)
+    {
+        personalityValue += value;
+    }
+    #endregion
+    #region Lua function registrations
     void OnEnable()
     {
         // Make the functions available to Lua: (Replace these lines with your own.)
+        //For Conditions
         Lua.RegisterFunction("GetPersonalityPoints", this, SymbolExtensions.GetMethodInfo(() => GetPersonalityPointsValue()));
+        
+
+
+        //For Modifying
         Lua.RegisterFunction("AddPersonalityPoints", this, SymbolExtensions.GetMethodInfo(() => SetPersonalityPointsValue((double)0)));
     }
 
@@ -36,14 +47,8 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
         Lua.UnregisterFunction("GetPersonalityPoints");
         Lua.UnregisterFunction("AddPersonalityPoints");
     }
-    void Update()
-    {
-        //PPointsText.text = $"Conversation Name: {dialogueDatabase.GetConversation(8).Title}";
-        PPointsText.text = $"Personality Points: {personalityValue}";
-    }
-
-    //----For debugging
-
+    #endregion
+    #region Save System
     public object SaveState()
     {
         return new SaveData()
@@ -64,4 +69,5 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     {
         public double personalityValue;
     }
+    #endregion
 }
