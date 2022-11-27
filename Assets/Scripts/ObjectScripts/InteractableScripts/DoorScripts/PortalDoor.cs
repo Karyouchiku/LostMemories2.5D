@@ -25,9 +25,27 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     public AudioClip doorKnocking;
 
     AudioSource audioSource;
+
+    //[Header("Player Gameobject")]
+    GameObject player;
+    GameObject inGameUi;
+    [Header("Teleport to other position")]
+    public GameObject changePositionTo;
+    BlackTransitioning transition;
+    Vector3 changePositionToVec;
+
+    WorldActiveSaveState worldRenderer;
+    [Header("Enable Directional Light")]
+    public bool lighting;
+    [Header("World to Render")]
+    public int renderPlaceID;
+
+    PlayerInventory playerInventory;
+    SaveSystem saveSystem;
     private void Awake()
     {
         inGameUi = GameObject.Find("IngameUI");
+        playerInventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
     }
     void Start()
     {
@@ -36,6 +54,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         player = GameObject.FindGameObjectWithTag("Burito");
         transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
     }
     public void Interact()
     {
@@ -60,7 +79,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
 
     void LockedDoor()
     {
-        Debug.Log("U r here");
+        //Debug.Log("U r here");
         if (key != null)
         {
             if (!inventory.SearchItemInInventory(key))
@@ -80,19 +99,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         }
     }
 
-    //[Header("Player Gameobject")]
-    GameObject player;
-    GameObject inGameUi;
-    [Header("Teleport to other position")]
-    public GameObject changePositionTo;
-    BlackTransitioning transition;
-    Vector3 changePositionToVec;
-
-    WorldActiveSaveState worldRenderer;
-    [Header("Enable Directional Light")]
-    public bool lighting;
-    [Header("World to Render")]
-    public int renderPlaceID;
+    
     IEnumerator MovePosition()
     {
         changePositionToVec = changePositionTo.transform.position;
@@ -108,8 +115,10 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         {
             player.GetComponent<PlayerControls>().enabled = true;
             inGameUi.SetActive(true);
+            playerInventory.InventoryRefresher();
         }
         OnTriggerExitBtn?.Invoke();
+        saveSystem.Save(5);
     }
 
     //For Playing SFX

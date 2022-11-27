@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using TMPro;
 public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
@@ -36,7 +36,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
-
+    TMP_Text questText;
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
     [Header("Scene Dialogue Changer")]
@@ -50,7 +50,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
+        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -105,8 +105,8 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         startThisScene = true;
 
-        //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
-        player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
+        //player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
@@ -136,6 +136,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         ContinueMode(true);
         MoveActor(3, 3);
+        player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
 
     public void ForDE20()
@@ -158,6 +159,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         SetActorStartingPosition(15, 7);
         
         yield return new WaitForSeconds(1);
+        questText.text = "Meet the receiver behind the store from the otherside of the road";
         Door(0);
         EndingScene();
     }
@@ -222,12 +224,14 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     public void EndingScene()
     {
         thisSceneDone = true;
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
     }
 
     //Calls from AutoEnterDoor
     public void EnterDoor()
     {
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
         EndingScene();
     }
 
@@ -261,6 +265,10 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using TMPro;
 public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
@@ -37,7 +37,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     //[Header("Other GameObjects")]
     public GameObject[] otherGameObjects;
-
+    TMP_Text questText;//
     BlackTransitioning transition;
     DialogueModifier dialogueModifier;
     void Start()
@@ -46,6 +46,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
@@ -164,6 +165,9 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     
     public void ForDE29()//last dialogue
     {
+        questText.text = "Get your things and get out of the house";
+        otherGameObjects[1].GetComponent<Puzzle1>().startThisPuzzle = true;
+        otherGameObjects[1].GetComponent<Puzzle1>().EnableInteractableObjects(true); ;
         EndingScene();
     }
 
@@ -255,6 +259,10 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

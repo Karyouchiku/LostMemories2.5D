@@ -6,16 +6,18 @@ public class HideRooms : MonoBehaviour
 {
     MeshRenderer[] mesh;
     Light[] lights;
+    SpriteRenderer[] sprites;
     Collider other;
 
     void Start()
     {
         mesh = GetComponentsInChildren<MeshRenderer>();
         lights = GetComponentsInChildren<Light>();
+        sprites = GetComponentsInChildren<SpriteRenderer>();
     }
     void Update()
     {
-        if (other == null)
+        if (other == null || other.tag != "Burito")
         {
             Renderer(false);
         }
@@ -25,27 +27,41 @@ public class HideRooms : MonoBehaviour
         if (other.tag == "Burito")
         {
             Renderer(true);
+            this.other = other;
         }
-        this.other = other;
     }
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Burito")
         {
             Renderer(false);
+            this.other = null;
         }
-        this.other = null;
     }
 
     void Renderer(bool render)
     {
-        for (int i = 0; i < mesh.Length; i++)
+        foreach (MeshRenderer item in mesh)
         {
-            mesh[i].enabled = render;
+            item.enabled = render;
         }
-        for (int i = 0; i < lights.Length; i++)
+        foreach (Light light in lights)
         {
-            lights[i].enabled = render;
+            light.enabled = render;
+        }
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            try
+            {
+                if (sprite.GetComponentInParent<Item>().isActive)
+                {
+                    sprite.enabled = render;
+                }
+            }
+            catch
+            {
+                sprite.enabled = render;
+            }
         }
     }
 }

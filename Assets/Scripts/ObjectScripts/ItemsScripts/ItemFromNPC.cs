@@ -6,19 +6,51 @@ public class ItemFromNPC : MonoBehaviour
 {
     public static event HandledItemReceived OnItemReceived;
     public delegate void HandledItemReceived(SOItemData soItemData);
+    
+    public static event HandledItemRemoved OnItemRemoved;
+    public delegate void HandledItemRemoved(SOItemData soItemData);
 
-    //public DialogueDatabase dialoguedb;
+    //public static event HandledItemNotification OnItemGetNotif;
+    //public delegate void HandledItemNotification(string Notif);
+
     public SOItemData[] itemData;
-    //public string itemName;
-    //string item;
+    
 
-    public void GiveItem()
+    public void GiveItem()//Give all in array
     {
-        //item = dialoguedb.GetItem(itemName).Name;
-        //itemData = Resources.Load<SOItemData>(itemName);
-        for (int i = 0; i < itemData.Length; i++)
+        StartCoroutine(GiveItemDeley());
+    }
+    IEnumerator GiveItemDeley()
+    {
+        foreach (SOItemData item in itemData)
         {
-            OnItemReceived?.Invoke(itemData[i]);
+            yield return new WaitForSeconds(0.6f);
+            OnItemReceived?.Invoke(item);
         }
     }
+
+    public void GiveItem(int itemID)//give specifically
+    {
+        OnItemReceived?.Invoke(itemData[itemID]);
+    }
+
+    public void RemoveItem()//remove all in array
+    {
+        StartCoroutine(RemoveItemDelay());
+    }
+    IEnumerator RemoveItemDelay()
+    {
+        foreach (SOItemData item in itemData)
+        {
+            yield return new WaitForSeconds(0.6f);
+            OnItemRemoved?.Invoke(item);
+        }
+
+    }
+
+    public void RemoveItem(int itemID)//remove specifically
+    {
+        OnItemRemoved?.Invoke(itemData[itemID]);
+    }
+
 }

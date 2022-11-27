@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControls : MonoBehaviour, ISaveable
+public class PlayerControls : MonoBehaviour//, ISaveable
 {
     //private Componets
     CharacterAnimation playerAnimations;
@@ -43,8 +43,11 @@ public class PlayerControls : MonoBehaviour, ISaveable
             MovementScript();
         }
     }
-
-    private void MovementScript()
+    public void ResetJoystickValue()
+    {
+        joystick.ResetValue();
+    }
+    void MovementScript()
     {
         if (controller.isGrounded)
         {
@@ -100,7 +103,7 @@ public class PlayerControls : MonoBehaviour, ISaveable
         move.z *= movementSpeed * Time.deltaTime;
         controller.Move(cam.rotation * ((Vector3.forward * move.z) + (Vector3.right * move.x)) + (Vector3.down * 5f * Time.deltaTime));
     }
-
+    /*
     public object SaveState()
     {
         return new SaveData()
@@ -131,4 +134,5 @@ public class PlayerControls : MonoBehaviour, ISaveable
     {
         public float[] position;
     }
+    */
 }

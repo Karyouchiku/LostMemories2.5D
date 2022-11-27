@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using TMPro;
 public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
@@ -36,7 +36,6 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
-
     [Header("Actor to Trigger Dialogue")]
     public int actorID;
     [Header("Scene Dialogue Changer")]
@@ -50,7 +49,6 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -116,6 +114,7 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         StartMoving();
         ContinueMode(true);
         SetMinSubtitleSeconds(3);
+        GetComponent<ItemFromNPC>().GiveItem();
         //SetActorStartingPosition(3, 0);
         /*
         for (int i = 0; i < GameObjectChildrens.Length; i++)
@@ -128,7 +127,8 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             otherGameObjects[i].SetActive(true);
         }
-
+        IQuest.SetQuest("Leave the Building");
+        EndingScene();
     }
 
 
@@ -228,6 +228,10 @@ public class Chapter113 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

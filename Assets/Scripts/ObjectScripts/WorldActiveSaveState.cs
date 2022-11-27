@@ -22,6 +22,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     public void RenderWorlds(bool lighting, int renderPlaceID)//bool w1, bool w2, bool w3, bool w4, bool w5, bool w6, bool w7, bool w8, bool w9, bool w10, bool w11)
     {
         this.lighting = lighting;
+        this.renderPlaceID = renderPlaceID;
         directionalLight.enabled = this.lighting;
         WorldRenderer(renderPlaceID);
 
@@ -33,7 +34,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
 
         for (int i = 0; i < places.Length; i++)
         {
-            bool render = i == renderPlaceID ? true : false;
+            bool render = i == renderPlaceID;
             
             //places[i].SetActive(render);
             

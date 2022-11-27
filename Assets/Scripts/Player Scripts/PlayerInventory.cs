@@ -10,6 +10,9 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     public List<InventoryItem> inventory = new List<InventoryItem>();
     Dictionary<string, InventoryItem> itemDictionary = new Dictionary<string, InventoryItem>();
     
+    public static event HandledNotification OnItemAddedOrRemoved;
+    public delegate void HandledNotification(string notif);
+
     public GameObject inventoryPanel;
 
     //public InventoryManager inventoryManager;
@@ -28,9 +31,14 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         Item.OnItemCollected += Add;
         InteractableItem.OnItemCollected += Add;
         InteractableItemV2.OnItemCollected += Add;
+        InteractableItemV3.OnItemCollected += Add;
         ItemFromNPC.OnItemReceived += Add;
+
+        ItemFromNPC.OnItemRemoved += Remove;
         InteractableDoor.RemoveFromInv += Remove;
         PortalDoor.RemoveFromInv += Remove;
+        PortalDoorV2.RemoveFromInv += Remove;
+
         LockInteractableDoors.OnUnlockInteractableDoor += Remove;
     }
     void OnDisable()
@@ -38,9 +46,14 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         Item.OnItemCollected -= Add;
         InteractableItem.OnItemCollected -= Add;
         InteractableItemV2.OnItemCollected -= Add;
+        InteractableItemV3.OnItemCollected -= Add;
         ItemFromNPC.OnItemReceived -= Add;
+
+        ItemFromNPC.OnItemRemoved -= Remove;
         InteractableDoor.RemoveFromInv -= Remove;
         PortalDoor.RemoveFromInv -= Remove;
+        PortalDoorV2.RemoveFromInv -= Remove;
+
         LockInteractableDoors.OnUnlockInteractableDoor -= Remove;
     }
 
@@ -56,9 +69,9 @@ public class PlayerInventory : MonoBehaviour, ISaveable
             InventoryItem newItem = new InventoryItem(soItemData.name);
             inventory.Add(newItem);
             itemDictionary.Add(soItemData.name, newItem);
-            Debug.Log($"Got the {soItemData.itemName}");
         }
         OnInventoryChange?.Invoke(inventory);
+        OnItemAddedOrRemoved?.Invoke(soItemData.itemName);
     }
 
     public void Remove(SOItemData soItemData)
@@ -71,6 +84,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
                 inventory.Remove(item);
                 itemDictionary.Remove(soItemData.name);
                 OnInventoryChange?.Invoke(inventory);
+                OnItemAddedOrRemoved?.Invoke($"{soItemData.itemName} Removed");
             }
         }
     }
@@ -102,10 +116,15 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         var saveData = (SaveData)state;
         this.inventory = saveData.inventory;
         this.itemDictionary = saveData.itemDictionary;
-        InventoryRefresher(); 
+        StartCoroutine(RefreshAfterFixedFrameUpdate());
+        
 
     }
-
+    IEnumerator RefreshAfterFixedFrameUpdate()
+    {
+        yield return new WaitForFixedUpdate();
+        InventoryRefresher();
+    }
     [Serializable]
     struct SaveData
     {

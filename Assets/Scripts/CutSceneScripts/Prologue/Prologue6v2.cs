@@ -86,6 +86,11 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         {
             GameObjectChildrens[i].SetActive(false);
         }
+        
+        ResetActorPositionToOriginal(11);
+        ResetActorPositionToOriginal(12);
+        ResetActorPositionToOriginal(13);
+        ResetActorPositionToOriginal(14);
     }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
@@ -242,10 +247,6 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     {
         yield return new WaitForSeconds(1);
         ResetActorPositionToOriginal(1);
-        ResetActorPositionToOriginal(11);
-        ResetActorPositionToOriginal(12);
-        ResetActorPositionToOriginal(13);
-        ResetActorPositionToOriginal(14);
         otherGameObjects[0].SetActive(true);
         EndingScene();
     }
@@ -267,6 +268,10 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

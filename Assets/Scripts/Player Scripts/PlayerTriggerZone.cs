@@ -19,11 +19,15 @@ public class PlayerTriggerZone : MonoBehaviour
     void OnEnable()
     {
         PortalDoor.OnTriggerExitBtn += DisableBtn;
+        PortalDoorV2.OnTriggerExitBtn += DisableBtn;
+
     }
 
     void OnDisable()
     {
         PortalDoor.OnTriggerExitBtn -= DisableBtn;
+        PortalDoorV2.OnTriggerExitBtn -= DisableBtn;
+
     }
 
     void ButtonEnabler(bool turn)
@@ -60,6 +64,7 @@ public class PlayerTriggerZone : MonoBehaviour
     {
         if (other == null)
         {
+            ButtonEnabler(false);
             return;
         }
         if (!isTalking)

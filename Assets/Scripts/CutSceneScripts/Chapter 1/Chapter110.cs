@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using TMPro;
 public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
@@ -37,14 +37,12 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
-
     void Start()
     {
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -105,6 +103,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
+        player.GetComponent<FlashlightControls>().FLSwitch(true);
         actors[3].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         actors[3].gameObject.tag = "Untagged";
         dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
@@ -112,6 +111,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         SetMinSubtitleSeconds(3);
         SetActorStartingPosition(3, 1);
 
+        StartMoving();
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
             GameObjectChildrens[i].SetActive(false);
@@ -122,6 +122,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             otherGameObjects[i].SetActive(true);
         }
+        IQuest.SetQuest("Find the Adoption Agency");
         EndingScene();
     }
 
@@ -213,6 +214,10 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

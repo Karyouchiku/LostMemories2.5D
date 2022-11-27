@@ -49,7 +49,7 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
-        transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
@@ -106,8 +106,9 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     {
         startThisScene = true;
         MoveActor(0, 0, 1);
+        actors[0].GetComponent<PlayerControls>().enabled = false;
         //dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
-        //player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
     }
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
@@ -115,7 +116,7 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         //ContinueMode(false);
-        //SetMinSubtitleSeconds(3);
+        SetMinSubtitleSeconds(3);
         //SetActorStartingPosition(2, 8);
         SetActorStartingPosition(8, 14);
         SetActorStartingPosition(9, 15);
@@ -329,6 +330,10 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

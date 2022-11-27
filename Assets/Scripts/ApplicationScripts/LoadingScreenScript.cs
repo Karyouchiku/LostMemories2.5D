@@ -8,6 +8,7 @@ public static class LoadingScreenScript
     public static float target;
     public static IEnumerator LoadScene_Coroutine(int sceneID)
     {
+        yield return new WaitForFixedUpdate();
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneID);
         asyncOperation.allowSceneActivation = false;
         while (!asyncOperation.isDone)
@@ -15,11 +16,9 @@ public static class LoadingScreenScript
             target = asyncOperation.progress;
             if (target >= 0.9f)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForFixedUpdate();
                 asyncOperation.allowSceneActivation = true;
             }
-            
-            yield return null;
         }
     }
 }

@@ -131,7 +131,8 @@ public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     }
     public void ForDE13()
     {
-        ContinueMode(false);
+        //ContinueMode(false);
+        GetComponent<ItemFromNPC>().GiveItem();
         SetActorStartingPosition(1, 0);
     }
     public void ForDE14()
@@ -280,6 +281,10 @@ public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData

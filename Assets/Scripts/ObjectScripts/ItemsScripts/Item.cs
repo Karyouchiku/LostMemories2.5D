@@ -7,8 +7,10 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
 {
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
-    
-    
+    /*
+    public static event HandledItemNotification OnItemGet;
+    public delegate void HandledItemNotification(string notif);
+    */
     public SOItemData soItemData;
     
     AudioSource audioSource;
@@ -16,6 +18,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
 
     public bool isActive;
 
+    public bool isObjectiveRelated;
     void Start()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = soItemData.icon;
@@ -30,11 +33,13 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     public void Collect()
     {
         OnItemCollected?.Invoke(soItemData);
-
         audioSource.clip = clip;
         audioSource.Play();
         isActive = false;
-        Debug.Log($"{soItemData.itemName} is Collected");
+        if (isObjectiveRelated)
+        {
+            IObjectives.SetObjective2();
+        }
     }
     
     public object SaveState()
@@ -48,7 +53,12 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
-        this.isActive = saveData.isActive;
+        StartCoroutine(SetItemActiveState(saveData.isActive));
+    }
+    IEnumerator SetItemActiveState(bool isActive)
+    {
+        yield return new WaitForFixedUpdate();
+        this.isActive = isActive;
     }
 
     [Serializable]

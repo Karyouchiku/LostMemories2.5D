@@ -8,7 +8,10 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
 {
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
-
+    
+    public static event HandledNotification OnNoItemFound;
+    public delegate void HandledNotification(string notif);
+    
     SOItemData itemData;
     public string itemName;
     bool itemGot;
@@ -27,16 +30,22 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
         if (!itemGot)
         {
             itemData = Resources.Load<SOItemData>(itemName);
-            if (itemData != null)
+            try
             {
-                OnItemCollected?.Invoke(itemData);
+                if (!isForCutSceneTrigger)
+                {
+                    OnItemCollected?.Invoke(itemData);
+                }
                 itemGot = true;
+                //OnItemGet?.Invoke(itemData.itemName);
             }
-            else
+            catch
             {
-                //No Item Found
-                Debug.Log("No Item Found");
+                OnNoItemFound?.Invoke("No Item Found");
+
             }
+            
+
             // For Triggering Dialogue
             if (isForCutSceneTrigger)
             {
@@ -48,6 +57,8 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
                 lmActors._LMActors[actorID].GetComponent<DialogueSystemTrigger>().OnUse();
             }
         }
+        transform.gameObject.tag = "Untagged";
+
     }
 
     public object SaveState()

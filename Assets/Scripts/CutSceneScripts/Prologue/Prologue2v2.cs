@@ -134,7 +134,7 @@ public class Prologue2v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     public void ForDE02()
     {
         dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
-        ContinueMode(false);
+        ContinueMode(true);
         MoveActor(8, 1, 0.7f);
         MoveActor(9, 2, 0.7f);
         MoveActor(10, 3, 0.7f);
@@ -339,6 +339,10 @@ public class Prologue2v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         this.startThisScene = saveData.startThisScene;
     }
 
+    public void ChangeLocation(int actorID, int locationID, float moveSpeed)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     struct SaveData
