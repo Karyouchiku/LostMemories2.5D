@@ -2149,17 +2149,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["personality"] = Variable["personality"] + 1;;
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
 
-        ;
-
-        AddPersonalityPoints(1)'
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 90
+        x: 92.96991
         y: 167.73419
         width: 160
         height: 30
@@ -2214,8 +2212,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 392.91705
-        y: 171.0989
+        x: 392.88202
+        y: 172.16273
         width: 160
         height: 30
     - id: 9
@@ -2837,8 +2835,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 726.449
-        y: 306.84906
+        x: 724.449
+        y: 311.84906
         width: 160
         height: 30
     - id: 20
@@ -2892,8 +2890,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 395.87784
-        y: 455.63315
+        x: 395.16678
+        y: 455.78824
         width: 160
         height: 30
     - id: 22
@@ -3064,7 +3062,8 @@ MonoBehaviour:
         destinationDialogueID: 29
         isConnector: 0
         priority: 2
-      conditionsString: Variable["personality"] <= -2
+      conditionsString: Variable["personality"] <= -3 and (GetPersonalityPoints()
+        <= -3)
       userScript: 'Variable["personality"] = Variable["personality"] - 2;
 
         Variable["beatenUp"]
@@ -3076,8 +3075,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 415.70828
-        y: 622.3108
+        x: 400.02408
+        y: 627.5086
         width: 160
         height: 30
     - id: 25
@@ -3133,8 +3132,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 719.09076
-        y: 626.3636
+        x: 721.50543
+        y: 627.6794
         width: 160
         height: 30
     - id: 26
@@ -3182,14 +3181,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 1
+      userScript: 'Variable["personality"] = Variable["personality"] - 2;
+
+        AddPersonalityPoints(-2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 905.18317
-        y: 304.21338
+        x: 911.73785
+        y: 315.30585
         width: 160
         height: 30
     - id: 27
@@ -3245,8 +3246,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1085.1831
-        y: 304.21335
+        x: 1103.7814
+        y: 312.44867
         width: 160
         height: 30
     - id: 28
@@ -3371,8 +3372,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 416.70502
-        y: 674.7242
+        x: 399.70502
+        y: 677.7242
         width: 160
         height: 30
     - id: 30
@@ -3481,8 +3482,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 415.8122
-        y: 726.3636
+        x: 398.8122
+        y: 729.3636
         width: 160
         height: 30
     - id: 33
@@ -4151,13 +4152,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 413.9615
-        y: 775.2498
+        x: 396.9615
+        y: 778.2498
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 10.714355, y: 0}
-    canvasZoom: 0.2800001
+    canvasScrollPosition: {x: 62.686584, y: 228.35822}
+    canvasZoom: 0.66999996
   - id: 3
     fields:
     - title: Title
@@ -4493,20 +4494,22 @@ MonoBehaviour:
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: GetPersonalityPoints() <= -3
       userScript: 'Variable["beatenUp"] = true;
 
         Variable["personality"]
         = Variable["personality"] - 2;
 
-'
+        ;
+
+        AddPersonalityPoints(-2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 365.0989
-        y: 180.65854
+        x: 334.96497
+        y: 178.46075
         width: 160
         height: 30
     - id: 5
@@ -4554,14 +4557,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 3
+      userScript: 'Variable["personality"] = Variable["personality"] + 3;
+
+        AddPersonalityPoints(3)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 603.4138
-        y: 185.65054
+        y: 183.2858
         width: 160
         height: 30
     - id: 6
@@ -4788,8 +4793,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 363.1758
-        y: 286.75607
+        x: 334.60437
+        y: 284.5583
         width: 160
         height: 30
     - id: 10
@@ -4843,8 +4848,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 361.9563
-        y: 341.68048
+        x: 333.38486
+        y: 339.4827
         width: 160
         height: 30
     - id: 11
@@ -4901,8 +4906,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 363.17584
-        y: 229.43903
+        x: 334.6044
+        y: 227.24124
         width: 160
         height: 30
     - id: 12
@@ -4960,8 +4965,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 361.9563
-        y: 392.9463
+        x: 333.38486
+        y: 390.7485
         width: 160
         height: 30
     - id: 13
@@ -5478,14 +5483,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 104.223724
-        y: 713.05206
+        y: 719.30206
         width: 160
         height: 30
     - id: 22
@@ -5537,14 +5542,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 1
+      userScript: 'Variable["personality"] = Variable["personality"] - 1;
+
+        AddPersonalityPoints(-1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 329.60117
-        y: 714.919
+        x: 326.1627
+        y: 715.14575
         width: 160
         height: 30
     - id: 23
@@ -6276,13 +6283,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 640.60223
+        x: 638.0706
         y: 785.5095
         width: 160
         height: 30
@@ -6332,7 +6339,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 1
+      userScript: 'Variable["personality"] = Variable["personality"] - 1;
+
+        AddPersonalityPoints(-2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6784,8 +6793,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 51.37951, y: 87.720276}
-    canvasZoom: 0.90999955
+    canvasScrollPosition: {x: 85.9375, y: 617.1876}
+    canvasZoom: 0.6399998
   - id: 4
     fields:
     - title: Title
@@ -7115,14 +7124,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 2
+      userScript: 'Variable["personality"] = Variable["personality"] - 2;
+
+        AddPersonalityPoints(-2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 356.7715
-        y: 660.1876
+        x: 361.24915
+        y: 658.69507
         width: 160
         height: 30
     - id: 6
@@ -7170,7 +7181,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7287,14 +7298,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 591.6971
-        y: 742.4485
+        x: 596.17474
+        y: 745.4335
         width: 160
         height: 30
     - id: 9
@@ -7348,8 +7361,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 149.91766
-        y: 760.7641
+        x: 143.94751
+        y: 783.15216
         width: 160
         height: 30
     - id: 10
@@ -7568,14 +7581,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 723.7187
-        y: 959.7251
+        x: 717.74854
+        y: 970.173
         width: 160
         height: 30
     - id: 14
@@ -7623,7 +7638,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7853,14 +7870,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 57.98047
-        y: 1061.0054
+        x: 66.21576
+        y: 1065.7113
         width: 160
         height: 30
     - id: 19
@@ -7908,7 +7925,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8245,13 +8264,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 1
+      userScript: 'Variable["personality"] = Variable["personality"] - 1;
+
+        AddPersonalityPoints(-1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 688.4178
+        x: 692.52734
         y: 1417.7776
         width: 160
         height: 30
@@ -8307,8 +8328,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1427.1896
-        y: 284.845
+        x: 1425.8197
+        y: 280.7354
         width: 160
         height: 30
     - id: 27
@@ -8450,7 +8471,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hmm... I wonder
+        value: Hmm... I wonder.
         type: 0
         typeString: 
       - title: Sequence
@@ -9652,7 +9673,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9707,7 +9730,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: SetQuestState("UNDEFINED", "unassigned")
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10431,7 +10454,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10486,14 +10511,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1227.7777
-        y: 1031.7278
+        x: 1217.4329
+        y: 1035.176
         width: 160
         height: 30
     - id: 69
@@ -10823,7 +10850,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11170,8 +11197,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1424.152
-        y: 331.20862
+        x: 1422.7821
+        y: 327.09903
         width: 160
         height: 30
     - id: 82
@@ -11219,7 +11246,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11275,13 +11302,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(3)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1540.2787
+        x: 1538.9088
         y: 380.96246
         width: 160
         height: 30
@@ -12067,8 +12096,8 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 1120.237, y: 302.65634}
-    canvasZoom: 0.96999925
+    canvasScrollPosition: {x: 156.68842, y: 2020.575}
+    canvasZoom: 1.029999
   - id: 5
     fields:
     - title: Title
@@ -12478,13 +12507,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 2
+      userScript: 'Variable["personality"] = Variable["personality"] - 2;
+
+        AddPersonalityPoints(-2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 101.14491
+        x: 105.54051
         y: 244.71274
         width: 160
         height: 30
@@ -12533,7 +12564,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -12790,7 +12823,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Don't worry about me. I can handle them on my own
+        value: Don't worry about me. I can handle them on my own.
         type: 0
         typeString: 
       - title: Sequence
@@ -12818,7 +12851,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 268.2963
+        x: 266.0985
         y: 422.3133
         width: 160
         height: 30
@@ -12845,7 +12878,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'll just try to ignore and stay away from them
+        value: I'll just try to ignore and stay away from them.
         type: 0
         typeString: 
       - title: Sequence
@@ -12867,7 +12900,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13038,14 +13073,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 148.28352
-        y: 520.7869
+        x: 146.08572
+        y: 519.68805
         width: 160
         height: 30
     - id: 16
@@ -13099,8 +13136,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 343.2025
-        y: 522.81415
+        x: 348.69702
+        y: 527.2098
         width: 160
         height: 30
     - id: 17
@@ -13534,7 +13571,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -13595,7 +13634,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1081.374
+        x: 1087.1992
         y: 273.1344
         width: 160
         height: 30
@@ -13821,7 +13860,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1087.796
+        x: 1089.7378
         y: 323.13443
         width: 160
         height: 30
@@ -13937,8 +13976,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1091.9839
-        y: 419.7238
+        x: 1089.0712
+        y: 415.84027
         width: 160
         height: 30
     - id: 32
@@ -13986,7 +14025,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -14041,14 +14082,16 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 2
+      userScript: 'Variable["personality"] = Variable["personality"] - 2;
+
+        AddPersonalityPoints(-2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1115.5352
-        y: 482.2114
+        x: 1113.717
+        y: 480.39322
         width: 160
         height: 30
     - id: 34
@@ -14157,8 +14200,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1116.4004
-        y: 572.5206
+        x: 1109.1277
+        y: 570.70245
         width: 160
         height: 30
     - id: 36
@@ -14376,7 +14419,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1114.6724
+        x: 1107.3997
         y: 614.8992
         width: 160
         height: 30
@@ -14425,13 +14468,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 2
+      userScript: 'Variable["personality"] = Variable["personality"] + 2;
+
+        AddPersonalityPoints(2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1474.9347
+        x: 1473.9637
         y: 199.0721
         width: 160
         height: 30
@@ -14872,7 +14917,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] - 1
+      userScript: 'Variable["personality"] = Variable["personality"] - 1;
+
+        AddPersonalityPoints(-1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -14927,7 +14974,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["personality"] = Variable["personality"] + 1
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
+
+        AddPersonalityPoints(1)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -15379,8 +15428,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 21.818146, y: 412.72723}
-    canvasZoom: 0.5500001
+    canvasScrollPosition: {x: 924.1304, y: 406.67975}
+    canvasZoom: 0.99999964
   - id: 6
     fields:
     - title: Title
@@ -15998,15 +16047,15 @@ MonoBehaviour:
         destinationDialogueID: 11
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: GetPersonalityPoints() <= -5
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 149.75157
-        y: 488.01068
+        x: 169.33919
+        y: 526.15497
         width: 160
         height: 30
     - id: 10
@@ -16058,14 +16107,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 411.68484
-        y: 521.4639
+        x: 401.37558
+        y: 531.77325
         width: 160
         height: 30
     - id: 11
@@ -16119,8 +16168,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 148.85872
-        y: 538.90356
+        x: 168.44637
+        y: 576.01697
         width: 160
         height: 30
     - id: 12
@@ -16172,8 +16221,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 150.12453
-        y: 587.63776
+        x: 169.71217
+        y: 624.75116
         width: 160
         height: 30
     - id: 13
@@ -16227,8 +16276,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 404.4604
-        y: 572.54456
+        x: 400.3367
+        y: 579.76105
         width: 160
         height: 30
     - id: 14
@@ -16276,7 +16325,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 401.92877
+        x: 400.8979
         y: 625.0761
         width: 160
         height: 30
@@ -16792,7 +16841,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 626.37665
+        x: 623.2839
         y: 531.01825
         width: 160
         height: 30
@@ -16896,13 +16945,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 625.1141
+        x: 622.0213
         y: 629.7094
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.70000017
+    canvasScrollPosition: {x: 5.6818237, y: 0}
+    canvasZoom: 0.88
   - id: 7
     fields:
     - title: Title
@@ -17465,8 +17514,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1194.4623
-        y: 503.55222
+        x: 1189.6079
+        y: 511.31924
         width: 160
         height: 30
     - id: 47
@@ -17580,7 +17629,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -17762,7 +17811,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1367.2903
+        x: 1368.2612
         y: 647.78906
         width: 160
         height: 30
@@ -17811,7 +17860,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -17992,8 +18041,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1123.8649
-        y: 840.86945
+        x: 1121.9231
+        y: 839.89856
         width: 160
         height: 30
     - id: 56
@@ -18045,14 +18094,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 1335.2052
-        y: 840.8695
+        y: 839.8987
         width: 160
         height: 30
     - id: 57
@@ -18339,8 +18388,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 828.82794, y: 468.22147}
-    canvasZoom: 0.85
+    canvasScrollPosition: {x: 922.1803, y: 668.6463}
+    canvasZoom: 1.0299999
   - id: 8
     fields:
     - title: Title
@@ -21413,8 +21462,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1185.0652, y: 459.96915}
-    canvasZoom: 1.1799989
+    canvasScrollPosition: {x: 565.072, y: 1041.3445}
+    canvasZoom: 0.51999944
   - id: 9
     fields:
     - title: Title
@@ -23178,8 +23227,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1146.81}
-    canvasZoom: 0.78999996
+    canvasScrollPosition: {x: 152.88031, y: 839.2291}
+    canvasZoom: 1.0599997
   - id: 10
     fields:
     - title: Title
@@ -23613,8 +23662,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 88.39287}
-    canvasZoom: 1.1199999
+    canvasScrollPosition: {x: 66.92592, y: 31.555075}
+    canvasZoom: 0.94000006
   - id: 11
     fields:
     - title: Title
@@ -23995,13 +24044,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 487.95532
+        x: 486.98444
         y: 292.64438
         width: 160
         height: 30
@@ -24053,15 +24102,15 @@ MonoBehaviour:
         destinationDialogueID: 7
         isConnector: 0
         priority: 2
-      conditionsString: 
-      userScript: 
+      conditionsString: GetPersonalityPoints() <= 5
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 798.75964
-        y: 299.80145
+        x: 797.7888
+        y: 298.8306
         width: 160
         height: 30
     - id: 7
@@ -24330,8 +24379,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 201.24475, y: 189.3617}
-    canvasZoom: 0.94000006
+    canvasScrollPosition: {x: 171.59973, y: 178.6564}
+    canvasZoom: 1.1499997
   - id: 12
     fields:
     - title: Title
@@ -24820,14 +24869,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 393.7838
-        y: 543.565
+        x: 394.92017
+        y: 552.6559
         width: 160
         height: 30
     - id: 9
@@ -25659,13 +25708,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 302.9581
+        x: 302.04065
         y: 1120.0128
         width: 160
         height: 30
@@ -25720,7 +25769,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 480.9398
+        x: 481.9106
         y: 1120.013
         width: 160
         height: 30
@@ -26062,8 +26111,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.9099997
+    canvasScrollPosition: {x: 183.4682, y: 1136.0768}
+    canvasZoom: 1.0299997
   - id: 13
     fields:
     - title: Title
@@ -26495,8 +26544,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 128.4418, y: 10.126556}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 320.10126, y: 0}
+    canvasZoom: 0.97
   - id: 14
     fields:
     - title: Title
@@ -27317,13 +27366,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 598.65686
+        x: 601.3966
         y: 427.9587
         width: 160
         height: 30
@@ -28217,8 +28266,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.34000033
+    canvasScrollPosition: {x: 177.62668, y: 546.23254}
+    canvasZoom: 0.82000005
   - id: 16
     fields:
     - title: Title
@@ -28546,7 +28595,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -28601,13 +28650,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Delivery(true)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 923.78394
+        x: 927.193
         y: 231.15875
         width: 160
         height: 30
@@ -28883,14 +28932,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(5)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 467.24597
-        y: 331.2939
+        x: 466.35315
+        y: 330.15753
         width: 160
         height: 30
     - id: 11
@@ -28938,13 +28987,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'AddPersonalityPoints(-3);
+
+        Delivery(true)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 704.519
+        x: 703.6261
         y: 276.8896
         width: 160
         height: 30
@@ -30524,8 +30575,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 332.58765, y: 235.64137}
-    canvasZoom: 0.93999946
+    canvasScrollPosition: {x: 495.34814, y: 142.14972}
+    canvasZoom: 1.1199992
   - id: 17
     fields:
     - title: Title
@@ -31304,7 +31355,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 20.849136, y: 48.101242}
+    canvasScrollPosition: {x: 33.5074, y: 0}
     canvasZoom: 0.7900002
   - id: 18
     fields:
@@ -32090,8 +32141,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 708.89606, y: 107.47507}
-    canvasZoom: 0.7899996
+    canvasScrollPosition: {x: 825.2035, y: 0}
+    canvasZoom: 1.0299994
   - id: 19
     fields:
     - title: Title
@@ -32482,14 +32533,14 @@ MonoBehaviour:
         destinationDialogueID: 80
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: DeliveryStatus()  == true
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1394.7844
+        x: 1393.565
         y: 366.80112
         width: 160
         height: 30
@@ -32539,14 +32590,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1267.2836
-        y: 426.9252
+        x: 1288.4601
+        y: 438.83542
         width: 160
         height: 30
     - id: 80
@@ -32594,14 +32645,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1533.2177
-        y: 426.89017
+        x: 1516.747
+        y: 441.00778
         width: 160
         height: 30
     - id: 81
@@ -32712,7 +32763,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -32767,14 +32818,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 1149.1859
-        y: 580.7063
+        y: 582.7682
         width: 160
         height: 30
     - id: 84
@@ -33504,14 +33555,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1708.1364
-        y: 1428.4497
+        x: 1713.7968
+        y: 1431.2799
         width: 160
         height: 30
     - id: 97
@@ -33849,7 +33900,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1713.591
-        y: 1528.4497
+        y: 1527.5063
         width: 160
         height: 30
     - id: 103
@@ -33959,14 +34010,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 1075.9984
-        y: 701.6902
+        y: 700.6593
         width: 160
         height: 30
     - id: 105
@@ -34014,14 +34065,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1304.1505
-        y: 689.2722
+        x: 1345.3877
+        y: 682.0557
         width: 160
         height: 30
     - id: 106
@@ -34075,8 +34126,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1305.7067
-        y: 734.1996
+        x: 1346.9438
+        y: 726.9831
         width: 160
         height: 30
     - id: 107
@@ -34135,8 +34186,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1305.6173
-        y: 779.7449
+        x: 1346.8545
+        y: 772.5284
         width: 160
         height: 30
     - id: 108
@@ -34195,8 +34246,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1088.0026
-        y: 764.53723
+        x: 1075.6313
+        y: 752.16614
         width: 160
         height: 30
     - id: 109
@@ -34696,15 +34747,15 @@ MonoBehaviour:
         destinationDialogueID: 118
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: DeliveryStatus()  == false
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1941.7651
-        y: 338.4522
+        x: 1938.754
+        y: 319.42822
         width: 160
         height: 30
     - id: 118
@@ -34759,8 +34810,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1943.8927
-        y: 388.4522
+        x: 1942.7164
+        y: 369.42822
         width: 160
         height: 30
     - id: 119
@@ -34815,8 +34866,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1942.9491
-        y: 438.45215
+        x: 1941.7728
+        y: 419.42816
         width: 160
         height: 30
     - id: 120
@@ -34871,8 +34922,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1942.9491
-        y: 489.39542
+        x: 1941.7728
+        y: 470.37143
         width: 160
         height: 30
     - id: 121
@@ -34932,8 +34983,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1942.9491
-        y: 539.3955
+        x: 1940.6366
+        y: 520.3715
         width: 160
         height: 30
     - id: 122
@@ -34959,7 +35010,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm sorry. I just didn't want to be involved with something iillegal.
+        value: I'm sorry. I just didn't want to be involved with something illegal.
         type: 0
         typeString: 
       - title: Sequence
@@ -34981,7 +35032,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -35273,8 +35324,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1065.5444, y: 1891.9285}
-    canvasZoom: 0.96999943
+    canvasScrollPosition: {x: 1113.5109, y: 1782.8124}
+    canvasZoom: 1.0599993
   - id: 20
     fields:
     - title: Title
@@ -35658,8 +35709,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 255.72646, y: 85.236336}
-    canvasZoom: 1.1499999
+    canvasScrollPosition: {x: 168.0022, y: 0}
+    canvasZoom: 0.94000006
   - id: 21
     fields:
     - title: Title
@@ -36556,7 +36607,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -36782,7 +36833,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -36838,7 +36889,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -38287,7 +38338,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -40404,7 +40455,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -40796,7 +40847,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -41132,7 +41183,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -42702,8 +42753,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1264.8215, y: 3722.2236}
-    canvasZoom: 0.76999974
+    canvasScrollPosition: {x: 1326.7288, y: 3325.9165}
+    canvasZoom: 0.6799998
   - id: 22
     fields:
     - title: Title
@@ -43698,8 +43749,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 572.0893, y: 690.82574}
-    canvasZoom: 1.0899997
+    canvasScrollPosition: {x: 406.26526, y: 0}
+    canvasZoom: 0.66999996
   - id: 23
     fields:
     - title: Title
@@ -44501,7 +44552,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[em2]"Mom! Mom!" you''ve been screaming like that for the last minute.'
+        value: '[em2]"Mom! Mom!" you''ve been screaming like that for the last minute.[/em2]'
         type: 0
         typeString: 
       - title: Sequence
@@ -44695,7 +44746,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 322.8085
-        y: 599.31915
+        y: 601.67206
         width: 160
         height: 30
     - id: 10
@@ -44743,7 +44794,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -44859,7 +44910,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -45976,8 +46027,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7300004
+    canvasScrollPosition: {x: 90.21378, y: 263.63635}
+    canvasZoom: 0.88000023
   - id: 25
     fields:
     - title: Title
@@ -46580,7 +46631,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -46916,14 +46967,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 568.2512
-        y: 702.5104
+        y: 701.1405
         width: 160
         height: 30
     - id: 16
@@ -48196,8 +48247,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 419.42035
-        y: 1625.6293
+        x: 452.2971
+        y: 1620.1498
         width: 160
         height: 30
     - id: 40
@@ -48742,7 +48793,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -50149,8 +50200,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 236.64722, y: 2874.1099}
-    canvasZoom: 0.78999925
+    canvasScrollPosition: {x: 213.97896, y: 2726.3643}
+    canvasZoom: 0.8199992
   - id: 26
     fields:
     - title: Title
@@ -50423,7 +50474,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1358.7546
+        x: 1357.1152
         y: 143.60654
         width: 160
         height: 30
@@ -50811,7 +50862,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -50866,7 +50917,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -52206,13 +52257,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 770.63885
+        x: 783.3507
         y: 1262.5381
         width: 160
         height: 30
@@ -52261,14 +52312,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 987.4297
-        y: 1261.4392
+        y: 1263.9816
         width: 160
         height: 30
     - id: 38
@@ -53658,7 +53709,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -54716,8 +54767,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 3.22583, y: 1284.955}
-    canvasZoom: 0.31000027
+    canvasScrollPosition: {x: 640.91266, y: 2785.7344}
+    canvasZoom: 1.1499997
   - id: 27
     fields:
     - title: Title
@@ -55783,8 +55834,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 118.76108, y: 618.3162}
-    canvasZoom: 1.3299997
+    canvasScrollPosition: {x: 24.054958, y: 79.8531}
+    canvasZoom: 0.8500001
   - id: 28
     fields:
     - title: Title
@@ -56057,8 +56108,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 307.98294, y: 0}
-    canvasZoom: 1.1799998
+    canvasScrollPosition: {x: 273.38855, y: 0}
+    canvasZoom: 1.1199999
   - id: 29
     fields:
     - title: Title
@@ -56716,7 +56767,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -57283,7 +57334,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2410.5464
+        x: 2400.02
         y: 1232.9812
         width: 160
         height: 30
@@ -57332,7 +57383,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -57394,7 +57445,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2663.3315
-        y: 1265.1375
+        y: 1270.4006
         width: 160
         height: 30
     - id: 24
@@ -57908,7 +57959,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2663.3315
-        y: 1315.1375
+        y: 1320.4006
         width: 160
         height: 30
     - id: 33
@@ -57967,7 +58018,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2663.3315
-        y: 1365.1375
+        y: 1370.4006
         width: 160
         height: 30
     - id: 34
@@ -58022,7 +58073,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2663.3315
-        y: 1420.2007
+        y: 1425.4639
         width: 160
         height: 30
     - id: 35
@@ -58081,7 +58132,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2664.5974
-        y: 1468.9348
+        y: 1474.198
         width: 160
         height: 30
     - id: 36
@@ -58136,7 +58187,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2664.5974
-        y: 1518.9348
+        y: 1524.198
         width: 160
         height: 30
     - id: 37
@@ -58195,7 +58246,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2665.8633
-        y: 1568.9348
+        y: 1574.198
         width: 160
         height: 30
     - id: 38
@@ -58805,7 +58856,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -58860,7 +58911,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -59037,7 +59088,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2154.291
+        x: 2152.7285
         y: 2530.1782
         width: 160
         height: 30
@@ -59086,7 +59137,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -59531,7 +59582,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: PalomaNumber(false)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -60358,7 +60409,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: PalomaNumber(true)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -60753,7 +60804,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -60808,14 +60859,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 1505.6471
-        y: 2259.9985
+        y: 2258.436
         width: 160
         height: 30
     - id: 85
@@ -61477,7 +61528,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -61538,8 +61589,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1614.738
-        y: 2419.0894
+        x: 1619.2156
+        y: 2451.9248
         width: 160
         height: 30
     - id: 98
@@ -61593,8 +61644,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1614.738
-        y: 2469.0894
+        x: 1619.2156
+        y: 2501.9248
         width: 160
         height: 30
     - id: 99
@@ -61648,8 +61699,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1614.7379
-        y: 2517.436
+        x: 1619.2155
+        y: 2550.2715
         width: 160
         height: 30
     - id: 100
@@ -61703,8 +61754,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1614.7379
-        y: 2567.436
+        x: 1619.2155
+        y: 2600.2715
         width: 160
         height: 30
     - id: 101
@@ -61758,8 +61809,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1614.7379
-        y: 2617.436
+        x: 1619.2155
+        y: 2650.2715
         width: 160
         height: 30
     - id: 102
@@ -61813,8 +61864,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1614.7379
-        y: 2667.436
+        x: 1619.2155
+        y: 2700.2715
         width: 160
         height: 30
     - id: 103
@@ -62276,8 +62327,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1862.5548
-        y: 973.87006
+        x: 1900.7126
+        y: 979.1331
         width: 160
         height: 30
     - id: 111
@@ -62666,8 +62717,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1401.2703, y: 1454.2622}
-    canvasZoom: 0.5499997
+    canvasScrollPosition: {x: 1126.0809, y: 2511.303}
+    canvasZoom: 0.66999966
   - id: 30
     fields:
     - title: Title
@@ -65273,13 +65324,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1504.4707
+        x: 1505.5345
         y: 1609.5931
         width: 160
         height: 30
@@ -65328,7 +65379,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -66434,7 +66485,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: PalomaNumber(true)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -66944,8 +66995,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1209.989, y: 2834.5532}
-    canvasZoom: 0.96999943
+    canvasScrollPosition: {x: 1310.5137, y: 2774.1946}
+    canvasZoom: 0.8199996
   - id: 31
     fields:
     - title: Title
@@ -67435,8 +67486,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 285.39087, y: 16.302025}
-    canvasZoom: 1.2999997
+    canvasScrollPosition: {x: 243.87361, y: 73.3945}
+    canvasZoom: 1.0899999
   - id: 32
     fields:
     - title: Title
@@ -68618,8 +68669,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 365.91632, y: 706.65405}
-    canvasZoom: 1.4900005
+    canvasScrollPosition: {x: 130.64484, y: 0}
+    canvasZoom: 0.62000126
   - id: 33
     fields:
     - title: Title
@@ -69000,7 +69051,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -69055,7 +69106,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -69221,7 +69272,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -69276,7 +69327,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -69941,7 +69992,7 @@ MonoBehaviour:
         destinationDialogueID: 37
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: checkPalomaNum()  == true
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -70397,7 +70448,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 979.75476
+        x: 980.8783
         y: 1512.8401
         width: 160
         height: 30
@@ -72485,7 +72536,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -72540,7 +72591,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(-2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -76164,7 +76215,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AddPersonalityPoints(1)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -78627,8 +78678,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 127.80582, y: 3386.281}
-    canvasZoom: 1.0699991
+    canvasScrollPosition: {x: 2357.7546, y: 2726.2114}
+    canvasZoom: 1.1599991
   - id: 34
     fields:
     - title: Title
@@ -95160,11 +95211,9 @@ MonoBehaviour:
     syncItemsDatabase: {fileID: 0}
     syncLocationsDatabase: {fileID: 0}
     syncVariablesDatabase: {fileID: 0}
-  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Is
-    Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Success
-    Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Failure
-    Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"State","value":"unassigned","type":0,"typeString":"CustomFieldType_QuestState"},{"title":"Is
-    Item","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"locationFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"}],"variableFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Initial
-    Value","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"}],"conversationFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"0","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"0","type":5,"typeString":"CustomFieldType_Actor"}],"dialogueEntryFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Menu
-    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Dialogue
-    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Sequence","value":"","type":0,"typeString":"CustomFieldType_Text"}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"pcLineColor":{"r":0.0,"g":0.0,"b":1.0,"a":1.0},"repeatLineColor":{"r":0.6037735939025879,"g":0.6037735939025879,"b":0.6037735939025879,"a":1.0}}'
+  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Is
+    Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Success
+    Description","value":"","type":0,"typeString":""},{"title":"Failure Description","value":"","type":0,"typeString":""},{"title":"State","value":"unassigned","type":0,"typeString":""},{"title":"Is
+    Item","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"locationFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"variableFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Initial
+    Value","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"conversationFields":[{"title":"Title","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Actor","value":"0","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"0","type":5,"typeString":"CustomFieldType_Actor"}],"dialogueEntryFields":[{"title":"Title","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""},{"title":"Actor","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Menu
+    Text","value":"","type":0,"typeString":""},{"title":"Dialogue Text","value":"","type":0,"typeString":""},{"title":"Sequence","value":"","type":0,"typeString":""}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"pcLineColor":{"r":0.0,"g":0.0,"b":1.0,"a":1.0},"repeatLineColor":{"r":0.5,"g":0.5,"b":0.5,"a":1.0}}'
