@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -748,8 +748,10 @@ MonoBehaviour:
   portraitImage: {fileID: 1086079066}
   portraitName:
     m_uiText: {fileID: 1338752483}
+    m_textMeshProUGUI: {fileID: 0}
   subtitleText:
     m_uiText: {fileID: 1865821374}
+    m_textMeshProUGUI: {fileID: 0}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
@@ -1236,7 +1238,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: New Conversation 1
+  conversation: Sample Paloma Number
   conversationConversant: {fileID: 126368263}
   conversationActor: {fileID: 385911184}
   startConversationEntryID: -1
@@ -1660,6 +1662,7 @@ MonoBehaviour:
   pcImage: {fileID: 0}
   pcName:
     m_uiText: {fileID: 0}
+    m_textMeshProUGUI: {fileID: 0}
   usePortraitNativeSize: 0
   timerSlider: {fileID: 21860703}
   buttonAlignment: 0
@@ -2575,8 +2578,10 @@ MonoBehaviour:
   panel: {fileID: 869494393}
   label:
     m_uiText: {fileID: 466654034}
+    m_textMeshProUGUI: {fileID: 0}
   inputField:
     m_uiInputField: {fileID: 466131032}
+    m_textMeshProInputField: {fileID: 0}
   acceptKey: 13
   cancelKey: 27
   showTouchScreenKeyboard: 0
@@ -2747,8 +2752,10 @@ MonoBehaviour:
   portraitImage: {fileID: 1025276080}
   portraitName:
     m_uiText: {fileID: 791340038}
+    m_textMeshProUGUI: {fileID: 0}
   subtitleText:
     m_uiText: {fileID: 1898403181}
+    m_textMeshProUGUI: {fileID: 0}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
   accumulateText: 0
@@ -3086,6 +3093,7 @@ MonoBehaviour:
     panel: {fileID: 27235151}
     alertText:
       m_uiText: {fileID: 1924311904}
+      m_textMeshProUGUI: {fileID: 0}
     queueAlerts: 1
     dontQueueDuplicates: 0
     waitForHideAnimation: 1
@@ -4346,6 +4354,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1610615960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125850, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+  m_PrefabInstance: {fileID: 8520519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610615964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610615960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cb39fec1a072e4a9bea5be07887bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PPointsText: {fileID: 0}
+  dialogueDatabase: {fileID: 11400000, guid: 997b1fb011f70734193f2582d8d4f9fb, type: 2}
 --- !u!1 &1637161489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,6 +4430,7 @@ MonoBehaviour:
   button: {fileID: 1637161493}
   label:
     m_uiText: {fileID: 1979874376}
+    m_textMeshProUGUI: {fileID: 0}
   setLabelColor: 1
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1637161492
