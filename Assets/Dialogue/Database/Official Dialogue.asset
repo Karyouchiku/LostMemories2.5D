@@ -2149,9 +2149,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 'Variable["personality"] = Variable["personality"] + 1;;
-
-        ;
+      userScript: 'Variable["personality"] = Variable["personality"] + 1;
 
         AddPersonalityPoints(1)'
       onExecute:
@@ -4156,8 +4154,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 10.714355, y: 0}
-    canvasZoom: 0.2800001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.7599999
   - id: 3
     fields:
     - title: Title

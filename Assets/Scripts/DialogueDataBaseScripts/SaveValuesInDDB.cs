@@ -7,11 +7,12 @@ using PixelCrushers.DialogueSystem;
 using TMPro;
 public class SaveValuesInDDB : MonoBehaviour, ISaveable
 {
-
+    #region Instance
     [Header("For Debugging")]
     public TMP_Text PPointsText;
-    public DialogueDatabase dialogueDatabase;
 
+    public DialogueDatabase dialogueDatabase;
+    #endregion
     #region Variables
     double personalityValue;
 
