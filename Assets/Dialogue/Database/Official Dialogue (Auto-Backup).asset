@@ -76439,7 +76439,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh! You're here! [em1]*hugs you*[em1]
+        value: Oh! You're here! [em1]*hugs you*[/em1]
         type: 0
         typeString: 
       - title: Sequence
@@ -78814,8 +78814,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2005.8989}
-    canvasZoom: 0.55999935
+    canvasScrollPosition: {x: 2049.3267, y: 1121.0044}
+    canvasZoom: 0.829999
   - id: 34
     fields:
     - title: Title
@@ -90992,8 +90992,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2142.3625, y: 3556.4058}
-    canvasZoom: 0.9099995
+    canvasScrollPosition: {x: 2043.7457, y: 3355.4702}
+    canvasZoom: 0.96999955
   - id: 37
     fields:
     - title: Title
