@@ -95759,8 +95759,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 621.21625
-        y: 132.52327
+        x: 399.1382
+        y: 335.12076
         width: 160
         height: 30
     - id: 5
@@ -95786,7 +95786,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: Next up, on the upper-right corner of the screen, you will see an
+          icon of a bag.
         type: 0
         typeString: 
       - title: Sequence
@@ -95800,7 +95801,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 52
+        originDialogueID: 5
+        destinationConversationID: 52
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -95808,12 +95815,67 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 398.93048
-        y: 226.60428
+        x: 398.28113
+        y: 227.25363
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: This will be your INVENTORY. This where you'll see your found items.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 52
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 52
+        originDialogueID: 6
+        destinationConversationID: 52
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 397.63177
+        y: 277.25363
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 120.157745, y: 25.45138}
+    canvasScrollPosition: {x: 193.53442, y: 100.00003}
     canvasZoom: 1.5399995
   - id: 53
     fields:
