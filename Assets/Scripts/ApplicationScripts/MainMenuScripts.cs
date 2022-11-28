@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Linq;
 
 public class MainMenuScripts : MonoBehaviour, ISaveable
 {
@@ -19,6 +20,9 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public GameObject InputPlayerNameObject;
     public TMP_Text errorMsg;
     public GameObject[] loadGameSlots;
+    [Header("Radio Gender")]
+    public ToggleGroup gender;
+
     [Header("For Options")]
     public Slider Volume;
     void Awake()
@@ -99,7 +103,12 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
             errorMsg.text = "Invalid Name";
             return;
         }
+        Toggle genderValue = gender.ActiveToggles().FirstOrDefault();
+        
+        Debug.Log($"Gender: {genderValue.GetComponentInChildren<Text>().text}");
+
         PlayerName.playerName = inputedPlayerName;
+        PlayerName.gender = gender.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text;
         InputPlayerNameObject.SetActive(false);
         loadingScreen.SetActive(true);
 
