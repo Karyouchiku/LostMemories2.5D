@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 using TMPro;
 
 public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
 {
+    #region Intance Variables
     [Header("Important for Saving Progress")]
     public bool startThisPuzzle;
     public bool thisPuzzleDone;
@@ -19,6 +21,14 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
     public FieldOfView ped;
     public FieldOfView ar;
     public FieldOfView shady;
+
+    [Header("Dialogue Database")]
+    public DialogueDatabase ddb;
+    DialogueSystemTrigger triggerDialogue;
+    DialogueSystemController dialogueSystemController;
+    [Header("Item Involved")]
+    public Item item;
+    public LockInteractableDoors door;
 
     bool[] startMove;
     GameObject[] actors;
@@ -36,7 +46,8 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
     public GameObject[] GameObjectChildrens;
     Vector3[] targetLocation;
     Vector3 animVec;
-
+    #endregion
+    #region Start Method -- Defining instance variables
     void Start()
     {
         firstFloor = GameObject.Find("WHI First Floor").GetComponent<HideFloors>();
@@ -45,6 +56,7 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
 
         actors = lmActors._LMActors;
@@ -57,6 +69,8 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
+    #endregion
+    #region Puzzle Methods
     /// <summary>
     /// Present ActorID Lists
     /// 15, 18, 19
@@ -65,14 +79,6 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
     /// 18 = nasa 2nd floor hallway
     /// 19 = 1st floor hallway and rooms
     /// </summary>
-
-
-    public void StartThisPuzzle()
-    {
-        startThisPuzzle = true;
-        HideFloors.enableDisablingActors = true;
-        RestartPuzzle(false);
-    }
     void Update()
     {
         if (startThisPuzzle)
@@ -86,31 +92,24 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
             
                 if (ar.canSeePlayer || ped.canSeePlayer || shady.canSeePlayer)
                 {
-                    ar.enabled = false;
-                    ped.enabled = false;
-                    shady.enabled = false;
-
-                    ar.canSeePlayer = false;
-                    ped.canSeePlayer = false;
-                    shady.canSeePlayer = false;
-                    Debug.Log("Someone saw you");
-                    RestartPuzzle(true);
+                    if (ar.canSeePlayer)
+                    {
+                        OnPlayerCaught(19, 50);
+                        Debug.Log("Ar saw you");
+                    }
+                    if (ped.canSeePlayer)
+                    {
+                        OnPlayerCaught(18, 49);
+                        Debug.Log("Ped saw you");
+                    }
+                    EnemyFOVs(false);
                 }
-            }
-            else
-            {
-                DisableChilds();
             }
             
         }
     }
-    void DisableChilds()
-    {
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
-        {
-            GameObjectChildrens[i].SetActive(false);
-        }
-    }
+    #endregion
+    #region Shortcuts
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
         if (startMove)
@@ -127,12 +126,37 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
             pAnim.moveZ = 0;
         }
     }
+    public void StartThisPuzzle()
+    {
+        startThisPuzzle = true;
+        HideFloors.enableDisablingActors = true;
 
+        actors[18].tag = "NPC";
+        actors[19].tag = "NPC";
+        DisableChilds();
+        StartEnemyRoutine();
+        EnemyFOVs(true);
+    }
+
+    void DisableChilds()
+    {
+        foreach (GameObject child in GameObjectChildrens)
+        {
+            child.SetActive(false);
+        }
+    }
+    void StartEnemyRoutine()
+    {
+        SetActorStartingPosition(15, 16);
+        SetActorStartingPosition(18, 0);
+        SetActorStartingPosition(19, 9);
+        GotoPosition(18, 1, 0.5f);
+        GotoPosition(19, 10, 0.5f);
+    }
     public void StopCharacter(int actorID)
     {
         startMove[actorID] = false;
     }
-    //IPuzzle Methods
 
     public void EndingPuzzle()
     {
@@ -140,9 +164,32 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         ResetActorPositionToOriginal(15);
         ResetActorPositionToOriginal(18);
         ResetActorPositionToOriginal(19);
+        DisableChilds();
+        EnemyFOVs(false);
     }
+    public void OnPlayerCaught(int actorID, int convoID)
+    {
+        StopCharacter(actorID);
+        triggerDialogue = actors[actorID].GetComponent<DialogueSystemTrigger>();
+        triggerDialogue.trigger = DialogueSystemTriggerEvent.OnUse;
+        triggerDialogue.conversation = ddb.GetConversation(convoID).Title;
+        triggerDialogue.OnUse();
+        triggerDialogue.trigger = DialogueSystemTriggerEvent.None;
 
-    #region Shortcuts
+    }
+    
+    void ContinueMode(bool isOptional)
+    {
+        
+        if (isOptional)
+        {
+            dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Optional;
+        }
+        else
+        {
+            dialogueSystemController.displaySettings.subtitleSettings.continueButton = DisplaySettings.SubtitleSettings.ContinueButtonMode.Never;
+        }
+    }
     int saveLocation18, saveLocation19;
     float saveMoveSpeed18, saveMoveSpeed19;
     public void GotoPosition(int actorID, int locationID)// 1
@@ -200,78 +247,65 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         yield return new WaitForSeconds(waitSec);
         targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
     }
-    void RestartPuzzle(bool onRestart)
+    void EnemyFOVs(bool onEnabled)
     {
-        actors[18].tag = "NPC";
-        actors[19].tag = "NPC";
-        foreach (GameObject child in GameObjectChildrens)
+        if (!onEnabled)
         {
-            child.SetActive(false);
+            ar.canSeePlayer = onEnabled;
+            ped.canSeePlayer = onEnabled;
+            shady.canSeePlayer = onEnabled;
         }
 
-        if (onRestart)
-        {
-            //stopping the player
-            player.GetComponent<PlayerControls>().enabled = false;
-            player.GetComponent<CharacterController>().enabled = false;
-            player.GetComponent<CharacterAnimation>().ResetAnimation();
-            inGameUI.GetComponentInChildren<VariableJoystick>().ResetValue();
-            inGameUI.SetActive(false);
-            
-            //stopping the actor
-            StopCharacter(18);
-            StopCharacter(19);
-
-            StartCoroutine(RestartPuzzleCoroutine());
-        }
-        else
-        {
-            SetActorStartingPosition(15, 16);
-            SetActorStartingPosition(18, 0);
-            SetActorStartingPosition(19, 9);
-            GotoPosition(18, 1, 0.5f);
-            GotoPosition(19, 10, 0.5f);
-
-            ar.enabled = true;
-            ped.enabled = true;
-            shady.enabled = true;
-        }
+        ar.enabled = onEnabled;
+        ped.enabled = onEnabled;
+        shady.enabled = onEnabled;
     }
-    IEnumerator RestartPuzzleCoroutine()
+    public void ForDEStart()
     {
-        yield return new WaitForSeconds(1f);
+        ContinueMode(true);
+    }
+    public void ForDENarration()
+    {
+        ContinueMode(false);
         transition.ManualTransitionON();
-        yield return new WaitForSeconds(1f);
+    }
+    public void ForDETryAgain()
+    {
+        StartCoroutine(RestartingPuzzle());
+    }
+
+    IEnumerator RestartingPuzzle()
+    {
+        item.isActive = true;
+        door.isUnlocked = false;
+        door.gameObject.tag = "InteractableObject";
         worldRenderer.RenderWorlds(false, 11);
-        cam.removeAnimation = true;
         SetActorStartingPosition(0, 8);
-        cam.removeAnimation = false;
 
         firstFloor.ManualEnableActorSprites(false);
         secondFloor.ManualEnableActorSprites(true);
 
-        SetActorStartingPosition(15, 16);
-        SetActorStartingPosition(18, 0);
-        SetActorStartingPosition(19, 9);
-        
-        GotoPosition(18, 1, 0.5f);
-        GotoPosition(19, 10, 0.5f);
-
-        ar.enabled = true;
-        ped.enabled = true;
-        shady.enabled = true;
-
+        StartEnemyRoutine(); 
+        EnemyFOVs(true);
         yield return new WaitForSeconds(1f);
         transition.ManualTransitionOFF();
-        player.GetComponent<PlayerControls>().enabled = true;
-        player.GetComponent<CharacterController>().enabled = true;
-        inGameUI.SetActive(true);
+
+        //player.GetComponent<PlayerControls>().enabled = true;
+        //inGameUI.SetActive(true);
     }
 
     void SetActorStartingPosition(int actorID, int locationID)
     {
+        if (actorID == 0)
+        {
+            player.GetComponent<CharacterController>().enabled = false;
+        }
         actors[actorID].SetActive(true);
         actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
+        if (actorID == 0)
+        {
+            player.GetComponent<CharacterController>().enabled = true;
+        }
     }
     void ResetActorPositionToOriginal(int actorID)
     {

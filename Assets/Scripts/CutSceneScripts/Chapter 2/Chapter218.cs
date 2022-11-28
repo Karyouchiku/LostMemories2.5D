@@ -63,7 +63,6 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
-    bool oneTimeSwitch;
     void Update()
     {
         if (startThisScene)
@@ -73,16 +72,6 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
                 for (int i = 0; i < startMove.Length; i++)
                 {
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
-                }
-            }
-            else
-            {
-                DisableChilds();
-                if (!oneTimeSwitch)
-                {
-                    oneTimeSwitch = true;
-                    OtherGOSwitch(false, 1);
-                    OtherGOSwitch(true, 2);
                 }
             }
         }
@@ -180,7 +169,7 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     void MoveAIAgent(int otherGameObjectID, int locationID)
     {
-        otherGameObjects[otherGameObjectID].SetActive(true);
+        OtherGOSwitch(true, otherGameObjectID);
         GameObjectChildrens[locationID].SetActive(true);
         otherGameObjects[otherGameObjectID].GetComponent<NavMeshAgent>().SetDestination(GameObjectChildrens[locationID].transform.position);
     }
@@ -243,6 +232,9 @@ public class Chapter218 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void EndingScene()
     {
         thisSceneDone = true;
+        DisableChilds();
+        OtherGOSwitch(false, 1);
+        OtherGOSwitch(true, 2);
     }
 
     //Calls from AutoEnterDoor

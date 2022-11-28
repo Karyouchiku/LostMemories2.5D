@@ -141,16 +141,15 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         ContinueMode(false);
         //ChangeActorDialogue(actorIDToChange, convoID);
-        GetComponent<ItemFromNPC>().GiveItem();
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(true);
-        }
+        transition.ManualTransitionON();
+        OtherGOSwitch(true);
         StartCoroutine(ForDE30Coroutine());
     }
     IEnumerator ForDE30Coroutine()
     {
         yield return new WaitForSeconds(2);
+        transition.ManualTransitionOFF();
+        GetComponent<ItemFromNPC>().GiveItem();
         IQuest.SetQuest("Meet the receiver behind the store from the otherside of the road");
         EndingScene();
     }
@@ -159,6 +158,13 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
+    void OtherGOSwitch(bool turn)
+    {
+        foreach (GameObject item in otherGameObjects)
+        {
+            item.SetActive(turn);
+        }
+    }
     void ChangeActorDialogue(int actorIDToChange, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
         if (useDialogyeManager)

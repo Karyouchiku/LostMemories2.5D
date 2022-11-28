@@ -118,18 +118,8 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         //SetMinSubtitleSeconds(3);
         StartMoving();
         SetActorStartingPosition(3, 1);
-        
-        for (int i = 0; i < GameObjectChildrens.Length; i++)
-        {
-            GameObjectChildrens[i].SetActive(false);
-        }
-        /*
-        //Activating other Objects
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(true);
-        }
-        */
+
+        DisableChilds();
         MoveActor(3, 2, 1f);
     }
     public void ForDE02()
@@ -152,10 +142,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         transition.ManualTransitionON();
         yield return new WaitForSeconds(1);
         GetComponent<ItemFromNPC>().GiveItem();
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(true);
-        }
+        OtherGOSwitch(true);
         SetActorStartingPosition(15, 7);
         
         yield return new WaitForSeconds(1);
@@ -166,6 +153,13 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
+    void OtherGOSwitch(bool turn)
+    {
+        foreach (GameObject item in otherGameObjects)
+        {
+            item.SetActive(turn);
+        }
+    }
     void Door(int doorID)
     {
         doors[doorID].Interact();
@@ -199,6 +193,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     {
         actors[actorID].SetActive(true);
         actors[actorID].transform.position = GameObjectChildrens[locationID].transform.position;
+        MoveActor(actorID, locationID);
     }
     void MoveActor(int actorID, int locationID)
     {

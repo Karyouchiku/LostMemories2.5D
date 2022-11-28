@@ -10,7 +10,7 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
     public delegate void HandledItemCollected(SOItemData soItemData);
     
     public static event HandledNotification OnNoItemFound;
-    public delegate void HandledNotification(string notif);
+    public delegate void HandledNotification(string notif, int type);
     
     SOItemData itemData;
     public string itemName;
@@ -41,7 +41,7 @@ public class InteractableItem : MonoBehaviour, IInteractor, ISaveable
             }
             catch
             {
-                OnNoItemFound?.Invoke("No Item Found");
+                OnNoItemFound?.Invoke("No Item Found", 3);
 
             }
             

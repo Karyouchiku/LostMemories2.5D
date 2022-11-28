@@ -18,6 +18,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public GameObject LoadGameBtn;
     public GameObject InputPlayerNameObject;
     public TMP_Text errorMsg;
+    public GameObject[] loadGameSlots;
     [Header("For Options")]
     public Slider Volume;
     void Awake()
@@ -36,19 +37,29 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
         }
 
         //If there is any save game file existed, avail the loadgame btn
-        for (int i = 0; i < LoadData.SaveDatas.Length; i++)
+        for (int i = 0; i < LoadData.SaveDatas.Length-1; i++)
         {
-            if (i == 5)
-            {
-                break;
-            }
-            if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[i]) == true)
+            if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[i]))
             {
                 LoadGameBtn.SetActive(true);
                 break;
             }
 
         }
+        //Specific available saved game slot only
+        for (int i = 0; i < LoadData.SaveDatas.Length-2; i++)
+        {
+            if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[i]))
+            {
+                loadGameSlots[i].SetActive(true);
+            }
+            else
+            {
+                loadGameSlots[i].SetActive(false);
+            }
+
+        }
+
         //For Settings
         saveSystem = GetComponent<SaveSystemInMainMenu>();
         if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[6]))

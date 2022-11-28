@@ -7,11 +7,14 @@ using PixelCrushers.DialogueSystem;
 using TMPro;
 public class SaveValuesInDDB : MonoBehaviour, ISaveable
 {
-    #region Instance
+    #region For Debugging
     [Header("For Debugging")]
     public TMP_Text PPointsText;
-
-    public DialogueDatabase dialogueDatabase;
+    void FixedUpdate()
+    {
+        PPointsText.text = $"Personality Points:\n{personalityValue}";
+    }
+    //public DialogueDatabase dialogueDatabase;
     #endregion
     #region Variables
     double personalityValue;
@@ -96,7 +99,10 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     {
         return new SaveData()
         {
-            personalityValue = this.personalityValue
+            personalityValue = this.personalityValue,
+            palomaNumber = this.palomaNumber,
+            delivered = this.delivered,
+            palomaPoints = this.palomaPoints
         };
     }
 
@@ -104,6 +110,9 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         this.personalityValue = saveData.personalityValue;
+        this.palomaNumber = saveData.palomaNumber;
+        this.delivered = saveData.delivered;
+        this.palomaPoints = saveData.palomaPoints;
     }
 
 
@@ -111,6 +120,9 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     struct SaveData
     {
         public double personalityValue;
+        public bool palomaNumber;
+        public bool delivered;
+        public double palomaPoints;
     }
     #endregion
 }

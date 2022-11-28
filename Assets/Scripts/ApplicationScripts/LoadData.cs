@@ -21,10 +21,7 @@ public static class LoadData
 
     public static bool SaveGameDataID(int id)
     {
-        string SavePath;
-        SavePath = SaveDatas[id];
-
-        if (File.Exists(SavePath))
+        if (File.Exists(SaveDatas[id]))
         {
             saveDataID = id;
             isOnLoadGameData = true;

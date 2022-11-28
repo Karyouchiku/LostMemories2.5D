@@ -7,10 +7,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
 {
     public static event HandledItemCollected OnItemCollected;
     public delegate void HandledItemCollected(SOItemData soItemData);
-    /*
-    public static event HandledItemNotification OnItemGet;
-    public delegate void HandledItemNotification(string notif);
-    */
+    
     public SOItemData soItemData;
     
     AudioSource audioSource;
@@ -41,7 +38,7 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
             IObjectives.SetObjective2();
         }
     }
-    
+    #region Save System
     public object SaveState()
     {
         return new SaveData()
@@ -66,5 +63,5 @@ public class Item : MonoBehaviour, ICollectible, ISaveable
     {
         public bool isActive;
     }
-    
+    #endregion
 }

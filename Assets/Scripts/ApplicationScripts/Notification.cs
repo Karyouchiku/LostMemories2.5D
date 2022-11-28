@@ -7,7 +7,9 @@ using System;
 public class Notification : MonoBehaviour
 {
     public GameObject notificationSection;
-    public GameObject itemNotifPrefab;
+    public GameObject itemNotifType1;//Added
+    public GameObject itemNotifType2;//Removed
+    public GameObject itemNotifType3;//No Item Found
     void OnEnable()
     {
 
@@ -24,9 +26,22 @@ public class Notification : MonoBehaviour
         PlayerInventory.OnItemAddedOrRemoved -= ShowNotif;
 
     }
-    void ShowNotif(string notifMsg)
+    void ShowNotif(string notifMsg, int type)
     {
-        GameObject newItemNotif = Instantiate(itemNotifPrefab);
+        GameObject newItemNotif = null;
+        if (type == 1)//Added
+        {
+            newItemNotif = Instantiate(itemNotifType1);
+        }
+        else if (type == 2)
+        {
+            newItemNotif = Instantiate(itemNotifType2);
+        }
+        else if (type == 3)
+        {
+            newItemNotif = Instantiate(itemNotifType3);
+        }
+
         newItemNotif.transform.SetParent(notificationSection.transform, false);
 
         newItemNotif.GetComponent<Animator>().ResetTrigger("Hide");

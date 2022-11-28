@@ -979,6 +979,12 @@ MonoBehaviour:
   LoadGameBtn: {fileID: 661221731}
   InputPlayerNameObject: {fileID: 1040027051}
   errorMsg: {fileID: 452055777}
+  loadGameSlots:
+  - {fileID: 668870618}
+  - {fileID: 1587101322}
+  - {fileID: 919920775}
+  - {fileID: 509620166}
+  - {fileID: 699861270}
   Volume: {fileID: 1257722456}
 --- !u!114 &255218727
 MonoBehaviour:

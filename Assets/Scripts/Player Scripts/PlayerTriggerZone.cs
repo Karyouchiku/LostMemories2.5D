@@ -82,19 +82,26 @@ public class PlayerTriggerZone : MonoBehaviour
 
     public void Interactbutton()
     {
-        if (_GOCollider.tag == "InteractableObject")
+        try
         {
-            if (_GOCollider.gameObject.TryGetComponent<IInteractor>(out IInteractor interact))
+            if (_GOCollider.tag == "InteractableObject")
             {
-                interact.Interact();
+                if (_GOCollider.gameObject.TryGetComponent<IInteractor>(out IInteractor interact))
+                {
+                    interact.Interact();
+                }
+            }
+
+            else if (_GOCollider.tag == "InteractableNPC")
+            {
+                Debug.Log("Convo Test");
+                ButtonEnabler(false);
+                isTalking = true;
             }
         }
-
-        else if (_GOCollider.tag == "InteractableNPC")
+        catch
         {
-            Debug.Log("Convo Test");
-            ButtonEnabler(false);
-            isTalking = true;
+            Debug.Log("NoCollider for button. Well its okay anyway");
         }
     }
 }

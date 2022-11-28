@@ -29,10 +29,9 @@ public class QuestAndObjectives : MonoBehaviour, ISaveable
     }
     void HighlightObjective1()
     {
-        objectives1.GetComponent<Animator>().SetTrigger("Highlight");
         objectives1.GetComponent<Animator>().ResetTrigger("Highlight");
+        objectives1.GetComponent<Animator>().SetTrigger("Highlight");
     }
-
     void SetObjective1(string objectives)
     {
         this.objectives1.text = objectives;
@@ -41,9 +40,6 @@ public class QuestAndObjectives : MonoBehaviour, ISaveable
     {
         this.objectives2.text = objectives;
     }
-    
-
-
     public object SaveState()
     {
         return new SaveData()

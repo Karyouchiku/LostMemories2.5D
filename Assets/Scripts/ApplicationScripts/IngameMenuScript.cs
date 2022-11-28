@@ -13,6 +13,8 @@ public class IngameMenuScript : MonoBehaviour
 
     [Header("Restore backup DDB")]
     public DialogueModifier dialogueModifier;
+    [Header("Load Game Availablity")]
+    public GameObject[] loadGame;
     void Start()
     {
         AudioListener.volume = MenuStaticVariables.soundVolume;
@@ -25,6 +27,20 @@ public class IngameMenuScript : MonoBehaviour
         {
             loadingText.text = $"Loading: {(int)(LoadingScreenScript.target * 100)}%";
             loadingProgress.value = Mathf.MoveTowards(loadingProgress.value, LoadingScreenScript.target, 3 * Time.deltaTime);
+        }
+    }
+    void FixedUpdate()
+    {
+        for (int i = 0; i < LoadData.SaveDatas.Length-1; i++)
+        {
+            if (LoadData.SaveGameFileChecker(LoadData.SaveDatas[i]))
+            {
+                loadGame[i].SetActive(true);
+            }
+            else
+            {
+                loadGame[i].SetActive(false);
+            }
         }
     }
     public void BackToMainMenu()

@@ -78,10 +78,6 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
                 }
             }
-            else
-            {
-                DisableChilds();
-            }
         }
     }
 
@@ -123,18 +119,18 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         SetMinSubtitleSeconds(5);
         //SetActorStartingPosition(2, 8);
         StartMoving();
-        MoveActor(3, 1, 1f);
+        MoveActor(3, 1, 1f);//Making Sure he stays in his starting position
         for (int i = 0; i < GameObjectChildrens.Length; i++)
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
+        /*
         //Activating other Objects
         for (int i = 0; i < otherGameObjects.Length; i++)
         {
             otherGameObjects[i].SetActive(true);
         }
-
+        */
         GetComponent<ItemFromNPC>().RemoveItem();
     }
     public void ForDE76()
@@ -247,6 +243,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void EndingScene()
     {
         thisSceneDone = true;
+        DisableChilds();
         puzzle.StartThisPuzzle();
     }
 

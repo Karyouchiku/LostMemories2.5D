@@ -8,7 +8,10 @@ using UnityEngine.Events;
 
 public class DialogueModifier : MonoBehaviour, ISaveable
 {
+    [Header("For Debugging")]
     public bool isDebugging;
+    public GameObject DebuggingValues;
+
     public DialogueDatabase dialoguedb;
     public DialogueDatabase dialoguedbBackup;
     string namePattern = "Burito";
@@ -19,6 +22,7 @@ public class DialogueModifier : MonoBehaviour, ISaveable
             PlayerName.playerName = "NullName";
         }
         ModifyPlayerNameInDialogues();
+        DebuggingValues.SetActive(isDebugging);
     }
     public void RestoreDialogues()
     {

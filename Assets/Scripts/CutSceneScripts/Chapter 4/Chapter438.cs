@@ -46,7 +46,6 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public DialogueDatabase dialogueDatabase;
     SaveSystem saveSystem;
     IngameMenuScript menu;
-    bool oneTimeSwitch;
     WorldActiveSaveState renderWorld;
     void Start()
     {
@@ -77,15 +76,6 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
                 for (int i = 0; i < startMove.Length; i++)
                 {
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
-                }
-            }
-            else
-            {
-                DisableChilds();
-                if (!oneTimeSwitch)
-                {
-                    oneTimeSwitch = true;
-                    OtherGOSwitch(true);
                 }
             }
         }
@@ -129,6 +119,7 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     IEnumerator ForDE18Coroutine()
     {
         yield return new WaitForSeconds(8f);
+        DisableChilds();
         menu.BackToMainMenu();
     }
 
