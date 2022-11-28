@@ -45,7 +45,6 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public int convoID;
     public DialogueDatabase dialogueDatabase;
     SaveSystem saveSystem;
-    bool oneTimeSwitch;
     WorldActiveSaveState renderWorld;
     void Start()
     {
@@ -81,11 +80,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             else
             {
                 DisableChilds();
-                if (!oneTimeSwitch)
-                {
-                    oneTimeSwitch = true;
-                    OtherGOSwitch(true);
-                }
+                OtherGOSwitch(true);
             }
         }
     }
@@ -130,6 +125,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE31()
     {
         ContinueMode(false);
+        transition.ManualTransitionON();
         MoveActor(0, 2, 1f);
         StartCoroutine(ForDE31Coroutine());
     }
@@ -140,7 +136,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE33()
     {
-        SetActorStartingPosition(11, 5);
+        //SetActorStartingPosition(11, 5);
         SetActorStartingPosition(7, 9);
         ShadowyActor(7, false);
         transition.ManualTransitionOFF();
@@ -213,14 +209,12 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     public void ForDE190()//Bad Ending
     {
-        OtherGOSwitch(true, 1);
         EndingTransition(18);
         EndingScene();
     }
     public void ForDE156()//Good Ending
     {
         renderWorld.RenderWorlds(true, 3);
-        OtherGOSwitch(true, 0);
         EndingTransition(17);
         EndingScene();
     }
@@ -352,6 +346,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void EndingScene()
     {
         thisSceneDone = true;
+        OtherGOSwitch(true);
         //player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
     #endregion

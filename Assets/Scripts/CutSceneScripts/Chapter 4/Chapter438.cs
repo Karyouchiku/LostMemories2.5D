@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
@@ -22,6 +23,9 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     CharacterAnimation[] anim;
     BlackTransitioning transition;
     DialogueModifier dialogueModifier;
+    public GameObject EndingAfterWords;
+    Animator EndingAfterWordsAnim;
+    TMP_Text EndingAfterWordsText;
 
     //[Header("Disable object and Scripts")]
     DialogueSystemEvents player;
@@ -57,6 +61,9 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         saveSystem = GameObject.FindGameObjectWithTag("Canvas").GetComponent<SaveSystem>();
         renderWorld = GameObject.Find("World").GetComponent<WorldActiveSaveState>();
         menu = GameObject.FindGameObjectWithTag("Canvas").GetComponent<IngameMenuScript>();
+        EndingAfterWordsAnim = EndingAfterWords.GetComponent<Animator>();
+        EndingAfterWordsText = EndingAfterWords.GetComponentInChildren<TMP_Text>();
+
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -118,16 +125,52 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     IEnumerator ForDE18Coroutine()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(6f);
         DisableChilds();
         //menu.BackToMainMenu();
 
         //AFTER WORDS
+        EndingAfterWords.SetActive(true);
+        AfterWords("Adoption is a sensitive issue but it does not mean that people should not be open about it.", 7);
+        yield return new WaitForSeconds(8f);
+        AfterWords("Adoption affects the adopted child and the adoptive parents.", 4);
+        yield return new WaitForSeconds(5f);
+        AfterWords("Based on research, adoption stigma or things like hiding the adoption, looking down on adoptive families, and any negative connotations about adoption emotionally impacts both the child and the parent.", 16);
+        yield return new WaitForSeconds(17f);
+        AfterWords("This game was created to help create a society that is understanding and supportive of adoptive families.", 7);
+        yield return new WaitForSeconds(8f);
+        AfterWords("This game showed the different outcomes of adoption stigma like the poor handling of adoptive parents and negatively affecting the emotions of an adopted child.", 10);
+        yield return new WaitForSeconds(11f);
+        AfterWords("Adopted children or people needs support and understanding of everyone. Otherwise, they might \find themselves hard to trust other people which eventually affects their lives.", 11);
+        yield return new WaitForSeconds(12f);
+        AfterWords("It seems like you got the bad ending. This means that you have created decisions that are common in the society that results into adoption stigma. The bad ending shows how it damages the relationship of an adopted child with other people especially is they are stigmatized. Let this be a lesson to us that we need to be understanding and considerate of adopted children.", 25);
+        yield return new WaitForSeconds(26f);
+        AfterWords("You may play the game again to find out about the different ending.", 5);
+        yield return new WaitForSeconds(6f);
+        AfterWords("Thanks for playing!", 4);
+        yield return new WaitForSeconds(5f);
+        menu.BackToMainMenu();
+
     }
 
     #endregion
 
     #region MY SHORCUT METHODS
+    void AfterWords(string msg, float readTime)
+    {
+        StartCoroutine(AfterWordsCoroutine(msg, readTime));
+    }
+    IEnumerator AfterWordsCoroutine(string msg, float readTime)
+    {
+        EndingAfterWordsAnim.SetTrigger("FadeIn");
+        EndingAfterWordsText.text = "msg";
+        yield return new WaitForSeconds(readTime);
+        EndingAfterWordsAnim.ResetTrigger("FadeIn");
+        EndingAfterWordsAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
+        EndingAfterWordsAnim.ResetTrigger("FadeOut");
+
+    }
     void TransitioningToOtherPlaces(int locationID)
     {
         StartCoroutine(TransitioningToOtherPlacesCoroutine(locationID));

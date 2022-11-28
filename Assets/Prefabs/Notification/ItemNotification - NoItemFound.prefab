@@ -26,17 +26,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2673117621133882271}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6950489765050824062}
-  m_RootOrder: 1
+  m_Father: {fileID: 7596920681138938106}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -170.3678, y: -27.591}
+  m_AnchoredPosition: {x: -141.1, y: 3.8}
   m_SizeDelta: {x: 279.9231, y: 105.1819}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6894333744807386485
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -361.31366, y: 0, z: 1.2454834, w: -1.1261597}
+  m_margin: {x: -447.5, y: 0, z: 15.86, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -178,14 +178,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2780986133745492939}
   m_Father: {fileID: 6950489765050824062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -301.8245, y: 8}
-  m_SizeDelta: {x: 603.6494, y: 153.4519}
+  m_AnchoredPosition: {x: -422.7776, y: 6.6815}
+  m_SizeDelta: {x: 845.5557, y: 150.8149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1294207740103687953
 CanvasRenderer:
@@ -220,14 +221,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23673905, g: 0.3773585, b: 0.36679664, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1770427624, guid: fd71af87a28a26944b0058b0a946dfea, type: 3}
+  m_Sprite: {fileID: 1180488307, guid: 8ff482d7b4728a4439173f6707f14ec0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -267,7 +268,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7596920681138938106}
-  - {fileID: 2780986133745492939}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

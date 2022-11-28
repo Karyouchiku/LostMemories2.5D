@@ -62853,8 +62853,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1126.0809, y: 2511.303}
-    canvasZoom: 0.66999966
+    canvasScrollPosition: {x: 1156.531, y: 2160.8206}
+    canvasZoom: 0.7599995
   - id: 30
     fields:
     - title: Title
@@ -68098,7 +68098,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: EventGuid
-        value: bd872974-3e55-4b5e-a622-edc4dbbb1577
+        value: 
         type: 0
         typeString: 
       conversationID: 32
@@ -68154,6 +68154,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 61785f06-c2e1-4eda-a7dd-b2695e2055b8
         type: 0
         typeString: 
       conversationID: 32
@@ -68805,8 +68809,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 130.64484, y: 0}
-    canvasZoom: 0.62000126
+    canvasScrollPosition: {x: 308.7707, y: 633.81836}
+    canvasZoom: 1.2800007
   - id: 33
     fields:
     - title: Title
@@ -76439,7 +76443,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh! You're here! [em1]*hugs you*[em1]
+        value: Oh! You're here! [em1]*hugs you*[/em1]
         type: 0
         typeString: 
       - title: Sequence
@@ -78814,8 +78818,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2005.8989}
-    canvasZoom: 0.55999935
+    canvasScrollPosition: {x: 2049.3267, y: 1121.0044}
+    canvasZoom: 0.829999
   - id: 34
     fields:
     - title: Title
@@ -90992,7 +90996,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2142.3625, y: 3556.4058}
+    canvasScrollPosition: {x: 0, y: 3366.2957}
     canvasZoom: 0.9099995
   - id: 37
     fields:

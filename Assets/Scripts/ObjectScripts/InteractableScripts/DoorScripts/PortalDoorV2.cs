@@ -79,6 +79,9 @@ public class PortalDoorV2 : MonoBehaviour, ISaveable, IInteractor
             {
                 playAudio(doorOpen, 0.7f);
             }
+            IQuest.SetQuest("Run away from the building");
+            IObjectives.SetObjective1();
+            IObjectives.SetObjective2();
             StartCoroutine(MovePosition());
         }
         else
