@@ -114,16 +114,19 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         DisableInteractable();
         ContinueMode(false);
         SetMinSubtitleSeconds(4);
-        //SetActorStartingPosition(5, 8);
-        //ShadowyActor(5, true);
+        ShadowyActor(1, true);
         DisableChilds();
-        //ChangeActorDialogue();
     }
     public void ForDE06()
     {
         ContinueMode(true);
         transition.ManualTransitionOFF();
     }
+    public void ForDE07()
+    {
+        ShadowyActor(2, false);
+    }
+
     public void ForDE31()
     {
         ContinueMode(false);
@@ -165,12 +168,11 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         ContinueMode(false);
         MoveActor(0, 12, 1f);
-        TransitioningToOtherPlaces(2);
-        SetActorStartingPosition(1, 14);
-        ShadowyActor(1, true);
+        transition.ManualTransitionON();
     }
     public void ForDE175()
     {
+        TransitioningToOtherPlaces(2);
         transition.ManualTransitionOFF();
         ContinueMode(true);
         MoveActor(0, 13, 1f);
@@ -182,8 +184,9 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         MoveActor(0, 12, 1f);
         transition.ManualTransitionON();
     }
-    public void ForDE125()
+    public void ForDE125()//Carol Entrance
     {
+        SetActorStartingPosition(1, 14);
         MoveActor(1, 15, 0.5f);
     }
     public void ForDE127()
@@ -210,28 +213,18 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     public void ForDE190()//Bad Ending
     {
-
+        OtherGOSwitch(true, 1);
         EndingTransition(18);
         EndingScene();
     }
     public void ForDE156()//Good Ending
     {
-        //OtherGOSwitch(true, 0);
         renderWorld.RenderWorlds(true, 3);
+        OtherGOSwitch(true, 0);
         EndingTransition(17);
         EndingScene();
     }
 
-    /* Item give or Remove method
-    public void ForDE_ThatGivesItem()
-    {
-        GetComponent<ItemFromNPC>().GiveItem();
-    }
-    public void ForDE_ThatRemovesItem()
-    {
-        GetComponent<ItemFromNPC>().RemoveItem();
-    }
-    */
     #endregion
 
     #region MY SHORCUT METHODS

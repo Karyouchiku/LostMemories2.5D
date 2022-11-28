@@ -102,6 +102,12 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
                         OnPlayerCaught(18, 49);
                         Debug.Log("Ped saw you");
                     }
+                    if (shady.canSeePlayer)
+                    {
+                        OnPlayerCaught(18, 51);
+                        Debug.Log("Shady saw you");
+                    }
+
                     EnemyFOVs(false);
                 }
             }

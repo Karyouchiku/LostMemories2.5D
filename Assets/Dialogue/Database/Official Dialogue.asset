@@ -80771,6 +80771,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 61e73fb1-ac4b-4c72-a3a9-d506cfa2a89b
+        type: 0
+        typeString: 
       conversationID: 36
       isRoot: 0
       isGroup: 0
@@ -82139,8 +82143,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 762.3681
-        y: 1678.7739
+        x: 768
+        y: 1668
         width: 160
         height: 30
     - id: 32
@@ -82477,8 +82481,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 570.669
-        y: 1975.2595
+        x: 576
+        y: 1980
         width: 160
         height: 30
     - id: 38
@@ -83205,8 +83209,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 570.03217
-        y: 2625.3096
+        x: 564
+        y: 2628
         width: 160
         height: 30
     - id: 51
@@ -83812,8 +83816,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1515.2474
-        y: 1271.1704
+        x: 1524
+        y: 1272
         width: 160
         height: 30
     - id: 62
@@ -84426,8 +84430,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1424.8469
-        y: 1781.582
+        x: 1428
+        y: 1788
         width: 160
         height: 30
     - id: 73
@@ -84481,8 +84485,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1427.496
-        y: 1831.582
+        x: 1428
+        y: 1836
         width: 160
         height: 30
     - id: 74
@@ -84536,8 +84540,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1426.8337
-        y: 1880.9199
+        x: 1428
+        y: 1884
         width: 160
         height: 30
     - id: 75
@@ -85955,6 +85959,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 7447eb9e-10b3-4027-87ca-51d284c8c1a6
+        type: 0
+        typeString: 
       conversationID: 36
       isRoot: 0
       isGroup: 0
@@ -86364,8 +86372,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2395.411
-        y: 2290.4888
+        x: 2400
+        y: 2292
         width: 160
         height: 30
     - id: 108
@@ -89952,6 +89960,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 
+        type: 0
+        typeString: 
       conversationID: 36
       isRoot: 0
       isGroup: 0
@@ -90980,8 +90992,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2043.7457, y: 3355.4702}
-    canvasZoom: 0.96999955
+    canvasScrollPosition: {x: 2142.3625, y: 3556.4058}
+    canvasZoom: 0.9099995
   - id: 37
     fields:
     - title: Title
@@ -91811,8 +91823,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.47000155
+    canvasScrollPosition: {x: 77.20925, y: 441.33075}
+    canvasZoom: 1.130001
   - id: 38
     fields:
     - title: Title
@@ -92963,8 +92975,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 55.420853, y: 545.4642}
-    canvasZoom: 1.03
+    canvasScrollPosition: {x: 45, y: 714}
+    canvasZoom: 1
   - id: 39
     fields:
     - title: Title
@@ -95396,6 +95408,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 46c3bfbb-f29b-46f7-a9c8-0934b287ab62
+        type: 0
+        typeString: 
       conversationID: 51
       isRoot: 0
       isGroup: 0
@@ -95451,6 +95467,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 713c0662-abf4-417a-b3d4-73e3eb4f1517
+        type: 0
+        typeString: 
       conversationID: 51
       isRoot: 0
       isGroup: 0
@@ -95471,8 +95491,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 19.837189, y: 0}
+    canvasZoom: 1.2099998
   - id: 52
     fields:
     - title: Title

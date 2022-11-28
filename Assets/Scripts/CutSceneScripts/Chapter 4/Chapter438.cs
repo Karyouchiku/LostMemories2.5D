@@ -103,7 +103,7 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         StartMoving();
         EnableListenersOnConvoEnd(false);
         DisableInteractable();
-        ContinueMode(false);
+        ContinueMode(true);
         SetMinSubtitleSeconds(4);
         //SetActorStartingPosition(5, 8);
         //ShadowyActor(5, true);
@@ -120,7 +120,9 @@ public class Chapter438 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         yield return new WaitForSeconds(8f);
         DisableChilds();
-        menu.BackToMainMenu();
+        //menu.BackToMainMenu();
+
+        //AFTER WORDS
     }
 
     #endregion
