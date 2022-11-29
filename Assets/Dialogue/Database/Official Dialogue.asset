@@ -68813,7 +68813,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 308.7707, y: 633.81836}
+    canvasScrollPosition: {x: 304.86444, y: 493.9746}
     canvasZoom: 1.2800007
   - id: 33
     fields:
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2049.3267, y: 1121.0044}
-    canvasZoom: 0.829999
+    canvasScrollPosition: {x: 765.472, y: 1856.4878}
+    canvasZoom: 0.94999886
   - id: 34
     fields:
     - title: Title
@@ -91000,8 +91000,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 50.73625, y: 3392.6033}
-    canvasZoom: 0.9999994
+    canvasScrollPosition: {x: 0, y: 3205.6035}
+    canvasZoom: 0.84999955
   - id: 37
     fields:
     - title: Title

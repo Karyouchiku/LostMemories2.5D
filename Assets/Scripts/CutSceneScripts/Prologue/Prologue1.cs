@@ -6,10 +6,10 @@ using PixelCrushers.DialogueSystem;
 
 public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
-
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
@@ -30,6 +30,7 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
 
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         pAnim = actor[0].GetComponent<CharacterAnimation>();
     }
@@ -72,6 +73,7 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     }
     public void ForDE1()
     {
+        bgm.ChangeBGM(0);
         startThisScene = true;
         actor[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
         Disables(false);

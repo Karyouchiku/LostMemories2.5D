@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Prologue2v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -46,6 +47,7 @@ public class Prologue2v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
 
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -111,6 +113,7 @@ public class Prologue2v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     // START CREATING ForDE METHODS HERE
     public void ForDE01()
     {
+        
         actors[actorID].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;//Deactivating the trigger system
         StartMoving();
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
@@ -138,7 +141,7 @@ public class Prologue2v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         MoveActor(8, 1, 0.7f);
         MoveActor(9, 2, 0.7f);
         MoveActor(10, 3, 0.7f);
-        
+        bgm.ChangeBGM(1);
     }
     public void ForDE03_08_13()
     {

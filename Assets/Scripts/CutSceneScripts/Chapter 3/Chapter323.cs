@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Chapter323 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -47,6 +48,7 @@ public class Chapter323 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -104,6 +106,7 @@ public class Chapter323 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
+        bgm.ChangeBGM(14);
         startThisScene = true;
         player.GetComponent<FlashlightControls>().FLSwitch(false);
         player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls

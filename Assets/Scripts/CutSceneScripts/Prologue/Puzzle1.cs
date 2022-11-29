@@ -6,6 +6,7 @@ using TMPro;
 
 public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
 {
+    BackgroundMusicScript bgm;
     public bool startThisPuzzle;
     public bool thisPuzzleDone;
     [Header("For Disabling Controls")]
@@ -30,6 +31,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
     BlackTransitioning transition;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         playerInventory = GameObject.FindWithTag("Player Inventory").GetComponent<PlayerInventory>();
         isRequiredItemsAquired = new bool[requiredItems.Length];

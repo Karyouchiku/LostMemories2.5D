@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -42,6 +43,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     DialogueModifier dialogueModifier;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -168,6 +170,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         questText.text = "Get your things and get out of the house";
         otherGameObjects[1].GetComponent<Puzzle1>().startThisPuzzle = true;
         otherGameObjects[1].GetComponent<Puzzle1>().EnableInteractableObjects(true); ;
+        bgm.ChangeBGM(7);
         EndingScene();
     }
 

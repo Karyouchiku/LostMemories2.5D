@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     #region Starting Codes
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -48,6 +49,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     WorldActiveSaveState renderWorld;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -104,6 +106,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     #region ForDE METHODS
     public void ForDE01()
     {
+        bgm.ChangeBGM(11);
         StartMoving();
         EnableListenersOnConvoEnd(false);
         DisableInteractable();
@@ -157,6 +160,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE50()
     {
+        bgm.ChangeBGM(15);
         ContinueMode(true);
         MoveActor(0, 11, 1f);
     }
@@ -176,12 +180,14 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     public void ForDE184()
     {
+        bgm.ChangeBGM(21);
         ContinueMode(false);
         MoveActor(0, 12, 1f);
         transition.ManualTransitionON();
     }
     public void ForDE125()//Carol Entrance
     {
+        bgm.ChangeBGM(13);
         SetActorStartingPosition(1, 14);
         MoveActor(1, 15, 0.5f);
     }

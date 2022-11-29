@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -46,6 +47,7 @@ public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
 
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -131,6 +133,7 @@ public class Prologue8v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     }
     public void ForDE13()
     {
+        bgm.ChangeBGM(15);
         //ContinueMode(false);
         GetComponent<ItemFromNPC>().GiveItem();
         SetActorStartingPosition(1, 0);

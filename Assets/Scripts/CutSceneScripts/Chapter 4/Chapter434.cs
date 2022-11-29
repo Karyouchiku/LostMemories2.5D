@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Chapter434 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     #region Starting Codes
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -49,6 +50,7 @@ public class Chapter434 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     WorldActiveSaveState renderWorld;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -109,6 +111,7 @@ public class Chapter434 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     #region ForDE METHODS
     public void ForDE01()
     {
+        bgm.ChangeBGM();
         StartMoving();
         EnableListenersOnConvoEnd(false);
         DisableInteractable();

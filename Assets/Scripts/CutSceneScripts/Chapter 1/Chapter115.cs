@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -46,6 +47,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
 
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -148,6 +150,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         yield return new WaitForSeconds(1);
         questText.text = "Meet the receiver behind the store from the otherside of the road";
         Door(0);
+        bgm.ChangeBGM(6);
         EndingScene();
     }
     //END OF ForDE METHODS

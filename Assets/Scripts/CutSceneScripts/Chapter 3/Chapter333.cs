@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     #region Starting Codes
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -49,6 +50,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     WorldActiveSaveState renderWorld;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -109,6 +111,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     #region ForDE METHODS
     public void ForDE01()
     {
+        bgm.ChangeBGM(15);
         StartMoving();
         EnableListenersOnConvoEnd(false);
         DisableInteractable();
@@ -125,9 +128,10 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         ContinueMode(true);
         MoveActor(20, 3, 0.5f);
     }
-    public void ForDE38()
+    public void ForDE38()//calling paloma
     {
-        //transition.ManualTransitionON();
+        
+        
         GetComponent<ItemFromNPC>().RemoveItem();
     }
     public void ForDE44()
@@ -146,8 +150,9 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         transition.ManualTransitionON();
         MoveActor(0, 11, 1f);
     }
-    public void ForDE49()
+    public void ForDE49()//finding paloma
     {
+        bgm.ChangeBGM(16);
         //20sec until DE 54
         renderWorld.RenderWorlds(false, 7);
         ResetActorPositionToOriginal(20);
@@ -199,6 +204,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE60()//Doctor out
     {
+        bgm.ChangeBGM();
         MoveActor(20, 25, 0.4f);
     }
     public void ForDE61()//Oh there you are!
@@ -208,6 +214,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     public void ForDE62()
     {
+        bgm.ChangeBGM(9);
         MoveActor(0, 21, 0.4f);
     }
     public void ForDE85()
@@ -216,6 +223,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE86()
     {
+        bgm.ChangeBGM(10);
         ResetActorPositionToOriginal(20);
         SetActorStartingPosition(0, 22);
         SetActorStartingPosition(6, 23);
@@ -243,6 +251,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     
     public void ForDE59()
     {
+        bgm.ChangeBGM(19);
         ContinueMode(true);
         SetActorStartingPosition(6, 6);
         MoveActor(6, 6, 0.1f);

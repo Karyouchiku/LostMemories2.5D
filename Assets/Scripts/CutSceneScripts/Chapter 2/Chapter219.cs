@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     //important to be saved
+    BackgroundMusicScript bgm;
     public bool thisSceneDone;
     public bool startThisScene;
 
@@ -51,6 +52,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -105,6 +107,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
+        bgm.ChangeBGM(1);
         startThisScene = true;
 
         player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
@@ -177,6 +180,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         otherGameObjects[0].tag = "InteractableObject";
         IQuest.SetQuest("Find your way out to escape");
         IObjectives.SetObjective1("Find your confiscated things before you leave");
+        bgm.ChangeBGM(8);
         EndingScene();
     }
     //END OF ForDE METHODS

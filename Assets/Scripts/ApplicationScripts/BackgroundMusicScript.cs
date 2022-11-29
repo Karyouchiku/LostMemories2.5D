@@ -19,6 +19,15 @@ public class BackgroundMusicScript : MonoBehaviour
         bgMusic.loop = true;
         bgMusic.spatialBlend = 0;
     }
+    public void ChangeBGM()
+    {
+        turn = false;
+    }
+    public void ChangeBGM(int clipID, float maxVolume)
+    {
+        this.maxVolume = maxVolume;
+        StartCoroutine(ChangeBGMCoroutine(clipID));
+    }
     public void ChangeBGM(int clipID)
     {
         StartCoroutine(ChangeBGMCoroutine(clipID));
@@ -28,6 +37,10 @@ public class BackgroundMusicScript : MonoBehaviour
         turn = false;
         yield return new WaitForSeconds(1.5f);
         bgMusic.clip = clips[clipID];
+        if (!bgMusic.isPlaying)
+        {
+            bgMusic.Play();
+        }
         turn = true;
     }
     // Update is called once per frame

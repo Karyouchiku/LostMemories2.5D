@@ -10,6 +10,7 @@ using TMPro;
 public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     #region Starting Codes
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -54,6 +55,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     WorldActiveSaveState renderWorld;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -108,6 +110,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     #region ForDE METHODS
     public void ForDE01()
     {
+        bgm.ChangeBGM(19);
         StartMoving();
         EnableListenersOnConvoEnd(false);
         DisableInteractable();
@@ -140,7 +143,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         yield return new WaitForSeconds(8f);
         DisableChilds();
         //menu.BackToMainMenu();
-
+        bgm.ChangeBGM(3);
         //AFTER WORDS
         EndingAfterWords.SetActive(true);
         AfterWords("Adoption is a sensitive issue but it does not mean that people should not be open about it.", 7);
@@ -160,6 +163,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         AfterWords("You may play the game again to find out about the different ending.", 5);
         yield return new WaitForSeconds(6f);
         AfterWords("Thanks for playing!", 4);
+        bgm.ChangeBGM();
         yield return new WaitForSeconds(5f);
         menu.BackToMainMenu();
 

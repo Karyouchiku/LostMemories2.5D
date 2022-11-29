@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Chapter329 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
     #region Starting Codes
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -49,6 +50,7 @@ public class Chapter329 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     bool oneTimeSwitch;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -160,6 +162,7 @@ public class Chapter329 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE08()
     {
+        bgm.ChangeBGM(20);
         ContinueMode(false);
         StartCoroutine(ForDE08Coroutine());
     }

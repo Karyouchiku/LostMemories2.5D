@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***********************
 {
+    BackgroundMusicScript bgm;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -39,6 +40,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public GameObject[] otherGameObjects;
     void Start()
     {
+        bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
@@ -95,6 +97,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     //Calls from TriggerCutscene 
     public void StartMoving()
     {
+        bgm.ChangeBGM(6);
         startThisScene = true;
 
         //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
