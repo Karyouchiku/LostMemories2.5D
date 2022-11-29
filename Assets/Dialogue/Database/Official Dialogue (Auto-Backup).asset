@@ -29,7 +29,7 @@ MonoBehaviour:
     bold: 0
     italic: 1
     underline: 0
-  - color: {r: 1, g: 1, b: 1, a: 1}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     bold: 1
     italic: 1
     underline: 0
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 650.9037, y: 2184.3896}
-    canvasZoom: 0.61999923
+    canvasScrollPosition: {x: 434.78394, y: 2459.3079}
+    canvasZoom: 0.22999918
   - id: 34
     fields:
     - title: Title
@@ -83549,7 +83549,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 572.22003
+        x: 573.1909
         y: 2925.3096
         width: 160
         height: 30
@@ -91000,8 +91000,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 50.73625, y: 3392.6033}
-    canvasZoom: 0.9999994
+    canvasScrollPosition: {x: 1403.3535, y: 331.96857}
+    canvasZoom: 1.2699991
   - id: 37
     fields:
     - title: Title
