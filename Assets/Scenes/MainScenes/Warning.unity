@@ -702,8 +702,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 1100, y: 130}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 1100, y: 272.6724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263906559
 MonoBehaviour:
@@ -738,8 +738,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The series content may not suitable for some audiences. It has a depiction
-    of abuse, bullying, and traumatic experiences.
+  m_Text: This game contains portrayals of explicit language, abuse, and involvement
+    of drugs. All characters and events in this game are entirely for representation
+    and any similarities with real people or scenarios are mere coincidence.
 --- !u!222 &263906560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5516,8 +5517,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This game requires 18 to 25 years old to play. Please specify your age
-    in the field below in order to continue.
+  m_text: This game is intended for ages 18 to 25 years old. Please specify your
+    birth date in the field below in order to determine your age to continue. Anyone
+    below the age of 18 or above 25 will be uneligible to play.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf4de473fe0f8cf49be90441ffc68e21, type: 2}
   m_sharedMaterial: {fileID: 9146487711537113910, guid: cf4de473fe0f8cf49be90441ffc68e21, type: 2}

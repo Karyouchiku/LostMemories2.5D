@@ -51,7 +51,7 @@ public class AgeConfirmation : MonoBehaviour
             //Debug.Log($"Age: {age}");
             ss.GoToMainMenu();
         }
-        else if (age < 16)
+        else if (age < 18)
         {
             message.text = "We apologize that your age is not eligible for playing the game because of its explicit content. The game will quit automatically after few seconds.";
             inputDate.SetActive(false);

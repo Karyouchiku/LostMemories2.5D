@@ -50,6 +50,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public DialogueDatabase dialogueDatabase;
     public int convoID;
     SaveSystem saveSystem;
+    public PuzzleCh2 puzzle;
     void Start()
     {
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
@@ -79,6 +80,11 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
                 {
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
                 }
+            }
+            else
+            {
+                DisableChilds();
+                
             }
         }
     }
@@ -244,11 +250,10 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         actors[actorID].GetComponent<CharacterAnimation>().ResetAnimation();
         actors[actorID].SetActive(false);
     }
-    public PuzzleCh2 puzzle;
+    
     public void EndingScene()
     {
         thisSceneDone = true;
-        DisableChilds();
         puzzle.StartThisPuzzle();
     }
 
