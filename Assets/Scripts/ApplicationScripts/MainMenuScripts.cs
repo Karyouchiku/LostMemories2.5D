@@ -18,6 +18,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public GameObject ContinueBtn;
     public GameObject LoadGameBtn;
     public GameObject InputPlayerNameObject;
+    public GameObject playTutorial;
     public TMP_Text errorMsg;
     public GameObject[] loadGameSlots;
     [Header("Radio Gender")]
@@ -95,7 +96,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     {
         InputPlayerNameObject.SetActive(true);
     }
-    public void SaveInputPlayerName(int loadSceneID)
+    public void CheckSaveInputPlayerName()
     {
         string inputedPlayerName = InputPlayerNameObject.GetComponentInChildren<TMP_InputField>().text;
         if (inputedPlayerName.Length < 3)
@@ -103,12 +104,16 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
             errorMsg.text = "Invalid Name";
             return;
         }
+        PlayerName.playerName = inputedPlayerName;
         Toggle genderValue = gender.ActiveToggles().FirstOrDefault();
         
         Debug.Log($"Gender: {genderValue.GetComponentInChildren<Text>().text}");
 
-        PlayerName.playerName = inputedPlayerName;
         PlayerName.gender = gender.ActiveToggles().FirstOrDefault().GetComponentInChildren<Text>().text;
+        playTutorial.SetActive(true);
+    }
+    public void LoadScene(int loadSceneID)
+    {
         InputPlayerNameObject.SetActive(false);
         loadingScreen.SetActive(true);
 
@@ -116,6 +121,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
 
         StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(loadSceneID));
     }
+
     public void BackFromPlayerNameInputWindow()
     {
         InputPlayerNameObject.GetComponentInChildren<TMP_InputField>().text = "";

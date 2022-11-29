@@ -13,6 +13,8 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     [Header("Disable object and Scripts")]
     public GameObject inGameUI;
     public GameObject player;
+    DialogueSystemEvents playerDSE;
+
     DialogueSystemController dialogueSystemController;
     [Header("Actors")]
     public GameObject[] actor;
@@ -33,6 +35,7 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         pAnim = actor[0].GetComponent<CharacterAnimation>();
+        playerDSE = player.GetComponent<DialogueSystemEvents>();
     }
     void Update()
     {
@@ -76,6 +79,7 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
         bgm.ChangeBGM(0);
         startThisScene = true;
         actor[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
+        playerDSE.conversationEvents.onConversationEnd.RemoveAllListeners();
         Disables(false);
     }
     public void GoOutSide()

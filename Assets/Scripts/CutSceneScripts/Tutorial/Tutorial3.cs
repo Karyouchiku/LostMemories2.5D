@@ -105,7 +105,7 @@ public class Tutorial3 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     public void ForDE01()
     {
         StartMoving();
-        EnableListenersOnConvoEnd(true);
+        EnableListenersOnConvoEnd(false);
         DisableInteractable();
         ContinueMode(true);
         SetMinSubtitleSeconds(4);
@@ -120,7 +120,7 @@ public class Tutorial3 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     }
     IEnumerator ForDE17Coroutine()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         
         loadingScreen.SetActive(true);
         StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));

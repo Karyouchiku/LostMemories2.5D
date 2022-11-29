@@ -5101,8 +5101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notificationSection: {fileID: 2246746124184460884}
   itemNotifType1: {fileID: 6405819159428094015, guid: 22f91831c45892d4baa49e48dd36d068, type: 3}
-  itemNotifType2: {fileID: 6405819159428094015, guid: 0ea6ea5671dfeea4e859da177d71ea5d, type: 3}
-  itemNotifType3: {fileID: 6405819159428094015, guid: 1a65802c738a7cb458bad1b987699294, type: 3}
+  itemNotifType2: {fileID: 6405819159428094015, guid: 744361f58df1a2345865cc26df176de1, type: 3}
+  itemNotifType3: {fileID: 6405819159428094015, guid: 19c2d1da7abbc074097839743c15679e, type: 3}
 --- !u!114 &4994403340054665044
 MonoBehaviour:
   m_ObjectHideFlags: 0

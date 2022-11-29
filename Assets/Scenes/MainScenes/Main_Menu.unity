@@ -585,10 +585,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1886878664}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 255218726}
+        m_TargetAssemblyTypeName: MainMenuScripts, Assembly-CSharp
+        m_MethodName: CheckSaveInputPlayerName
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1503,6 +1503,7 @@ MonoBehaviour:
   ContinueBtn: {fileID: 1995013912}
   LoadGameBtn: {fileID: 661221731}
   InputPlayerNameObject: {fileID: 1040027051}
+  playTutorial: {fileID: 1886878664}
   errorMsg: {fileID: 452055777}
   loadGameSlots:
   - {fileID: 668870618}
@@ -3220,7 +3221,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 255218726}
         m_TargetAssemblyTypeName: MainMenuScripts, Assembly-CSharp
-        m_MethodName: SaveInputPlayerName
+        m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10342,7 +10343,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 255218726}
         m_TargetAssemblyTypeName: MainMenuScripts, Assembly-CSharp
-        m_MethodName: SaveInputPlayerName
+        m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

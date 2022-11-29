@@ -65,7 +65,6 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             anim[i] = actors[i].GetComponent<CharacterAnimation>();
         }
     }
-    bool onTimeSwitch;
     void Update()
     {
         if (startThisScene)
@@ -80,11 +79,6 @@ public class Chapter116 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
             else
             {
                 DisableChilds();
-                if (!onTimeSwitch)
-                {
-                    onTimeSwitch = true;
-                    otherGameObjects[4].SetActive(true);
-                }
             }
         }
     }
