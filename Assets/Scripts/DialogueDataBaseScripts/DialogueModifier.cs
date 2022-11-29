@@ -15,6 +15,11 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     public DialogueDatabase dialoguedb;
     public DialogueDatabase dialoguedbBackup;
     string namePattern = "Burito";
+
+    [Header("Gender Changer")]
+    public Animator animator;
+    public RuntimeAnimatorController male;
+    public RuntimeAnimatorController female;
     void Awake()
     {
         if (PlayerName.playerName == null)
@@ -23,6 +28,27 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         }
         ModifyPlayerNameInDialogues();
         DebuggingValues.SetActive(isDebugging);
+    }
+    void Start()
+    {
+        ChangeGender();
+    }
+    void ChangeGender()
+    {
+        switch (PlayerName.gender)
+        {
+            case "Male":
+                animator.runtimeAnimatorController = male;
+                break;
+            case "Female":
+                animator.runtimeAnimatorController = female;
+                break;
+            default:
+                animator.runtimeAnimatorController = female;
+                Debug.Log("This is the Default Character");
+                break;
+        }
+
     }
     public void RestoreDialogues()
     {
@@ -85,12 +111,14 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         playerInventory.GetComponent<PlayerInventory>().InventoryRefresher();
     }
 
+    
 
     public object SaveState()
     {
         return new SaveData()
         {
-            playerName = PlayerName.playerName
+            playerName = PlayerName.playerName,
+            gender = PlayerName.gender
         };
     }
 
@@ -98,7 +126,9 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     {
         var saveData = (SaveData)state;
         PlayerName.playerName = saveData.playerName;
+        PlayerName.gender = saveData.gender;
         ModifyPlayerNameInDialogues();
+        ChangeGender();
     }
 
 
@@ -106,5 +136,6 @@ public class DialogueModifier : MonoBehaviour, ISaveable
     struct SaveData
     {
         public string playerName;
+        public string gender;
     }
 }

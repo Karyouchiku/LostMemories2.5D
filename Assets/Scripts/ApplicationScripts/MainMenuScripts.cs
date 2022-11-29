@@ -95,7 +95,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     {
         InputPlayerNameObject.SetActive(true);
     }
-    public void SaveInputPlayerName()
+    public void SaveInputPlayerName(int loadSceneID)
     {
         string inputedPlayerName = InputPlayerNameObject.GetComponentInChildren<TMP_InputField>().text;
         if (inputedPlayerName.Length < 3)
@@ -113,7 +113,8 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
         loadingScreen.SetActive(true);
 
         LoadData.isOnLoadGameData = false;
-        StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
+
+        StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(loadSceneID));
     }
     public void BackFromPlayerNameInputWindow()
     {

@@ -5306,7 +5306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4434350922817512365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.224, y: -0.551, z: 2.266}
+  m_LocalPosition: {x: -13.884, y: -0.551, z: 5.265999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5331,6 +5331,9 @@ MonoBehaviour:
   DebuggingValues: {fileID: 6532568873003131371}
   dialoguedb: {fileID: 11400000, guid: 044430d55944faf4ba780e1a66822921, type: 2}
   dialoguedbBackup: {fileID: 11400000, guid: de32908fb29994348bd9f1092c41b313, type: 2}
+  animator: {fileID: 8987313563989479697}
+  male: {fileID: 9100000, guid: 8ab88337a5c5a3e43846e90f623b6d42, type: 2}
+  female: {fileID: 9100000, guid: 5f1c38e0eb0fdd141bd1f9b2c75de3d3, type: 2}
   inGameUI: {fileID: 4543056469077714770}
   player: {fileID: 8390022774997457338}
   playerInventory: {fileID: 8390022775087897598}

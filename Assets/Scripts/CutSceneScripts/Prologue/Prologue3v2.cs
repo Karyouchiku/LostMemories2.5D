@@ -128,13 +128,6 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
-        //Activating other Objects
-        for (int i = 0; i < otherGameObjects.Length; i++)
-        {
-            otherGameObjects[i].SetActive(true);
-        }
-
     }
     public void ForDE03()
     {
@@ -154,6 +147,11 @@ public class Prologue3v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     {
         transition.ManualTransitionON();
     }
+    public void ForDE05()
+    {
+        ContinueMode(true);
+    }
+
     public void ForDE12()
     {
         transition.ManualTransitionOFF();

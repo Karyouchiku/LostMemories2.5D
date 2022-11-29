@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackgroundMusicScript : MonoBehaviour
 {
+    public AudioClip[] clips;
     AudioSource bgMusic;
     [Range(0,1)]
     public float maxVolume = 0.6f;
@@ -17,6 +18,17 @@ public class BackgroundMusicScript : MonoBehaviour
         bgMusic.playOnAwake = true;
         bgMusic.loop = true;
         bgMusic.spatialBlend = 0;
+    }
+    public void ChangeBGM(int clipID)
+    {
+        StartCoroutine(ChangeBGMCoroutine(clipID));
+    }
+    IEnumerator ChangeBGMCoroutine(int clipID)
+    {
+        turn = false;
+        yield return new WaitForSeconds(1.5f);
+        bgMusic.clip = clips[clipID];
+        turn = true;
     }
     // Update is called once per frame
     void Update()
@@ -46,7 +58,7 @@ public class BackgroundMusicScript : MonoBehaviour
     }
     void OnDisable()
     {
-        bgMusic.volume = 0;
         turn = false;
+        bgMusic.volume = 0;
     }
 }
