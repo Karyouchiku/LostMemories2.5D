@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: Official Dialogue
+  m_Name: Official Dialogue (Auto-Backup)
   m_EditorClassIdentifier: 
   version: 69
   author: Jose Luigi Vergara
@@ -62812,7 +62812,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 21
+        value: 26
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -62857,8 +62857,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1389.4287, y: 1772.7621}
-    canvasZoom: 0.42999956
+    canvasScrollPosition: {x: 1321.1963, y: 874.72156}
+    canvasZoom: 0.63999945
   - id: 30
     fields:
     - title: Title
@@ -74835,7 +74835,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: And not join the people who already bring down adopted children.
+        value: And not joined the people who already bring down adopted children.
         type: 0
         typeString: 
       - title: Sequence
@@ -74919,7 +74919,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 543.51074
-        y: 3241.8196
+        y: 3242.8398
         width: 160
         height: 30
     - id: 110
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 650.9037, y: 2184.3896}
-    canvasZoom: 0.61999923
+    canvasScrollPosition: {x: 2049.3267, y: 1121.0044}
+    canvasZoom: 0.829999
   - id: 34
     fields:
     - title: Title
