@@ -116,9 +116,9 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         DisableInteractable();
         ContinueMode(false);
         SetMinSubtitleSeconds(4);
-        SetActorStartingPosition(8, 1);
-        SetActorStartingPosition(9, 2);
-        SetActorStartingPosition(10, 3);
+        SetActorStartingPosition(8, 2);
+        SetActorStartingPosition(9, 3);
+        SetActorStartingPosition(10, 4);
         //SetActorStartingPosition(5, 8);
         //ShadowyActor(5, true);
         DisableChilds();

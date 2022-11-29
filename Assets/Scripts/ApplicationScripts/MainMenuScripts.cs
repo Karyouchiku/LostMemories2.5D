@@ -119,7 +119,8 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
 
         LoadData.isOnLoadGameData = false;
 
-        StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(loadSceneID));
+        //StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(loadSceneID));
+        LoadingScreenScript.LoadScene(loadSceneID);
     }
 
     public void BackFromPlayerNameInputWindow()
@@ -132,7 +133,8 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
         if (LoadData.SaveGameDataID(saveID))
         {
             loadingScreen.SetActive(true);
-            StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
+            //StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
+            LoadingScreenScript.LoadScene(2);
         }
         else
         {

@@ -16629,6 +16629,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 541751888996675024, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 124.899414
+      objectReference: {fileID: 0}
     - target: {fileID: 561381702924740018, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16860,11 +16864,15 @@ PrefabInstance:
     - target: {fileID: 1518939258123976309, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: dialoguedbBackup
       value: 
-      objectReference: {fileID: 11400000, guid: 1c3aa0a1a49e7a54ebf014d5ded2afe5, type: 2}
+      objectReference: {fileID: 11400000, guid: 69eff5541ed9aa84387fc0795062e7b1, type: 2}
     - target: {fileID: 1518939258123976309, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: dialogueSystemController
       value: 
       objectReference: {fileID: 1023445216}
+    - target: {fileID: 1578558481886078125, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 57
+      objectReference: {fileID: 0}
     - target: {fileID: 1671934577859602194, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16900,6 +16908,10 @@ PrefabInstance:
     - target: {fileID: 1816756887606175827, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: m_Color.r
       value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899318038564025588, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1945441594233604996, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: displaySettings.inputSettings.cancel.key
@@ -17724,6 +17736,22 @@ PrefabInstance:
     - target: {fileID: 4376903145025621452, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: camZ
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376903145061478917, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376903145061478917, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376903145061478917, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376903145061478917, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4543056469077714770, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
       propertyPath: m_IsActive

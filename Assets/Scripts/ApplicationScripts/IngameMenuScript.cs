@@ -45,7 +45,9 @@ public class IngameMenuScript : MonoBehaviour
     }
     public void BackToMainMenu()
     {
-        StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(1));
+        //StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(1));
+        LoadingScreenScript.LoadScene(1);
+
     }
 
     public void ExitGame()

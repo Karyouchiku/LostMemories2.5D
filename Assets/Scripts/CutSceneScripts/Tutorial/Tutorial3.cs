@@ -123,7 +123,8 @@ public class Tutorial3 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         yield return new WaitForSeconds(6f);
         
         loadingScreen.SetActive(true);
-        StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
+        //StartCoroutine(LoadingScreenScript.LoadScene_Coroutine(2));
+        LoadingScreenScript.LoadScene(2);
     }
 
     #endregion
