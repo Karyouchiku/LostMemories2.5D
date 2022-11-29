@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: Official Dialogue
+  m_Name: Official Dialogue (Auto-Backup)
   m_EditorClassIdentifier: 
   version: 69
   author: Jose Luigi Vergara
@@ -68813,7 +68813,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 304.86444, y: 493.9746}
+    canvasScrollPosition: {x: 308.7707, y: 633.81836}
     canvasZoom: 1.2800007
   - id: 33
     fields:
@@ -81168,7 +81168,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[em2]NO![/em2] You must not meet her at all cost!'
+        value: '[em1]NO![/em2] You must not meet her at all cost!'
         type: 0
         typeString: 
       - title: Sequence
@@ -91000,8 +91000,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1235.2241, y: 1029.1655}
-    canvasZoom: 0.84999955
+    canvasScrollPosition: {x: 1403.3535, y: 331.96857}
+    canvasZoom: 1.2699991
   - id: 37
     fields:
     - title: Title
@@ -93269,10 +93269,6 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      - title: EventGuid
-        value: 4607f18c-e671-47e5-a9f9-8143cbbc7aea
-        type: 0
-        typeString: 
       conversationID: 40
       isRoot: 0
       isGroup: 0
@@ -93577,10 +93573,6 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
-        type: 0
-        typeString: 
-      - title: EventGuid
-        value: 1ebace5b-cc27-4a03-a0d7-ca832322159f
         type: 0
         typeString: 
       conversationID: 42
@@ -93889,10 +93881,6 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      - title: EventGuid
-        value: f20339a3-11a8-4585-ad4f-a2b089170a61
-        type: 0
-        typeString: 
       conversationID: 44
       isRoot: 0
       isGroup: 0
@@ -94046,10 +94034,6 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
-      - title: EventGuid
-        value: 247700ac-9bf3-4f2e-bf9d-26c2e09f345f
-        type: 0
-        typeString: 
       conversationID: 45
       isRoot: 0
       isGroup: 0
@@ -94201,10 +94185,6 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
-        type: 0
-        typeString: 
-      - title: EventGuid
-        value: 2c47d52c-a3ce-40ae-acf6-51608888dafd
         type: 0
         typeString: 
       conversationID: 46
@@ -94511,10 +94491,6 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 
-        type: 0
-        typeString: 
-      - title: EventGuid
-        value: 7e16b3d0-5bfd-4581-b1bf-d17427a4717c
         type: 0
         typeString: 
       conversationID: 48
