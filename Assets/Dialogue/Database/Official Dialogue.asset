@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Jose
+      value: Burito
       type: 0
       typeString: 
     - title: Pictures
@@ -42779,8 +42779,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1290.8734, y: 642.89484}
-    canvasZoom: 1.0699995
+    canvasScrollPosition: {x: 1246.6785, y: 915.23126}
+    canvasZoom: 1.7299987
   - id: 22
     fields:
     - title: Title
@@ -94168,7 +94168,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 31
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
