@@ -24,7 +24,6 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     BlackTransitioning transition;
     DialogueModifier dialogueModifier;
 
-    //[Header("Disable object and Scripts")]
     DialogueSystemEvents player;
 
     [Header("Portal Doors Involved")]
@@ -139,7 +138,6 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE33()
     {
-        //SetActorStartingPosition(11, 5);
         SetActorStartingPosition(7, 9);
         ShadowyActor(7, false);
         transition.ManualTransitionOFF();
@@ -257,10 +255,10 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     void EnableListenersOnConvoEnd(bool enable)
     {
-        player.conversationEvents.onConversationEnd.RemoveAllListeners();//Remove the Listeners for enabling Controls
+        player.conversationEvents.onConversationEnd.RemoveAllListeners();
         if (enable)
         {
-            dialogueModifier.AddListenersOnConversationEnd();//Adds the Listeners for enabling Controls
+            dialogueModifier.AddListenersOnConversationEnd();
         }
     }
     void Checkpoint()
@@ -353,23 +351,18 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         thisSceneDone = true;
         OtherGOSwitch(true);
-        //player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
     #endregion
     #region CutScenes Methods For External Callers
     //Calls from AutoEnterDoor
     public void EnterDoor()
     {
-        //dialogueModifier.AddListenersOnConversationEnd();//Remove the Comment to activate this line
         EndingScene();
     }
 
     //Calls from LocationChanger
     public void ChangeLocation(int actorID, int locationID)
     {
-        //GameObjectChildrens[locationID].SetActive(true);
-        //targetLocation[actorID] = GameObjectChildrens[locationID].transform.position;
-        
         MoveActor(actorID, locationID);
     }
 

@@ -5516,7 +5516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This game requires 16 to 25 years old to play. Please specify your age
+  m_text: This game requires 18 to 25 years old to play. Please specify your age
     in the field below in order to continue.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf4de473fe0f8cf49be90441ffc68e21, type: 2}

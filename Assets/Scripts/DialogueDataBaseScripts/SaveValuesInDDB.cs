@@ -14,7 +14,6 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     {
         PPointsText.text = $"Personality Points:\n{personalityValue}";
     }
-    //public DialogueDatabase dialogueDatabase;
     #endregion
     #region Variables
     double personalityValue;
@@ -70,7 +69,6 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     #region Lua function registrations
     void OnEnable()
     {
-        // Make the functions available to Lua: (Replace these lines with your own.)
         //For Conditions
         Lua.RegisterFunction("GetPersonalityPoints", this, SymbolExtensions.GetMethodInfo(() => GetPersonalityPointsValue()));
         Lua.RegisterFunction("checkPalomaNum", this, SymbolExtensions.GetMethodInfo(() => checkPalomaNumber()));

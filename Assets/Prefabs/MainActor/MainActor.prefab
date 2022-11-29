@@ -2302,7 +2302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -198.60236, y: -378.53583}
+  m_AnchoredPosition: {x: -60.6, y: -378.53583}
   m_SizeDelta: {x: 397.205, y: 361.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9202264951222228783
@@ -2323,7 +2323,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 70.1
+  m_Spacing: -4.5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -5101,8 +5101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notificationSection: {fileID: 2246746124184460884}
   itemNotifType1: {fileID: 6405819159428094015, guid: 22f91831c45892d4baa49e48dd36d068, type: 3}
-  itemNotifType2: {fileID: 6405819159428094015, guid: 5c50a6c6441dbc044b6ffb7016c6ab11, type: 3}
-  itemNotifType3: {fileID: 6405819159428094015, guid: 15784e9b6a55c024e82fcba3d883b1cc, type: 3}
+  itemNotifType2: {fileID: 6405819159428094015, guid: 0ea6ea5671dfeea4e859da177d71ea5d, type: 3}
+  itemNotifType3: {fileID: 6405819159428094015, guid: 1a65802c738a7cb458bad1b987699294, type: 3}
 --- !u!114 &4994403340054665044
 MonoBehaviour:
   m_ObjectHideFlags: 0
