@@ -182,8 +182,9 @@ public class Chapter327 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     {
         
         IQuest.SetQuest("Get out of the house");
-        saveSystem.Save(5);
         EndingScene();
+        
+        saveSystem.Save(5);
     }
     //END OF ForDE METHODS
 

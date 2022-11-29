@@ -46,7 +46,7 @@ public class Prologue7v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     public bool useDialogueManager;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
-
+    SaveSystem saveSystem;
     void Start()
     {
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
@@ -54,6 +54,7 @@ public class Prologue7v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
@@ -177,7 +178,8 @@ public class Prologue7v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         bgm.ChangeBGM(5);
         ContinueMode(false);
         IQuest.SetQuest("Find your old pictures for your assignment tomorrow.");
-        EnterDoor();
+        EndingScene();
+        saveSystem.Save(5);
     }
 
     //END OF ForDE METHODS

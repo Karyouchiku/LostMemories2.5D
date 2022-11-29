@@ -41,6 +41,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     TMP_Text questText;//
     BlackTransitioning transition;
     DialogueModifier dialogueModifier;
+    SaveSystem saveSystem;
     void Start()
     {
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
@@ -49,6 +50,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
         questText = GameObject.Find("Quest Text").GetComponent<TMP_Text>();
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
 
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
@@ -172,6 +174,7 @@ public class Prologue9 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         otherGameObjects[1].GetComponent<Puzzle1>().EnableInteractableObjects(true); ;
         bgm.ChangeBGM(7);
         EndingScene();
+        saveSystem.Save(5);
     }
 
 

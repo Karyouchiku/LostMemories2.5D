@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Jose
+      value: NullName
       type: 0
       typeString: 
     - title: Pictures
@@ -1893,8 +1893,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 2.5316772, y: 287.34183}
-    canvasZoom: 0.78999984
+    canvasScrollPosition: {x: 114.44252, y: 56.451645}
+    canvasZoom: 1.2399994
   - id: 2
     fields:
     - title: Title

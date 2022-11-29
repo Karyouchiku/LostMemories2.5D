@@ -49,7 +49,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public int actorIDToChange;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
-
+    SaveSystem saveSystem;
     void Start()
     {
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
@@ -58,7 +58,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
         //inventory = GameObject.Find("Inventory").GetComponent<PlayerInventory>();
-
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -182,6 +182,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         IObjectives.SetObjective1("Find your confiscated things before you leave");
         bgm.ChangeBGM(8);
         EndingScene();
+        saveSystem.Save(5);
     }
     //END OF ForDE METHODS
 

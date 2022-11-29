@@ -146,25 +146,25 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         bgm.ChangeBGM(3);
         //AFTER WORDS
         EndingAfterWords.SetActive(true);
-        AfterWords("Adoption is a sensitive issue but it does not mean that people should not be open about it.", 7);
-        yield return new WaitForSeconds(8f);
-        AfterWords("Adoption affects the adopted child and the adoptive parents.", 4);
-        yield return new WaitForSeconds(5f);
-        AfterWords("Based on research, adoption stigma or things like hiding the adoption, looking down on adoptive families, and any negative connotations about adoption emotionally impacts both the child and the parent.", 16);
-        yield return new WaitForSeconds(17f);
-        AfterWords("This game was created to help create a society that is understanding and supportive of adoptive families.", 7);
-        yield return new WaitForSeconds(8f);
-        AfterWords("This game showed the different outcomes of adoption stigma like the poor handling of adoptive parents and negatively affecting the emotions of an adopted child.", 10);
-        yield return new WaitForSeconds(11f);
-        AfterWords("Adopted children or people needs support and understanding of everyone. Otherwise, they might \find themselves hard to trust other people which eventually affects their lives.", 11);
-        yield return new WaitForSeconds(12f);
-        AfterWords("It seems like you got the good ending. You have successfully created the correct decisions about the different factors that affects adoption stigma. We, the developers, would like to congratulate you for being an understanding and supportive to adoptive children based on your decisions. We hope you continue this attitude towards adoptive families to help create a society supportive of adoptive families.", 25);
-        yield return new WaitForSeconds(26f);
-        AfterWords("You may play the game again to find out about the different ending.", 5);
-        yield return new WaitForSeconds(6f);
-        AfterWords("Thanks for playing!", 4);
+        AfterWords("Adoption is a sensitive issue but it does not mean that people should not be open about it.", 9);
+        yield return new WaitForSeconds(10.5f);
+        AfterWords("Adoption affects the adopted child and the adoptive parents.", 6);
+        yield return new WaitForSeconds(7.5f);
+        AfterWords("Based on research, adoption stigma or things like hiding the adoption, looking down on adoptive families, and any negative connotations about adoption emotionally impacts both the child and the parent.", 18);
+        yield return new WaitForSeconds(19.5f);
+        AfterWords("This game was created to help create a society that is understanding and supportive of adoptive families.", 9);
+        yield return new WaitForSeconds(10.5f);
+        AfterWords("This game showed the different outcomes of adoption stigma like the poor handling of adoptive parents and negatively affecting the emotions of an adopted child.", 12);
+        yield return new WaitForSeconds(13.5f);
+        AfterWords("Adopted children or people needs support and understanding of everyone. Otherwise, they might \find themselves hard to trust other people which eventually affects their lives.", 13);
+        yield return new WaitForSeconds(14.5f);
+        AfterWords("It seems like you got the good ending. You have successfully created the correct decisions about the different factors that affects adoption stigma. We, the developers, would like to congratulate you for being an understanding and supportive to adoptive children based on your decisions. We hope you continue this attitude towards adoptive families to help create a society supportive of adoptive families.", 27);
+        yield return new WaitForSeconds(28.5f);
+        AfterWords("You may play the game again to find out about the different ending.", 7);
+        yield return new WaitForSeconds(8.5f);
+        AfterWords("Thanks for playing!", 6);
         bgm.ChangeBGM();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7.5f);
         menu.BackToMainMenu();
 
     }
@@ -178,7 +178,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     IEnumerator AfterWordsCoroutine(string msg, float readTime)
     {
         EndingAfterWordsAnim.SetTrigger("FadeIn");
-        EndingAfterWordsText.text = "msg";
+        EndingAfterWordsText.text = msg;
         yield return new WaitForSeconds(readTime);
         EndingAfterWordsAnim.ResetTrigger("FadeIn");
         EndingAfterWordsAnim.SetTrigger("FadeOut");

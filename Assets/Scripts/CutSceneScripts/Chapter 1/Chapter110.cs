@@ -38,6 +38,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 
     [Header("For Other GameObjects involved")]
     public GameObject[] otherGameObjects;
+    SaveSystem saveSystem;
     void Start()
     {
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
@@ -45,6 +46,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -127,6 +129,7 @@ public class Chapter110 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         }
         IQuest.SetQuest("Find the Adoption Agency");
         EndingScene();
+        saveSystem.Save(5);
     }
 
 

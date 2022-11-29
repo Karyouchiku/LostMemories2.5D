@@ -41,7 +41,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
     public int renderPlaceID;
 
     PlayerInventory playerInventory;
-    SaveSystem saveSystem;
+    //SaveSystem saveSystem;
     private void Awake()
     {
         inGameUi = GameObject.Find("IngameUI");
@@ -54,7 +54,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
         player = GameObject.FindGameObjectWithTag("Burito");
         transition = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
         worldRenderer = GetComponentInParent<WorldActiveSaveState>();
-        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
+        //saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
     }
     public void Interact()
     {
@@ -118,7 +118,7 @@ public class PortalDoor : MonoBehaviour, ISaveable, IInteractor
             playerInventory.InventoryRefresher();
         }
         OnTriggerExitBtn?.Invoke();
-        saveSystem.Save(5);
+        //saveSystem.Save(5);
     }
 
     //For Playing SFX

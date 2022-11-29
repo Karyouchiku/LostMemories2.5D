@@ -45,7 +45,7 @@ public class Chapter220 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public int actorIDToChange;
     public DialogueDatabase dialogueDatabase;
     public int convoID;
-
+    SaveSystem saveSystem;
     void Start()
     {
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
@@ -53,7 +53,7 @@ public class Chapter220 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
         dialogueSystemController = GameObject.Find("Dialogue Manager").GetComponent<DialogueSystemController>();
         transition = GameObject.FindGameObjectWithTag("Canvas").GetComponent<BlackTransitioning>();
-
+        saveSystem = GameObject.Find("Canvas").GetComponent<SaveSystem>();
         actors = lmActors._LMActors;
         startMove = new bool[actors.Length];
         ActorsMoveSpeed = new float[actors.Length];
@@ -135,6 +135,7 @@ public class Chapter220 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE05()
     {
         EndingScene();
+        saveSystem.Save(5);
     }
     //END OF ForDE METHODS
 

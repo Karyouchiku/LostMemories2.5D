@@ -132,7 +132,7 @@ public class PortalDoorV2 : MonoBehaviour, ISaveable, IInteractor
             playerInventory.InventoryRefresher();
         }
         OnTriggerExitBtn?.Invoke();
-        saveSystem.Save(5);
+        //saveSystem.Save(5);
     }
     #region Save System
     //For Playing SFX

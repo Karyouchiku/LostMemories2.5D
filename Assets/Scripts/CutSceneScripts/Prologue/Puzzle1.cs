@@ -56,7 +56,7 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
                     player.gameObject.GetComponent<CharacterAnimation>().moveX = animationVec.x;
                     player.gameObject.GetComponent<CharacterAnimation>().moveZ = animationVec.z;
                 }
-                
+
                 if (CheckInventoryForRequiredItems())
                 {
                     UnlockTheDoor();
@@ -75,10 +75,12 @@ public class Puzzle1 : MonoBehaviour, IPuzzle, ISaveable
         {
             GameObjectChildren[i].gameObject.SetActive(isEnable);
         }
+        /*
         if (!isEnable)
         {
             startThisPuzzle = false;
         }
+        */
     }
     bool objectiveIsOngoing = true;
     bool CheckInventoryForRequiredItems()
