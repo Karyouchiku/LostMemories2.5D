@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 1cc1dbd8afb3d9f4d98631907b57eef2
+  m_OcclusionCullingData: {fileID: 36300000, guid: 9dbc6f14e77683a4b95950afc0e322cb, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 6e2281f4926e4794f8f46ea9447c49c0, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: ce81d396747738640833ff20e2d0e4ed, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: e6c4fdb7ffdd3be418fc71329c0b7478, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -527,7 +527,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58629236}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -571,7 +571,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2856,7 +2856,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550140027}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -2900,7 +2900,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2978,7 +2978,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisSceneDone: 0
   startThisScene: 0
-  loadDataChecker: {fileID: 842959620}
   doors: []
   GameObjectChildrens:
   - {fileID: 1294585155}
@@ -4624,17 +4623,6 @@ Transform:
   m_Father: {fileID: 1365926927}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &842959620 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6936310805046284669, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}
-  m_PrefabInstance: {fileID: 1945642809}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5d475da7c719541aa31569d80df6ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &842959621 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 891323907937902290, guid: e29226354f9b85744b5bb1a22fe50270, type: 3}

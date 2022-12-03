@@ -41,11 +41,13 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
     HideFloors firstFloor;
     HideFloors secondFloor;
 
-
     [Header("Use for Locations: Moving object to these locations")]
     public GameObject[] GameObjectChildrens;
     Vector3[] targetLocation;
     Vector3 animVec;
+
+    [Header("Reset Warehouse State")]
+    public GameObject[] WarehouseRoomsAndFloors;
     #endregion
     #region Start Method -- Defining instance variables
     void Start()
@@ -85,7 +87,7 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         {
             if (!thisPuzzleDone)
             {
-                for (int i = 0; i < startMove.Length; i++)
+                for (int i = 1; i < startMove.Length; i++)
                 {
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
                 }
@@ -136,7 +138,7 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
     {
         startThisPuzzle = true;
         HideFloors.enableDisablingActors = true;
-
+        
         actors[18].tag = "NPC";
         actors[19].tag = "NPC";
         DisableChilds();
@@ -293,6 +295,7 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
 
         StartEnemyRoutine(); 
         EnemyFOVs(true);
+        ResetWarehouse();
         yield return new WaitForSeconds(1f);
         transition.ManualTransitionOFF();
 
@@ -320,6 +323,31 @@ public class PuzzleCh2 : MonoBehaviour, IPuzzle2, ISaveable
         targetLocation[actorID] = lmActors.orginalActorLocations[actorID];
         actors[actorID].GetComponent<CharacterAnimation>().ResetAnimation();
         actors[actorID].SetActive(false);
+    }
+    void ResetWarehouse()
+    {
+        //foreach (GameObject warehouse in WarehouseRoomsAndFloors)
+        for (int i = 0; i < WarehouseRoomsAndFloors.Length; i++)
+        {
+            bool render = i == 4 /*second floor*/|| i == 5 /*starting room*/|| i == 7/*2nd floor hallway*/;
+            MeshRenderer[] meshes = WarehouseRoomsAndFloors[i].GetComponentsInChildren<MeshRenderer>();
+            Light[] lights = WarehouseRoomsAndFloors[i].GetComponentsInChildren<Light>();
+            SpriteRenderer[] sprites = WarehouseRoomsAndFloors[i].GetComponentsInChildren<SpriteRenderer>();
+
+            foreach (MeshRenderer mesh in meshes)
+            {
+                mesh.enabled = render;
+            }
+            foreach (Light light in lights)
+            {
+                light.enabled = render;
+            }
+            foreach (SpriteRenderer sprite in sprites)
+            {
+                sprite.enabled = render;
+            }
+
+        }
     }
     #endregion
     #region Save System

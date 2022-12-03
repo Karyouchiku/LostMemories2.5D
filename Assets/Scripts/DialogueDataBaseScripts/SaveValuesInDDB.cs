@@ -16,7 +16,7 @@ public class SaveValuesInDDB : MonoBehaviour, ISaveable
     }
     #endregion
     #region Variables
-    double personalityValue;
+    public double personalityValue;
     bool palomaNumber;
     bool delivered;
     double palomaPoints;

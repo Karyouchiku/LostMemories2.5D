@@ -11,6 +11,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 {
     #region Starting Codes
     BackgroundMusicScript bgm;
+    EndingMessage msgs;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -29,12 +30,10 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     Animator EndingAfterWordsAnim;
     TMP_Text EndingAfterWordsText;
 
-
     DialogueSystemEvents player;
 
     [Header("Portal Doors Involved")]
     public PortalDoor[] doors;
-
 
     [Header("Use for Locations: Moving object to these locations")]
     public GameObject[] GameObjectChildrens;
@@ -55,6 +54,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     WorldActiveSaveState renderWorld;
     void Start()
     {
+        msgs = new EndingMessage();
         bgm = GameObject.Find("BGM").GetComponent<BackgroundMusicScript>();
         lmActors = GameObject.Find("LMActors").GetComponent<LMActors>();
         dialogueModifier = GameObject.Find("Player&Camera").GetComponent<DialogueModifier>();
@@ -88,6 +88,10 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
                 }
             }
+            else
+            {
+                DisableChilds();
+            }
         }
     }
 
@@ -119,10 +123,7 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         SetActorStartingPosition(8, 2);
         SetActorStartingPosition(9, 3);
         SetActorStartingPosition(10, 4);
-        //SetActorStartingPosition(5, 8);
-        //ShadowyActor(5, true);
         DisableChilds();
-        //ChangeActorDialogue();
     }
     public void ForDE07()
     {
@@ -136,45 +137,65 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE13()
     {
         StartCoroutine(ForDE13Coroutine());
+        EndingScene();
         //GOOD ENDING
     }
     IEnumerator ForDE13Coroutine()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(5f);
         DisableChilds();
-        //menu.BackToMainMenu();
         bgm.ChangeBGM(3);
         //AFTER WORDS
         EndingAfterWords.SetActive(true);
-        AfterWords("Adoption is a sensitive issue but it does not mean that people should not be open about it.", 9);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[0], 9));
+        //AfterWords(msgs.afterWordsMesseges[0], 9);
         yield return new WaitForSeconds(10.5f);
-        AfterWords("Adoption affects the adopted child and the adoptive parents.", 6);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[1], 6));
+        //AfterWords(msgs.afterWordsMesseges[1], 6);
         yield return new WaitForSeconds(7.5f);
-        AfterWords("Based on research, adoption stigma or things like hiding the adoption, looking down on adoptive families, and any negative connotations about adoption emotionally impacts both the child and the parent.", 18);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[2], 18));
+        //AfterWords(msgs.afterWordsMesseges[2], 18);
         yield return new WaitForSeconds(19.5f);
-        AfterWords("This game was created to help create a society that is understanding and supportive of adoptive families.", 9);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[3], 9));
+        //AfterWords(msgs.afterWordsMesseges[3], 9);
         yield return new WaitForSeconds(10.5f);
-        AfterWords("This game showed the different outcomes of adoption stigma like the poor handling of adoptive parents and negatively affecting the emotions of an adopted child.", 12);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[4], 12));
+        //AfterWords(msgs.afterWordsMesseges[4], 12);
         yield return new WaitForSeconds(13.5f);
-        AfterWords("Adopted children or people needs support and understanding of everyone. Otherwise, they might \find themselves hard to trust other people which eventually affects their lives.", 13);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[5], 13));
+        //AfterWords(msgs.afterWordsMesseges[5], 13);
         yield return new WaitForSeconds(14.5f);
-        AfterWords("It seems like you got the good ending. You have successfully created the correct decisions about the different factors that affects adoption stigma. We, the developers, would like to congratulate you for being an understanding and supportive to adoptive children based on your decisions. We hope you continue this attitude towards adoptive families to help create a society supportive of adoptive families.", 27);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[6], 27));
+        //AfterWords(msgs.afterWordsMesseges[7], 27);//Unique
         yield return new WaitForSeconds(28.5f);
-        AfterWords("You may play the game again to find out about the different ending.", 7);
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[8], 7));
+        //AfterWords(msgs.afterWordsMesseges[8], 7);
         yield return new WaitForSeconds(8.5f);
-        AfterWords("Thanks for playing!", 6);
-        bgm.ChangeBGM();
+
+        StartCoroutine(AfterWordsCoroutine(msgs.afterWordsMesseges[9], 6));
+        //AfterWords(msgs.afterWordsMesseges[9], 6);
         yield return new WaitForSeconds(7.5f);
+
+        bgm.ChangeBGM();
         menu.BackToMainMenu();
 
     }
     #endregion
-
     #region MY SHORCUT METHODS
+    /* 
     void AfterWords(string msg, float readTime)
     {
         StartCoroutine(AfterWordsCoroutine(msg, readTime));
     }
+    */
     IEnumerator AfterWordsCoroutine(string msg, float readTime)
     {
         EndingAfterWordsAnim.SetTrigger("FadeIn");
@@ -184,7 +205,6 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         EndingAfterWordsAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1f);
         EndingAfterWordsAnim.ResetTrigger("FadeOut");
-
     }
     void TransitioningToOtherPlaces(int locationID)
     {
@@ -330,7 +350,6 @@ public class Chapter437 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
 
     #endregion
-
     #region ISaveable Methods
     public object SaveState()
     {

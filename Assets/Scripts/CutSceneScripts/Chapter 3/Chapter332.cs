@@ -10,6 +10,7 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 {
     #region Starting Codes
     BackgroundMusicScript bgm;
+    public Animator florAnim;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -118,6 +119,7 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         ContinueMode(false);
         SetMinSubtitleSeconds(4);
         SetActorStartingPosition(5, 8);
+        florAnim.SetTrigger("Higa");
         ShadowyActor(5, true);
         DisableChilds();
         //ChangeActorDialogue();
@@ -157,6 +159,7 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE19()
     {
+        florAnim.ResetTrigger("Higa");
         ContinueMode(false);
         StartCoroutine(ForDE19Coroutine());
     }

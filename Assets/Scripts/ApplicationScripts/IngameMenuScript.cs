@@ -29,6 +29,14 @@ public class IngameMenuScript : MonoBehaviour
             loadingProgress.value = Mathf.MoveTowards(loadingProgress.value, LoadingScreenScript.target, 3 * Time.deltaTime);
         }
     }
+    public void OnPause()
+    {
+        //Time.timeScale = 0;
+    }
+    public void OnResume()
+    {
+        //Time.timeScale = 0;
+    }
     void FixedUpdate()
     {
         for (int i = 0; i < LoadData.SaveDatas.Length-1; i++)

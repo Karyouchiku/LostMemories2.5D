@@ -17,11 +17,11 @@ MonoBehaviour:
   description: 
   globalUserScript: 
   emphasisSettings:
-  - color: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
+  - color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     bold: 1
     italic: 1
     underline: 0
-  - color: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
+  - color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
     bold: 1
     italic: 0
     underline: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: Burito
+      value: NullName
       type: 0
       typeString: 
     - title: Pictures
@@ -42779,8 +42779,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1290.8734, y: 642.89484}
-    canvasZoom: 1.0699995
+    canvasScrollPosition: {x: 1246.6785, y: 915.23126}
+    canvasZoom: 1.7299987
   - id: 22
     fields:
     - title: Title
@@ -74219,7 +74219,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[/em2]HOW DARE YOU SAY THAT TO ME?![/em2]'
+        value: '[em2]HOW DARE YOU SAY THAT TO ME?![/em2]'
         type: 0
         typeString: 
       - title: Sequence
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 434.78394, y: 2459.3079}
-    canvasZoom: 0.22999918
+    canvasScrollPosition: {x: 368.0974, y: 2374.3865}
+    canvasZoom: 1.0999988
   - id: 34
     fields:
     - title: Title
@@ -92983,8 +92983,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 45, y: 714}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 628.8318}
+    canvasZoom: 1.1799998
   - id: 39
     fields:
     - title: Title
@@ -94071,7 +94071,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.88000005
   - id: 46
     fields:
     - title: Title
@@ -94184,7 +94184,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Actor
-        value: 2
+        value: 31
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant

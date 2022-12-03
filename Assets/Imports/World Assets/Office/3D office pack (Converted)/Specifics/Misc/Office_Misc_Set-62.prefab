@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   open: {fileID: 8300000, guid: 043497149c3429f4d864d1bd6d4dd97c, type: 3}
   close: {fileID: 8300000, guid: 9d168f474a5a46c429682175b5dfaf6c, type: 3}
+  isUnlocked: 1
 --- !u!82 &8790313913538070399
 AudioSource:
   m_ObjectHideFlags: 0
@@ -241,7 +242,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8469494145858465668, guid: 292e5b6fe39778f4e814cb7ff0ac0032, type: 3}
+  - {fileID: 2100000, guid: bb99080599d432c4b9190c0a743ce9f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

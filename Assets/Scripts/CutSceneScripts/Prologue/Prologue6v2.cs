@@ -128,12 +128,13 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         {
             GameObjectChildrens[i].SetActive(false);
         }
-
+        /*
         //Activating other Objects
         for (int i = 0; i < otherGameObjects.Length; i++)
         {
             otherGameObjects[i].SetActive(false);
         }
+        */
         MoveActor(1, 5, 0.6f);
     }
     public void ForDE02_15()
@@ -160,10 +161,27 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         yield return new WaitForSeconds(2);
         MoveActor(0, 2, 0.7f);
     }
+    public void ForDEEndings()
+    {
+        ResetActorPositionToOriginal(1);
+        OtherGOSwitch(true);
+        EndingScene();
+    }
 
     //END OF ForDE METHODS
 
     //MY SHORCUT METHODS
+    void OtherGOSwitch(bool turn)
+    {
+        foreach (GameObject go in otherGameObjects)
+        {
+            go.SetActive(turn);
+        }
+    }
+    void OtherGOSwitch(bool turn, int id)
+    {
+        otherGameObjects[id].SetActive(turn);
+    }
     void ChangeActorDialogue(int actorID, int convoID)//Use this for Interaction of NPC not for OnTriggerCollision
     {
         if (useDialogueManager)
@@ -240,16 +258,18 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     //Calls from LocationChecker
     public void LocationCheck()
     {
-        transition.ManualTransitionON();
-        StartCoroutine(DiableNPCs());
+        //transition.ManualTransitionON();
+        //StartCoroutine(DiableNPCs());
     }
+    /*
     IEnumerator DiableNPCs()
     {
         yield return new WaitForSeconds(1);
-        ResetActorPositionToOriginal(1);
-        otherGameObjects[0].SetActive(true);
-        EndingScene();
+        //ResetActorPositionToOriginal(1);
+        //otherGameObjects[0].SetActive(true);
+        //EndingScene();
     }
+    */
     //END OF ALL EVENT METHODS
 
 

@@ -22,7 +22,6 @@ public class Tutorial1 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     CharacterAnimation[] anim;
     BlackTransitioning transition;
     DialogueModifier dialogueModifier;
-    public LoadDataChecker loadDataChecker;
     //[Header("Disable object and Scripts")]
     DialogueSystemEvents player;
 
@@ -103,7 +102,6 @@ public class Tutorial1 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     #region ForDE METHODS
     public void ForDE01()
     {
-        loadDataChecker.movePlayer = false;
         StartMoving();
         transition.ManualTransitionOFF();
         EnableListenersOnConvoEnd(true);
@@ -133,7 +131,6 @@ public class Tutorial1 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     
 
     #endregion
-
     #region MY SHORCUT METHODS
     void EndingTransition(int locationID)
     {
@@ -286,7 +283,6 @@ public class Tutorial1 : MonoBehaviour, CutScenes, ISaveable//Rename Class *****
     }
 
     #endregion
-
     #region ISaveable Methods
     public object SaveState()
     {

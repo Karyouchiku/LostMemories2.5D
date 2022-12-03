@@ -31,7 +31,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
     void WorldRenderer(int renderPlaceID)
     {
         
-
+        /*
         for (int i = 0; i < places.Length; i++)
         {
             bool render = i == renderPlaceID;
@@ -61,6 +61,7 @@ public class WorldActiveSaveState : MonoBehaviour, ISaveable
             }
             
         }
+        */
     }
 
     public object SaveState()

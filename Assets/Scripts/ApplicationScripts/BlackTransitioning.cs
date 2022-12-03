@@ -12,6 +12,7 @@ public class BlackTransitioning : MonoBehaviour
     {
         blackTransition.gameObject.SetActive(true);
         blackTransition.SetBool("isStart", true);
+        Camera.main.GetComponentInParent<CamFollowPlayer>().removeAnimation = true;
     }
 
     public void ManualTransitionON()

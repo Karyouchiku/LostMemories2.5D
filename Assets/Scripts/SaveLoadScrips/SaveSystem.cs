@@ -20,6 +20,8 @@ public class SaveSystem : MonoBehaviour
     {
         var state = LoadFile(LoadData.SaveDatas[id]);
         LoadState(state);
+        LoadData.isOnLoadGameData = false;
+        LoadData.saveDataID = 0;
     }
     public IngameMenuScript ingameMenuScript;
     public void LoadGame(int id)

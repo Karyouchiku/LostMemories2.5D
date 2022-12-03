@@ -6,13 +6,11 @@ using UnityEngine;
 public class LoadDataChecker : MonoBehaviour
 {
     SaveSystem saveSystem;
-    BlackTransitioning trasitioning;
+    BlackTransitioning transition;
     [Header("Data Needed for NewGame")]
     public GameObject player;
     public GameObject ingameUI;
-    public GameObject movePlayerLocation;
-    public bool movePlayer;
-    Vector3 target;
+    public GameObject TriggerCutScene1;
     [Header("For Debugging")]
     public bool isDebugging;
 
@@ -20,24 +18,24 @@ public class LoadDataChecker : MonoBehaviour
     //bool isPlayerControlsEnabled;
     void Awake()
     {
-        trasitioning = GameObject.Find("Canvas").GetComponent<BlackTransitioning>();
+        transition = GetComponent<BlackTransitioning>();
         saveSystem = GetComponent<SaveSystem>();
         if (!isDebugging)
         {
             if (LoadData.isOnLoadGameData)
             {
                 //Check When this is a Load Game
-                LoadData.isOnLoadGameData = false;
-                saveSystem.Load(LoadData.saveDataID);
-                StartCoroutine(EnablingControls());
+                //LoadData.isOnLoadGameData = false;
+                Debug.Log($"LoadData.isOnLoadGameData is {LoadData.isOnLoadGameData}");
+                StartCoroutine(CheckIfLoadGame());
             }
             else
             {
                 //This is for New Game
+                TriggerCutScene1.SetActive(true);
                 player.GetComponent<PlayerControls>().enabled = false;
                 //ingameUI.SetActive(false);
-                movePlayer = true;
-                trasitioning.StartTransition2ndVer();
+                transition.StartTransition2ndVer();
             }
         }
         else
@@ -45,21 +43,17 @@ public class LoadDataChecker : MonoBehaviour
             MenuStaticVariables.soundVolume = 1f;
         }
     }
-    IEnumerator EnablingControls()
+    IEnumerator CheckIfLoadGame()
     {
+        transition.StartTransition2ndVer();
         yield return new WaitForFixedUpdate();
+        player.GetComponent<CharacterController>().enabled = false;
+        saveSystem.Load(LoadData.saveDataID);
+        player.GetComponent<CharacterController>().enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        transition.ManualTransitionOFF();
         player.GetComponent<PlayerControls>().enabled = true;
         ingameUI.SetActive(true);
-    }
-    void FixedUpdate()
-    {
 
-        if (movePlayer)
-        {
-            target = movePlayerLocation.transform.position;
-            target.y = player.transform.position.y;
-
-            player.transform.position = Vector3.MoveTowards(player.transform.position, target, 2 * Time.deltaTime);
-        }
     }
 }

@@ -76,7 +76,7 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         {
             if (!thisSceneDone)
             {
-                for (int i = 0; i < startMove.Length; i++)
+                for (int i = 1; i < startMove.Length; i++)
                 {
                     MoveCharacter(startMove[i], actors[i], anim[i], targetLocation[i], ActorsMoveSpeed[i]);
                 }
@@ -98,14 +98,18 @@ public class Chapter219 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void MoveCharacter(bool startMove, GameObject actor, CharacterAnimation pAnim, Vector3 target, float mSpeed)
     {
+        target.y = actor.transform.position.y;
         if (startMove)
         {
             animVec = target - actor.transform.position;
-            target.y = actor.transform.position.y;
             actor.transform.position = Vector3.MoveTowards(actor.transform.position, target, mSpeed * Time.deltaTime);
-            pAnim.moveX = animVec.x;
-            pAnim.moveZ = animVec.z;
         }
+        else
+        {
+            animVec = Vector3.zero;
+        }
+        pAnim.moveX = animVec.x;
+        pAnim.moveZ = animVec.z;
     }
 
     //START OF ALL EVENT METHODS

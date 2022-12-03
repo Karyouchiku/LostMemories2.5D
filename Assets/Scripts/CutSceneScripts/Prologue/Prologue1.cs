@@ -77,6 +77,7 @@ public class Prologue1 : MonoBehaviour, CutScenes, ISaveable
     public void ForDE1()
     {
         bgm.ChangeBGM(0);
+        loc[3].SetActive(false);
         startThisScene = true;
         actor[1].GetComponent<DialogueSystemTrigger>().trigger = DialogueSystemTriggerEvent.None;
         playerDSE.conversationEvents.onConversationEnd.RemoveAllListeners();

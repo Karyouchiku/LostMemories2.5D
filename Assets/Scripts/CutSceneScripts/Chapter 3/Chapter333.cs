@@ -10,6 +10,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
 {
     #region Starting Codes
     BackgroundMusicScript bgm;
+    public Animator florAnim;
     //important to be saved
     public bool thisSceneDone;
     public bool startThisScene;
@@ -117,6 +118,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         DisableInteractable();
         ContinueMode(false);
         SetMinSubtitleSeconds(4);
+        florAnim.SetTrigger("Higa2");
         //SetActorStartingPosition(5, 8);
         //ShadowyActor(5, true);
         DisableChilds();
@@ -130,7 +132,6 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void ForDE38()//calling paloma
     {
-        
         
         GetComponent<ItemFromNPC>().RemoveItem();
     }
@@ -424,6 +425,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void EndingScene()
     {
+        florAnim.ResetTrigger("Higa2");
         thisSceneDone = true;
         //player.GetComponent<FlashlightControls>().FLSwitch(false);
     }
