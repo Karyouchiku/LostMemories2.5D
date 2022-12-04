@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: NullName
+      value: Burito
       type: 0
       typeString: 
     - title: Pictures
@@ -12122,7 +12122,7 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 73.97272, y: 1373.3545}
+    canvasScrollPosition: {x: 0, y: 1017.18964}
     canvasZoom: 0.72999924
   - id: 5
     fields:
@@ -16976,8 +16976,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.70000005
+    canvasScrollPosition: {x: 7.6140594, y: 359.53378}
+    canvasZoom: 0.9699998
   - id: 7
     fields:
     - title: Title
@@ -18414,8 +18414,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 650.27356, y: 219.45602}
-    canvasZoom: 0.7600001
+    canvasScrollPosition: {x: 599.5099, y: 922.42505}
+    canvasZoom: 0.88
   - id: 8
     fields:
     - title: Title

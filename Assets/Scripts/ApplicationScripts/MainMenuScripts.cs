@@ -99,7 +99,7 @@ public class MainMenuScripts : MonoBehaviour, ISaveable
     public void CheckSaveInputPlayerName()
     {
         string inputedPlayerName = InputPlayerNameObject.GetComponentInChildren<TMP_InputField>().text;
-        if (inputedPlayerName.Length < 3)
+        if (inputedPlayerName.Length < 3 || inputedPlayerName.Length > 10)
         {
             errorMsg.text = "Invalid Name";
             return;

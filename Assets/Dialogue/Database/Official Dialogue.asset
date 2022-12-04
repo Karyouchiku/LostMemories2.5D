@@ -124,7 +124,7 @@ MonoBehaviour:
   - id: 2
     fields:
     - title: Name
-      value: NullName
+      value: Burito
       type: 0
       typeString: 
     - title: Pictures
@@ -1303,7 +1303,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "It\u2019s okay, NullName. You may take your seat."
+        value: "It\u2019s okay, Burito. You may take your seat."
         type: 0
         typeString: 
       - title: Sequence
@@ -1413,7 +1413,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[em1]*murmurs*[/em1] NullName has always been like that.'
+        value: '[em1]*murmurs*[/em1] Burito has always been like that.'
         type: 0
         typeString: 
       - title: Sequence
@@ -1468,7 +1468,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "NullName doesn\u2019t show any improvement lol. [em1]*murmurs*[/em1]"
+        value: "Burito doesn\u2019t show any improvement lol. [em1]*murmurs*[/em1]"
         type: 0
         typeString: 
       - title: Sequence
@@ -2078,7 +2078,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hey! What are you up to. NullName?
+        value: Hey! What are you up to. Burito?
         type: 0
         typeString: 
       - title: Sequence
@@ -36837,7 +36837,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm NullName. Nice to meet you.
+        value: I'm Burito. Nice to meet you.
         type: 0
         typeString: 
       - title: Sequence
@@ -50307,7 +50307,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh... uhm, I'm NullName.
+        value: Oh... uhm, I'm Burito.
         type: 0
         typeString: 
       - title: Sequence
@@ -54597,7 +54597,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Good night, NullName.
+        value: Good night, Burito.
         type: 0
         typeString: 
       - title: Sequence
@@ -73719,7 +73719,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm NullName.
+        value: I'm Burito.
         type: 0
         typeString: 
       - title: Sequence
@@ -76616,7 +76616,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So thank you, NullName.
+        value: So thank you, Burito.
         type: 0
         typeString: 
       - title: Sequence
@@ -82850,7 +82850,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I''m NullName. Your son. '
+        value: 'I''m Burito. Your son. '
         type: 0
         typeString: 
       - title: Sequence
@@ -84074,7 +84074,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: '[em1]sigh[/em1] I knew it. You wouldn''t go here if only you knew
-          the story. This is a mistake, NullName.'
+          the story. This is a mistake, Burito.'
         type: 0
         typeString: 
       - title: Sequence

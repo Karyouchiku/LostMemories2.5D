@@ -161,12 +161,6 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
         yield return new WaitForSeconds(2);
         MoveActor(0, 2, 0.7f);
     }
-    public void ForDEEndings()
-    {
-        ResetActorPositionToOriginal(1);
-        OtherGOSwitch(true);
-        EndingScene();
-    }
 
     //END OF ForDE METHODS
 
@@ -258,18 +252,18 @@ public class Prologue6v2 : MonoBehaviour, CutScenes, ISaveable//Rename Class ***
     //Calls from LocationChecker
     public void LocationCheck()
     {
-        //transition.ManualTransitionON();
-        //StartCoroutine(DiableNPCs());
+        transition.ManualTransitionON();
+        StartCoroutine(DiableNPCs());
     }
-    /*
+    
     IEnumerator DiableNPCs()
     {
         yield return new WaitForSeconds(1);
-        //ResetActorPositionToOriginal(1);
-        //otherGameObjects[0].SetActive(true);
-        //EndingScene();
+        ResetActorPositionToOriginal(1);
+        OtherGOSwitch(true);
+        EndingScene();
     }
-    */
+    
     //END OF ALL EVENT METHODS
 
 
