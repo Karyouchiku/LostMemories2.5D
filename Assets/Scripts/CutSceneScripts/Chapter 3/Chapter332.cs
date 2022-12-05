@@ -157,6 +157,8 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE19()
     {
         florAnim.ResetTrigger("Higa");
+        florAnim.SetTrigger("Higa2");
+
         ContinueMode(false);
         StartCoroutine(ForDE19Coroutine());
     }

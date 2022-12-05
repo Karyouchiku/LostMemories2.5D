@@ -118,9 +118,9 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         DisableInteractable();
         ContinueMode(false);
         SetMinSubtitleSeconds(4);
-        florAnim.ResetTrigger("Higa");
-        florAnim.ResetTrigger("Higa2");
-        florAnim.SetTrigger("Higa2");
+        //florAnim.ResetTrigger("Higa");
+        //florAnim.ResetTrigger("Higa2");
+        //florAnim.SetTrigger("Higa2");
         //SetActorStartingPosition(5, 8);
         //ShadowyActor(5, true);
         DisableChilds();
