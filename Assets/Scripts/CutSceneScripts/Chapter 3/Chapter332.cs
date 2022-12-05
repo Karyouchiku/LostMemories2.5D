@@ -122,9 +122,6 @@ public class Chapter332 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
         florAnim.SetTrigger("Higa");
         ShadowyActor(5, true);
         DisableChilds();
-        //ChangeActorDialogue();
-
-
     }
     public void ForDE02()
     {

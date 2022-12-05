@@ -139,7 +139,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE33()
     {
         SetActorStartingPosition(7, 9);
-        ShadowyActor(7, false);
+        ShadowyActor(7, true);
         transition.ManualTransitionOFF();
         MoveActor(0, 4, 0.6f);
     }
@@ -150,6 +150,7 @@ public class Chapter436 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE41()
     {
         ContinueMode(true);
+        ShadowyActor(7, false);
     }
     public void ForDE47()
     {
