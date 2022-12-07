@@ -52485,7 +52485,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Now, I want to see hard. I want to say sorry now because I at least
+        value: Now, I want to see her. I want to say sorry now because I at least
           have an idea how she felt.
         type: 0
         typeString: 
@@ -54907,8 +54907,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 651.59985, y: 1039.0001}
-    canvasZoom: 0.9999999
+    canvasScrollPosition: {x: 468.05246, y: 2110.1377}
+    canvasZoom: 0.9999997
   - id: 27
     fields:
     - title: Title
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 434.78394, y: 2459.3079}
-    canvasZoom: 0.22999918
+    canvasScrollPosition: {x: 1972.1812, y: 2908.1687}
+    canvasZoom: 0.64999926
   - id: 34
     fields:
     - title: Title
@@ -94898,8 +94898,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 306.31482, y: 0}
-    canvasZoom: 1.5699995
+    canvasScrollPosition: {x: 201.21204, y: 53.719025}
+    canvasZoom: 1.2099998
   - id: 50
     fields:
     - title: Title
