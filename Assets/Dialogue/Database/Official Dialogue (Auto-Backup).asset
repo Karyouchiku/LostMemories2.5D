@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: Official Dialogue
+  m_Name: Official Dialogue (Auto-Backup)
   m_EditorClassIdentifier: 
   version: 69
   author: Jose Luigi Vergara
@@ -65048,7 +65048,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: We are family, and we should be trusting one another. Our bond should
+        value: We are family and we should be trusting one another. Our bond should
           be stronger than that.
         type: 0
         typeString: 
@@ -67135,8 +67135,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1397.669, y: 963.2648}
-    canvasZoom: 0.9999994
+    canvasScrollPosition: {x: 1379.1904, y: 1321.2764}
+    canvasZoom: 0.96999943
   - id: 31
     fields:
     - title: Title
@@ -67811,7 +67811,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You instantly looked for Flor to talk about what happened.
+        value: You instantly looked for Flor to tell about what happened.
         type: 0
         typeString: 
       - title: Sequence
@@ -68813,7 +68813,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 325.17694, y: 0}
+    canvasScrollPosition: {x: 304.86444, y: 493.9746}
     canvasZoom: 1.2800007
   - id: 33
     fields:
@@ -69889,7 +69889,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Okay but hurry up. We don't have much time.
+        value: Okay, but hurry up. We don't have much time.
         type: 0
         typeString: 
       - title: Sequence
@@ -69999,7 +69999,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I know you're shocked, but we don't have much time.
+        value: I know you're shocked but we don't have much time.
         type: 0
         typeString: 
       - title: Sequence
@@ -70619,7 +70619,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh, so we have a family member right here but...
+        value: Oh so we have a family member right here but...
         type: 0
         typeString: 
       - title: Sequence
@@ -72259,7 +72259,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh, there you are! I've been looking all over for you!
+        value: Oh there you are! I've been looking all over for you!
         type: 0
         typeString: 
       - title: Sequence
@@ -75226,7 +75226,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It should be me. I lied to you, and I didn't know how it greatly affected
+        value: It should be me. I lied to you and I didn't know how it greatly affected
           you.
         type: 0
         typeString: 
@@ -75503,7 +75503,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Of course, I still want you as my mom.
+        value: Of course I still want you as my mom.
         type: 0
         typeString: 
       - title: Sequence
@@ -75531,7 +75531,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2486.002
+        x: 2487.0889
         y: 717.333
         width: 160
         height: 30
@@ -75558,7 +75558,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It's just that a long time has already passed, and I always thought
+        value: It's just that a long time has already passed and I always thought
           that I can't come back anymore.
         type: 0
         typeString: 
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1988.1626, y: 605.13855}
-    canvasZoom: 0.88999885
+    canvasScrollPosition: {x: 106.97693, y: 2857.7036}
+    canvasZoom: 0.85999894
   - id: 34
     fields:
     - title: Title
