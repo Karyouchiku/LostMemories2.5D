@@ -13,6 +13,9 @@ TagManager:
   - Burito
   - CutScenePosLoc
   - NPC
+  - wood
+  - stone
+  - dirt
   layers:
   - Default
   - TransparentFX
