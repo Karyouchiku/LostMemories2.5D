@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: Official Dialogue Backup
+  m_Name: Official Dialogue 1
   m_EditorClassIdentifier: 
   version: 69
   author: Jose Luigi Vergara
@@ -2078,7 +2078,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hey! What are you up to. Burito?
+        value: Hey! What are you up to, Burito?
         type: 0
         typeString: 
       - title: Sequence
@@ -4179,8 +4179,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 17.9104}
-    canvasZoom: 0.66999996
+    canvasScrollPosition: {x: 79.1611, y: 149.19702}
+    canvasZoom: 0.78999984
   - id: 3
     fields:
     - title: Title
@@ -5422,7 +5422,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hey, you okay?
+        value: Hey, are you okay?
         type: 0
         typeString: 
       - title: Sequence
@@ -6819,8 +6819,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 79.230896, y: 719.6981}
-    canvasZoom: 0.8199997
+    canvasScrollPosition: {x: 0, y: 346.77753}
+    canvasZoom: 0.7899997
   - id: 4
     fields:
     - title: Title
@@ -7128,7 +7128,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'll have my revenge on them when the righ time comes.
+        value: I'll have my revenge on them when the right time comes.
         type: 0
         typeString: 
       - title: Sequence
@@ -7185,7 +7185,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I am always trying to be as kind as possible but it just won't work...
+        value: I am always trying to be as kind as possible, but it just won't work...
         type: 0
         typeString: 
       - title: Sequence
@@ -8607,7 +8607,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Well, just try to undesrtand your mom, okay?
+        value: Well, just try to understand your mom, okay?
         type: 0
         typeString: 
       - title: Sequence
@@ -9899,7 +9899,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Again with the silence treatment.
+        value: Again, with the silence treatment.
         type: 0
         typeString: 
       - title: Sequence
@@ -10853,7 +10853,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: She's good. She's been nagging me a lot lately but I guess that's
+        value: She's good. She's been nagging me a lot lately, but I guess that's
           just her way of showing her love.
         type: 0
         typeString: 
@@ -11019,8 +11019,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Like she's asking me for the most little things even if she can do
-          it herself.
+        value: Like she's asking me for the littlest things even if she can do it
+          herself.
         type: 0
         typeString: 
       - title: Sequence
@@ -11049,7 +11049,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1096.7288
-        y: 1571.3292
+        y: 1572.4281
         width: 160
         height: 30
     - id: 79
@@ -11529,7 +11529,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Yeah he did. Now I gotta find my old pics.
+        value: Yeah, he did. Now I gotta find my old pics.
         type: 0
         typeString: 
       - title: Sequence
@@ -11694,7 +11694,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: If it's not embarassing, then sure. Otherwise, nope.
+        value: If it's not embarrassing, then sure. Otherwise, nope.
         type: 0
         typeString: 
       - title: Sequence
@@ -12122,8 +12122,8 @@ MonoBehaviour:
         width: 1
         height: 0.19354248
       color: {r: 1, g: 1, b: 1, a: 0.5}
-    canvasScrollPosition: {x: 0, y: 1017.18964}
-    canvasZoom: 0.72999924
+    canvasScrollPosition: {x: 824.1767, y: 418.1379}
+    canvasZoom: 0.9099991
   - id: 5
     fields:
     - title: Title
@@ -12961,7 +12961,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: so you dont have to worry about me, mom.
+        value: So, you don't have to worry about me, mom.
         type: 0
         typeString: 
       - title: Sequence
@@ -12990,7 +12990,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 544.00037
-        y: 465.8567
+        y: 464.6372
         width: 160
         height: 30
     - id: 14
@@ -15454,8 +15454,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 700.00024, y: 232.9269}
-    canvasZoom: 0.81999975
+    canvasScrollPosition: {x: 628.33624, y: 28.409119}
+    canvasZoom: 0.8799997
   - id: 6
     fields:
     - title: Title
@@ -16378,7 +16378,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Her kid always get in trouble.
+        value: Her kid always gets in trouble.
         type: 0
         typeString: 
       - title: Sequence
@@ -16976,7 +16976,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 7.6140594, y: 359.53378}
+    canvasScrollPosition: {x: 97.304825, y: 269.07224}
     canvasZoom: 0.9699998
   - id: 7
     fields:
@@ -18272,7 +18272,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: And it's already evening. Mom would hate me if I ask for something
+        value: And it's already evening. Mom will hate me if I ask for something
           I need at this time.
         type: 0
         typeString: 
@@ -18414,7 +18414,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 599.5099, y: 922.42505}
+    canvasScrollPosition: {x: 874.5096, y: 697.7272}
     canvasZoom: 0.88
   - id: 8
     fields:
@@ -20730,7 +20730,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I... I-I can't take anymore of this.
+        value: I... I-I can't take any more of this.
         type: 0
         typeString: 
       - title: Sequence
@@ -21063,7 +21063,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'For me? Maybe it''s for you! For you to hide your embarassment for
+        value: 'For me? Maybe it''s for you! For you to hide your embarrassment for
           having an adopted child like me! '
         type: 0
         typeString: 
@@ -21345,7 +21345,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Your mom continued to talk but its was muffled by your crying and
+        value: 'Your mom continued to talk but it was muffled by your crying and
           covering of ears. '
         type: 0
         typeString: 
@@ -21488,8 +21488,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1211.6359, y: 798.52515}
-    canvasZoom: 1.2999988
+    canvasScrollPosition: {x: 1408.869, y: 1569.8197}
+    canvasZoom: 0.9399991
   - id: 9
     fields:
     - title: Title
@@ -22711,7 +22711,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Everything may seem calm but only you knows what you're going through.
+        value: Everything may seem calm but only you know what you're going through.
         type: 0
         typeString: 
       - title: Sequence
@@ -23253,7 +23253,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 152.88031, y: 839.2291}
+    canvasScrollPosition: {x: 165.14444, y: 883.0192}
     canvasZoom: 1.0599997
   - id: 10
     fields:
@@ -24273,7 +24273,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Look around and ask if someone is willing to help. Preferrably someone
+        value: Look around and ask if someone is willing to help. Preferably someone
           who works in the agency.
         type: 0
         typeString: 
@@ -24405,7 +24405,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 278.1603, y: 0}
+    canvasScrollPosition: {x: 351.3746, y: 180.35718}
     canvasZoom: 1.1199998
   - id: 12
     fields:
@@ -25040,7 +25040,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[em3]That was mean of him but he might be the only way to get what
+        value: '[em3]That was mean of him, but he might be the only way to get what
           I need.
 
           I have to put up with him for now.[/em3]'
@@ -25098,7 +25098,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Yeah, that's the case I guess and I was hoping you can help me.
+        value: Yeah, that's the case I guess, and I was hoping you can help me.
         type: 0
         typeString: 
       - title: Sequence
@@ -25650,7 +25650,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You just have to deliver something and that receiver will give you
+        value: You just have to deliver something, and that receiver will give you
           what you want. Sounds simple enough?
         type: 0
         typeString: 
@@ -25712,7 +25712,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '[em3]This sounds suspicious but I can''t go back now[/em3]'
+        value: '[em3]This sounds suspicious, but I can''t go back now[/em3]'
         type: 0
         typeString: 
       - title: Sequence
@@ -26137,7 +26137,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 120.388306, y: 1112.622}
+    canvasScrollPosition: {x: 84.466, y: 878.6409}
     canvasZoom: 1.0299997
   - id: 13
     fields:
@@ -30123,7 +30123,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: No one move or this kid will get it! YOU HEAR ME?! NO ONE MOVE!
+        value: No one move, or this kid will get it! YOU HEAR ME?! NO ONE MOVE!
         type: 0
         typeString: 
       - title: Sequence
@@ -30513,8 +30513,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Tsk! We can't just follow them with just us two. Plus they got a hostage.
-          We gotta report this immediately...
+        value: Tsk! We can't just follow them with just us two. Plus, they got a
+          hostage. We gotta report this immediately...
         type: 0
         typeString: 
       - title: Sequence
@@ -30601,7 +30601,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 542.2411, y: 1272.043}
+    canvasScrollPosition: {x: 501.1949, y: 1183.9982}
     canvasZoom: 0.9999993
   - id: 17
     fields:
@@ -31381,8 +31381,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 33.5074, y: 0}
-    canvasZoom: 0.7900002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.73000026
   - id: 18
     fields:
     - title: Title
@@ -33952,7 +33952,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm afraid I can't do that. You've already seen to much.
+        value: I'm afraid I can't do that. You've already seen too much.
         type: 0
         typeString: 
       - title: Sequence
@@ -35350,8 +35350,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1113.5109, y: 1782.8124}
-    canvasZoom: 1.0599993
+    canvasScrollPosition: {x: 1290.9761, y: 81.61679}
+    canvasZoom: 0.9999994
   - id: 20
     fields:
     - title: Title
@@ -37058,7 +37058,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Otherwise what? What would've happen if I went that way?
+        value: Otherwise, what? What would've happen if I went that way?
         type: 0
         typeString: 
       - title: Sequence
@@ -40233,7 +40233,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You can't help but feel an ache in your heart as you have too leave
+        value: You can't help but feel an ache in your heart as you have to leave
           a friend, Mario, in a place where it feels like all hope was lost.
         type: 0
         typeString: 
@@ -41187,7 +41187,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So what about it?
+        value: So, what about it?
         type: 0
         typeString: 
       - title: Sequence
@@ -42355,7 +42355,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Is she embarassed about me or just for herself as a parent? I don''t
+        value: 'Is she embarrassed about me or just for herself as a parent? I don''t
           know but I think it would''ve been better if she was just open about it. '
         type: 0
         typeString: 
@@ -42779,8 +42779,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1246.6785, y: 915.23126}
-    canvasZoom: 1.7299987
+    canvasScrollPosition: {x: 2079.1167, y: 2062.057}
+    canvasZoom: 1.0699993
   - id: 22
     fields:
     - title: Title
@@ -46053,7 +46053,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 212.94101, y: 728.40894}
+    canvasScrollPosition: {x: 198.1683, y: 745.45435}
     canvasZoom: 0.88000023
   - id: 25
     fields:
@@ -46518,7 +46518,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So tell me, where are your parents? I can call them for you if you
+        value: So, tell me, where are your parents? I can call them for you if you
           know their number.
         type: 0
         typeString: 
@@ -47852,7 +47852,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It's because everyone else knew I'm adopted and I didn't.
+        value: It's because everyone else knew I'm adopted, and I didn't.
         type: 0
         typeString: 
       - title: Sequence
@@ -48856,7 +48856,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So you've done the same, huh? Why?
+        value: So, you've done the same, huh? Why?
         type: 0
         typeString: 
       - title: Sequence
@@ -49241,7 +49241,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So you mean, she's adopted too?
+        value: So, you mean, she's adopted too?
         type: 0
         typeString: 
       - title: Sequence
@@ -49269,7 +49269,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 566.28046
+        x: 565.14404
         y: 2383.9004
         width: 160
         height: 30
@@ -49914,7 +49914,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So I guess I'll stay.
+        value: So, I guess I'll stay.
         type: 0
         typeString: 
       - title: Sequence
@@ -50340,8 +50340,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 200.00006, y: 0}
-    canvasZoom: 0.7299998
+    canvasScrollPosition: {x: 173.85046, y: 2525.2625}
+    canvasZoom: 0.87999964
   - id: 26
     fields:
     - title: Title
@@ -51651,7 +51651,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Of course we adopted you because we love you and that's all there
+        value: Of course, we adopted you because we love you and that's all there
           is to it.
         type: 0
         typeString: 
@@ -52041,7 +52041,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It felt like I don't know who I am anymore and I don't know where
+        value: It felt like I don't know who I am anymore, and I don't know where
           I belong.
         type: 0
         typeString: 
@@ -52071,7 +52071,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1356.9678
-        y: 461.20496
+        y: 460.02844
         width: 160
         height: 30
     - id: 31
@@ -52097,7 +52097,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Because my whole life, I thought that they are my family but it turns
+        value: Because my whole life, I thought that they are my family, but it turns
           out that they are ashamed of having me or maybe ashamed for themselves
           as adoptive parents.
         type: 0
@@ -52929,7 +52929,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You see, you want us to have a normal life yet you treat us differently.
+        value: You see, you want us to have a normal life yet, you treat us differently.
         type: 0
         typeString: 
       - title: Sequence
@@ -54907,8 +54907,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 468.05246, y: 2110.1377}
-    canvasZoom: 0.9999997
+    canvasScrollPosition: {x: 447.97525, y: 2377.3076}
+    canvasZoom: 0.76000005
   - id: 27
     fields:
     - title: Title
@@ -55267,7 +55267,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So... what's the plan? I know I said I'll help you but I don't have
+        value: So... what's the plan? I know I said I'll help you, but I don't have
           the slightest idea how.
         type: 0
         typeString: 
@@ -55610,7 +55610,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So this is her...
+        value: So, this is her...
         type: 0
         typeString: 
       - title: Sequence
@@ -56488,7 +56488,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Uhm... I'm looking for the BCA buildiing. Can you point me where it
+        value: Uhm... I'm looking for the BCA building. Can you point me where it
           is?
         type: 0
         typeString: 
@@ -59695,7 +59695,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: After saying those words to you, Paloma quickly left and she is visibly
+        value: After saying those words to you, Paloma quickly left, and she is visibly
           startled by what you said.
         type: 0
         typeString: 
@@ -60029,7 +60029,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So what are you trying to do here?
+        value: So, what are you trying to do here?
         type: 0
         typeString: 
       - title: Sequence
@@ -62857,8 +62857,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1389.4287, y: 1772.7621}
-    canvasZoom: 0.42999956
+    canvasScrollPosition: {x: 1587.7516, y: 2851.0566}
+    canvasZoom: 0.81999946
   - id: 30
     fields:
     - title: Title
@@ -63042,7 +63042,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: So you've said you're adopted too and you ran away from home, right?
+        value: So, you've said you're adopted too and you ran away from home, right?
         type: 0
         typeString: 
       - title: Sequence
@@ -63826,8 +63826,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It's like she's overprotecting me and it made me feel like she's hiding
-          something.
+        value: It's like she's overprotecting me, and it made me feel like she's
+          hiding something.
         type: 0
         typeString: 
       - title: Sequence
@@ -64048,8 +64048,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'It''s like they want us to live a normal life but they treat us differently.
-          Do they not trust us about the adoption? '
+        value: 'It''s like they want us to live a normal life, but they treat us
+          differently. Do they not trust us about the adoption? '
         type: 0
         typeString: 
       - title: Sequence
@@ -64826,7 +64826,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I'm just fed up with people like that but it doesn't mean it's okay
+        value: I'm just fed up with people like that, but it doesn't mean it's okay
           what they're doing.
         type: 0
         typeString: 
@@ -65048,7 +65048,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: We are family and we should be trusting one another. Our bond should
+        value: We are family, and we should be trusting one another. Our bond should
           be stronger than that.
         type: 0
         typeString: 
@@ -65827,8 +65827,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I want to see her too. But evertime I hear her voice or see her, everything
-          just comes back to me.
+        value: I want to see her too. But everytime I hear her voice or see her,
+          everything just comes back to me.
         type: 0
         typeString: 
       - title: Sequence
@@ -67135,8 +67135,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1310.5137, y: 2774.1946}
-    canvasZoom: 0.8199996
+    canvasScrollPosition: {x: 1397.669, y: 963.2648}
+    canvasZoom: 0.9999994
   - id: 31
     fields:
     - title: Title
@@ -67626,7 +67626,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 243.87361, y: 73.3945}
+    canvasScrollPosition: {x: 250.29561, y: 0}
     canvasZoom: 1.0899999
   - id: 32
     fields:
@@ -67811,7 +67811,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You instantly looked for Flor to tell about what happened.
+        value: You instantly looked for Flor to talk about what happened.
         type: 0
         typeString: 
       - title: Sequence
@@ -68813,7 +68813,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 304.86444, y: 493.9746}
+    canvasScrollPosition: {x: 325.17694, y: 0}
     canvasZoom: 1.2800007
   - id: 33
     fields:
@@ -69889,7 +69889,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Okay, but hurry up. We don't have much time.
+        value: Okay but hurry up. We don't have much time.
         type: 0
         typeString: 
       - title: Sequence
@@ -69999,7 +69999,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I know you're shocked but we don't have much time.
+        value: I know you're shocked, but we don't have much time.
         type: 0
         typeString: 
       - title: Sequence
@@ -70619,7 +70619,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh so we have a family member right here but...
+        value: Oh, so we have a family member right here but...
         type: 0
         typeString: 
       - title: Sequence
@@ -70949,7 +70949,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You have successfully contacted Paloma and without any hesistation...
+        value: You have successfully contacted Paloma and without any hesitation...
         type: 0
         typeString: 
       - title: Sequence
@@ -72259,7 +72259,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Oh there you are! I've been looking all over for you!
+        value: Oh, there you are! I've been looking all over for you!
         type: 0
         typeString: 
       - title: Sequence
@@ -74779,7 +74779,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Maybe you could have understood her better and symphatize and just
+        value: Maybe you could have understood her better and sympathize and just
           supported her.
         type: 0
         typeString: 
@@ -75226,7 +75226,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It should be me. I lied to you and I didn't know how it greatly affected
+        value: It should be me. I lied to you, and I didn't know how it greatly affected
           you.
         type: 0
         typeString: 
@@ -75503,7 +75503,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Of course I still want you as my mom.
+        value: Of course, I still want you as my mom.
         type: 0
         typeString: 
       - title: Sequence
@@ -75531,7 +75531,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2487.0889
+        x: 2486.002
         y: 717.333
         width: 160
         height: 30
@@ -75558,7 +75558,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: It's just that a long time has already passed and I always thought
+        value: It's just that a long time has already passed, and I always thought
           that I can't come back anymore.
         type: 0
         typeString: 
@@ -78822,8 +78822,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1972.1812, y: 2908.1687}
-    canvasZoom: 0.64999926
+    canvasScrollPosition: {x: 1988.1626, y: 605.13855}
+    canvasZoom: 0.88999885
   - id: 34
     fields:
     - title: Title
@@ -82850,7 +82850,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'I''m Burito. Your son. '
+        value: 'I''m Burito. Your child. '
         type: 0
         typeString: 
       - title: Sequence
@@ -82905,7 +82905,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Your long lost son. I've come to find you.
+        value: Your long lost child. I've come to find you.
         type: 0
         typeString: 
       - title: Sequence
@@ -82933,7 +82933,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 569.40717
+        x: 568.3763
         y: 2375.2593
         width: 160
         height: 30
@@ -83244,7 +83244,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Yes, it's me. Your son. I've been longing to find you and my father.
+        value: Yes, it's me. Your child. I've been longing to find you and my father.
         type: 0
         typeString: 
       - title: Sequence
@@ -83851,7 +83851,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Takita told  you, didn't she?
+        value: Carol told  you, didn't she?
         type: 0
         typeString: 
       - title: Sequence
@@ -86074,7 +86074,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: You see, Takita told me about your past. She said she told you too
+        value: You see, Carol told me about your past. She said she told you too
           but I guess you didn't understand her that time.
         type: 0
         typeString: 
@@ -86517,7 +86517,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: That's because you suffered from amnesia. I think Takita said it's
+        value: That's because you suffered from amnesia. I think Carol said it's
           dissociative amnesia.
         type: 0
         typeString: 
@@ -86547,7 +86547,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2395.411
-        y: 2441.27
+        y: 2442.4062
         width: 160
         height: 30
     - id: 111
@@ -87964,7 +87964,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Even if the whole world is againts you, I'd still be on your side.
+        value: Even if the whole world is against you, I'd still be on your side.
           [em1]*sob*[/em1]
         type: 0
         typeString: 
@@ -89102,8 +89102,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2601.8628
-        y: 3192.1045
+        x: 2600.597
+        y: 3168.0537
         width: 160
         height: 30
     - id: 157
@@ -89796,7 +89796,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Im just related to you by blood but you're not one bit my family.
+        value: I'm just related to you by blood but you're not one bit my family.
         type: 0
         typeString: 
       - title: Sequence
@@ -91000,8 +91000,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1235.2241, y: 1029.1655}
-    canvasZoom: 0.84999955
+    canvasScrollPosition: {x: 136.65292, y: 3210.9956}
+    canvasZoom: 1.1499993
   - id: 37
     fields:
     - title: Title
@@ -92236,7 +92236,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: and youself alone...
+        value: and yourself alone...
         type: 0
         typeString: 
       - title: Sequence
@@ -92983,7 +92983,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 628.8318}
+    canvasScrollPosition: {x: 0, y: 1.6948853}
     canvasZoom: 1.1799998
   - id: 39
     fields:
