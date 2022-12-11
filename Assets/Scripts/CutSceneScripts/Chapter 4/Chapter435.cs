@@ -125,6 +125,7 @@ public class Chapter435 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     public void ForDE12()
     {
         transition.ManualTransitionON();
+        OtherGOSwitch(true);
     }
     public void ForDE14()
     {
@@ -134,7 +135,6 @@ public class Chapter435 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     IEnumerator ForDE09Coroutine()
     {
         yield return new WaitForSeconds(3f);
-        OtherGOSwitch(true);
         TransitioningToOtherPlaces(2, 8);
         SetActorStartingPosition(2, 3);
         ShadowyActor(2, true);

@@ -149,7 +149,7 @@ public class Chapter115: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         SetActorStartingPosition(15, 7);
         
         yield return new WaitForSeconds(1);
-        questText.text = "Meet the receiver behind the store from the otherside of the road";
+        questText.text = "Deliver the parcel to the receiver behind the building across the road";
         Door(0);
         bgm.ChangeBGM(6);
         EndingScene();

@@ -150,7 +150,7 @@ public class Chapter112: MonoBehaviour, CutScenes, ISaveable//Rename Class *****
         yield return new WaitForSeconds(2);
         transition.ManualTransitionOFF();
         GetComponent<ItemFromNPC>().GiveItem();
-        IQuest.SetQuest("Meet the receiver behind the store from the otherside of the road");
+        IQuest.SetQuest("Deliver the parcel to the receiver behind the building across the road");
         EndingScene();
     }
 

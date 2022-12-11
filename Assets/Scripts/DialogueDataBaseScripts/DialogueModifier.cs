@@ -110,9 +110,6 @@ public class DialogueModifier : MonoBehaviour, ISaveable
         playerInventory = this.playerInventory.transform;
         playerInventory.GetComponent<PlayerInventory>().InventoryRefresher();
     }
-
-    
-
     public object SaveState()
     {
         return new SaveData()
@@ -121,17 +118,19 @@ public class DialogueModifier : MonoBehaviour, ISaveable
             gender = PlayerName.gender
         };
     }
-
     public void LoadState(object state)
     {
         var saveData = (SaveData)state;
         PlayerName.playerName = saveData.playerName;
         PlayerName.gender = saveData.gender;
-        ModifyPlayerNameInDialogues();
         ChangeGender();
+        StartCoroutine(ChangeDelay());
     }
-
-
+    IEnumerator ChangeDelay()
+    {
+        yield return new WaitForFixedUpdate();
+        ModifyPlayerNameInDialogues();
+    }
     [Serializable]
     struct SaveData
     {

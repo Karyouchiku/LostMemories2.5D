@@ -20,7 +20,7 @@ public class EndingMessage
             //Good Ending
             /*6*/"It seems like you got the good ending. You have successfully created the correct decisions about the different factors that affects adoption stigma. We, the developers, would like to congratulate you for being an understanding and supportive to adoptive children based on your decisions. We hope you continue this attitude towards adoptive families to help create a society supportive of adoptive families.",
             //Bad Ending
-            /*7*/"It seems like you got the bad ending. This means that you have created decisions that are common in the society that results into adoption stigma. The bad ending shows how it damages the relationship of an adopted child with other people especially is they are stigmatized. Let this be a lesson to us that we need to be understanding and considerate of adopted children.",
+            /*7*/"It seems like you got the bad ending. This means that you have created decisions that are common in the society that results into adoption stigma. The bad ending shows how it damages the relationship of an adopted child with other people especially if they are stigmatized. Let this be a lesson to us that we need to be understanding and considerate of adopted children.",
             
             /*8*/"You may play the game again to find out about the different ending.",
             /*9*/"Thanks for playing!"

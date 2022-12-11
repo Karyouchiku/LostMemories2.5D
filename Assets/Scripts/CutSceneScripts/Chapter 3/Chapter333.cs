@@ -427,6 +427,7 @@ public class Chapter333 : MonoBehaviour, CutScenes, ISaveable//Rename Class ****
     }
     public void EndingScene()
     {
+        OtherGOSwitch(true);
         florAnim.ResetTrigger("Higa2");
         thisSceneDone = true;
         //player.GetComponent<FlashlightControls>().FLSwitch(false);
